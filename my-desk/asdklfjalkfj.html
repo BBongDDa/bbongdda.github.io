@@ -1,0 +1,749 @@
+{{ XeFrontend::css([
+'plugins/xehub_ui/assets/spoqa.css',
+'plugins/xehub_ui/assets/xetailwind.css',
+'plugins/xehub_ui/assets/css/dist.css',
+'plugins/xehub_ui/assets/xeCheckbox.css',
+'plugins/xehub_ui/assets/xeDropdown/xeDropdown.css',
+])->load() }}
+
+{{ XeFrontend::js([
+'plugins/xehub_ui/assets/xeDropdown/xeDropdown.js',
+])->load() }}
+
+<!-- 컴포넌트 시작지점 / 배경, p, w, h 설정지점-->
+<div class="xe-w-full xe-h-auto xe-p-[24px] xe-bg-[#E5E6EA]">
+    <!-- 폼 시작 -->
+    <form id="station-create-form"
+        class="xe-bg-[#fff] xe-w-full xe-h-full xe-rounded-[8px] xe-border-[1px] xe-border-[#DFDFDF] xe-py-[23px] xe-px-[15px]"
+        action="{{-- route('custom_quantum::backoffice.shop.shop_station.store', $targetShop->getId()) --}}"
+        method="POST" enctype="multipart/form-data" class="xe-px-[50px]">
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-px-[15px]">회원여부</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-w-full xe-h-full xe-p-[16px] xe-rounded-[2px]">
+                    <input
+                        class=" xe-text-center xe-w-full xe-h-[38px] xe-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF] xe-p-[10px] xe-bg-[#F5F5F5]  xe-border-box xe-border-[1px] xe-border-[#DFDFDF] "
+                        name="" readonly type="text" value="{{-- $targetShop->shop_name --}}" />
+                    <input name="" readonly type="hidden" value="{{--  --}}" />
+                </div>
+            </div>
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-px-[15px]">고객번호</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-w-full xe-h-full xe-p-[16px] xe-rounded-[2px]">
+                    <input
+                        class=" xe-text-center xe-w-full xe-h-[38px]e-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF] xe-p-[10px] xe-bg-[#F5F5F5]  xe-border-box xe-border-[1px] xe-border-[#DFDFDF] "
+                        name="" readonly type="text" value="{{-- $targetShop->shop_name --}}" />
+                    <input name="" readonly type="hidden" value="{{--  --}}" />
+                </div>
+            </div>
+        </div>
+
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-px-[15px]">고객명</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-w-full xe-h-full xe-p-[16px] xe-rounded-[2px]">
+                    <input
+                        class=" xe-text-center xe-w-full xe-h-[38px] xe-h-full xe-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF] xe-p-[10px] xe-bg-[#F5F5F5]  xe-border-box xe-border-[1px] xe-border-[#DFDFDF] "
+                        name="" readonly type="text" value="{{-- $targetShop->shop_name --}}" />
+                    <input name="" readonly type="hidden" value="{{--  --}}" />
+                </div>
+            </div>
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-px-[15px]">연락처</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-w-full xe-h-full xe-p-[16px] xe-rounded-[2px]">
+                    <input
+                        class=" xe-text-center xe-w-full xe-h-[38px] xe-h-full xe-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF] xe-p-[10px] xe-bg-[#F5F5F5]  xe-border-box xe-border-[1px] xe-border-[#DFDFDF] "
+                        name="" readonly type="text" value="{{-- $targetShop->shop_name --}}" />
+                    <input name="" readonly type="hidden" value="{{--  --}}" />
+                </div>
+            </div>
+        </div>
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-px-[15px]">예약일</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-w-full xe-h-full xe-p-[16px] xe-rounded-[2px]">
+                    <input
+                        class=" xe-text-center xe-w-full xe-h-[38px] xe-h-full xe-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF] xe-p-[10px] xe-bg-[#F5F5F5]  xe-border-box xe-border-[1px] xe-border-[#DFDFDF] "
+                        name="" readonly type="text" value="{{-- $targetShop->shop_name --}}" />
+                    <input name="" readonly type="hidden" value="{{--  --}}" />
+                </div>
+            </div>
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-px-[15px]">예약시간</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-w-full xe-h-full xe-p-[16px] xe-rounded-[2px]">
+                    <input
+                        class=" xe-text-center xe-w-full xe-h-[38px] xe-h-full xe-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF] xe-p-[10px] xe-bg-[#F5F5F5]  xe-border-box xe-border-[1px] xe-border-[#DFDFDF] "
+                        name="" readonly type="text" value="{{-- $targetShop->shop_name --}}" />
+                    <input name="" readonly type="hidden" value="{{--  --}}" />
+                </div>
+            </div>
+        </div>
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-px-[15px]">담당자</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-w-full xe-h-full xe-p-[16px] xe-rounded-[2px]">
+                    <input
+                        class=" xe-text-center xe-w-full xe-h-[38px] xe-h-full xe-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF] xe-p-[10px] xe-bg-[#F5F5F5]  xe-border-box xe-border-[1px] xe-border-[#DFDFDF] "
+                        name="" readonly type="text" value="{{-- $targetShop->shop_name --}}" />
+                    <input name="" readonly type="hidden" value="{{--  --}}" />
+                </div>
+            </div>
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-px-[15px]">경대</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-w-full xe-h-full xe-p-[16px] xe-rounded-[2px]">
+                    <input
+                        class=" xe-text-center xe-w-full xe-h-[38px] xe-h-full xe-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF] xe-p-[10px] xe-bg-[#F5F5F5]  xe-border-box xe-border-[1px] xe-border-[#DFDFDF] "
+                        name="" readonly type="text" value="{{-- $targetShop->shop_name --}}" />
+                    <input name="" readonly type="hidden" value="{{--  --}}" />
+                </div>
+            </div>
+        </div>
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-px-[15px]">유형</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-w-full xe-h-full xe-p-[16px] xe-rounded-[2px]">
+                    <input
+                        class=" xe-text-center xe-w-full xe-h-[38px] xe-h-full xe-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF] xe-p-[10px] xe-bg-[#F5F5F5]  xe-border-box xe-border-[1px] xe-border-[#DFDFDF] "
+                        name="" readonly type="text" value="{{-- $targetShop->shop_name --}}" />
+                    <input name="" readonly type="hidden" value="{{--  --}}" />
+                </div>
+            </div>
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-px-[15px]">상태</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-w-full xe-h-full xe-p-[16px] xe-rounded-[2px]">
+                    <input
+                        class=" xe-text-center xe-w-full xe-h-[38px] xe-h-full xe-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF] xe-p-[10px] xe-bg-[#F5F5F5]  xe-border-box xe-border-[1px] xe-border-[#DFDFDF] "
+                        name="" readonly type="text" value="{{-- $targetShop->shop_name --}}" />
+                    <input name="" readonly type="hidden" value="{{--  --}}" />
+                </div>
+            </div>
+        </div>
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-px-[15px]">선결제</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-gap-x-[15px] xe-pl-[16px]">
+                    <!-- 라디오 -->
+                    <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                        <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                            <label
+                                class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                                for="radio--4"></label>
+                            <input type="radio" disabled id="radio--4"
+                                class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                            <div
+                                class="xe-checkbox__box xe-bg-[#DFDFDF] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-full xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="white"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="xe-whitespace-nowrap">완료</span>
+                    </div>
+                    <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                        <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                            <label
+                                class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                                for="radio--5"></label>
+                            <input type="radio" disabled id="radio--5"
+                                class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                            <div
+                                class="xe-checkbox__box xe-bg-[#DFDFDF] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-full xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="white"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="xe-whitespace-nowrap">미완료</span>
+                    </div>
+                </div>
+            </div>
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-px-[15px]">예약경로</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-gap-x-[15px] xe-pl-[16px]">
+                    <!-- 라디오 -->
+                    <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                        <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                            <label
+                                class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                                for="radio--10"></label>
+                            <input type="radio" disabled id="radio--10"
+                                class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                            <div
+                                class="xe-checkbox__box xe-bg-[#DFDFDF] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-full xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="white"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="xe-whitespace-nowrap">네이버</span>
+                    </div>
+                    <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                        <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                            <label
+                                class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                                for="radio--11"></label>
+                            <input type="radio" disabled id="radio--11"
+                                class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                            <div
+                                class="xe-checkbox__box xe-bg-[#DFDFDF] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-full xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="white"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="xe-whitespace-nowrap">카카오</span>
+                    </div>
+                </div>
+                <div class="xe-flex xe-gap-x-[15px] xe-pl-[16px]">
+                    <!-- 라디오 -->
+                    <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                        <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                            <label
+                                class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                                for="radio--12"></label>
+                            <input type="radio" disabled id="radio--12"
+                                class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                            <div
+                                class="xe-checkbox__box xe-bg-[#DFDFDF] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-full xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="white"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="xe-whitespace-nowrap">박매니저(앱)</span>
+                    </div>
+                    <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                        <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                            <label
+                                class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                                for="radio--13"></label>
+                            <input type="radio" disabled id="radio--13"
+                                class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                            <div
+                                class="xe-checkbox__box xe-bg-[#DFDFDF] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-full xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="white"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="xe-whitespace-nowrap">박매니저(수기)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                <label for="id"
+                    class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[110px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                    <span class="xe-pl-[15px] xe-pr-[2px] xe-text-[15px]">시술상품</span>
+                    <span class="xe-text-[#F5332B]">*</span>
+                </label>
+            </div>
+            <div class="xe-flex xe-flex-col xe-pl-[15px]">
+                <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                    <div class="xe-w-[208px] xe-h-[38px] xe-relative">
+                        <select
+                            class="xe-w-[208px] xe-h-[38px] xe-p-[5px] xe-border-[1px] xe-border-[#C0C0C0] xe-text-[14px] xe-text-[#C0C0C0] xe-font-[500] xe-rounded-[5px] xe-appearance-none focus:xe-outline-none ">
+                            <option selected>데이터 불러옴</option>
+                            {{--@foreach($idleStations as $station)
+                            <option value="{{ $station->station_id }}">{{ $station->station_number }}</option>
+                            @endforeach--}}
+                        </select>
+                        <!-- 화살표 absolute -->
+                        <div
+                            class="xe-absolute xe-w-[9px] xe-h-[5px] xe-top-[50%] xe-right-[10px] xe-translate-y-[50%] xe-translate-y-[-50%] xe-border-t-[4px] xe-border-t-[px] xe-border-t-[#999] xe-border-r-[4px] xe-border-r-[transparent] xe-border-b-[0px] xe-border-b-[transparent] xe-border-l-[4px] xe-border-l-[transparent]">
+                        </div>
+                    </div>
+                    <div class="xe-w-[208px] xe-h-[38px] xe-relative">
+                        <select
+                            class="xe-w-[208px] xe-h-[38px] xe-p-[5px] xe-border-[1px] xe-border-[#C0C0C0] xe-text-[14px] xe-text-[#C0C0C0] xe-font-[500] xe-rounded-[5px] xe-appearance-none focus:xe-outline-none ">
+                            <option selected>데이터 불러옴</option>
+                            {{--@foreach($idleStations as $station)
+                            <option value="{{ $station->station_id }}">{{ $station->station_number }}</option>
+                            @endforeach--}}
+                        </select>
+                        <!-- 화살표 absolute -->
+                        <div
+                            class="xe-absolute xe-w-[9px] xe-h-[5px] xe-top-[50%] xe-right-[10px] xe-translate-y-[50%] xe-translate-y-[-50%] xe-border-t-[4px] xe-border-t-[px] xe-border-t-[#999] xe-border-r-[4px] xe-border-r-[transparent] xe-border-b-[0px] xe-border-b-[transparent] xe-border-l-[4px] xe-border-l-[transparent]">
+                        </div>
+                    </div>
+
+                    <div class="xe-w-[208px] xe-h-[38px] xe-relative">
+                        <select
+                            class="xe-w-[208px] xe-h-[38px] xe-p-[5px] xe-border-[1px] xe-border-[#C0C0C0] xe-text-[14px] xe-text-[#C0C0C0] xe-font-[500] xe-rounded-[5px] xe-appearance-none focus:xe-outline-none ">
+                            <option selected>상품리스트</option>
+                            {{--@foreach($idleStations as $station)
+                            <option value="{{ $station->station_id }}">{{ $station->station_number }}</option>
+                            @endforeach--}}
+                        </select>
+                        <!-- 화살표 absolute -->
+                        <div
+                            class="xe-absolute xe-w-[9px] xe-h-[5px] xe-top-[50%] xe-right-[10px] xe-translate-y-[50%] xe-translate-y-[-50%] xe-border-t-[4px] xe-border-t-[px] xe-border-t-[#999] xe-border-r-[4px] xe-border-r-[transparent] xe-border-b-[0px] xe-border-b-[transparent] xe-border-l-[4px] xe-border-l-[transparent]">
+                        </div>
+                    </div>
+                    <button class="xe-w-[70px] xe-h-[38px] xe-bg-[#13CCCD] xe-rounded-[2px]">
+                        <span class="xe-text-[#fff] xe-text-[15px] xe-font-[500]">추가</span>
+                    </button>
+                </div>
+                <!-- 선택된 시술상품 -->
+                <div class="xe-flex xe-gap-x-[8px] xe-pt-[8px]">
+                    <button
+                        class="xe-flex xe-gap-x-[15px] xe-w-auto xe-h-[38px] xe-bg-[#fff] xe-rounded-[66px] xe-border-[1px] xe-border-[#E8E8E8] xe-jusify-center xe-items-center xe-px-[12px]">
+                        <span class="xe-text-[#555] xe-text-[14px]">가일컷</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.93996 8.00077L11.8066 5.14077C11.9322 5.01524 12.0027 4.84498 12.0027 4.66744C12.0027 4.48991 11.9322 4.31964 11.8066 4.19411C11.6811 4.06857 11.5108 3.99805 11.3333 3.99805C11.1558 3.99805 10.9855 4.06857 10.86 4.19411L7.99996 7.06077L5.13996 4.19411C5.01442 4.06857 4.84416 3.99805 4.66663 3.99805C4.48909 3.99805 4.31883 4.06857 4.19329 4.19411C4.06776 4.31964 3.99723 4.48991 3.99723 4.66744C3.99723 4.84498 4.06776 5.01524 4.19329 5.14077L7.05996 8.00077L4.19329 10.8608C4.13081 10.9227 4.08121 10.9965 4.04737 11.0777C4.01352 11.159 3.99609 11.2461 3.99609 11.3341C3.99609 11.4221 4.01352 11.5093 4.04737 11.5905C4.08121 11.6717 4.13081 11.7455 4.19329 11.8074C4.25527 11.8699 4.329 11.9195 4.41024 11.9534C4.49148 11.9872 4.57862 12.0046 4.66663 12.0046C4.75463 12.0046 4.84177 11.9872 4.92301 11.9534C5.00425 11.9195 5.07798 11.8699 5.13996 11.8074L7.99996 8.94077L10.86 11.8074C10.9219 11.8699 10.9957 11.9195 11.0769 11.9534C11.1581 11.9872 11.2453 12.0046 11.3333 12.0046C11.4213 12.0046 11.5084 11.9872 11.5897 11.9534C11.6709 11.9195 11.7446 11.8699 11.8066 11.8074C11.8691 11.7455 11.9187 11.6717 11.9526 11.5905C11.9864 11.5093 12.0038 11.4221 12.0038 11.3341C12.0038 11.2461 11.9864 11.159 11.9526 11.0777C11.9187 10.9965 11.8691 10.9227 11.8066 10.8608L8.93996 8.00077Z"
+                                fill="#949494" />
+                        </svg>
+                    </button>
+                    <button
+                        class="xe-flex xe-gap-x-[15px] xe-w-auto xe-h-[38px] xe-bg-[#fff] xe-rounded-[66px] xe-border-[1px] xe-border-[#E8E8E8] xe-jusify-center xe-items-center xe-px-[12px]">
+                        <span class="xe-text-[#555] xe-text-[14px]">기장추가 (+5000)</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.93996 8.00077L11.8066 5.14077C11.9322 5.01524 12.0027 4.84498 12.0027 4.66744C12.0027 4.48991 11.9322 4.31964 11.8066 4.19411C11.6811 4.06857 11.5108 3.99805 11.3333 3.99805C11.1558 3.99805 10.9855 4.06857 10.86 4.19411L7.99996 7.06077L5.13996 4.19411C5.01442 4.06857 4.84416 3.99805 4.66663 3.99805C4.48909 3.99805 4.31883 4.06857 4.19329 4.19411C4.06776 4.31964 3.99723 4.48991 3.99723 4.66744C3.99723 4.84498 4.06776 5.01524 4.19329 5.14077L7.05996 8.00077L4.19329 10.8608C4.13081 10.9227 4.08121 10.9965 4.04737 11.0777C4.01352 11.159 3.99609 11.2461 3.99609 11.3341C3.99609 11.4221 4.01352 11.5093 4.04737 11.5905C4.08121 11.6717 4.13081 11.7455 4.19329 11.8074C4.25527 11.8699 4.329 11.9195 4.41024 11.9534C4.49148 11.9872 4.57862 12.0046 4.66663 12.0046C4.75463 12.0046 4.84177 11.9872 4.92301 11.9534C5.00425 11.9195 5.07798 11.8699 5.13996 11.8074L7.99996 8.94077L10.86 11.8074C10.9219 11.8699 10.9957 11.9195 11.0769 11.9534C11.1581 11.9872 11.2453 12.0046 11.3333 12.0046C11.4213 12.0046 11.5084 11.9872 11.5897 11.9534C11.6709 11.9195 11.7446 11.8699 11.8066 11.8074C11.8691 11.7455 11.9187 11.6717 11.9526 11.5905C11.9864 11.5093 12.0038 11.4221 12.0038 11.3341C12.0038 11.2461 11.9864 11.159 11.9526 11.0777C11.9187 10.9965 11.8691 10.9227 11.8066 10.8608L8.93996 8.00077Z"
+                                fill="#949494" />
+                        </svg>
+                    </button>
+                    <button
+                        class="xe-flex xe-gap-x-[15px] xe-w-auto xe-h-[38px] xe-bg-[#fff] xe-rounded-[66px] xe-border-[1px] xe-border-[#E8E8E8] xe-jusify-center xe-items-center xe-px-[12px]">
+                        <span class="xe-text-[#555] xe-text-[14px]">염색 (애쉬브라운)</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.93996 8.00077L11.8066 5.14077C11.9322 5.01524 12.0027 4.84498 12.0027 4.66744C12.0027 4.48991 11.9322 4.31964 11.8066 4.19411C11.6811 4.06857 11.5108 3.99805 11.3333 3.99805C11.1558 3.99805 10.9855 4.06857 10.86 4.19411L7.99996 7.06077L5.13996 4.19411C5.01442 4.06857 4.84416 3.99805 4.66663 3.99805C4.48909 3.99805 4.31883 4.06857 4.19329 4.19411C4.06776 4.31964 3.99723 4.48991 3.99723 4.66744C3.99723 4.84498 4.06776 5.01524 4.19329 5.14077L7.05996 8.00077L4.19329 10.8608C4.13081 10.9227 4.08121 10.9965 4.04737 11.0777C4.01352 11.159 3.99609 11.2461 3.99609 11.3341C3.99609 11.4221 4.01352 11.5093 4.04737 11.5905C4.08121 11.6717 4.13081 11.7455 4.19329 11.8074C4.25527 11.8699 4.329 11.9195 4.41024 11.9534C4.49148 11.9872 4.57862 12.0046 4.66663 12.0046C4.75463 12.0046 4.84177 11.9872 4.92301 11.9534C5.00425 11.9195 5.07798 11.8699 5.13996 11.8074L7.99996 8.94077L10.86 11.8074C10.9219 11.8699 10.9957 11.9195 11.0769 11.9534C11.1581 11.9872 11.2453 12.0046 11.3333 12.0046C11.4213 12.0046 11.5084 11.9872 11.5897 11.9534C11.6709 11.9195 11.7446 11.8699 11.8066 11.8074C11.8691 11.7455 11.9187 11.6717 11.9526 11.5905C11.9864 11.5093 12.0038 11.4221 12.0038 11.3341C12.0038 11.2461 11.9864 11.159 11.9526 11.0777C11.9187 10.9965 11.8691 10.9227 11.8066 10.8608L8.93996 8.00077Z"
+                                fill="#949494" />
+                        </svg>
+                    </button>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-pl-[15px] xe-pr-[2px] xe-text-[15px]">추가요금</span>
+                        <span class="xe-text-[#F5332B]">*</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-items-center xe-gap-x-[8px] xe-w-full xe-h-full xe-p-[16px] xe-rounded-[2px]">
+                    <input
+                        class=" xe-text-center xe-w-full xe-h-[38px] xe-h-full xe-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF] xe-p-[10px]  xe-border-box xe-border-[1px] xe-border-[#DFDFDF] "
+                        name="" type="text" value="{{-- $targetShop->shop_name --}}" />
+                    <input name="" readonly type="hidden" value="{{--  --}}" />
+                    <span class="xe-text-[12px] xe-text-[#B7B7B7]">원</span>
+                </div>
+            </div>
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-pl-[15px] xe-pr-[2px] xe-text-[15px]">차감요금</span>
+                        <span class="xe-text-[#F5332B]">*</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-items-center xe-gap-x-[8px] xe-w-full xe-h-full xe-p-[16px] xe-rounded-[2px]">
+                    <input
+                        class=" xe-text-center xe-w-full xe-h-[38px] xe-h-full xe-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF] xe-p-[10px]  xe-border-box xe-border-[1px] xe-border-[#DFDFDF] "
+                        name="" type="text" value="{{-- $targetShop->shop_name --}}" />
+                    <input name="" readonly type="hidden" value="{{--  --}}" />
+                    <span class="xe-text-[12px] xe-text-[#B7B7B7]">원</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                <label for="id"
+                    class="xe-flex xe-items-center xe-relative xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                    <span class="xe-pl-[15px] xe-pr-[2px] xe-text-[15px]">포인트<br>할인</span>
+                    <span class="xe-absolute xe-top-[13px] xe-right-[30px] xe-text-[#F5332B]">*</span>
+                </label>
+            </div>
+
+            <div class="xe-flex xe-gap-x-[8px] xe-items-center xe-pl-[16px]">
+                <div>
+                    <input
+                        class="xe-w-[274px] xe-h-[38px] xe-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF]">
+                    <span class="xe-text-[12px] xe-text-[#B7B7B7]">원</span>
+                </div>
+                <button class="xe-w-[106px] xe-h-[38px] xe-bg-[#13CCCD] xe-rounded-[2px]">
+                    <span class="xe-text-[#fff] xe-text-[15px] xe-font-[500]">모두사용</span>
+                </button>
+                <span class="xe-text-[12px] xe-text-[#B7B7B7]">잔여 박매니저 포인트 (n,nnn원)</span>
+            </div>
+
+        </div>
+
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                <label for="id"
+                    class="xe-flex xe-items-center xe-relative xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                    <span class="xe-pl-[15px] xe-pr-[2px] xe-text-[15px]">부가 결제<br>수단</span>
+                    <span class="xe-absolute xe-top-[13px] xe-right-[13px] xe-text-[#F5332B]">*</span>
+                </label>
+            </div>
+
+            <div class="xe-flex xe-flex xe-gap-x-[15px] xe-pl-[16px]">
+                <!-- 라디오 -->
+                <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                    <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                        <label class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                            for="checkbox--4"></label>
+                        <input type="checkbox" id="checkbox--4"
+                            class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                        <div
+                            class="xe-checkbox__box xe-bg-[#fff] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-[0] xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                            <svg class="xe-checkbox__icon xe-flex xe-w-[15px] xe-h-[10px] xe-max-h-[10px]" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="m5.5004 10-5-5 1.5-1.5 3.5 3.482 7.5-6.981 1.5 1.491-9 8.508Z" fill="#fff">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <span class="xe-whitespace-nowrap xe-text-[#484848] xe-text-[14px]">정액권 (잔액: n,nnn원)</span>
+                </div>
+                <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                    <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                        <label class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                            for="checkbox--5"></label>
+                        <input type="checkbox" id="checkbox--5"
+                            class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                        <div
+                            class="xe-checkbox__box xe-bg-[#fff] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-[0] xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                            <svg class="xe-checkbox__icon xe-flex xe-w-[15px] xe-h-[10px] xe-max-h-[10px]" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="m5.5004 10-5-5 1.5-1.5 3.5 3.482 7.5-6.981 1.5 1.491-9 8.508Z" fill="#fff">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <span class="xe-whitespace-nowrap xe-text-[#484848] xe-text-[14px]">횟수권</span>
+                </div>
+            </div>
+            <button class="xe-flex xe-items-center xe-ml-[10px]">
+                <span class="xe-text-[#13CCCD] xe-text-[12px] xe-underline">횟수권 선택</span>
+                <!-- svg 크기 조정 지점 -->
+                <div class="xe-w-[14px] xe-h-[14px]">
+                    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.6659 11.8357L10.5018 9.68899C11.3418 8.64156 11.7487 7.31208 11.6386 5.97391C11.5285 4.63575 10.9099 3.39061 9.91 2.49453C8.91007 1.59845 7.60483 1.11954 6.26265 1.15626C4.92046 1.19299 3.64336 1.74257 2.69394 2.69199C1.74452 3.64141 1.19494 4.91851 1.15822 6.26069C1.12149 7.60288 1.6004 8.90812 2.49648 9.90804C3.39257 10.908 4.6377 11.5266 5.97587 11.6366C7.31403 11.7467 8.64352 11.3399 9.69094 10.4998L11.8376 12.6465C11.8918 12.7012 11.9564 12.7446 12.0274 12.7742C12.0985 12.8038 12.1748 12.819 12.2518 12.819C12.3288 12.819 12.405 12.8038 12.4761 12.7742C12.5472 12.7446 12.6117 12.7012 12.6659 12.6465C12.7711 12.5377 12.8299 12.3924 12.8299 12.2411C12.8299 12.0898 12.7711 11.9444 12.6659 11.8357ZM6.41844 10.4998C5.61084 10.4998 4.82136 10.2603 4.14986 9.81166C3.47836 9.36298 2.95499 8.72525 2.64593 7.97911C2.33688 7.23298 2.25601 6.41196 2.41357 5.61987C2.57113 4.82778 2.96003 4.1002 3.53109 3.52914C4.10215 2.95807 4.82973 2.56917 5.62182 2.41162C6.41391 2.25406 7.23494 2.33492 7.98107 2.64398C8.7272 2.95304 9.36493 3.47641 9.81361 4.14791C10.2623 4.81941 10.5018 5.60888 10.5018 6.41649C10.5018 7.49946 10.0716 8.53807 9.30579 9.30384C8.54002 10.0696 7.50141 10.4998 6.41844 10.4998Z"
+                            fill="#13CCCD" />
+                    </svg>
+                </div>
+            </button>
+
+        </div>
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-pl-[15px] xe-pr-[2px] xe-text-[15px]">결제수단</span>
+                        <span class="xe-text-[#F5332B]">*</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-gap-x-[15px] xe-pl-[16px]">
+                    <!-- 라디오 -->
+                    <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                        <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                            <label
+                                class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                                for="radio--20"></label>
+                            <input type="radio" id="radio--20"
+                                class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                            <div
+                                class="xe-checkbox__box xe-bg-[#fff] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-full xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="white"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="xe-whitespace-nowrap">현금</span>
+                    </div>
+                    <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                        <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                            <label
+                                class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                                for="radio--21"></label>
+                            <input type="radio" id="radio--21"
+                                class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                            <div
+                                class="xe-checkbox__box xe-bg-[#fff] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-full xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="white"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="xe-whitespace-nowrap">카드</span>
+                    </div>
+                </div>
+                <div class="xe-flex xe-gap-x-[15px] xe-pl-[16px]">
+                    <!-- 라디오 -->
+                    <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                        <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                            <label
+                                class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                                for="radio--22"></label>
+                            <input type="radio" id="radio--22"
+                                class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                            <div
+                                class="xe-checkbox__box xe-bg-[#fff] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-full xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="white"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="xe-whitespace-nowrap">네이버</span>
+                    </div>
+                    <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                        <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                            <label
+                                class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                                for="radio--23"></label>
+                            <input type="radio" id="radio--23"
+                                class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                            <div
+                                class="xe-checkbox__box xe-bg-[#fff] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-full xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="white"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="xe-whitespace-nowrap">카카오</span>
+                    </div>
+                </div>
+            </div>
+            <div class="xe-flex xe-flex-1">
+                <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                    <label for="id"
+                        class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                        <span class="xe-px-[15px]">현금<br />영수증</span>
+                    </label>
+                </div>
+
+                <div class="xe-flex xe-gap-x-[15px] xe-pl-[16px]">
+                    <!-- 라디오 -->
+                    <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                        <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                            <label
+                                class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                                for="radio--24"></label>
+                            <input type="radio" id="radio--24"
+                                class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                            <div
+                                class="xe-checkbox__box xe-bg-[#fff] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-full xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="white"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="xe-whitespace-nowrap">발행</span>
+                    </div>
+                    <div class="xe-flex xe-gap-x-[8px] xe-items-center">
+
+                        <div class="xe-checkbox xe-flex xe-justify-center" data-theme="parkManagerAdmin">
+                            <label
+                                class="xe-flex xe-w-[20px] xe-min-h-[20px] xe-min-w-[20px] xe-min-h-[20px] xe-absolute"
+                                for="radio--25"></label>
+                            <input type="radio" id="radio--25"
+                                class="xe-absolute xe-overflow-hidden xe-w-[0] xe-h-[0] xe-border-[0] xe-text-[0] xe-leading-[0] xe-z-[-9999]">
+                            <div
+                                class="xe-checkbox__box xe-bg-[#fff] xe-w-[16px] xe-h-[16px] xe-flex xe-rounded-full xe-items-center xe-justify-center xe-border xe-border-[#22A1B3]">
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="white"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="xe-whitespace-nowrap">미발행</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                <label for="id"
+                    class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                    <span class="xe-pl-[15px] xe-pr-[2px] xe-text-[15px]">총 결제요금</span>
+                </label>
+            </div>
+
+            <div class="xe-flex xe-flex-col xe-gap-y-[6px] xe-w-full xe-pl-[16px] ">
+                <div>
+                    <p class="xe-text-[#B7B7B7] xe-text-[12px]">총 결제요금 <span
+                            class="xe-text-[#13CCCD] xe-text-[16px] xe-font-[500]">100,000</span>원</p>
+                    <p class="xe-text-[#B7B7B7] xe-text-[12px]">총 시술금액 (nn,nnn원) + 추가요금 (nn,nnn원) </p>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                <label for="id"
+                    class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                    <span class="xe-pl-[15px] xe-pr-[2px] xe-text-[15px]">실 결제요금</span>
+                </label>
+            </div>
+
+            <div class="xe-flex xe-flex-col xe-gap-y-[6px] xe-w-full xe-pl-[16px] ">
+                <div>
+                    <p class="xe-text-[#B7B7B7] xe-text-[12px]">총 결제요금 <span
+                            class="xe-text-[#13CCCD] xe-text-[16px] xe-font-[500]">70,000</span>원</p>
+                    <p class="xe-text-[#B7B7B7] xe-text-[12px]">총 시술금액 (nn,nnn원) + 추가요금 (nn,nnn원) - 자체할인 (n,nnn원) -
+                        포인트할인 (n,nnn원) - 정액권 이용액 (n,nnn원)</p>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="xe-border-[#DFDFDF] xe-border-t-[1px] xe-items-center xe-flex">
+            <div class="xe-flex xe-items-center xe-bg-[#FCFCFC] xe-mr-[15px]">
+                <label for="id"
+                    class="xe-text-[15px] xe-text-medium xe-min-w-[95px]  xe-min-h-[70px] xe-bg-[#FCFCFC] xe-flex xe-items-center xe-text-left xe-pr-[5px] xe-whitespace-nowrap">
+                    <span class="xe-pl-[15px] xe-pr-[2px] xe-text-[15px]">메모</span>
+                </label>
+            </div>
+            <div class="xe-flex xe-w-full xe-h-full xe-p-[16px] xe-rounded-[2px]">
+                <input placeholder="내용을 입력하세요."
+                    class=" xe-w-full xe-h-[38px]e-rounded-[2px] xe-border-box xe-border-[1px] xe-border-[#DFDFDF] xe-p-[10px]  xe-border-box xe-border-[1px] xe-border-[#DFDFDF] "
+                    name="" type="text" />
+
+            </div>
+        </div>
+        <div class="xe-flex xe-gap-x-[8px] xe-mt-[35px] xe-w-[340px] xe-mx-auto">
+            <button type="button" onclick="javascript:history.back()"
+                class="xe-w-auto xe-bg-[#fff] xe-border-[1px] xe-border-[#DFDFDF] xe-text-[16px] xe-text-[#1F1F1F] xe-py-[12px] xe-px-[64px] xe-rounded-[2px]">취소</button>
+            <button type="submit"
+                class="xe-w-auto xe-bg-[#13CCCD] xe-text-[16px] xe-text-[#fff] xe-py-[12px] xe-px-[64px] xe-rounded-[2px]">등록</button>
+        </div>
+</div>
+</form>
+</div>

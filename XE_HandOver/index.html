@@ -5,8 +5,212 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XE HandOver</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    dd
-</body>
+<body onkeydown="test(event)">
+<style>
+body {
+   font-family: 'Verdana';
+   font-size: 18px;
+   letter-spacing: -1px;
+   padding: 50px 15px;
+   background-color: #2253f40f;
+ }
+ 
+ a {
+   color: #2254F4;
+   text-decoration: none;
+   font-weight: 500;
+   font-size: 20px;
+ }
+ 
+ .group,
+ .box {
+   width: 100%;
+   max-width: 1140px;
+   margin: 0 auto;
+ }
+ 
+ .box .title {
+   display: block;
+ }
+ 
+ .box .title a {
+   display: block;
+   background-color: #f7f8f9;
+   border-bottom: 1px solid #dfdfdf;
+   padding: 20px 15px;
+ }
+ 
+ .box .cont {
+   padding: 10px;
+   background-color: #fff;
+   border-bottom: 1px solid #fff;
+   padding: 15px 10px;
+ }
+    </style>
+
+    <div class="w-full text-center mb-[12px]">
+      <p class="text-[22px] mx-auto">인수인계 사항 정리</p>     
+    </div>
+
+    <div class="sec7-text-box w-full text-center mb-[25px]">
+        <!-- <p>오픈날짜</p> -->
+        <!-- <p class="runTimeCon">2021년 03월 11일 AM 11시</p> -->
+        <!-- <hr/> -->
+        <p class="time-title text-[#484848]">Frank 복귀 까지 ❤️</p>
+        <div class="time text-[#484848]">
+          <span class="text-[#484848]" id="d-day-hour">00</span>
+          <span class="text-[#484848]" class="col">:</span>
+          <span class="text-[#484848]" id="d-day-min">00</span>
+          <span class="text-[#484848]" class="col">:</span>
+          <span class="text-[#484848]" id="d-day-sec">00</span>
+        </div>
+        <span class="text-[#484848]" id="d-day-day">00</span>일
+    </div>
+
+    <div class="group g1">
+        <div class="box">
+          <strong class="title title1"><a href="#">이스포츠아레나 (협회)</a></strong>
+          <div class="cont">
+            - 코어 버전 문제로 xehub_ui 설치 불가, prefix 없이 Tailwind 사용<br>
+            - 방역준수 마크 (준영님 이관 및 설명됨) ppt 댓글 참고<br>
+            - 시설뷰 -> 시설정보 및 pc 사양 (준영님 이관 및 설명됨) <br>
+                &nbsp;&nbsp;&nbsp;+ if문 위치로 제어가능, 수정진행 시 시설정보 우측 보더 값 유의<br>
+            - 메인페이지 대회리스트 grid 135 -> 123 변경 요청 (준영님 이관 및 설명됨)<br>
+                &nbsp;&nbsp;&nbsp;+ PC 작업된 상태로 widget.blade 백업해놓음, 모바일만 작업하면 됨<br>
+                &nbsp;&nbsp;&nbsp;+ 업체 측에 리스크 설명 후 보류된 상태임<br>
+            - 코어 문제로 위젯에서 이미지 직접 업로드 불가, 미디어 라이브러리 이용해야함 (한결님, PGM 조희정님)<br>
+            - 잔여 벡엔드항목은 한식 과장님께 공유드림 약 3가지 항목
+            - 사이트 리뉴얼 작업 중 표시 페이지, 카운트 설정 시 month -1 필요
+          </div>
+        </div>
+        <div class="box">
+          <strong class="title"><a href="#">한화 이스포츠 (배틀리카)</a></strong>
+          <div class="cont">
+            - 코어 문제로 위젯에서 이미지 직접 업로드 불가, 미디어 라이브러리 이용해야함 (한결님, PGM 조희정님)<br>
+            - 한화 대진표 작업 후, 이스포츠(협회)에도 진행 필요함
+          </div>
+        </div>
+        <div class="box">
+          <strong class="title"><a href="#">청주대 to 준영님</a></strong>
+          <div class="cont"> 
+            - 기존 기능문제로 XE1 리팩토링, XE1 관리자는 도메인/admin임<br>
+                &nbsp;&nbsp;&nbsp;+ /admin 안될경우 ?module=admin 시도<br>
+            - 모든 브라우져 지원필요 gap 사용 X, Margin 또는 Padding 사용하여 정렬 (마진상쇄 유의), webkit 속성 사용해서 크로스 브라우징<br>
+            - 개발서버 생성 요청 후 작업, 모든 파일은 백업 후 작업, 파일 위치 찾기 어려울경우 ftp 접속 후 최근 수정 파일 위주로 의심해보기
+          </div>
+        </div>
+        <div class="box">
+          <strong class="title"><a href="#">기타사항</a></strong>
+          <div class="cont">
+            - 메타버스 펠로우십 정보<br>
+                 &nbsp;&nbsp;&nbsp;+ 메타버스 펠로우십은 개발서버가 없음<br>
+                 &nbsp;&nbsp;&nbsp;+ XE가 아닌 생 PHP<br><br>
+            - 무럭무럭<br>
+            &nbsp;&nbsp;&nbsp; + 멀티 셀렉터 / shift 누른 후 선택<br>
+            &nbsp;&nbsp;&nbsp; 쉼표 > 오늘의 차한잔 이미지 변경 요청 시 figma 더미 레이아웃 참고<br><br>
+
+            - 디자이너 공석 중 유의사항<br>
+            &nbsp;&nbsp;&nbsp; + 아이콘 및 이미지 피그마 XE Team Library 참고<br>
+            &nbsp;&nbsp;&nbsp; + 타 사이트 아이콘 및 이미지 이용시 저작권 유의, 무료 / 상업적이용가능 / 저작자표시 없는 것만 사용<br>
+            &nbsp;&nbsp;&nbsp; + 폼, 라디오, 버튼, 토글 등 UI Kit은 악어 컴포넌트 혹은 Theme UI Guide 참고<br><br>
+
+            - 전처리<br>
+            &nbsp;&nbsp;&nbsp; tailwind -> npm run build ui<br>
+            &nbsp;&nbsp;&nbsp; scss -> npm run watch<br>
+          </div>
+        </div>
+      </div>
+      </div>
+</body> 
+<script>
+$(function() {
+
+var group = $(".group");
+
+group.each(function() {
+  var _group = new GroupBox(this);
+});
+
+// 사용자 정의 생성자 함수 정의
+function GroupBox(groupElement) {
+
+  var box = $(groupElement).find(".box");
+  var title = $(groupElement).find(".box .title a");
+
+  box.each(function(idx) {
+    var newBox = new RootBox(this);
+    if (idx > 0) {
+      newBox.siblingsClose();
+    }
+  });
+}
+
+// 사용자 정의 생성자 함수 정의
+function RootBox(boxElement) {
+  var _this = this;
+  var boxEl = $(boxElement);
+  var target = $(boxEl).find(".title a");
+  var cont = $(boxEl).find(".cont");
+
+  // _groupParent = $(boxEl).parent();
+
+  target.on("click", anchorClickEvent);
+
+  function anchorClickEvent() {
+
+    if (cont.is(':hidden')) {
+      _this.open();
+    } else {
+      _this.close();
+    }
+  }
+
+  _this.siblingsClose = function() {
+    cont.css('display', 'none');
+  };
+
+  _this.open = function() {
+    cont.slideDown();
+  };
+  _this.close = function() {
+    cont.slideUp();
+  }
+}
+});
+
+</script>
+<script>
+  function remaindTime() {
+  var now = new Date(); //현재시간
+  var when = new Date(2022,12,05,10,00,00); // 달에 -1 해야함 
+
+  var nt = now.getTime(); // 현재
+  var ot = when.getTime(); // 오픈시간
+
+ if(nt<ot){ //현재시간이 오픈시간보다 이르면 오픈시간까지의 남은 시간을 구한다.   
+   sec = parseInt(ot - nt) / 1000;
+   hour = parseInt(sec/60/60);
+   sec = (sec - (hour*60*60));
+   min = parseInt(sec/60);
+   sec = parseInt(sec-(min*60));
+
+   if(hour<10){hour="0"+hour;}
+   if(min<10){min="0"+min;}
+   if(sec<10){sec="0"+sec;}
+    $("#d-day-hour").html(hour);
+    $("#d-day-min").html(min);
+    $("#d-day-sec").html(sec);
+    $("#d-day-day").html(hour/24);
+ } else{ //현재시간이 종료시간보다 크면
+  $("#d-day-hour").html('00');
+  $("#d-day-min").html('00');
+  $("#d-day-sec").html('00');
+  alert('Frank 복귀!');
+ }
+}
+setInterval(remaindTime,1000); //1초마다 검사를 해주면 실시간으로 시간을 알 수 있다. 
+</script>
 </html>

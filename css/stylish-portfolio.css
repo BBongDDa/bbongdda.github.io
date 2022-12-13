@@ -120,7 +120,7 @@ p.typing-txt{display: none;}
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/bg-masthead-Downsizing.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../main-bg.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>대기 현황 화면</title>
+  </head>
+  <body>
+    <!-- 컨텐츠 영역  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/dist.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        font-family: "Noto Sans KR", "Roboto", sans-serif;
+      }
+      html p,
+      div {
+        transition: 0.4s;
+      }
+    </style>
+    <div class="xe-flex xe-flex-col xe-items-center xe-justify-between xe-w-full xe-h-full">
+      <div class="xe-w-full xe-px-[20px] xe-py-[20px] md:xe-py-[30px] xe-shadow-md" style="background: linear-gradient(90deg, #f91709 23.91%, #fe825c 76.25%)">
+        <div class="xe-w-full xe-h-full xe-max-w-[1200px] xe-mx-auto">
+          <p class="xe-text-[#fff] xe-text-[24px] md:xe-text-[45px] xe-line-clamp-1 xe-tracking-[-0.4px] xe-font-[500] xe-leading-[150%]">매장명 노출영역 입니다.</p>
+        </div>
+      </div>
+      <div class="xe-flex xe-flex-col xe-items-center xe-justify-center xe-w-full xe-h-full xe-max-w-[1200px] xe-mx-auto xe-px-[20px] xe-py-[36px] xe-min-h-[420px]">
+        <!-- trigger class == xe-cancled -->
+        <div class="xe-cancled xe-relative xe-grid xe-grid-cols-2 xe-gap-x-[20px] md:xe-gap-x-[50px] xe-w-full">
+          <div class="xe-flex xe-flex-col xe-items-center xe-justify-center xe-gap-y-[14px] md:xe-gap-y-[30px] xe-bg-[#fff] xe-w-full xe-py-[20px] md:xe-py-[40px] xe-rounded-[15px]" style="box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.25)">
+            <p class="xe-text-[#000] xe-text-[16px] md:xe-text-[30px] xe-line-clamp-1 xe-tracking-[-0.4px] xe-font-[500] xe-leading-[150%]">내 앞 웨이팅</p>
+            <p class="xe-text-[#000] xe-text-[18px] md:xe-text-[32px] xe-line-clamp-1 xe-tracking-[-0.4px] xe-font-[500] xe-leading-[150%]"><span class="xe-nums xe-text-[35px] md:xe-text-[70px] xe-font-[700]" data-count="0">0</span>&nbsp; 팀</p>
+          </div>
+          <div class="xe-flex xe-flex-col xe-items-center xe-justify-center xe-gap-y-[14px] md:xe-gap-y-[30px] xe-bg-[#fff] xe-w-full xe-py-[20px] md:xe-py-[40px] xe-rounded-[15px]" style="box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.25)">
+            <p class="xe-text-[#000] xe-text-[16px] md:xe-text-[30px] xe-line-clamp-1 xe-tracking-[-0.4px] xe-font-[500] xe-leading-[150%]">예상 대기시간</p>
+            <p class="xe-text-[#000] xe-text-[18px] md:xe-text-[32px] xe-line-clamp-1 xe-tracking-[-0.4px] xe-font-[500] xe-leading-[150%]"><span class="xe-nums xe-text-[35px] md:xe-text-[70px] xe-font-[700]" data-count="0">0</span>&nbsp; 분</p>
+          </div>
+          <div class="xe-cancel-dimmed xe-hidden xe-absolute xe-items-center xe-justify-center xe-w-full xe-h-full xe-bg-[#fff]/90 xe-z-[9]">
+            <p class="xe-text-[#4f4f4f] xe-text-[25px] md:xe-text-[45px] xe-font-[700]">취소된 예약입니다</p>
+          </div>
+          <style>
+            .xe-cancled .xe-cancel-dimmed {
+              display: flex !important;
+            }
+          </style>
+        </div>
+        <div class="xe-flex xe-flex-col xe-items-center xe-justify-center xe-gap-y-[20px] xe-w-full xe-py-[50px] md:xe-pt-[70px] md:xe-pb-[120px]">
+          <div class="xe-flex xe-gap-x-[25px] md:xe-gap-x-[90px] xe-w-full">
+            <p class="xe-text-[#4f4f4f] xe-text-[15px] md:xe-text-[32px] !xe-min-w-[43px] md:!xe-min-w-[90px] !xe-w-[43px] md:!xe-w-[90px] xe-tracking-[-0.4px] xe-font-[400] xe-leading-[150%]">매장명</p>
+            <p class="xe-text-[#222] xe-text-[15px] md:xe-text-[32px] xe-line-clamp-2 xe-tracking-[-0.4px] xe-font-[500] xe-leading-[150%]">매장명이 노출됩니다.</p>
+          </div>
+          <div class="xe-flex xe-gap-x-[25px] md:xe-gap-x-[90px] xe-w-full">
+            <p class="xe-text-[#4f4f4f] xe-text-[15px] md:xe-text-[32px] !xe-min-w-[43px] md:!xe-min-w-[90px] !xe-w-[43px] md:!xe-w-[90px] xe-tracking-[-0.4px] xe-font-[400] xe-leading-[150%]">연락처</p>
+            <a href="tel:031-1234-5678" class="!xe-text-[#222] xe-text-[15px] md:xe-text-[32px] xe-line-clamp-2 xe-tracking-[-0.4px] xe-font-[500] xe-leading-[150%] hover:xe-underline hover:xe-opacity-[0.9]" style="transition: 0.4s">031-1234-5678</a>
+          </div>
+          <div class="xe-flex xe-gap-x-[25px] md:xe-gap-x-[90px] xe-w-full">
+            <p class="xe-text-[#4f4f4f] xe-text-[15px] md:xe-text-[32px] !xe-min-w-[43px] md:!xe-min-w-[90px] !xe-w-[43px] md:!xe-w-[90px] xe-tracking-[-0.4px] xe-font-[400] xe-leading-[150%]">주소</p>
+            <p class="xe-text-[#222] xe-text-[15px] md:xe-text-[32px] xe-line-clamp-3 xe-tracking-[-0.4px] xe-font-[500] xe-leading-[150%]" style="word-break: keep-all">경기도 000시 XX중앙로40번길 21, 00프라자 0층 XXX호</p>
+          </div>
+        </div>
+        <!-- disabled 처리 -->
+        <button disabled class="xe-rounded-[50px] xe-w-[80%] xe-max-w-[335px] xe-py-[17px] md:xe-py-[17px] hover:!xe-opacity-[0.85] disabled:!xe-bg-gradient-to-r disabled:!xe-from-[#dfdfdf]-500 disabled:!to-[#dfdfdf]-500 disabled:!xe-bg-[#dfdfdf]" style="background: linear-gradient(91deg, #f90b00 3.28%, #fe825c 79.24%)">
+          <span class="xe-text-[#fff] xe-text-[18px] xe-font-[500] xe-tracking-[-0.4px] xe-leading-[140%]">예약 취소하기</span>
+        </button>
+      </div>
+    </div>
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        $(".xe-nums").each(function () {
+          const $this = $(this),
+            countTo = $this.attr("data-count");
+
+          $({
+            countNum: $this.text(),
+          }).animate(
+            {
+              countNum: countTo,
+            },
+            {
+              duration: 550,
+              easing: "linear",
+              step: function () {
+                $this.text(Math.floor(this.countNum));
+              },
+              complete: function () {
+                $this.text(this.countNum);
+              },
+            }
+          );
+        });
+      });
+    </script>
+    <!-- 컨텐츠 영역  -->
+  </body>
+</html>

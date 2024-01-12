@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build-ui": "npx tailwindcss -i ./tailwind.jm.css -o ./assets/css/dist.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "ngrok": "^4.3.3"
+  }
+}

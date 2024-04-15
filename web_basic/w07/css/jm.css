@@ -22,15 +22,21 @@
 
 @media screen and (max-width: 320px) {
   .jm-grid-cols-2-sm-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
   }
   .jm-contents-wrap {
     padding: 15px !important;
+  }
+  .navbar-brand {
+    font-size: 12px !important;
   }
 }
 @media screen and (max-width: 768px) {
   .jm-grid-cols-2-sm-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .navbar-brand {
+    font-size: 20px;
   }
   .jm-contents-wrap {
     padding: 20px !important;

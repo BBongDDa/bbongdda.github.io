@@ -43,6 +43,9 @@
   .jm-contents-wrap {
     padding: 25px !important;
   }
+  .jm-grid-cols-2-sm-cols-1:nth-child(even) .jm-contents-wrap {
+    background-color: #ececec;
+  }
 }
 
 @media screen and (min-width: 1920px) {

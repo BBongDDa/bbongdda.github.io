@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SM</title>
+    <link rel="stylesheet" href="./assets/css/dist.css" />
+    <link rel="stylesheet" href="./assets/css/font.css" />
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    .cslv-shadow {
+      box-shadow: 6px 9px 15px 2px #999999;
+    }
+    @media (max-width: 1024px) {
+      .cslv-shadow {
+        box-shadow: 6px 8px 11px 1px #aaa7a6;
+      }
+    }
+  </style>
+  <body>
+    <!-- 배경 테마 영역 -->
+    <style>
+      html,
+      body {
+        /* reset css */
+        width: 100%;
+        height: 100%;
+        margin: 0 !important;
+        font-family: "SMTOWN", sans-serif;
+      }
+    </style>
+    <div class="w-full h-auto min-h-[100vh] bg-[#FDEAF0]">
+      <div class="tw-container w-[90%] max-w-[1320px] mx-auto h-auto min-h-[100vh] flex flex-col items-center justify-between py-[30px] lg:py-[40px] xl:py-[50px]">
+        <!-- nav -->
+        <div class="flex flex-col xl:flex-row xl:justify-between items-start xl:items-start w-full gap-[20px]">
+          <a href="/"
+            ><h1 class="text-[25px] md:text-[30px] xl:text-[60px] font-[700] text-[#000] leading-[110%]">Casting&Training <br class="hidden xl:block" />Archive</h1></a
+          >
+          <ul class="flex items-start gap-[6px] w-full md:w-auto z-[9]">
+            <li class="w-full xl:w-auto">
+              <button type="button" class="btn-nav-dropbox relative w-[100%] md:w-[170px] xl:w-[180px] max-w-[190px] py-[9px] xl:py-[12px] pl-[12px] xl:pl-[24px] pr-[6px] xl:pr-[8px] bg-[#fff] border-[1px] border-[#000] rounded-[20px]">
+                <div class="flex items-center justify-between">
+                  <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[105%]">사용자 관리 </span>
+                  <svg class="whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M13.9833 8.51701C13.8625 8.39618 13.7 8.33368 13.5417 8.33368C13.3833 8.33368 13.2208 8.39618 13.1 8.51701L9.99999 11.617L6.89999 8.51701C6.76666 8.37951 6.58333 8.32118 6.40416 8.33368C6.26249 8.34618 6.12499 8.40451 6.01666 8.51285C5.89583 8.63785 5.83333 8.80035 5.83333 8.95868C5.83333 9.11701 5.89583 9.27951 6.01666 9.40035L9.55833 12.942C9.67916 13.0628 9.84166 13.1253 9.99999 13.1253C10.1583 13.1253 10.3208 13.0628 10.4417 12.942L13.9833 9.40035C14.1208 9.26285 14.1792 9.07951 14.1625 8.90035C14.15 8.75868 14.0875 8.62535 13.9833 8.51701Z" fill="black" />
+                  </svg>
+                </div>
+                <div class="nav-dropbox-contents pointer-events-none absolute top-[60%] left-[50%] translate-x-[-50%] bg-[#fff] w-[101%] border-[1px] border-[#000] !border-t-[0px] z-[9] rounded-b-[20px] pt-[10px] pb-[3px] !h-[0px] !z-[-1] opacity-0 !p-[25px]" style="transition: 0.2s">
+                  <ul>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">사용자 추가 </span>
+                          <svg class="opacity-[0] whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">부서 관리 </span>
+                          <svg class="whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </button>
+            </li>
+            <li class="w-full xl:w-auto">
+              <button type="button" class="btn-nav-dropbox relative w-[100%] md:w-[170px] xl:w-[180px] max-w-[190px] py-[9px] xl:py-[12px] pl-[12px] xl:pl-[24px] pr-[6px] xl:pr-[8px] bg-[#fff] border-[1px] border-[#000] rounded-[20px]">
+                <div class="flex items-center justify-between">
+                  <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[105%]">코드 관리 </span>
+                  <svg class="whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M13.9833 8.51701C13.8625 8.39618 13.7 8.33368 13.5417 8.33368C13.3833 8.33368 13.2208 8.39618 13.1 8.51701L9.99999 11.617L6.89999 8.51701C6.76666 8.37951 6.58333 8.32118 6.40416 8.33368C6.26249 8.34618 6.12499 8.40451 6.01666 8.51285C5.89583 8.63785 5.83333 8.80035 5.83333 8.95868C5.83333 9.11701 5.89583 9.27951 6.01666 9.40035L9.55833 12.942C9.67916 13.0628 9.84166 13.1253 9.99999 13.1253C10.1583 13.1253 10.3208 13.0628 10.4417 12.942L13.9833 9.40035C14.1208 9.26285 14.1792 9.07951 14.1625 8.90035C14.15 8.75868 14.0875 8.62535 13.9833 8.51701Z" fill="black" />
+                  </svg>
+                </div>
+                <div class="nav-dropbox-contents pointer-events-none absolute top-[60%] left-[50%] translate-x-[-50%] bg-[#fff] w-[100.9%] border-[1px] border-[#000] !border-t-[0px] z-[9] rounded-b-[20px] pt-[10px] pb-[3px] !h-[0px] !z-[-1] opacity-0 !p-[25px]" style="transition: 0.2s">
+                  <ul>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">캐스팅 경로 관리 </span>
+                          <svg class="opacity-[0] whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">오디션 결과 관리 </span>
+                          <svg class="whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">트레이닝 결과 관리 </span>
+                          <svg class="opacity-[0] whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">국가 관리 </span>
+                          <svg class="opacity-[0] whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </button>
+            </li>
+            <li class="w-full xl:w-auto">
+              <button type="button" class="btn-nav-dropbox relative w-[100%] md:w-[170px] xl:w-[180px] max-w-[190px] py-[9px] xl:py-[12px] pl-[12px] xl:pl-[24px] pr-[6px] xl:pr-[8px] bg-[#fff] border-[1px] border-[#000] rounded-[20px]">
+                <div class="flex items-center justify-between">
+                  <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[105%]">아티스트 관리 </span>
+                  <svg class="whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M13.9833 8.51701C13.8625 8.39618 13.7 8.33368 13.5417 8.33368C13.3833 8.33368 13.2208 8.39618 13.1 8.51701L9.99999 11.617L6.89999 8.51701C6.76666 8.37951 6.58333 8.32118 6.40416 8.33368C6.26249 8.34618 6.12499 8.40451 6.01666 8.51285C5.89583 8.63785 5.83333 8.80035 5.83333 8.95868C5.83333 9.11701 5.89583 9.27951 6.01666 9.40035L9.55833 12.942C9.67916 13.0628 9.84166 13.1253 9.99999 13.1253C10.1583 13.1253 10.3208 13.0628 10.4417 12.942L13.9833 9.40035C14.1208 9.26285 14.1792 9.07951 14.1625 8.90035C14.15 8.75868 14.0875 8.62535 13.9833 8.51701Z" fill="black" />
+                  </svg>
+                </div>
+                <div class="nav-dropbox-contents pointer-events-none absolute top-[60%] left-[50%] translate-x-[-50%] bg-[#fff] w-[100.9%] border-[1px] border-[#000] !border-t-[0px] z-[9] rounded-b-[20px] pt-[10px] pb-[3px] !h-[0px] !z-[-1] opacity-0 !p-[25px]" style="transition: 0.2s">
+                  <ul>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">Dummy 관리 </span>
+                          <svg class="opacity-[0] whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">Dummy 관리 </span>
+                          <svg class="whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </button>
+            </li>
+            <!-- 네비 드롭박스 스크립트 -->
+            <script>
+              $(".btn-nav-dropbox").on("click", function () {
+                $(".btn-nav-dropbox").children(".nav-dropbox-contents").addClass(" !h-[0px] !z-[-1] opacity-0 !p-[25px]");
+                $(".btn-nav-dropbox").removeClass("w-[50vw]");
+                $(this).addClass("w-[50vw]");
+                $(this).children(".nav-dropbox-contents").removeClass(" !h-[0px] !z-[-1] opacity-0 !p-[25px]");
+              });
+              $(document).mouseup(function (e) {
+                if ($(".btn-nav-dropbox").has(e.target).length === 0) {
+                  $(".btn-nav-dropbox").children(".nav-dropbox-contents").addClass(" !h-[0px] !z-[-1] opacity-0 !p-[25px]");
+                  $(".btn-nav-dropbox").removeClass("w-[50vw]");
+                }
+              });
+            </script>
+            <!-- 네비 드롭박스 스크립트 e -->
+          </ul>
+        </div>
+        <!-- nav end -->
+        <!-- 컨텐츠영역 -->
+        <div class="w-full py-[40px] xl:py-[60px]" style="box-sizing: border-box">
+          <div class="w-full bg-[#fff] p-[20px] xl:p-[40px] pb-[30px] xl:pb-[50px] border-y-[4px] border-[#000]">
+            <div class="flex flex-col items-center gap-y-[30px] xl:gap-y-[40px]">
+              <!-- 테이블 상단 기능 s -->
+              <div class="flex justify-between items-end gap-y-[10px] w-full">
+                <div class="flex flex-row gap-x-[8px] items-center justify-between lg:justify-start">
+                  <!-- text s -->
+                  <a href="#" class="text-[16px] leading-[150%] !text-[#84929A] font-[400] whitespace-nowrap hover:opacity-75">코드 관리</a>
+                  <span class="text-[16px] leading-[150%] !text-[#C5CBD1] font-[400] whitespace-nowrap">&gt;</span>
+                  <a href="#" class="text-[16px] leading-[150%] !text-[#000] font-[700] whitespace-nowrap hover:opacity-75">캐스팅 경로 관리</a>
+                  <!-- text e -->
+                </div>
+              </div>
+              <!-- 테이블 상단 기능 e -->
+
+              <form class="w-full h-full">
+                <div id="input-wrapper" class="flex flex-col items-center gap-y-[8px] w-[95%] h-auto max-w-[600px] mx-auto">
+                  <div class="dynamic-input-wrap flex flex-row items-center gap-x-[12px] w-full">
+                    <div class="group relative flex flex-col items-start w-full bg-[#fff]">
+                      <input required placeholder="캐스팅 경로를 입력하세요." class="peer w-full h-full pt-[36px] pb-[12px] px-[16px] rounded-[8px] text-[#000] text-[16px] font-[400] leading-[150%] tracking-[-0.4px] border-[1px] border-[#C5CBD1] rounded-[8px] focus:!border-[#000] hover:!border-[#000]" name="input_dynamic[]" type="text" />
+                      <label for="input_dynamic[]" class="peer-focus:font-[500] peer-focus:text-[#000] peer-hover:font-[500] peer-hover:text-[#000] absolute top-[12px] left-[16px] text-[#9BA5AF] text-[13px] font-[400] leading-[145%] tracking-[-0.3px]">캐스팅 경로</label>
+                    </div>
+                    <button type="button" class="w-auto hover:opacity-75" onclick="$(this).closest('.dynamic-input-wrap').remove();">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <g clip-path="url(#clip0_3_1371)">
+                          <path d="M16.9587 11.125H7.04199C6.55874 11.125 6.16699 11.5168 6.16699 12C6.16699 12.4832 6.55874 12.875 7.04199 12.875H16.9587C17.4419 12.875 17.8337 12.4832 17.8337 12C17.8337 11.5168 17.4419 11.125 16.9587 11.125Z" fill="#424252" />
+                          <path d="M0.333496 11.9997C0.333496 18.4455 5.55433 23.6663 12.0002 23.6663C18.446 23.6663 23.6668 18.4455 23.6668 11.9997C23.6668 5.55384 18.446 0.333008 12.0002 0.333008C5.55433 0.333008 0.333496 5.55384 0.333496 11.9997ZM21.9168 11.9997C21.9168 17.4655 17.466 21.9163 12.0002 21.9163C6.53433 21.9163 2.0835 17.4655 2.0835 11.9997C2.0835 6.53384 6.53433 2.08301 12.0002 2.08301C17.466 2.08301 21.9168 6.53384 21.9168 11.9997Z" fill="#424252" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_3_1371">
+                            <rect width="23.3333" height="23.3333" fill="white" transform="translate(0.333496 0.333008)" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="flex items-center gap-[10px] w-[95%] h-auto max-w-[600px] text-center mt-[20px] mx-auto text-center">
+                  <button id="add_dynamic_input" type="button" class="flex flex-row gap-x-[4px] items-center py-[13px] px-[20px] mx-auto hover:opacity-70">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="!w-[26px]" viewBox="0 0 28 28" fill="none">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.08301 13.9997C4.08301 19.4678 8.53209 23.9163 13.9997 23.9163C19.4678 23.9163 23.9163 19.4678 23.9163 13.9997C23.9163 8.53151 19.4678 4.08301 13.9997 4.08301C8.53209 4.08301 4.08301 8.53151 4.08301 13.9997ZM2.33301 13.9997C2.33301 7.55617 7.55618 2.33301 13.9997 2.33301C20.4432 2.33301 25.6663 7.55617 25.6663 13.9997C25.6663 20.4432 20.4432 25.6663 13.9997 25.6663C7.55618 25.6663 2.33301 20.4432 2.33301 13.9997ZM14.8747 13.1247H18.958C19.4393 13.1247 19.833 13.5184 19.833 13.9997C19.833 14.4809 19.4393 14.8747 18.958 14.8747H14.8747V18.958C14.8747 19.4393 14.4809 19.833 13.9997 19.833C13.5184 19.833 13.1247 19.4393 13.1247 18.958V14.8747H9.04134C8.56009 14.8747 8.16634 14.4809 8.16634 13.9997C8.16634 13.5184 8.56009 13.1247 9.04134 13.1247H13.1247V9.04134C13.1247 8.56009 13.5184 8.16634 13.9997 8.16634C14.4809 8.16634 14.8747 8.56009 14.8747 9.04134V13.1247Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <span class="text-[#000] text-[14px] font-[400] tracking-[-0.3px] leading-[150%]">추가</span>
+                  </button>
+                </div>
+                <div class="flex items-center gap-[10px] w-[95%] h-auto max-w-[600px] text-center mt-[30px] xl:mt-[40px] mx-auto">
+                  <button type="submit" class="w-full py-[13px] px-[50px] bg-[#223055] rounded-[8px]">
+                    <span class="text-[#fff] text-[16px] font-[700] leading-[110%]">저장</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <script>
+          $("#add_dynamic_input").on("click", function () {
+            var itemHtml = "";
+            itemHtml += '<div class="dynamic-input-wrap flex flex-row items-center gap-x-[12px] w-full">';
+            itemHtml += '<div class="group relative flex flex-col items-start w-full bg-[#fff]">';
+            itemHtml += '<input required placeholder="캐스팅 경로를 입력하세요." class="peer w-full h-full pt-[36px] pb-[12px] px-[16px] rounded-[8px] text-[#000] text-[16px] font-[400] leading-[150%] tracking-[-0.4px] border-[1px] border-[#C5CBD1] rounded-[8px] focus:!border-[#000] hover:!border-[#000]" name="input_dynamic[]" type="text" />';
+            itemHtml += '<label for="input_dynamic[]" class="peer-focus:font-[500] peer-focus:text-[#000] peer-hover:font-[500] peer-hover:text-[#000] absolute top-[12px] left-[16px] text-[#9BA5AF] text-[13px] font-[400] leading-[145%] tracking-[-0.3px]">캐스팅 경로</label>';
+            itemHtml += "</div>";
+            itemHtml += '<button type="button" class="w-auto hover:opacity-75" onclick="$(this).closest(\'.dynamic-input-wrap\').remove();">';
+            itemHtml += '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">';
+            itemHtml += '<g clip-path="url(#clip0_3_1371)">';
+            itemHtml += '<path d="M16.9587 11.125H7.04199C6.55874 11.125 6.16699 11.5168 6.16699 12C6.16699 12.4832 6.55874 12.875 7.04199 12.875H16.9587C17.4419 12.875 17.8337 12.4832 17.8337 12C17.8337 11.5168 17.4419 11.125 16.9587 11.125Z" fill="#424252" />';
+            itemHtml += '<path d="M0.333496 11.9997C0.333496 18.4455 5.55433 23.6663 12.0002 23.6663C18.446 23.6663 23.6668 18.4455 23.6668 11.9997C23.6668 5.55384 18.446 0.333008 12.0002 0.333008C5.55433 0.333008 0.333496 5.55384 0.333496 11.9997ZM21.9168 11.9997C21.9168 17.4655 17.466 21.9163 12.0002 21.9163C6.53433 21.9163 2.0835 17.4655 2.0835 11.9997C2.0835 6.53384 6.53433 2.08301 12.0002 2.08301C17.466 2.08301 21.9168 6.53384 21.9168 11.9997Z" fill="#424252" />';
+            itemHtml += "</g>";
+            itemHtml += "<defs>";
+            itemHtml += '<clipPath id="clip0_3_1371">';
+            itemHtml += '<rect width="23.3333" height="23.3333" fill="white" transform="translate(0.333496 0.333008)" />';
+            itemHtml += "</clipPath>";
+            itemHtml += "</defs>";
+            itemHtml += "</svg>";
+            itemHtml += "</button>";
+            itemHtml += "</div>";
+
+            $("#input-wrapper").append(itemHtml);
+          });
+        </script>
+        <!-- 컨텐츠영역 e -->
+        <!-- footer -->
+        <a href="#" class="flex flex-col xl:flex-row justify-center items-center w-full">
+          <img src="/assets/images/main-logo-sm.svg" alt="SM 로고 이미지 " />
+        </a>
+        <!-- footer end -->
+      </div>
+    </div>
+    <!-- 배경 테마 영역 e -->
+  </body>
+</html>

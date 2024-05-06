@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "SMTOWN";
+  font-weight: 300;
+  src: url("SMTOWN(OTF)-Light") format("otf");
+}
+
+@font-face {
+  font-family: "SMTOWN";
+  font-weight: 400;
+  src: url("SMTOWN(OTF)-Regular") format("otf");
+}
+
+@font-face {
+  font-family: "SMTOWN";
+  font-weight: 500;
+  src: url("SMTOWN(OTF)-Medium") format("otf");
+}
+
+@font-face {
+  font-family: "SMTOWN";
+  font-weight: 700;
+  src: url("font/SMTOWN(OTF)-Bold.otf") format("otf");
+}
+
+html,
+body {
+  font-family: "SMTOWN", sans-serif !important;
+}

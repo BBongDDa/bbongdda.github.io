@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SM</title>
+    <link rel="stylesheet" href="./assets/css/dist.css" />
+    <link rel="stylesheet" href="./assets/css/font.css" />
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    .cslv-shadow {
+      box-shadow: 6px 9px 15px 2px #999999;
+    }
+    @media (max-width: 1024px) {
+      .cslv-shadow {
+        box-shadow: 6px 8px 11px 1px #aaa7a6;
+      }
+    }
+  </style>
+  <body>
+    <!-- 배경 테마 영역 -->
+    <style>
+      html,
+      body {
+        /* reset css */
+        width: 100%;
+        height: 100%;
+        margin: 0 !important;
+        font-family: "SMTOWN", sans-serif;
+      }
+    </style>
+    <div class="w-full h-auto min-h-[100vh] bg-[#FDEAF0]">
+      <div class="tw-container w-[90%] max-w-[1320px] mx-auto h-auto min-h-[100vh] flex flex-col items-center justify-between py-[30px] lg:py-[40px] xl:py-[50px]">
+        <!-- nav -->
+        <div class="flex flex-col xl:flex-row xl:justify-between items-start xl:items-start w-full gap-[20px]">
+          <a href="/"
+            ><h1 class="text-[25px] md:text-[30px] xl:text-[60px] font-[700] text-[#000] leading-[110%]">Casting&Training <br class="hidden xl:block" />Archive</h1></a
+          >
+          <ul class="flex items-start gap-[6px] w-full md:w-auto z-[9]">
+            <li class="w-full xl:w-auto">
+              <button class="btn-nav-dropbox relative w-[100%] md:w-[170px] xl:w-[180px] max-w-[190px] py-[9px] xl:py-[12px] pl-[12px] xl:pl-[24px] pr-[6px] xl:pr-[8px] bg-[#fff] border-[1px] border-[#000] rounded-[20px]">
+                <div class="flex items-center justify-between">
+                  <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[105%]">사용자 관리 </span>
+                  <svg class="whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M13.9833 8.51701C13.8625 8.39618 13.7 8.33368 13.5417 8.33368C13.3833 8.33368 13.2208 8.39618 13.1 8.51701L9.99999 11.617L6.89999 8.51701C6.76666 8.37951 6.58333 8.32118 6.40416 8.33368C6.26249 8.34618 6.12499 8.40451 6.01666 8.51285C5.89583 8.63785 5.83333 8.80035 5.83333 8.95868C5.83333 9.11701 5.89583 9.27951 6.01666 9.40035L9.55833 12.942C9.67916 13.0628 9.84166 13.1253 9.99999 13.1253C10.1583 13.1253 10.3208 13.0628 10.4417 12.942L13.9833 9.40035C14.1208 9.26285 14.1792 9.07951 14.1625 8.90035C14.15 8.75868 14.0875 8.62535 13.9833 8.51701Z" fill="black" />
+                  </svg>
+                </div>
+                <div class="nav-dropbox-contents pointer-events-none absolute top-[60%] left-[50%] translate-x-[-50%] bg-[#fff] w-[101%] border-[1px] border-[#000] !border-t-[0px] z-[9] rounded-b-[20px] pt-[10px] pb-[3px] !h-[0px] !z-[-1] opacity-0 !p-[25px]" style="transition: 0.2s">
+                  <ul>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">사용자 관리 </span>
+                          <svg class="opacity-[0] whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">부서 관리 </span>
+                          <svg class="whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </button>
+            </li>
+            <li class="w-full xl:w-auto">
+              <button class="btn-nav-dropbox relative w-[100%] md:w-[170px] xl:w-[180px] max-w-[190px] py-[9px] xl:py-[12px] pl-[12px] xl:pl-[24px] pr-[6px] xl:pr-[8px] bg-[#fff] border-[1px] border-[#000] rounded-[20px]">
+                <div class="flex items-center justify-between">
+                  <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[105%]">코드 관리 </span>
+                  <svg class="whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M13.9833 8.51701C13.8625 8.39618 13.7 8.33368 13.5417 8.33368C13.3833 8.33368 13.2208 8.39618 13.1 8.51701L9.99999 11.617L6.89999 8.51701C6.76666 8.37951 6.58333 8.32118 6.40416 8.33368C6.26249 8.34618 6.12499 8.40451 6.01666 8.51285C5.89583 8.63785 5.83333 8.80035 5.83333 8.95868C5.83333 9.11701 5.89583 9.27951 6.01666 9.40035L9.55833 12.942C9.67916 13.0628 9.84166 13.1253 9.99999 13.1253C10.1583 13.1253 10.3208 13.0628 10.4417 12.942L13.9833 9.40035C14.1208 9.26285 14.1792 9.07951 14.1625 8.90035C14.15 8.75868 14.0875 8.62535 13.9833 8.51701Z" fill="black" />
+                  </svg>
+                </div>
+                <div class="nav-dropbox-contents pointer-events-none absolute top-[60%] left-[50%] translate-x-[-50%] bg-[#fff] w-[100.9%] border-[1px] border-[#000] !border-t-[0px] z-[9] rounded-b-[20px] pt-[10px] pb-[3px] !h-[0px] !z-[-1] opacity-0 !p-[25px]" style="transition: 0.2s">
+                  <ul>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">캐스팅 경로 관리 </span>
+                          <svg class="opacity-[0] whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">오디션 결과 관리 </span>
+                          <svg class="whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">트레이닝 결과 관리 </span>
+                          <svg class="opacity-[0] whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">국가 관리 </span>
+                          <svg class="opacity-[0] whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </button>
+            </li>
+            <li class="w-full xl:w-auto">
+              <button class="btn-nav-dropbox relative w-[100%] md:w-[170px] xl:w-[180px] max-w-[190px] py-[9px] xl:py-[12px] pl-[12px] xl:pl-[24px] pr-[6px] xl:pr-[8px] bg-[#fff] border-[1px] border-[#000] rounded-[20px]">
+                <div class="flex items-center justify-between">
+                  <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[105%]">아티스트 관리 </span>
+                  <svg class="whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M13.9833 8.51701C13.8625 8.39618 13.7 8.33368 13.5417 8.33368C13.3833 8.33368 13.2208 8.39618 13.1 8.51701L9.99999 11.617L6.89999 8.51701C6.76666 8.37951 6.58333 8.32118 6.40416 8.33368C6.26249 8.34618 6.12499 8.40451 6.01666 8.51285C5.89583 8.63785 5.83333 8.80035 5.83333 8.95868C5.83333 9.11701 5.89583 9.27951 6.01666 9.40035L9.55833 12.942C9.67916 13.0628 9.84166 13.1253 9.99999 13.1253C10.1583 13.1253 10.3208 13.0628 10.4417 12.942L13.9833 9.40035C14.1208 9.26285 14.1792 9.07951 14.1625 8.90035C14.15 8.75868 14.0875 8.62535 13.9833 8.51701Z" fill="black" />
+                  </svg>
+                </div>
+                <div class="nav-dropbox-contents pointer-events-none absolute top-[60%] left-[50%] translate-x-[-50%] bg-[#fff] w-[100.9%] border-[1px] border-[#000] !border-t-[0px] z-[9] rounded-b-[20px] pt-[10px] pb-[3px] !h-[0px] !z-[-1] opacity-0 !p-[25px]" style="transition: 0.2s">
+                  <ul>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">Dummy 관리 </span>
+                          <svg class="opacity-[0] whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="first:border-t-[1px] border-[#000]">
+                      <a href="#" class="pointer-events-auto hover:opacity-70">
+                        <div class="flex items-center justify-between py-[10px] px-[24px]">
+                          <span class="text-[13px] xl:text-[14px] font-[400] text-[#000] line-clamp-1 leading-[132%]">Dummy 관리 </span>
+                          <svg class="whitespace-nowrap min-w-[20px] ml-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2558 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.9304 13.3986L3.9254 9.39406C3.6004 9.06865 3.07249 9.06865 2.74707 9.39406L2.74415 9.39698C2.41874 9.7224 2.41874 10.2503 2.74415 10.5757L7.33874 15.1699L7.34124 15.1728C7.66665 15.4986 8.19457 15.4986 8.51999 15.1728L8.5229 15.1699L17.2558 6.42531C17.5812 6.0999 17.5812 5.5724 17.2558 5.24698" fill="black" />
+                          </svg>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </button>
+            </li>
+            <!-- 네비 드롭박스 스크립트 -->
+            <script>
+              $(".btn-nav-dropbox").on("click", function () {
+                $(".btn-nav-dropbox").children(".nav-dropbox-contents").addClass(" !h-[0px] !z-[-1] opacity-0 !p-[25px]");
+                $(".btn-nav-dropbox").removeClass("w-[50vw]");
+                $(this).addClass("w-[50vw]");
+                $(this).children(".nav-dropbox-contents").removeClass(" !h-[0px] !z-[-1] opacity-0 !p-[25px]");
+              });
+              $(document).mouseup(function (e) {
+                if ($(".btn-nav-dropbox").has(e.target).length === 0) {
+                  $(".btn-nav-dropbox").children(".nav-dropbox-contents").addClass(" !h-[0px] !z-[-1] opacity-0 !p-[25px]");
+                  $(".btn-nav-dropbox").removeClass("w-[50vw]");
+                }
+              });
+            </script>
+            <!-- 네비 드롭박스 스크립트 e -->
+          </ul>
+        </div>
+        <!-- nav end -->
+        <!-- 컨텐츠영역 -->
+        <div class="w-full py-[40px] xl:py-[60px]" style="box-sizing: border-box">
+          <div class="w-full bg-[#fff] p-[20px] border-y-[4px] border-[#000]">
+            <div class="flex flex-col items-center gap-y-[20px]">
+              <!-- 테이블 상단 기능 s -->
+              <div class="flex flex-col 2xl:flex-row justify-between items-end gap-y-[10px] w-full">
+                <div class="flex flex-row gap-x-[8px] items-center justify-between lg:justify-start w-full">
+                  <!-- text s -->
+                  <p class="text-[14px] text-[#1a1a1a] font-[500] whitespace-nowrap">총 [<span class="text-[#0B57E3]">21</span>건]</p>
+                  <!-- text e -->
+                  <!-- select box s -->
+                  <div class="relative flex w-full justify-between items-center overflow-hidden max-w-[180px]">
+                    <select class="list-perpage appearance-none bg-transparent w-full h-full outline-none border-[1px] border-[#DFDFDF] focus:border-[#383838] pl-[15px] pr-[35px] py-[8px] text-[13px] leading-[18px] tracking-[-0.4px] text-[#383838]">
+                      <option value="10">10개씩 보기</option>
+                      <option value="25">25개씩 보기</option>
+                      <option value="50">50개씩 보기</option>
+                      <option value="100">100개씩 보기</option>
+                    </select>
+                    <div class="absolute right-[15px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+                        <g clip-path="url(#a)"><path fill="#383838" d="M5.572 9.12a.612.612 0 0 0 .857 0l5.394-5.381a.604.604 0 1 0-.856-.855L6 7.837 1.034 2.883a.604.604 0 1 0-.857.855l5.395 5.381Z"></path></g>
+                        <defs>
+                          <clipPath id="a"><path fill="#fff" d="M12 12H0V0h12z"></path></clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                  <!-- select box e -->
+                </div>
+                <form method="post" action="https://prj-gurivolunteer.xehub.co.kr/guri-admin/download-request/talent-donation" class="bg-[#002974] hover:bg-[#002974]/90 px-[12px] py-[8px]">
+                  <input type="hidden" name="_token" value="pqKK2YuEfmk1Nv5jxBtswzj5sh3yBHakb2b6yZzN" />
+                  <button type="submit" class="flex font-[500] text-[12px] leading-[18px] tracking-[-0.4px] text-[#fff] whitespace-nowrap">엑셀다운로드</button>
+                </form>
+              </div>
+
+              <!-- 테이블 상단 기능 e -->
+
+              <!-- 스크롤 테이블 s -->
+              <div class="w-full">
+                <div class="overflow-x-auto">
+                  <table class="w-full min-w-[1140px] break-all whitespace-nowrap">
+                    <thead class="bg-[#F6F8FC] border-t-[1px] border-t-[#949494] h-[49px]">
+                      <tr>
+                        <th class="px-[20px] first:pl-[30px]">
+                          <!-- checkbox s -->
+                          <label class="relative block min-w-[16px] min-h-[16px] cursor-pointer !mb-0">
+                            <input type="checkbox" class="check checkAll peer absolute overflow-hidden opacity-0 w-[unset] h-[unset] left-[unset] text-[0] leading-[0] border-[0] p-[0] m-[0]" id="checkAll" />
+                            <span class="absolute top-[50%] translate-y-[-50%] left-0 bg-[#fff] peer-checked:bg-[#2155A0] border-[1px] border-[#949494] peer-checked:border-[#2155A0] w-[16px] h-[16px] peer-checked:after:content-[''] peer-checked:after:absolute peer-checked:after:left-[50%] peer-checked:after:top-[50%] peer-checked:after:w-[6px] peer-checked:after:h-[9px] peer-checked:after:mt-[-6px] peer-checked:after:ml-[-3px] peer-checked:after:border-r-[2px] peer-checked:after:border-r-[#fff] peer-checked:after:border-b-[2px] peer-checked:after:border-b-[#fff] peer-checked:after:rotate-[40deg]"></span>
+                          </label>
+                          <!-- checkbox e -->
+                        </th>
+                        <th class="px-[20px] first:pl-[40px]">
+                          <p class="font-[500] text-[13px] leading-[19px] tracking-[-0.4px] text-[#383838] text-center">주문번호</p>
+                        </th>
+                        <th class="px-[20px] first:pl-[40px]">
+                          <p class="font-[500] text-[13px] leading-[19px] tracking-[-0.4px] text-[#383838] text-center">입점몰</p>
+                        </th>
+                        <th class="px-[20px] first:pl-[40px]">
+                          <p class="font-[500] text-[13px] leading-[19px] tracking-[-0.4px] text-[#383838] text-center">주문상품</p>
+                        </th>
+                        <th class="px-[20px] first:pl-[40px]">
+                          <p class="font-[500] text-[13px] leading-[19px] tracking-[-0.4px] text-[#383838] text-center">상품금액</p>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody class="bg-[#fff]">
+                      <tr class="cursor-pointer bg-[#fff] hover:bg-[rgba(156,156,156,0.08)] text-center border-b-[1px] border-b-[#DFDFDF] h-[49px]">
+                        <td class="px-[20px] first:pl-[30px]">
+                          <label class="relative block min-w-[16px] min-h-[16px] cursor-pointer !mb-0">
+                            <input type="checkbox" class="guri-child-check check peer absolute overflow-hidden opacity-0 w-[unset] h-[unset] left-[unset] text-[0] leading-[0] border-[0] p-[0] m-[0]" data-target-no="2" data-item-id="afcc7688-e10e-400a-a864-bc8f9f839274" />
+                            <span class="absolute top-[50%] translate-y-[-50%] left-0 bg-[#fff] peer-checked:bg-[#2155A0] border-[1px] border-[#949494] peer-checked:border-[#2155A0] w-[16px] h-[16px] peer-checked:after:content-[''] peer-checked:after:absolute peer-checked:after:left-[50%] peer-checked:after:top-[50%] peer-checked:after:w-[6px] peer-checked:after:h-[9px] peer-checked:after:mt-[-6px] peer-checked:after:ml-[-3px] peer-checked:after:border-r-[2px] peer-checked:after:border-r-[#fff] peer-checked:after:border-b-[2px] peer-checked:after:border-b-[#fff] peer-checked:after:rotate-[40deg]"></span>
+                          </label>
+                        </td>
+                        <td class="px-[20px] first:pl-[40px] py-[5px]">
+                          <p class="text-[13px] leading-[19px] tracking-[-0.4px] text-[#383838]">Default</p>
+                        </td>
+                        <td class="px-[20px] first:pl-[40px] py-[5px]">
+                          <p class="text-[13px] leading-[19px] tracking-[-0.4px] text-[#383838]">Default</p>
+                        </td>
+                        <td class="px-[20px] first:pl-[40px] py-[5px]">
+                          <p class="text-[13px] leading-[19px] tracking-[-0.4px] text-[#383838]">Default</p>
+                        </td>
+                        <td class="px-[20px] first:pl-[40px] py-[5px]">
+                          <p class="text-[13px] leading-[19px] tracking-[-0.4px] text-[#383838]">Default</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="text-[12px] leading-[16px] tracking-[-0.4px] pt-[12px] text-[#de3618]">* 항목이 많으면 좌우 스크롤이 가능합니다.</p>
+              </div>
+              <!-- 스크롤 테이블 e -->
+
+              <!-- 테이블 하단 기능 s -->
+              <div class="flex flex-row flex-wrap justify-start items-center w-full gap-x-[8px] gap-y-[10px]">
+                <button type="button" class="btn-check-all flex justify-center bg-[#fff] hover:bg-[rgba(156,156,156,0.08)] border-[1px] border-[#DFDFDF] py-[8px] px-[12px]">
+                  <span class="font-[500] text-[12px] leading-[18px] tracking-[-0.4px] text-[#383838]">전체선택</span>
+                </button>
+                <button type="button" class="guri-delete-btn flex justify-center bg-[#fff] hover:bg-[rgba(156,156,156,0.08)] border-[1px] border-[#DFDFDF] py-[8px] px-[12px]">
+                  <span class="font-[500] text-[12px] leading-[18px] tracking-[-0.4px] text-[#383838]">선택삭제</span>
+                </button>
+              </div>
+              <!-- 테이블 하단 기능 e -->
+              <!-- 페이지네이션 s -->
+              <div class="flex flex-row justify-center items-center gap-x-[20px] w-full">
+                <div>
+                  <a href="#" class="flex justify-center items-center w-[32px] h-[32px] border-[1px] border-[#DFDFDF]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" fill="none"><path fill="#DFDFDF" d="M7.68 13.664.664 6.992l7-6.656.984.953-5.984 5.703 6 5.703-.984.97Z"></path></svg>
+                  </a>
+                </div>
+                <div class="flex flex-row justif-center items-center gap-x-[4px]">
+                  <div>
+                    <a href="#" class="flex justify-center items-center w-[32px] h-[32px] bg-[#0B57E3] border-[1px] border-[#0B57E3]">
+                      <p class="text-[14px] leading-[17px] tracking-[-1.12424px] text-[#fff]">1</p>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="#" class="flex justify-center items-center w-[32px] h-[32px] border-[1px] border-[#DFDFDF]">
+                      <p class="text-[14px] leading-[17px] tracking-[-1.12424px] text-[#949494]">2</p>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="#" class="flex justify-center items-center w-[32px] h-[32px] border-[1px] border-[#DFDFDF]">
+                      <p class="text-[14px] leading-[17px] tracking-[-1.12424px] text-[#949494]">3</p>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="#" class="flex justify-center items-center w-[32px] h-[32px] border-[1px] border-[#DFDFDF]">
+                      <p class="text-[14px] leading-[17px] tracking-[-1.12424px] text-[#949494]">4</p>
+                    </a>
+                  </div>
+                </div>
+                <div>
+                  <a href="#" class="flex justify-center items-center w-[32px] h-[32px] border-[1px] border-[#DFDFDF] rotate-180">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" fill="none"><path fill="#949494" d="M7.68 13.664.664 6.992l7-6.656.984.953-5.984 5.703 6 5.703-.984.97Z"></path></svg>
+                  </a>
+                </div>
+              </div>
+              <!-- 페이지네이션 e -->
+            </div>
+          </div>
+        </div>
+        <!-- 컨텐츠영역 e -->
+        <!-- footer -->
+        <a href="#" class="flex flex-col xl:flex-row justify-center items-center w-full">
+          <img src="/assets/images/main-logo-sm.svg" alt="SM 로고 이미지 " />
+        </a>
+        <!-- footer end -->
+      </div>
+    </div>
+    <!-- 배경 테마 영역 e -->
+    <div class="fixed top-0 left-0 w-full h-full bg-[#000]/30 flex items-center justify-center z-[99]">
+      <p class="text-[#fff] font-[700] text-[40px]">작업 전</p>
+    </div>
+  </body>
+</html>

@@ -84,7 +84,7 @@
                     <path d="M13.9833 8.51701C13.8625 8.39618 13.7 8.33368 13.5417 8.33368C13.3833 8.33368 13.2208 8.39618 13.1 8.51701L9.99999 11.617L6.89999 8.51701C6.76666 8.37951 6.58333 8.32118 6.40416 8.33368C6.26249 8.34618 6.12499 8.40451 6.01666 8.51285C5.89583 8.63785 5.83333 8.80035 5.83333 8.95868C5.83333 9.11701 5.89583 9.27951 6.01666 9.40035L9.55833 12.942C9.67916 13.0628 9.84166 13.1253 9.99999 13.1253C10.1583 13.1253 10.3208 13.0628 10.4417 12.942L13.9833 9.40035C14.1208 9.26285 14.1792 9.07951 14.1625 8.90035C14.15 8.75868 14.0875 8.62535 13.9833 8.51701Z" fill="black" />
                   </svg>
                 </div>
-                <div class="nav-dropbox-contents absolute pointer-events-none absolute top-[60%] left-[50%] translate-x-[-50%] bg-[#fff] w-[100.9%] border-[1px] border-[#000] !border-t-[0px] z-[9] rounded-b-[20px] pt-[10px] pb-[3px] !h-[0px] !z-[-1] opacity-0 !p-[25px] absolutepointer-events-none" style="transition: 0.2s">
+                <div class="nav-dropbox-contents absolute pointer-events-none absolute top-[60%] left-[50%] translate-x-[-50%] bg-[#fff] w-[100.9%] border-[1px] border-[#000] !border-t-[0px] z-[9] rounded-b-[20px] pt-[10px] pb-[3px] !h-[0px] !z-[-1] opacity-0 !p-[25px] absolute pointer-events-none" style="transition: 0.2s">
                   <ul>
                     <li class="first:border-t-[1px] border-[#000]">
                       <a href="#" class="pointer-events-auto hover:opacity-70">
@@ -138,7 +138,7 @@
                     <path d="M13.9833 8.51701C13.8625 8.39618 13.7 8.33368 13.5417 8.33368C13.3833 8.33368 13.2208 8.39618 13.1 8.51701L9.99999 11.617L6.89999 8.51701C6.76666 8.37951 6.58333 8.32118 6.40416 8.33368C6.26249 8.34618 6.12499 8.40451 6.01666 8.51285C5.89583 8.63785 5.83333 8.80035 5.83333 8.95868C5.83333 9.11701 5.89583 9.27951 6.01666 9.40035L9.55833 12.942C9.67916 13.0628 9.84166 13.1253 9.99999 13.1253C10.1583 13.1253 10.3208 13.0628 10.4417 12.942L13.9833 9.40035C14.1208 9.26285 14.1792 9.07951 14.1625 8.90035C14.15 8.75868 14.0875 8.62535 13.9833 8.51701Z" fill="black" />
                   </svg>
                 </div>
-                <div class="nav-dropbox-contents absolute pointer-events-none absolute top-[60%] left-[50%] translate-x-[-50%] bg-[#fff] w-[100.9%] border-[1px] border-[#000] !border-t-[0px] z-[9] rounded-b-[20px] pt-[10px] pb-[3px] !h-[0px] !z-[-1] opacity-0 !p-[25px] absolutepointer-events-none" style="transition: 0.2s">
+                <div class="nav-dropbox-contents absolute pointer-events-none absolute top-[60%] left-[50%] translate-x-[-50%] bg-[#fff] w-[100.9%] border-[1px] border-[#000] !border-t-[0px] z-[9] rounded-b-[20px] pt-[10px] pb-[3px] !h-[0px] !z-[-1] opacity-0 !p-[25px] absolute pointer-events-none" style="transition: 0.2s">
                   <ul>
                     <li class="first:border-t-[1px] border-[#000]">
                       <a href="#" class="pointer-events-auto hover:opacity-70">
@@ -179,14 +179,14 @@
             </style>
             <script>
               $(".btn-nav-dropbox").on("click", function () {
-                $(".btn-nav-dropbox").children(".nav-dropbox-contents").addClass(" !h-[0px] !z-[-1] opacity-0 !p-[25px]");
+                $(".btn-nav-dropbox").children(".nav-dropbox-contents").addClass(" !h-[0px] !z-[-1] opacity-0 !p-[25px] pointer-events-none");
                 $(".btn-nav-dropbox").removeClass("w-[50vw] active");
                 $(this).addClass("w-[50vw] active");
-                $(this).children(".nav-dropbox-contents").removeClass(" !h-[0px] !z-[-1] opacity-0 !p-[25px] pointer-events-none ");
+                $(this).children(".nav-dropbox-contents").removeClass(" !h-[0px] !z-[-1] opacity-0 !p-[25px] pointer-events-none");
               });
               $(document).mouseup(function (e) {
                 if ($(".btn-nav-dropbox").has(e.target).length === 0) {
-                  $(".btn-nav-dropbox").children(".nav-dropbox-contents").addClass(" !h-[0px] !z-[-1] opacity-0 !p-[25px]");
+                  $(".btn-nav-dropbox").children(".nav-dropbox-contents").addClass(" !h-[0px] !z-[-1] opacity-0 !p-[25px] pointer-events-none");
                   $(".btn-nav-dropbox").removeClass("w-[50vw] active");
                 }
               });
@@ -200,8 +200,8 @@
           <div class="w-full bg-[#fff] p-[20px] border-y-[4px] border-[#000]">
             <div class="flex flex-col items-center gap-y-[20px]">
               <!-- 테이블 상단 기능 s -->
-              <div class="flex flex-col 2xl:flex-row justify-between items-end gap-y-[25px] lg:gap-y-[40px] w-full">
-                <div class="flex flex-row gap-x-[8px] items-center justify-between lg:justify-start w-full">
+              <div class="flex flex-col justify-between items-end gap-y-[25px] lg:gap-y-[40px] w-full">
+                <div class="flex flex-row gap-x-[8px] items-center justify-between w-full">
                   <!-- text s -->
                   <p class="text-[20px] sm:text-[24px] text-[#000] font-[700] whitespace-nowrap">아티스트 목록</p>
                   <!-- text e -->
@@ -220,7 +220,7 @@
                     </button>
                   </form>
                 </div>
-                <div class="flex justify-between items-center w-full gap-x-[12px]">
+                <form class="flex justify-between items-center w-full gap-x-[12px]">
                   <div class="w-full overflow-x-auto">
                     <div class="flex items-center min-w-[900px] w-full gap-x-[8px] overflow-x-auto">
                       <input type="text" placeholder="이름" class="w-[130px] text-[14px] font-[400] leading-[105%] tracking-[-0.4px] text-[#223055] placeholder:!text-[#84929A] border-[1px] border-[#C5CBD1] rounded-[8px] h-[50px] px-[14px] py-[2px] !outline-none hover:!border-[#223055] focus:!border-[#223055]" placeholder="이름" />
@@ -244,9 +244,104 @@
                       </div>
                       <!-- select box e -->
                       <!-- select box s -->
-                      <div class="relative flex w-full justify-between items-center overflow-hidden w-auto max-w-[] h-[50px]">
+                      <div class="relative flex w-full justify-between items-center overflow-hidden w-auto max-w-[190px] h-[50px]">
                         <select class="appearance-none bg-transparent w-full h-full outline-none border-[1px] border-[#C5CBD1] focus:border-[#223055] pl-[15px] pr-[35px] py-[15px] text-[13px] leading-[110%] tracking-[-0.4px] text-[#223055] rounded-[8px] bg-[#fff] disabled:!text-[#84929A]">
-                          <option selected disabled>성별</option>
+                          <option selected disabled>국적</option>
+                          <option value="10">dummy</option>
+                          <option value="25">dummydummydummy</option>
+                          <option value="50">dummy</option>
+                          <option value="100">dummy</option>
+                        </select>
+                        <div class="absolute right-[15px]">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+                            <g clip-path="url(#a)"><path fill="#383838" d="M5.572 9.12a.612.612 0 0 0 .857 0l5.394-5.381a.604.604 0 1 0-.856-.855L6 7.837 1.034 2.883a.604.604 0 1 0-.857.855l5.395 5.381Z"></path></g>
+                            <defs>
+                              <clipPath id="a"><path fill="#fff" d="M12 12H0V0h12z"></path></clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                      </div>
+                      <!-- select box e -->
+                      <!-- select box s -->
+                      <div class="relative flex w-full justify-between items-center overflow-hidden w-auto max-w-[190px] h-[50px]">
+                        <select class="appearance-none bg-transparent w-full h-full outline-none border-[1px] border-[#C5CBD1] focus:border-[#223055] pl-[15px] pr-[35px] py-[15px] text-[13px] leading-[110%] tracking-[-0.4px] text-[#223055] rounded-[8px] bg-[#fff] disabled:!text-[#84929A]">
+                          <option selected disabled>생년</option>
+                          <option value="10">dummy</option>
+                          <option value="25">dummy</option>
+                          <option value="50">dummy</option>
+                          <option value="100">dummy</option>
+                        </select>
+                        <div class="absolute right-[15px]">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+                            <g clip-path="url(#a)"><path fill="#383838" d="M5.572 9.12a.612.612 0 0 0 .857 0l5.394-5.381a.604.604 0 1 0-.856-.855L6 7.837 1.034 2.883a.604.604 0 1 0-.857.855l5.395 5.381Z"></path></g>
+                            <defs>
+                              <clipPath id="a"><path fill="#fff" d="M12 12H0V0h12z"></path></clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                      </div>
+                      <!-- select box e -->
+                      <!-- select box s -->
+                      <div class="relative flex w-full justify-between items-center overflow-hidden w-auto max-w-[190px] h-[50px]">
+                        <select class="appearance-none bg-transparent w-full h-full outline-none border-[1px] border-[#C5CBD1] focus:border-[#223055] pl-[15px] pr-[35px] py-[15px] text-[13px] leading-[110%] tracking-[-0.4px] text-[#223055] rounded-[8px] bg-[#fff] disabled:!text-[#84929A]">
+                          <option selected disabled>오디션 결과</option>
+                          <option value="10">dummy</option>
+                          <option value="25">dummy</option>
+                          <option value="50">dummy</option>
+                          <option value="100">dummy</option>
+                        </select>
+                        <div class="absolute right-[15px]">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+                            <g clip-path="url(#a)"><path fill="#383838" d="M5.572 9.12a.612.612 0 0 0 .857 0l5.394-5.381a.604.604 0 1 0-.856-.855L6 7.837 1.034 2.883a.604.604 0 1 0-.857.855l5.395 5.381Z"></path></g>
+                            <defs>
+                              <clipPath id="a"><path fill="#fff" d="M12 12H0V0h12z"></path></clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                      </div>
+                      <!-- select box e -->
+                      <!-- select box s -->
+                      <div class="relative flex w-full justify-between items-center overflow-hidden w-auto max-w-[190px] h-[50px]">
+                        <select class="appearance-none bg-transparent w-full h-full outline-none border-[1px] border-[#C5CBD1] focus:border-[#223055] pl-[15px] pr-[35px] py-[15px] text-[13px] leading-[110%] tracking-[-0.4px] text-[#223055] rounded-[8px] bg-[#fff] disabled:!text-[#84929A]">
+                          <option selected disabled>트레이닝 결과</option>
+                          <option value="10">dummy</option>
+                          <option value="25">dummy</option>
+                          <option value="50">dummy</option>
+                          <option value="100">dummy</option>
+                        </select>
+                        <div class="absolute right-[15px]">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+                            <g clip-path="url(#a)"><path fill="#383838" d="M5.572 9.12a.612.612 0 0 0 .857 0l5.394-5.381a.604.604 0 1 0-.856-.855L6 7.837 1.034 2.883a.604.604 0 1 0-.857.855l5.395 5.381Z"></path></g>
+                            <defs>
+                              <clipPath id="a"><path fill="#fff" d="M12 12H0V0h12z"></path></clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                      </div>
+                      <!-- select box e -->
+                      <!-- select box s -->
+                      <div class="relative flex w-full justify-between items-center overflow-hidden w-auto max-w-[190px] h-[50px]">
+                        <select class="appearance-none bg-transparent w-full h-full outline-none border-[1px] border-[#C5CBD1] focus:border-[#223055] pl-[15px] pr-[35px] py-[15px] text-[13px] leading-[110%] tracking-[-0.4px] text-[#223055] rounded-[8px] bg-[#fff] disabled:!text-[#84929A]">
+                          <option selected disabled>오디션 시기</option>
+                          <option value="10">dummy</option>
+                          <option value="25">dummy</option>
+                          <option value="50">dummy</option>
+                          <option value="100">dummy</option>
+                        </select>
+                        <div class="absolute right-[15px]">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+                            <g clip-path="url(#a)"><path fill="#383838" d="M5.572 9.12a.612.612 0 0 0 .857 0l5.394-5.381a.604.604 0 1 0-.856-.855L6 7.837 1.034 2.883a.604.604 0 1 0-.857.855l5.395 5.381Z"></path></g>
+                            <defs>
+                              <clipPath id="a"><path fill="#fff" d="M12 12H0V0h12z"></path></clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                      </div>
+                      <!-- select box e -->
+                      <!-- select box s -->
+                      <div class="relative flex w-full justify-between items-center overflow-hidden w-auto max-w-[190px] h-[50px]">
+                        <select class="appearance-none bg-transparent w-full h-full outline-none border-[1px] border-[#C5CBD1] focus:border-[#223055] pl-[15px] pr-[35px] py-[15px] text-[13px] leading-[110%] tracking-[-0.4px] text-[#223055] rounded-[8px] bg-[#fff] disabled:!text-[#84929A]">
+                          <option selected disabled>트레이닝 시기</option>
                           <option value="10">dummy</option>
                           <option value="25">dummy</option>
                           <option value="50">dummy</option>
@@ -267,7 +362,7 @@
                   <button class="flex items-center justify-center text-[16px] text-[#000] font-[700] py-[13px] px-[34px] bg-[#fff] border-[1px] border-[#000] rounded-[8px]">
                     <span class="whitespace-nowrap mt-[1px] leading-[103%]">검색</span>
                   </button>
-                </div>
+                </form>
               </div>
 
               <!-- 테이블 상단 기능 e -->
@@ -279,16 +374,25 @@
                     <thead class="bg-[#fff] border-t-[2px] border-b-[1px] border-[#000] h-[60px]">
                       <tr>
                         <th class="px-[20px] first:pl-[40px]">
+                          <p class="font-[700] text-[13px] leading-[150%] tracking-[-0.2px] text-[#000] text-center">NO</p>
+                        </th>
+                        <th class="px-[20px] first:pl-[40px]">
                           <p class="font-[700] text-[13px] leading-[150%] tracking-[-0.2px] text-[#000] text-center">이름</p>
                         </th>
                         <th class="px-[20px] first:pl-[40px]">
-                          <p class="font-[700] text-[13px] leading-[150%] tracking-[-0.2px] text-[#000] text-center">이메일</p>
+                          <p class="font-[700] text-[13px] leading-[150%] tracking-[-0.2px] text-[#000] text-center">성별</p>
                         </th>
                         <th class="px-[20px] first:pl-[40px]">
-                          <p class="font-[700] text-[13px] leading-[150%] tracking-[-0.2px] text-[#000] text-center">전화번호</p>
+                          <p class="font-[700] text-[13px] leading-[150%] tracking-[-0.2px] text-[#000] text-center">국적</p>
                         </th>
                         <th class="px-[20px] first:pl-[40px]">
-                          <p class="font-[700] text-[13px] leading-[150%] tracking-[-0.2px] text-[#000] text-center">관리자 여부</p>
+                          <p class="font-[700] text-[13px] leading-[150%] tracking-[-0.2px] text-[#000] text-center">생년</p>
+                        </th>
+                        <th class="px-[20px] first:pl-[40px]">
+                          <p class="font-[700] text-[13px] leading-[150%] tracking-[-0.2px] text-[#000] text-center">오디션 결과</p>
+                        </th>
+                        <th class="px-[20px] first:pl-[40px]">
+                          <p class="font-[700] text-[13px] leading-[150%] tracking-[-0.2px] text-[#000] text-center">트레이닝 결과</p>
                         </th>
                         <th><p class="font-[700] text-[13px] leading-[150%] tracking-[-0.2px] text-[#000] text-center">삭제</p></th>
                       </tr>
@@ -296,16 +400,25 @@
                     <tbody class="bg-[#fff]">
                       <tr onclick="location.href='#tr'" class="cursor-pointer bg-[#fff] hover:bg-[rgba(156,156,156,0.08)] text-center border-b-[1px] border-b-[#000] h-[60px]">
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">김영복 KARINA</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">01</p>
                         </td>
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">kim4533lesj@naver.com</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">KARINA</p>
                         </td>
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">010-3322-3344</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">여</p>
                         </td>
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">관리자</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">미국</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">2005년</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">1차 합격</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">2차 오디션</p>
                         </td>
 
                         <td class="text-center">
@@ -324,16 +437,25 @@
                       </tr>
                       <tr onclick="location.href='#tr'" class="cursor-pointer bg-[#fff] hover:bg-[rgba(156,156,156,0.08)] text-center border-b-[1px] border-b-[#000] h-[60px]">
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">김영복 KARINA</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">01</p>
                         </td>
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">kim4533lesj@naver.com</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">KARINA</p>
                         </td>
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">010-3322-3344</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">여</p>
                         </td>
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">관리자</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">미국</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">2005년</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">1차 합격</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">2차 오디션</p>
                         </td>
 
                         <td class="text-center">
@@ -352,16 +474,25 @@
                       </tr>
                       <tr onclick="location.href='#tr'" class="cursor-pointer bg-[#fff] hover:bg-[rgba(156,156,156,0.08)] text-center border-b-[1px] border-b-[#000] h-[60px]">
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">김영복 KARINA</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">01</p>
                         </td>
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">kim4533lesj@naver.com</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">KARINA</p>
                         </td>
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">010-3322-3344</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">여</p>
                         </td>
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">관리자</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">미국</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">2005년</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">1차 합격</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">2차 오디션</p>
                         </td>
 
                         <td class="text-center">
@@ -380,16 +511,99 @@
                       </tr>
                       <tr onclick="location.href='#tr'" class="cursor-pointer bg-[#fff] hover:bg-[rgba(156,156,156,0.08)] text-center border-b-[1px] border-b-[#000] h-[60px]">
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">김영복 KARINA</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">01</p>
                         </td>
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">kim4533lesj@naver.com</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">KARINA</p>
                         </td>
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">010-3322-3344</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">여</p>
                         </td>
                         <td class="px-[20px] py-[5px]">
-                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">관리자</p>
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">미국</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">2005년</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">1차 합격</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">2차 오디션</p>
+                        </td>
+
+                        <td class="text-center">
+                          <div class="flex items-center justify-center gap-x-[8px] mx-auto">
+                            <button type="button" class="flex justify-center gap-x-[4px] px-[16px] py-[10px] rounded-[8px] bg-[#E9EAED] hover:bg-[#E9EAED]/70 font-[400] text-[12px] leading-[150%] tracking-[-0.2px] !text-[#000]">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path
+                                  d="M8.70654 8.00033L11.1832 5.52366C11.2699 5.43699 11.3199 5.32366 11.3265 5.20699C11.3365 5.06699 11.2899 4.92366 11.1832 4.81699C11.1065 4.74033 11.0132 4.69699 10.9165 4.67699C10.7599 4.65033 10.5965 4.69699 10.4765 4.81699L7.99988 7.29366L5.51988 4.81366C5.42321 4.71699 5.29321 4.66699 5.16654 4.66699C5.03988 4.66699 4.90988 4.71699 4.81321 4.81366C4.71654 4.91033 4.66654 5.03699 4.66654 5.16699C4.66654 5.29699 4.71654 5.42366 4.81321 5.52033L7.29321 8.00033L4.81321 10.4803C4.71654 10.577 4.66654 10.707 4.66654 10.8337C4.66654 10.9603 4.71654 11.0903 4.81321 11.187C4.90654 11.2803 5.03321 11.3303 5.15654 11.3337C5.27988 11.337 5.41988 11.287 5.51988 11.187L7.99988 8.70699L10.4799 11.187C10.5765 11.2837 10.7065 11.3337 10.8332 11.3337C10.9599 11.3337 11.0899 11.2837 11.1865 11.187C11.2732 11.1003 11.3232 10.987 11.3299 10.8737C11.3399 10.7337 11.2932 10.587 11.1865 10.4803L8.70654 8.00033Z"
+                                  fill="black"
+                                />
+                              </svg>
+                              <span>삭제</span>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr onclick="location.href='#tr'" class="cursor-pointer bg-[#fff] hover:bg-[rgba(156,156,156,0.08)] text-center border-b-[1px] border-b-[#000] h-[60px]">
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">01</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">KARINA</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">여</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">미국</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">2005년</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">1차 합격</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">2차 오디션</p>
+                        </td>
+
+                        <td class="text-center">
+                          <div class="flex items-center justify-center gap-x-[8px] mx-auto">
+                            <button type="button" class="flex justify-center gap-x-[4px] px-[16px] py-[10px] rounded-[8px] bg-[#E9EAED] hover:bg-[#E9EAED]/70 font-[400] text-[12px] leading-[150%] tracking-[-0.2px] !text-[#000]">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path
+                                  d="M8.70654 8.00033L11.1832 5.52366C11.2699 5.43699 11.3199 5.32366 11.3265 5.20699C11.3365 5.06699 11.2899 4.92366 11.1832 4.81699C11.1065 4.74033 11.0132 4.69699 10.9165 4.67699C10.7599 4.65033 10.5965 4.69699 10.4765 4.81699L7.99988 7.29366L5.51988 4.81366C5.42321 4.71699 5.29321 4.66699 5.16654 4.66699C5.03988 4.66699 4.90988 4.71699 4.81321 4.81366C4.71654 4.91033 4.66654 5.03699 4.66654 5.16699C4.66654 5.29699 4.71654 5.42366 4.81321 5.52033L7.29321 8.00033L4.81321 10.4803C4.71654 10.577 4.66654 10.707 4.66654 10.8337C4.66654 10.9603 4.71654 11.0903 4.81321 11.187C4.90654 11.2803 5.03321 11.3303 5.15654 11.3337C5.27988 11.337 5.41988 11.287 5.51988 11.187L7.99988 8.70699L10.4799 11.187C10.5765 11.2837 10.7065 11.3337 10.8332 11.3337C10.9599 11.3337 11.0899 11.2837 11.1865 11.187C11.2732 11.1003 11.3232 10.987 11.3299 10.8737C11.3399 10.7337 11.2932 10.587 11.1865 10.4803L8.70654 8.00033Z"
+                                  fill="black"
+                                />
+                              </svg>
+                              <span>삭제</span>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr onclick="location.href='#tr'" class="cursor-pointer bg-[#fff] hover:bg-[rgba(156,156,156,0.08)] text-center border-b-[1px] border-b-[#000] h-[60px]">
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">01</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">KARINA</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">여</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">미국</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">2005년</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">1차 합격</p>
+                        </td>
+                        <td class="px-[20px] py-[5px]">
+                          <p class="text-[13px] leading-[150%] tracking-[-0.2px] font-[400] text-[#000]">2차 오디션</p>
                         </td>
 
                         <td class="text-center">
@@ -416,35 +630,53 @@
               <!-- 페이지네이션 s -->
               <div class="flex flex-row justify-center items-center gap-x-[20px] w-full">
                 <div>
-                  <a href="#" class="flex justify-center items-center w-[32px] h-[32px] border-[1px] border-[#DFDFDF]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" fill="none"><path fill="#DFDFDF" d="M7.68 13.664.664 6.992l7-6.656.984.953-5.984 5.703 6 5.703-.984.97Z"></path></svg>
+                  <a href="#" class="flex justify-center items-center w-[32px]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M16.249 18.2499C16.249 18.0579 16.176 17.8659 16.0295 17.7194L10.3095 11.9999L16.0295 6.28038C16.176 6.13388 16.249 5.94187 16.249 5.74988C16.249 5.55788 16.176 5.36588 16.0295 5.21937C15.7365 4.92688 15.2615 4.92688 14.9685 5.21937L8.7195 11.4684C8.573 11.6149 8.5 11.8069 8.5 11.9989V11.9999V12.0009C8.5 12.1929 8.573 12.3849 8.7195 12.5309L14.9685 18.7804C15.2615 19.0729 15.7365 19.0729 16.0295 18.7804C16.176 18.6339 16.249 18.4419 16.249 18.2499Z" fill="#C5CBD1" />
+                    </svg>
                   </a>
                 </div>
-                <div class="flex flex-row justif-center items-center gap-x-[4px]">
+                <div class="flex flex-row justif-center items-center md:gap-x-[8px] xl:gap-x-[16px]">
+                  <style>
+                    .pagination-active {
+                      background-color: #ffb7ca;
+                      border: #fff;
+                    }
+                    .pagination-active p {
+                      font-weight: 500 !important;
+                    }
+                  </style>
                   <div>
-                    <a href="#" class="flex justify-center items-center w-[32px] h-[32px] bg-[#0B57E3] border-[1px] border-[#0B57E3]">
-                      <p class="text-[14px] leading-[17px] tracking-[-1.12424px] text-[#fff]">1</p>
+                    <a href="#" class="pagination-active flex items-center justify-center !w-[36px] !h-[36px] aspect-square rounded-full hover:!bg-[#FFB7CA] peer-checked:!bg-[#FFB7CA] peer-checked:!border-[#fff]">
+                      <p class="text-[16px] leading-[125%] tracking-[-0.4px] text-[#000] mt-[1px]">1</p>
                     </a>
                   </div>
                   <div>
-                    <a href="#" class="flex justify-center items-center w-[32px] h-[32px] border-[1px] border-[#DFDFDF]">
-                      <p class="text-[14px] leading-[17px] tracking-[-1.12424px] text-[#949494]">2</p>
+                    <a href="#" class="flex items-center justify-center !w-[36px] !h-[36px] aspect-square rounded-full hover:!bg-[#FFB7CA] peer-checked:!bg-[#FFB7CA] peer-checked:!border-[#fff]">
+                      <p class="text-[16px] leading-[125%] tracking-[-0.4px] text-[#000] mt-[1px]">2</p>
                     </a>
                   </div>
                   <div>
-                    <a href="#" class="flex justify-center items-center w-[32px] h-[32px] border-[1px] border-[#DFDFDF]">
-                      <p class="text-[14px] leading-[17px] tracking-[-1.12424px] text-[#949494]">3</p>
+                    <a href="#" class="flex items-center justify-center !w-[36px] !h-[36px] aspect-square rounded-full hover:!bg-[#FFB7CA] peer-checked:!bg-[#FFB7CA] peer-checked:!border-[#fff]">
+                      <p class="text-[16px] leading-[125%] tracking-[-0.4px] text-[#000] mt-[1px]">3</p>
                     </a>
                   </div>
                   <div>
-                    <a href="#" class="flex justify-center items-center w-[32px] h-[32px] border-[1px] border-[#DFDFDF]">
-                      <p class="text-[14px] leading-[17px] tracking-[-1.12424px] text-[#949494]">4</p>
+                    <a href="#" class="flex items-center justify-center !w-[36px] !h-[36px] aspect-square rounded-full hover:!bg-[#FFB7CA] peer-checked:!bg-[#FFB7CA] peer-checked:!border-[#fff]">
+                      <p class="text-[16px] leading-[125%] tracking-[-0.4px] text-[#000] mt-[1px]">4</p>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="#" class="flex items-center justify-center !w-[36px] !h-[36px] aspect-square rounded-full hover:!bg-[#FFB7CA] peer-checked:!bg-[#FFB7CA] peer-checked:!border-[#fff]">
+                      <p class="text-[16px] leading-[125%] tracking-[-0.4px] text-[#000] mt-[1px]">5</p>
                     </a>
                   </div>
                 </div>
                 <div>
-                  <a href="#" class="flex justify-center items-center w-[32px] h-[32px] border-[1px] border-[#DFDFDF] rotate-180">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" fill="none"><path fill="#949494" d="M7.68 13.664.664 6.992l7-6.656.984.953-5.984 5.703 6 5.703-.984.97Z"></path></svg>
+                  <a href="#" class="flex justify-center items-center w-[32px]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.62549 18.1249C8.62549 17.9329 8.69849 17.7409 8.84499 17.5944L14.565 11.8749L8.84499 6.15538C8.69849 6.00888 8.62549 5.81687 8.62549 5.62488C8.62549 5.43288 8.69849 5.24088 8.84499 5.09437C9.13799 4.80188 9.61299 4.80188 9.90599 5.09437L16.155 11.3434C16.3015 11.4899 16.3745 11.6819 16.3745 11.8739V11.8749V11.8759C16.3745 12.0679 16.3015 12.2599 16.155 12.4059L9.90599 18.6554C9.61299 18.9479 9.13799 18.9479 8.84499 18.6554C8.69849 18.5089 8.62549 18.3169 8.62549 18.1249Z" fill="black" />
+                    </svg>
                   </a>
                 </div>
               </div>

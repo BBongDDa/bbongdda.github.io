@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>w11_array.html</title>
+  </head>
+  <body>
+    <h1>포켓몬스터</h1>
+    <h2>스칼렛 바이올렛</h2>
+    <h3>스타팅 포켓몬</h3>
+    <script>
+      const pokemons = ["나오하", "뜨아거"];
+      document.write(pokemons[0]);
+      document.write(pokemons[1]);
+    </script>
+    <h3>count</h3>
+    <script>
+      document.write(pokemons.length);
+    </script>
+    <h3>push</h3>
+    <script>
+      pokemons.push("꾸왁스");
+      document.write(pokemons.length);
+      document.write(pokemons);
+    </script>
+    <br />
+    <br />
+    <br />
+    <h1>음식메뉴</h1>
+    <h2>배열</h2>
+    <ul>
+      <script>
+        const foodarray = [
+          "갈비찜",
+          "떡볶이",
+          "김치찌개",
+          "보쌈",
+          "등갈비",
+          "칼국수",
+          "감자탕",
+          "핫황금올리브",
+          "피자",
+          "리코타치즈샐러드",
+          "딸기크림치즈",
+        ];
+
+        document.write(foodarray.length);
+        document.write(foodarray);
+        document.write("<li>" + foodarray[0] + "</li>");
+        document.write("<li>" + foodarray[1] + "</li>");
+        document.write("<li>" + foodarray[2] + "</li>");
+        document.write("<li>" + foodarray[3] + "</li>");
+
+        document.write("<br> while 반복문으로 진행");
+        var i = 0;
+        var length = foodarray.length;
+        while (i < length) {
+          document.write('<li><a href="https://google.com/search?q=' + foodarray[i] + '">' + foodarray[i] + "</a></li>");
+          i = i + 1;
+        }
+      </script>
+    </ul>
+  </body>
+</html>

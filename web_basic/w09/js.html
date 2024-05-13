@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin: 10px;
+        float: left;
+        padding: 30px;
+        text-align: center;
+        background-color: lightgray;
+      }
+      p {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body onload="bodyOnloaded()" style="display: flex; flex-direction: column; align-items: center; justify-content: center">
+    <div onmouseover="myOverFunction()">
+      <p>
+        onmouseover: <br />
+        <span id="demo"> Mouse over me! </span>
+      </p>
+    </div>
+    <script>
+      var z = 0;
+      function myOverFunction() {
+        document.getElementById("demo").innerHTML = z += 1;
+      }
+    </script>
+
+    <img
+      onmouseover="bigImg(this)"
+      onmouseout="normalImg(this)"
+      src="https://www.syu.ac.kr/wp-content/themes/syu-main/images/logo/logo_black.png"
+      alt="Smiley"
+      width="150px"
+      height="auto"
+      style="transition: 0.3s"
+    />
+    <script>
+      function bigImg(x) {
+        x.style.height = "auto";
+        x.style.width = "200px";
+      }
+      function normalImg(x) {
+        x.style.height = "auto";
+        x.style.width = "150px";
+      }
+    </script>
+
+    <input type="text" onkeydown="myFunction()" />
+    <script>
+      function myFunction() {
+        alert("You pressed a key inside the input field");
+      }
+      d;
+      function bodyOnloaded() {
+        alert("page is loaded");
+      }
+    </script>
+
+    <p>
+      JavaScript (/ˈdʒɑːvəskrɪpt/), often abbreviated as JS, is a programming language that is one of the core technologies of the
+      World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for webpage behavior,
+      often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on
+      users' devices.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>1+2+3+4+5+6+7+8+9+10</p>
+    <script>
+      document.write(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10);
+    </script>
+    <br />
+    <input onclick="alert('click')" type="button" value="hello" />
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px">
+      <select type="text" onchange="alert('change')" style="padding: 10px 15px; border: 1px solid #dfdfdf; border-radius: 8px">
+        <option selected disabled>On Change</option>
+        <option>dummy1</option>
+        <option>dummy1</option>
+        <option>dummy1</option>
+      </select>
+      <button
+        onclick="alert('click')"
+        type="button"
+        style="padding: 10px 15px; background-color: #ff2f01; color: #fff; border: 0px; border-radius: 10px; font-weight: 600"
+      >
+        On Click
+      </button>
+      <button
+        onmouseover="alert('mouseover')"
+        onmouseout="alert('mouseout')"
+        type="button"
+        style="padding: 10px 15px; background-color: #ff2f01; color: #fff; border: 0px; border-radius: 10px; font-weight: 600"
+      >
+        On MouseOver
+      </button>
+      <button
+        id="btn-load"
+        type="button"
+        style="padding: 10px 15px; background-color: #ff2f01; color: #fff; border: 0px; border-radius: 10px; font-weight: 600"
+      >
+        Loading
+      </button>
+    </div>
+  </body>
+</html>

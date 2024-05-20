@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function second(printNum, loopNum){
+            for(let i=1; i<=loopNum; i++){
+                document.write('<li>'+printNum+'-'+i+'</li>');
+            }
+        }
+        document.write('<li>1</li>');
+        document.write('<li>2</li>');
+        second(2, 2);
+        document.write('<li>3</li>');
+        second(3, 3);
+    </script>
+</body>
+</html>

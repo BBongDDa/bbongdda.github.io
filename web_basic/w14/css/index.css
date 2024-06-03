@@ -1,0 +1,15 @@
+* {
+  transition: 0.2s !important;
+}
+
+body.text-size-bigger {
+  font-size: 20px;
+}
+
+img {
+  width: 90%;
+}
+
+.img-size-bigger {
+  width: 100% !important;
+}

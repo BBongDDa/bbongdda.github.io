@@ -12,4 +12,5 @@ img {
 
 .img-size-bigger {
   width: 100% !important;
+  max-width: 1250px !important;
 }

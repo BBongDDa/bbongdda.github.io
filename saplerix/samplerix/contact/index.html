@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="ko" style="width: 100%; height: 100%" class="jm-overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>샘플릭스 - Make Your Creative</title>
+    <link rel="stylesheet" href="/assets/css/dist_v240406.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- 컨텐츠 영역  -->
+    <style>
+      body::after {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: -3;
+
+        /* load images */
+        content: url("/assets/video/main-bg.mp4") url("/assets/images/about.jpg") url("/assets/images/buyer.jpg") url("/assets/images/seller.jpg") url(/assets/video/main-bg.mp4) url(/assets/images/about.jpg) url(/assets/images/buyer.jpg) url(/assets/images/seller.jpg);
+      }
+      .gnb__menu:hover .gnb__submenu {
+        display: block !important;
+      }
+      .gnb__menu:hover > a > span {
+        color: #911789f4;
+      }
+      html {
+        scroll-behavior: smooth;
+        width: 100% !important;
+        background-color: #56076779;
+        font-family: "Noto Sans KR", sans-serif;
+      }
+      .gnb-active {
+        color: #911789f4;
+      }
+      .change-icon-color {
+        fill: #777;
+      }
+      .gnb__menu-wrap-3depth {
+        position: absolute;
+        display: none;
+        left: 100%;
+        top: -10px;
+        background: #f7f7f7;
+        padding: 10px 30px;
+      }
+      .gnb__submenu > li:hover > .gnb__menu-wrap-3depth {
+        display: block;
+      }
+
+      .gnb__menu-3depth {
+        padding: 5px 0;
+      }
+
+      .gnb__menu-3depth > a > span {
+        white-space: nowrap;
+      }
+
+      .gnb__submenu .gnb__menu-link-arrow {
+        stroke: #383838;
+      }
+
+      .gnb__submenu > li:hover .gnb__menu-link-arrow {
+        stroke: #911789f4;
+      }
+    </style>
+
+    <!-- header -->
+    <header data-aos="zoom-out-up" data-aos-easing="ease-in-out-back" data-aos-duration="1800" class="xf-scroll-change__bg jm-fixed jm-top-0 jm-left-0 jm-right-0 jm-z-[100] jm-h-[60px] xl:jm-h-[80px] jm-transition-all jm-duration-500 jm-w-[100vw]" style="transition: 0.4s">
+      <div class="jm-container jm-mx-auto jm-h-full jm-w-full jm-flex jm-items-center jm-justify-between !jm-border-b-[0px]">
+        <!-- mobile gnb toggle -->
+        <div class="jm-flex xl:jm-hidden">
+          <button data-element="gnb--mobile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path class="xf-scroll-change__path jm-btn-scnu-search-svg" fill="" d="M3.5 9.333h21A1.167 1.167 0 0 0 24.5 7h-21a1.167 1.167 0 0 0 0 2.333Zm21 9.334h-21A1.167 1.167 0 1 0 3.5 21h21a1.167 1.167 0 1 0 0-2.333Zm0-5.834h-21a1.167 1.167 0 1 0 0 2.334h21a1.167 1.167 0 0 0 0-2.334Z" /></svg>
+          </button>
+        </div>
+
+        <!-- brand -->
+        <div class="jm-absolute lg:jm-relative jm-left-[50%] lg:jm-left-auto jm-translate-x-[-50%] lg:jm-translate-x-[unset] jm-flex jm-items-center jm-h-[100%]">
+          <a href="/samplerix/main/" class="xf-scroll-change__logo-text jm-text-[#911789f4] hover:jm-text-[#911789f4] active:jm-text-[#911789f4] @endif jm-font-bold jm-text-[24px] xl:jm-text-[32px] jm-leaidng-[38.73px] jm-tracking-[-0.0474em]">
+            <img class="jm-white-logo jm-w-[180px] lg:jm-w-[200px]" style="transition: 0.3s" src="/assets/images/main_logo_v2.png" alt="샘플릭스 로고" />
+            <img class="jm-color-logo jm-w-[180px] lg:jm-w-[200px] !jm-hidden" style="transition: 0.3s" src="/assets/images/main_logo_color.png" alt="샘플릭스 로고" />
+          </a>
+        </div>
+
+        <!-- mobile mypage -->
+        <div class="jm-flex xl:jm-hidden">
+          <!-- @if(auth()->check())
+                  <ul class="jm-relative xf-scroll-change__text @if(is_home()) jm-text-[#FFF] @else jm-text-[#383838] @endif jm-flex jm-h-full jm-items-center jm-gap-x-[12px] xl:jm-gap-x-[20px] jm-font-normal jm-text-[14px] jm-leading-[16.94px] jm-tracking-[-0.0174em]">
+                      <li class="jm-login-btn">
+                          <a href="/user" class="jm-flex jm-items-center jm-justify-center">
+                              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M14 14C15.3924 14 16.7277 13.4469 17.7123 12.4623C18.6969 11.4777 19.25 10.1424 19.25 8.75C19.25 7.35761 18.6969 6.02226 17.7123 5.03769C16.7277 4.05312 15.3924 3.5 14 3.5C12.6076 3.5 11.2723 4.05312 10.2877 5.03769C9.30312 6.02226 8.75 7.35761 8.75 8.75C8.75 10.1424 9.30312 11.4777 10.2877 12.4623C11.2723 13.4469 12.6076 14 14 14ZM17.5 8.75C17.5 9.67826 17.1313 10.5685 16.4749 11.2249C15.8185 11.8813 14.9283 12.25 14 12.25C13.0717 12.25 12.1815 11.8813 11.5251 11.2249C10.8687 10.5685 10.5 9.67826 10.5 8.75C10.5 7.82174 10.8687 6.9315 11.5251 6.27513C12.1815 5.61875 13.0717 5.25 14 5.25C14.9283 5.25 15.8185 5.61875 16.4749 6.27513C17.1313 6.9315 17.5 7.82174 17.5 8.75ZM24.5 22.75C24.5 24.5 22.75 24.5 22.75 24.5H5.25C5.25 24.5 3.5 24.5 3.5 22.75C3.5 21 5.25 15.75 14 15.75C22.75 15.75 24.5 21 24.5 22.75ZM22.75 22.743C22.7482 22.3125 22.4805 21.0175 21.294 19.831C20.153 18.69 18.0057 17.5 14 17.5C9.9925 17.5 7.847 18.69 6.706 19.831C5.5195 21.0175 5.2535 22.3125 5.25 22.743H22.75Z"  class="xf-scroll-change__path jm-btn-scnu-search-svg" fill=""/>
+                              </svg>
+                          </a>
+                      </li>
+                  </ul>
+              @else -->
+          <ul class="jm-relative xf-scroll-change__text jm-text-[#383838] @endif jm-flex jm-h-full jm-items-center jm-gap-x-[12px] xl:jm-gap-x-[20px] jm-font-normal jm-text-[14px] jm-leading-[16.94px] jm-tracking-[-0.0174em]">
+            <li class="jm-login-btn">
+              <a href="/samplerix/mypage/userinfo.html" class="jm-flex jm-items-center jm-justify-center">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14 14C15.3924 14 16.7277 13.4469 17.7123 12.4623C18.6969 11.4777 19.25 10.1424 19.25 8.75C19.25 7.35761 18.6969 6.02226 17.7123 5.03769C16.7277 4.05312 15.3924 3.5 14 3.5C12.6076 3.5 11.2723 4.05312 10.2877 5.03769C9.30312 6.02226 8.75 7.35761 8.75 8.75C8.75 10.1424 9.30312 11.4777 10.2877 12.4623C11.2723 13.4469 12.6076 14 14 14ZM17.5 8.75C17.5 9.67826 17.1313 10.5685 16.4749 11.2249C15.8185 11.8813 14.9283 12.25 14 12.25C13.0717 12.25 12.1815 11.8813 11.5251 11.2249C10.8687 10.5685 10.5 9.67826 10.5 8.75C10.5 7.82174 10.8687 6.9315 11.5251 6.27513C12.1815 5.61875 13.0717 5.25 14 5.25C14.9283 5.25 15.8185 5.61875 16.4749 6.27513C17.1313 6.9315 17.5 7.82174 17.5 8.75ZM24.5 22.75C24.5 24.5 22.75 24.5 22.75 24.5H5.25C5.25 24.5 3.5 24.5 3.5 22.75C3.5 21 5.25 15.75 14 15.75C22.75 15.75 24.5 21 24.5 22.75ZM22.75 22.743C22.7482 22.3125 22.4805 21.0175 21.294 19.831C20.153 18.69 18.0057 17.5 14 17.5C9.9925 17.5 7.847 18.69 6.706 19.831C5.5195 21.0175 5.2535 22.3125 5.25 22.743H22.75Z"
+                    class="xf-scroll-change__path jm-btn-scnu-search-svg"
+                    fill=""
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- menu -->
+        <ul class="xf-scroll-change__text jm-hidden xl:!jm-flex jm-h-full jm-items-center xl:jm-gap-x-[90px] jm-gap-x-[25px] jm-mx-auto jm-text-[#FFF] jm-text-[18px] jm-font-bold jm-tracking-[-0.0174em] jm-leading-[26.06px] jm-pr-[50px]">
+          <li class="gnb__menu jm-relative jm-flex jm-py-[20px]">
+            <a href="/samplerix/search_result/index.html" class="jm-relative jm-flex jm-justify-center jm-items-center">
+              <span class="jm-text-[19px] jm-font-[600] jm-tracking-[-0.6px] jm-leading-[155%] jm-text-[#fff] hover:!jm-text-[#911789f4]">Samples</span>
+            </a>
+
+            <ul class="gnb__submenu jm-absolute jm-left-[50%] jm-translate-x-[-50%] jm-hidden jm-top-[100%] jm-py-[10px] jm-bg-[#FFF]" style="box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15)">
+              <li class="jm-relative jm-w-full">
+                <a href="/samplerix/search_result/index.html" class="jm-inline-flex jm-items-center jm-py-[5px] jm-px-[30px] jm-w-full hover:jm-text-[#911789f4] jm-text-[#383838] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium jm-whitespace-nowrap gnb__submenu-link">
+                  <span class="gnb__menu-link-text">음원 검색</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="gnb__menu jm-relative jm-flex jm-py-[20px]">
+            <a href="/" class="jm-relative jm-flex jm-justify-center jm-items-center">
+              <span class="jm-text-[19px] jm-font-[600] jm-tracking-[-0.6px] jm-leading-[155%] jm-text-[#fff] hover:!jm-text-[#911789f4]">About Us</span>
+            </a>
+          </li>
+          <li class="gnb__menu jm-relative jm-flex jm-py-[20px]">
+            <a href="/samplerix/contact/" class="jm-relative jm-flex jm-justify-center jm-items-center">
+              <span class="jm-text-[19px] jm-font-[600] jm-tracking-[-0.6px] jm-leading-[155%] jm-text-[#fff] hover:!jm-text-[#911789f4]">고객문의</span>
+            </a>
+          </li>
+          <li class="gnb__menu jm-relative jm-flex jm-py-[20px]">
+            <a href="/samplerix/mypage/userinfo.html" class="jm-relative jm-flex jm-justify-center jm-items-center">
+              <span class="jm-text-[19px] jm-font-[600] jm-tracking-[-0.6px] jm-leading-[155%] jm-text-[#fff] hover:!jm-text-[#911789f4]">My 샘플릭스</span>
+            </a>
+
+            <ul class="gnb__submenu jm-absolute jm-left-[50%] jm-translate-x-[-50%] jm-hidden jm-top-[100%] jm-py-[10px] jm-bg-[#FFF]" style="box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15)">
+              <li class="jm-relative jm-w-full">
+                <a href="/samplerix/mypage/userinfo.html" class="jm-inline-flex jm-items-center jm-py-[5px] jm-px-[30px] jm-w-full hover:jm-text-[#911789f4] jm-text-[#383838] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium jm-whitespace-nowrap gnb__submenu-link">
+                  <span class="gnb__menu-link-text">회원정보 수정</span>
+                </a>
+              </li>
+              <li class="jm-relative jm-w-full">
+                <a href="/samplerix/mypage/reqseller.html" class="jm-inline-flex jm-items-center jm-py-[5px] jm-px-[30px] jm-w-full hover:jm-text-[#911789f4] jm-text-[#383838] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium jm-whitespace-nowrap gnb__submenu-link">
+                  <span class="gnb__menu-link-text">판매자 등록</span>
+                </a>
+              </li>
+              <li class="jm-relative jm-w-full">
+                <a href="/samplerix/mypage/list.html" class="jm-inline-flex jm-items-center jm-py-[5px] jm-px-[30px] jm-w-full hover:jm-text-[#911789f4] jm-text-[#383838] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium jm-whitespace-nowrap gnb__submenu-link">
+                  <span class="gnb__menu-link-text">구매 목록</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- auth -->
+        <ul class="jm-relative xf-scroll-change__text @if(is_home()) jm-text-[#FFF] @else jm-text-[#383838] @endif jm-hidden xl:!jm-flex jm-h-full jm-items-center jm-gap-x-[12px] xl:jm-gap-x-[20px] jm-font-normal jm-text-[14px] jm-leading-[16.94px] jm-tracking-[-0.0174em]">
+          <!-- <li class="">
+                      <a href="{{ route('user.settings') }}" class="">
+                          <span class="">
+                              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M11 11C12.3924 11 13.7277 10.4469 14.7123 9.46231C15.6969 8.47774 16.25 7.14239 16.25 5.75C16.25 4.35761 15.6969 3.02226 14.7123 2.03769C13.7277 1.05312 12.3924 0.5 11 0.5C9.60761 0.5 8.27226 1.05312 7.28769 2.03769C6.30312 3.02226 5.75 4.35761 5.75 5.75C5.75 7.14239 6.30312 8.47774 7.28769 9.46231C8.27226 10.4469 9.60761 11 11 11ZM14.5 5.75C14.5 6.67826 14.1313 7.5685 13.4749 8.22487C12.8185 8.88125 11.9283 9.25 11 9.25C10.0717 9.25 9.1815 8.88125 8.52513 8.22487C7.86875 7.5685 7.5 6.67826 7.5 5.75C7.5 4.82174 7.86875 3.9315 8.52513 3.27513C9.1815 2.61875 10.0717 2.25 11 2.25C11.9283 2.25 12.8185 2.61875 13.4749 3.27513C14.1313 3.9315 14.5 4.82174 14.5 5.75ZM21.5 19.75C21.5 21.5 19.75 21.5 19.75 21.5H2.25C2.25 21.5 0.5 21.5 0.5 19.75C0.5 18 2.25 12.75 11 12.75C19.75 12.75 21.5 18 21.5 19.75ZM19.75 19.743C19.7482 19.3125 19.4805 18.0175 18.294 16.831C17.153 15.69 15.0057 14.5 11 14.5C6.9925 14.5 4.847 15.69 3.706 16.831C2.5195 18.0175 2.2535 19.3125 2.25 19.743H19.75Z" fill="#777777"/>
+                                  </svg>
+  
+                          </span>
+                      </a>
+                  </li> -->
+          <!-- <li class="">
+            <a href="{{ route('logout') }}" class="jm-btn-sign jm-flex jm-items-center jm-justify-center jm-rounded-[100px] jm-px-[16px] jm-py-[6px]">
+              <span class="jm-tracking-[-0.02em] jm-text-[12px] jm-font-[500]">Logout</span>
+            </a>
+          </li>
+          @if(auth()->user()->isAdmin())
+          <li class="">
+            <a href="{{ route('settings') }}" class="change-icon-color">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M21.32 9.55L19.43 8.92L20.32 7.14C20.4102 6.95369 20.4404 6.74397 20.4064 6.53978C20.3723 6.33558 20.2758 6.14699 20.13 6L18 3.87C17.8522 3.72209 17.6618 3.62421 17.4555 3.59013C17.2493 3.55605 17.0375 3.58748 16.85 3.68L15.07 4.57L14.44 2.68C14.3735 2.483 14.2472 2.31163 14.0787 2.18975C13.9102 2.06787 13.7079 2.00155 13.5 2H10.5C10.2904 1.99946 10.0858 2.06482 9.91537 2.18685C9.7449 2.30887 9.61709 2.48138 9.55 2.68L8.92 4.57L7.14 3.68C6.95369 3.58978 6.74397 3.55961 6.53978 3.59364C6.33558 3.62767 6.14699 3.72423 6 3.87L3.87 6C3.72209 6.14777 3.62421 6.33818 3.59013 6.54446C3.55605 6.75074 3.58748 6.96251 3.68 7.15L4.57 8.93L2.68 9.56C2.483 9.62654 2.31163 9.75283 2.18975 9.92131C2.06787 10.0898 2.00155 10.2921 2 10.5V13.5C1.99946 13.7096 2.06482 13.9142 2.18685 14.0846C2.30887 14.2551 2.48138 14.3829 2.68 14.45L4.57 15.08L3.68 16.86C3.58978 17.0463 3.55961 17.256 3.59364 17.4602C3.62767 17.6644 3.72423 17.853 3.87 18L6 20.13C6.14777 20.2779 6.33818 20.3758 6.54446 20.4099C6.75074 20.444 6.96251 20.4125 7.15 20.32L8.93 19.43L9.56 21.32C9.62709 21.5186 9.7549 21.6911 9.92537 21.8132C10.0958 21.9352 10.3004 22.0005 10.51 22H13.51C13.7196 22.0005 13.9242 21.9352 14.0946 21.8132C14.2651 21.6911 14.3929 21.5186 14.46 21.32L15.09 19.43L16.87 20.32C17.0551 20.4079 17.2628 20.4369 17.4649 20.4029C17.667 20.3689 17.8538 20.2737 18 20.13L20.13 18C20.2779 17.8522 20.3758 17.6618 20.4099 17.4555C20.444 17.2493 20.4125 17.0375 20.32 16.85L19.43 15.07L21.32 14.44C21.517 14.3735 21.6884 14.2472 21.8103 14.0787C21.9321 13.9102 21.9985 13.7079 22 13.5V10.5C22.0005 10.2904 21.9352 10.0858 21.8132 9.91537C21.6911 9.7449 21.5186 9.61709 21.32 9.55ZM20 12.78L18.8 13.18C18.5241 13.2695 18.2709 13.418 18.0581 13.6151C17.8452 13.8122 17.6778 14.0533 17.5675 14.3216C17.4571 14.5899 17.4064 14.879 17.419 15.1688C17.4315 15.4586 17.5069 15.7422 17.64 16L18.21 17.14L17.11 18.24L16 17.64C15.7436 17.5122 15.4627 17.4411 15.1763 17.4313C14.89 17.4215 14.6049 17.4734 14.3403 17.5834C14.0758 17.6934 13.8379 17.8589 13.6429 18.0688C13.4479 18.2787 13.3003 18.5281 13.21 18.8L12.81 20H11.22L10.82 18.8C10.7305 18.5241 10.582 18.2709 10.3849 18.0581C10.1878 17.8452 9.94671 17.6778 9.67842 17.5675C9.41014 17.4571 9.12105 17.4064 8.83123 17.419C8.5414 17.4315 8.25777 17.5069 8 17.64L6.86 18.21L5.76 17.11L6.36 16C6.4931 15.7422 6.56852 15.4586 6.58105 15.1688C6.59357 14.879 6.5429 14.5899 6.43254 14.3216C6.32218 14.0533 6.15478 13.8122 5.94195 13.6151C5.72912 13.418 5.47595 13.2695 5.2 13.18L4 12.78V11.22L5.2 10.82C5.47595 10.7305 5.72912 10.582 5.94195 10.3849C6.15478 10.1878 6.32218 9.94671 6.43254 9.67842C6.5429 9.41014 6.59357 9.12105 6.58105 8.83123C6.56852 8.5414 6.4931 8.25777 6.36 8L5.79 6.89L6.89 5.79L8 6.36C8.25777 6.4931 8.5414 6.56852 8.83123 6.58105C9.12105 6.59357 9.41014 6.5429 9.67842 6.43254C9.94671 6.32218 10.1878 6.15478 10.3849 5.94195C10.582 5.72912 10.7305 5.47595 10.82 5.2L11.22 4H12.78L13.18 5.2C13.2695 5.47595 13.418 5.72912 13.6151 5.94195C13.8122 6.15478 14.0533 6.32218 14.3216 6.43254C14.5899 6.5429 14.879 6.59357 15.1688 6.58105C15.4586 6.56852 15.7422 6.4931 16 6.36L17.14 5.79L18.24 6.89L17.64 8C17.5122 8.25645 17.4411 8.53735 17.4313 8.82369C17.4215 9.11003 17.4734 9.39513 17.5834 9.65969C17.6934 9.92424 17.8589 10.1621 18.0688 10.3571C18.2787 10.5521 18.5281 10.6997 18.8 10.79L20 11.19V12.78ZM12 8C11.2089 8 10.4355 8.2346 9.77772 8.67413C9.11993 9.11365 8.60724 9.73836 8.30448 10.4693C8.00173 11.2002 7.92252 12.0044 8.07686 12.7804C8.2312 13.5563 8.61217 14.269 9.17158 14.8284C9.73099 15.3878 10.4437 15.7688 11.2196 15.9231C11.9956 16.0775 12.7998 15.9983 13.5307 15.6955C14.2616 15.3928 14.8864 14.8801 15.3259 14.2223C15.7654 13.5645 16 12.7911 16 12C16 10.9391 15.5786 9.92172 14.8284 9.17158C14.0783 8.42143 13.0609 8 12 8V8ZM12 14C11.6044 14 11.2178 13.8827 10.8889 13.6629C10.56 13.4432 10.3036 13.1308 10.1522 12.7654C10.0009 12.3999 9.96126 11.9978 10.0384 11.6098C10.1156 11.2219 10.3061 10.8655 10.5858 10.5858C10.8655 10.3061 11.2219 10.1156 11.6098 10.0384C11.9978 9.96126 12.3999 10.0009 12.7654 10.1522C13.1308 10.3036 13.4432 10.56 13.6629 10.8889C13.8827 11.2178 14 11.6044 14 12C14 12.5304 13.7893 13.0391 13.4142 13.4142C13.0391 13.7893 12.5304 14 12 14Z"
+                  fill=""
+                />
+              </svg>
+            </a>
+          </li> -->
+          <a href="/samplerix/mypage/userinfo.html" class="jm-flex jm-items-center jm-justify-center">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14 14C15.3924 14 16.7277 13.4469 17.7123 12.4623C18.6969 11.4777 19.25 10.1424 19.25 8.75C19.25 7.35761 18.6969 6.02226 17.7123 5.03769C16.7277 4.05312 15.3924 3.5 14 3.5C12.6076 3.5 11.2723 4.05312 10.2877 5.03769C9.30312 6.02226 8.75 7.35761 8.75 8.75C8.75 10.1424 9.30312 11.4777 10.2877 12.4623C11.2723 13.4469 12.6076 14 14 14ZM17.5 8.75C17.5 9.67826 17.1313 10.5685 16.4749 11.2249C15.8185 11.8813 14.9283 12.25 14 12.25C13.0717 12.25 12.1815 11.8813 11.5251 11.2249C10.8687 10.5685 10.5 9.67826 10.5 8.75C10.5 7.82174 10.8687 6.9315 11.5251 6.27513C12.1815 5.61875 13.0717 5.25 14 5.25C14.9283 5.25 15.8185 5.61875 16.4749 6.27513C17.1313 6.9315 17.5 7.82174 17.5 8.75ZM24.5 22.75C24.5 24.5 22.75 24.5 22.75 24.5H5.25C5.25 24.5 3.5 24.5 3.5 22.75C3.5 21 5.25 15.75 14 15.75C22.75 15.75 24.5 21 24.5 22.75ZM22.75 22.743C22.7482 22.3125 22.4805 21.0175 21.294 19.831C20.153 18.69 18.0057 17.5 14 17.5C9.9925 17.5 7.847 18.69 6.706 19.831C5.5195 21.0175 5.2535 22.3125 5.25 22.743H22.75Z"
+                class="xf-scroll-change__path jm-btn-scnu-search-svg"
+                fill=""
+                style="fill: rgb(119, 119, 119)"
+              ></path>
+            </svg>
+          </a>
+
+          <li class="">
+            <a href="/samplerix/sign_in/" class="jm-btn-sign jm-cursor-pointer jm-flex jm-items-center jm-justify-center jm-rounded-[100px] jm-px-[16px] jm-py-[6px]">
+              <span class="jm-tracking-[-0.02em] jm-text-[12px] jm-font-[600]">Sign In</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="/samplerix/admin">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M21.32 9.55L19.43 8.92L20.32 7.14C20.4102 6.95369 20.4404 6.74397 20.4064 6.53978C20.3723 6.33558 20.2758 6.14699 20.13 6L18 3.87C17.8522 3.72209 17.6618 3.62421 17.4555 3.59013C17.2493 3.55605 17.0375 3.58748 16.85 3.68L15.07 4.57L14.44 2.68C14.3735 2.483 14.2472 2.31163 14.0787 2.18975C13.9102 2.06787 13.7079 2.00155 13.5 2H10.5C10.2904 1.99946 10.0858 2.06482 9.91537 2.18685C9.7449 2.30887 9.61709 2.48138 9.55 2.68L8.92 4.57L7.14 3.68C6.95369 3.58978 6.74397 3.55961 6.53978 3.59364C6.33558 3.62767 6.14699 3.72423 6 3.87L3.87 6C3.72209 6.14777 3.62421 6.33818 3.59013 6.54446C3.55605 6.75074 3.58748 6.96251 3.68 7.15L4.57 8.93L2.68 9.56C2.483 9.62654 2.31163 9.75283 2.18975 9.92131C2.06787 10.0898 2.00155 10.2921 2 10.5V13.5C1.99946 13.7096 2.06482 13.9142 2.18685 14.0846C2.30887 14.2551 2.48138 14.3829 2.68 14.45L4.57 15.08L3.68 16.86C3.58978 17.0463 3.55961 17.256 3.59364 17.4602C3.62767 17.6644 3.72423 17.853 3.87 18L6 20.13C6.14777 20.2779 6.33818 20.3758 6.54446 20.4099C6.75074 20.444 6.96251 20.4125 7.15 20.32L8.93 19.43L9.56 21.32C9.62709 21.5186 9.7549 21.6911 9.92537 21.8132C10.0958 21.9352 10.3004 22.0005 10.51 22H13.51C13.7196 22.0005 13.9242 21.9352 14.0946 21.8132C14.2651 21.6911 14.3929 21.5186 14.46 21.32L15.09 19.43L16.87 20.32C17.0551 20.4079 17.2628 20.4369 17.4649 20.4029C17.667 20.3689 17.8538 20.2737 18 20.13L20.13 18C20.2779 17.8522 20.3758 17.6618 20.4099 17.4555C20.444 17.2493 20.4125 17.0375 20.32 16.85L19.43 15.07L21.32 14.44C21.517 14.3735 21.6884 14.2472 21.8103 14.0787C21.9321 13.9102 21.9985 13.7079 22 13.5V10.5C22.0005 10.2904 21.9352 10.0858 21.8132 9.91537C21.6911 9.7449 21.5186 9.61709 21.32 9.55ZM20 12.78L18.8 13.18C18.5241 13.2695 18.2709 13.418 18.0581 13.6151C17.8452 13.8122 17.6778 14.0533 17.5675 14.3216C17.4571 14.5899 17.4064 14.879 17.419 15.1688C17.4315 15.4586 17.5069 15.7422 17.64 16L18.21 17.14L17.11 18.24L16 17.64C15.7436 17.5122 15.4627 17.4411 15.1763 17.4313C14.89 17.4215 14.6049 17.4734 14.3403 17.5834C14.0758 17.6934 13.8379 17.8589 13.6429 18.0688C13.4479 18.2787 13.3003 18.5281 13.21 18.8L12.81 20H11.22L10.82 18.8C10.7305 18.5241 10.582 18.2709 10.3849 18.0581C10.1878 17.8452 9.94671 17.6778 9.67842 17.5675C9.41014 17.4571 9.12105 17.4064 8.83123 17.419C8.5414 17.4315 8.25777 17.5069 8 17.64L6.86 18.21L5.76 17.11L6.36 16C6.4931 15.7422 6.56852 15.4586 6.58105 15.1688C6.59357 14.879 6.5429 14.5899 6.43254 14.3216C6.32218 14.0533 6.15478 13.8122 5.94195 13.6151C5.72912 13.418 5.47595 13.2695 5.2 13.18L4 12.78V11.22L5.2 10.82C5.47595 10.7305 5.72912 10.582 5.94195 10.3849C6.15478 10.1878 6.32218 9.94671 6.43254 9.67842C6.5429 9.41014 6.59357 9.12105 6.58105 8.83123C6.56852 8.5414 6.4931 8.25777 6.36 8L5.79 6.89L6.89 5.79L8 6.36C8.25777 6.4931 8.5414 6.56852 8.83123 6.58105C9.12105 6.59357 9.41014 6.5429 9.67842 6.43254C9.94671 6.32218 10.1878 6.15478 10.3849 5.94195C10.582 5.72912 10.7305 5.47595 10.82 5.2L11.22 4H12.78L13.18 5.2C13.2695 5.47595 13.418 5.72912 13.6151 5.94195C13.8122 6.15478 14.0533 6.32218 14.3216 6.43254C14.5899 6.5429 14.879 6.59357 15.1688 6.58105C15.4586 6.56852 15.7422 6.4931 16 6.36L17.14 5.79L18.24 6.89L17.64 8C17.5122 8.25645 17.4411 8.53735 17.4313 8.82369C17.4215 9.11003 17.4734 9.39513 17.5834 9.65969C17.6934 9.92424 17.8589 10.1621 18.0688 10.3571C18.2787 10.5521 18.5281 10.6997 18.8 10.79L20 11.19V12.78ZM12 8C11.2089 8 10.4355 8.2346 9.77772 8.67413C9.11993 9.11365 8.60724 9.73836 8.30448 10.4693C8.00173 11.2002 7.92252 12.0044 8.07686 12.7804C8.2312 13.5563 8.61217 14.269 9.17158 14.8284C9.73099 15.3878 10.4437 15.7688 11.2196 15.9231C11.9956 16.0775 12.7998 15.9983 13.5307 15.6955C14.2616 15.3928 14.8864 14.8801 15.3259 14.2223C15.7654 13.5645 16 12.7911 16 12C16 10.9391 15.5786 9.92172 14.8284 9.17158C14.0783 8.42143 13.0609 8 12 8V8ZM12 14C11.6044 14 11.2178 13.8827 10.8889 13.6629C10.56 13.4432 10.3036 13.1308 10.1522 12.7654C10.0009 12.3999 9.96126 11.9978 10.0384 11.6098C10.1156 11.2219 10.3061 10.8655 10.5858 10.5858C10.8655 10.3061 11.2219 10.1156 11.6098 10.0384C11.9978 9.96126 12.3999 10.0009 12.7654 10.1522C13.1308 10.3036 13.4432 10.56 13.6629 10.8889C13.8827 11.2178 14 11.6044 14 12C14 12.5304 13.7893 13.0391 13.4142 13.4142C13.0391 13.7893 12.5304 14 12 14Z"
+                  fill="#777777"
+                ></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <script>
+      $(".jm-white-logo").addClass("!jm-hidden");
+      $(".jm-color-logo").removeClass("!jm-hidden");
+      $(".xf-scroll-change__logo-text").removeClass("!jm-text-[#fff]");
+      $(".xf-scroll-change__bg").removeClass("transparent-bg");
+      $(".xf-scroll-change__bg").addClass("jm-shadow-xl");
+      $(".xf-scroll-change__bg > .jm-container").removeClass("!jm-border-b-0");
+      $(".jm-btn-scnu-search-wrap").css("background", "#fff");
+      $(".jm-btn-scnu-search-svg").css("fill", "#777");
+      $(".change-icon-color").css("fill", "#777");
+      $(".xf-scroll-change__logo").removeClass("jm-hidden");
+      $(".xf-scroll-change__logo-white").addClass("jm-hidden");
+      $(".jm-btn-sign").removeClass("!jm-border-[#fff] jm-text-center jm-bg-[#fff]/30 jm-border-none hover:jm-bg-[#fff]/60");
+      $(".jm-btn-sign").addClass("!jm-border-[2px] !jm-border-[#D59F13] !jm-bg-[#fff]");
+      $(".jm-btn-sign > span").removeClass("!jm-text-[#fff]/60");
+      $(".jm-btn-sign > span").addClass("jm-text-[#911789f4]");
+    </script>
+
+    <style>
+      .xf-scroll-change__bg {
+        background: #ffffffdc;
+        border-bottom: 0px !important;
+        transition: 0.4s;
+      }
+      .xf-scroll-change__bg .gnb__menu > a > span {
+        color: #3f3f3f;
+      }
+      .xf-scroll-change__bg .gnb__menu:hover > a > span,
+      .xf-scroll-change__bg .gnb__menu > a > span.gnb-active {
+        color: #911789f4;
+      }
+
+      .xf-scroll-change__bg.transparent-bg {
+        background: transparent !important;
+        border-bottom: 0px !important;
+        transition: 0.4s;
+      }
+      .xf-scroll-change__bg.transparent-bg .gnb__menu > a > span {
+        color: #ffffffeb;
+      }
+      .xf-scroll-change__bg.transparent-bg .gnb__menu:hover > a > span,
+      .xf-scroll-change__bg.transparent-bg .gnb__menu > a > span.gnb-active {
+        color: #fff;
+      }
+    </style>
+
+    <style>
+      /* gnb 1depth 마지막 색깔 변경 */
+      li:last-child > .jm-submenu-mobile {
+        margin-bottom: 0;
+      }
+    </style>
+
+    <!-- 모바일 gnb  -->
+    <div class="jm-fixed jm-top-0 jm-flex jm-flex-row jm-w-full jm-h-[100vh] jm-overflow-hidden jm-hidden jm-z-[999]" data-element="gnb-wrapper--mobile">
+      <div class="jm-absolute jm-left-0 jm-z-[999] jm-flex jm-flex-row jm-h-[100vh] jm-w-[calc(100%-64px)] jm-max-w-[310px] md:jm-max-w-[500px] jm-transition-all jm-duration-300 jm-translate-x-[-100%]" data-element="gnb-menu--mobile">
+        <div class="jm-relative jm-z-[20] jm-flex jm-flex-col jm-w-full jm-min-w-full jm-h-full jm-max-w-[500px] jm-bg-[#FFF] jm-overflow-y-auto">
+          <div class="jm-flex jm-flex-col jm-bg-[#EFEFEF] jm-py-[20px] jm-px-[24px] jm-pb-[30px] jm-border-box">
+            <div class="jm-flex jm-flex-row jm-justify-end jm-py-[12px]">
+              <span class="jm-flex jm-w-[32px] jm-h-[32px] jm-justify-center jm-items-center jm-ml-[10px] hover:jm-cursor-pointer" data-element="gnb-close--mobile">
+                <svg class="jm-flex" width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M.2968 13.5815a.5.5 0 1 0 .707.7071l6.2889-6.2888 6.2888 6.2888a.5.5 0 1 0 .7071-.7071L7.9998 7.2927 14.4389.8536a.5.5 0 1 0-.7071-.7072L7.2927 6.5856.8536.1465a.5.5 0 1 0-.7072.7071l6.4391 6.439-6.2887 6.2889Z" fill="#000" /></svg>
+              </span>
+            </div>
+            <div class="jm-flex jm-mt-[30px] jm-mb-[24px] jm-flex-row jm-justify-between">
+              <div class="jm-flex jm-flex-row">
+                <div class="jm-flex jm-justify-center jm-ite한ms-center">
+                  <div class="jm-flex jm-mr-[12px] jm-w-[48px] jm-h-[48px] jm-rounded-full jm-bg-no-repeat jm-bg-cover jm-overflow-hidden md:jm-mr-[16px] jm-bg-[#fff]"></div>
+                </div>
+                <div class="jm-flex jm-flex-col">
+                  <!-- @if(auth()->check())
+                              <div class="jm-flex jm-flex-row">
+                                      <span class="jm-flex jm-text-[#383838]  jm-text[17px] jm-leading-[25px] jm-whitespasce-nowrap">{{ Auth::user()->getDisplayName() }}</span>
+                                      <span class="jm-flex jm-text-[#383838] jm-text[17px] jm-leading-[25px]">님</span>
+                              </div>
+                              <a href="/auth/logout" class="jm-flex jm-flex-row">
+                                  <span class="jm-flex jm-text-[#383838] jm-text[17px] jm-leading-[25px] jm-whitespasce-nowrap">로그아웃</span>
+                              </a>
+                              @else -->
+                  <a onclick="alert('서비스 오픈 준비 중입니다! 👨‍💻')" class="jm-flex jm-flex-row">
+                    <span class="jm-flex jm-text-[#911789f4] jm-text[17px] jm-leading-[25px] jm-whitespasce-nowrap">로그인해주세요</span>
+                  </a>
+                  <div class="jm-flex jm-items-center">
+                    <span class="jm-flex jm-text-[13px] jm-text-[#383838]">샘플릭스 방문을 환영합니다!</span>
+                  </div>
+                </div>
+              </div>
+              <div class="jm-flex jm-items-center jm-justify-center">
+                <a href="#" class="jm-flex jm-w-[32px] jm-h-[32px] jm-justify-center jm-items-center jm-rounded-[4px] hover:jm-bg-[#000]/[.08] hover:jm-cursor-pointer jm-transition-all">
+                  <svg class="jm-flex" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="m21.32 9.55-1.89-.63.89-1.78A1.0004 1.0004 0 0 0 20.13 6L18 3.87a1.0002 1.0002 0 0 0-1.15-.19l-1.78.89-.63-1.89A.9997.9997 0 0 0 13.5 2h-3a1 1 0 0 0-.95.68l-.63 1.89-1.78-.89A1 1 0 0 0 6 3.87L3.87 6a1 1 0 0 0-.19 1.15l.89 1.78-1.89.63a1 1 0 0 0-.68.94v3a.9998.9998 0 0 0 .68.95l1.89.63-.89 1.78A.9999.9999 0 0 0 3.87 18L6 20.13a1.0003 1.0003 0 0 0 1.15.19l1.78-.89.63 1.89a1.0004 1.0004 0 0 0 .95.68h3a1.0003 1.0003 0 0 0 .95-.68l.63-1.89 1.78.89a1.0002 1.0002 0 0 0 1.13-.19L20.13 18a1.0004 1.0004 0 0 0 .19-1.15l-.89-1.78 1.89-.63a.9999.9999 0 0 0 .68-.94v-3a1.0004 1.0004 0 0 0-.68-.95ZM20 12.78l-1.2.4A2.0002 2.0002 0 0 0 17.64 16l.57 1.14-1.1 1.1-1.11-.6a1.9996 1.9996 0 0 0-1.6597-.0566A2.0003 2.0003 0 0 0 13.21 18.8l-.4 1.2h-1.59l-.4-1.2A2.0002 2.0002 0 0 0 8 17.64l-1.14.57-1.1-1.1.6-1.11a2.0001 2.0001 0 0 0-1.16-2.82l-1.2-.4v-1.56l1.2-.4A2.0002 2.0002 0 0 0 6.36 8l-.57-1.11 1.1-1.1L8 6.36a2 2 0 0 0 2.82-1.16l.4-1.2h1.56l.4 1.2A2.0002 2.0002 0 0 0 16 6.36l1.14-.57 1.1 1.1-.6 1.11a2 2 0 0 0 1.16 2.79l1.2.4v1.59ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 6a2 2 0 0 1-1.9616-2.3902 2.0004 2.0004 0 0 1 1.5714-1.5714A2 2 0 1 1 12 14Z"
+                      fill="#777"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="jm-flex jm-flex-col jm-pt-[30px] jm-border-box jm-bg-[#fff]">
+            <div class="jm-flex jm-flex-col">
+              <ul class="jm-flex jm-flex-col">
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-group jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center jm-cursor-pointer">
+                    <a href="/samplerix/search_result/top_100.html" class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#383838] jm-py-[10px] jm-whitespace-nowra group-hover:!jm-text-[#911789f4]">Samples </a>
+                    <div class="jm-absolute jm-right-0 jm-stroke-[#B7B7B7] group-hover:!jm-stroke-[#911789f4]">
+                      <svg class="jm-plus-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path stroke-linecap="square" stroke-linejoin="round" stroke-width="1.4" d="M10 4.166v11.667M4.167 10h11.666" /></svg>
+                      <svg class="jm-minus-icon" style="display: none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path stroke-linecap="square" stroke-linejoin="round" stroke-width="1.4" d="M4.167 10h11.666" /></svg>
+                    </div>
+                  </div>
+                  <ul class="jm-submenu-mobile jm-flex jm-flex-col jm-mx-[-25px] jm-mb-[10px] jm-px-[25px] jm-bg-[#F8F8F8] jm-py-[15px] jm-border-box" style="display: none">
+                    <li class="jm-w-full">
+                      <a href="/samplerix/search_result/top_100.html" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] gnb__submenu-link">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#555]">Top 100</span>
+                      </a>
+                    </li>
+                    <li class="jm-w-full">
+                      <a href="/samplerix/search_result/index.html" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] gnb__submenu-link">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#555]">음원 검색</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center">
+                    <a href="/" class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#383838] jm-py-[10px] jm-w-full jm-whitespace-nowra hover:!jm-text-[#91178968]">About Us</a>
+                  </div>
+                </li>
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center">
+                    <a href="/samplerix/contact/" class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#383838] jm-py-[10px] jm-w-full jm-whitespace-nowra hover:!jm-text-[#91178968]">고객문의 </a>
+                  </div>
+                </li>
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-group jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center jm-cursor-pointer">
+                    <a href="/samplerix/mypage/userinfo.html" class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#383838] jm-py-[10px] jm-whitespace-nowra group-hover:!jm-text-[#911789f4]"> My 샘플릭스 </a>
+                    <div class="jm-absolute jm-right-0 jm-stroke-[#B7B7B7] group-hover:!jm-stroke-[#911789f4]">
+                      <svg class="jm-plus-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path stroke-linecap="square" stroke-linejoin="round" stroke-width="1.4" d="M10 4.166v11.667M4.167 10h11.666" /></svg>
+                      <svg class="jm-minus-icon" style="display: none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path stroke-linecap="square" stroke-linejoin="round" stroke-width="1.4" d="M4.167 10h11.666" /></svg>
+                    </div>
+                  </div>
+                  <ul class="jm-submenu-mobile jm-flex jm-flex-col jm-mx-[-25px] jm-mb-[10px] jm-px-[25px] jm-bg-[#F8F8F8] jm-py-[15px] jm-border-box" style="display: none">
+                    <li class="jm-w-full">
+                      <a href="/samplerix/mypage/userinfo.html" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] gnb__submenu-link">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#555]">회원정보 수정</span>
+                      </a>
+                    </li>
+                    <li class="jm-w-full">
+                      <a href="/samplerix/mypage/reqseller.html" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] gnb__submenu-link">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#555]">판매자 등록</span>
+                      </a>
+                    </li>
+                    <li class="jm-w-full">
+                      <a href="/samplerix/mypage/list.html" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] gnb__submenu-link">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#555]">구매목록</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="jm-flex jm-justify-center jm-items-start jm-mx-[23px] jm-mt-[22px] hover:jm-cursor-pointer" data-element="gnb-close--mobile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none">
+            <rect width="22" height="2.2" y="15.557" fill="#fff" rx="1.1" transform="rotate(-45 0 15.557)" />
+            <rect width="22" height="2.2" x="1.556" fill="#fff" rx="1.1" transform="rotate(45 1.556 0)" />
+          </svg>
+        </div>
+      </div>
+      <div class="jm-absolute jm-z-[1] jm-w-full jm-h-full jm-bg-[#000]/[0]" data-element="gnb-dimd--mobile"></div>
+    </div>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        $(
+          (function () {
+            $('[data-element="gnb--mobile"]').on("click", function () {
+              console.log("click");
+              $("html").css("overflow", "hidden");
+              $('[data-element="gnb-wrapper--mobile"]').show().removeClass("jm-hidden");
+              setTimeout(function () {
+                $('[data-element="gnb-menu--mobile"]').addClass("!jm-translate-x-[0]");
+                $('[data-element="gnb-dimd--mobile"]').removeClass("jm-bg-[#000]/[0]").addClass("jm-bg-[rgba(0,0,0,0.6)]");
+              });
+            });
+            $('[data-element="gnb-close--mobile"], [data-element="gnb-dimd--mobile"]').on("click", function () {
+              $('[data-element="gnb-wrapper--mobile"]').fadeOut();
+              $("html").css("overflow", "");
+              $('[data-element="gnb-menu--mobile"]').removeClass("!jm-translate-x-[0]");
+              $('[data-element="gnb-dimd--mobile"]').addClass("jm-bg-[#000]/[0]").removeClass("jm-bg-[rgba(0,0,0,0.6)]");
+            });
+          })()
+        );
+      });
+    </script>
+
+    <script>
+      $(function () {
+        // ===== 모바일 햄버거 메뉴 =====
+        $(".jm-submenu-btn").click(function (e) {
+          if ($(this).hasClass("active")) {
+            $(this).removeClass("active");
+            $(this).next(".jm-submenu-mobile").stop().slideUp();
+            $(this).find(".jm-plus-icon").css("display", "block");
+            $(this).find(".jm-minus-icon").css("display", "none");
+          } else {
+            $(this).addClass("active");
+            $(this).next(".jm-submenu-mobile").stop().slideDown();
+            $(this).find(".jm-plus-icon").css("display", "none");
+            $(this).find(".jm-minus-icon").css("display", "block");
+          }
+        });
+        // ===== //모바일 햄버거 메뉴 =====
+      });
+    </script>
+
+    <!-- 모바일 gnb -->
+
+    <!-- 퀵메뉴 -->
+    <!-- <div class="btn-jm-floating-quick-menu-wrap">
+      <div class="jm-floating-quick-menu-contents-wrap">
+        <a href="https://handrix.co.kr/#slide01" target="_blank" class="jm-floating-quick-menu-contents jm-group">
+          <p class="group-hover:!jm-opacity-80 group-hover:jm-underline">핸드릭스</p>
+          <div class="jm-flex jm-items-center jm-justify-center jm-w-[60px] lg:jm-w-[65px] jm-aspect-square jm-rounded-full jm-bg-[#fff] group-hover:!jm-opacity-80">
+            <img src="/assets/images/handrix-logo.png" alt="handrix logo" class="!jm-w-[56%] !jm-h-auto" />
+          </div>
+        </a>
+        <a href="https://smartstore.naver.com/handrixmusic" target="_blank" class="jm-floating-quick-menu-contents jm-group">
+          <p class="group-hover:!jm-opacity-80 group-hover:jm-underline">스마트스토어</p>
+          <div class="jm-flex jm-items-center jm-justify-center jm-w-[60px] lg:jm-w-[65px] jm-aspect-square jm-rounded-full jm-bg-[#fff] group-hover:!jm-opacity-80">
+            <img src="/assets/images/smartstore-logo.png" alt="handrix logo" class="!jm-w-[56%] !jm-h-auto" />
+          </div>
+        </a>
+        <a href="https://www.youtube.com/channel/UCmkV3Ci9IlIbOh6facLuPRw" target="_blank" class="jm-floating-quick-menu-contents jm-group">
+          <p class="group-hover:!jm-opacity-80 group-hover:jm-underline">유튜브</p>
+          <div class="jm-flex jm-items-center jm-justify-center jm-w-[60px] lg:jm-w-[65px] jm-aspect-square jm-rounded-full jm-bg-[#fff] group-hover:!jm-opacity-80">
+            <img src="/assets/images/youtube-logo.png" alt="handrix logo" class="!jm-w-[56%] !jm-h-auto" />
+          </div>
+        </a>
+        <a href="https://www.instagram.com/handrix_music/" target="_blank" class="jm-floating-quick-menu-contents jm-group">
+          <p class="group-hover:!jm-opacity-80 group-hover:jm-underline">인스타그램</p>
+          <div class="jm-flex jm-items-center jm-justify-center jm-w-[60px] lg:jm-w-[65px] jm-aspect-square jm-rounded-full jm-bg-[#fff] group-hover:!jm-opacity-80">
+            <img src="/assets/images/instagram-logo.png" alt="handrix logo" class="!jm-w-[56%] !jm-h-auto" />
+          </div>
+        </a>
+      </div>
+      <div>
+        <button class="btn-jm-floating-quick-menu jm-animate-pulse">
+          <svg xmlns="http://www.w3.org/2000/svg" class="jm-w-[30px] lg:jm-w-[40px]" viewBox="0 0 40 40" fill="none">
+            <path
+              d="M16.6667 21.6667H5.00001C4.55798 21.6667 4.13406 21.8423 3.8215 22.1549C3.50894 22.4674 3.33334 22.8913 3.33334 23.3334V35C3.33334 35.4421 3.50894 35.866 3.8215 36.1786C4.13406 36.4911 4.55798 36.6667 5.00001 36.6667H16.6667C17.1087 36.6667 17.5326 36.4911 17.8452 36.1786C18.1577 35.866 18.3333 35.4421 18.3333 35V23.3334C18.3333 22.8913 18.1577 22.4674 17.8452 22.1549C17.5326 21.8423 17.1087 21.6667 16.6667 21.6667ZM15 33.3334H6.66668V25H15V33.3334ZM35 3.33337H23.3333C22.8913 3.33337 22.4674 3.50897 22.1548 3.82153C21.8423 4.13409 21.6667 4.55801 21.6667 5.00004V16.6667C21.6667 17.1087 21.8423 17.5327 22.1548 17.8452C22.4674 18.1578 22.8913 18.3334 23.3333 18.3334H35C35.442 18.3334 35.866 18.1578 36.1785 17.8452C36.4911 17.5327 36.6667 17.1087 36.6667 16.6667V5.00004C36.6667 4.55801 36.4911 4.13409 36.1785 3.82153C35.866 3.50897 35.442 3.33337 35 3.33337V3.33337ZM33.3333 15H25V6.66671H33.3333V15ZM35 21.6667H23.3333C22.8913 21.6667 22.4674 21.8423 22.1548 22.1549C21.8423 22.4674 21.6667 22.8913 21.6667 23.3334V35C21.6667 35.4421 21.8423 35.866 22.1548 36.1786C22.4674 36.4911 22.8913 36.6667 23.3333 36.6667H35C35.442 36.6667 35.866 36.4911 36.1785 36.1786C36.4911 35.866 36.6667 35.4421 36.6667 35V23.3334C36.6667 22.8913 36.4911 22.4674 36.1785 22.1549C35.866 21.8423 35.442 21.6667 35 21.6667ZM33.3333 33.3334H25V25H33.3333V33.3334ZM16.6667 3.33337H5.00001C4.55798 3.33337 4.13406 3.50897 3.8215 3.82153C3.50894 4.13409 3.33334 4.55801 3.33334 5.00004V16.6667C3.33334 17.1087 3.50894 17.5327 3.8215 17.8452C4.13406 18.1578 4.55798 18.3334 5.00001 18.3334H16.6667C17.1087 18.3334 17.5326 18.1578 17.8452 17.8452C18.1577 17.5327 18.3333 17.1087 18.3333 16.6667V5.00004C18.3333 4.55801 18.1577 4.13409 17.8452 3.82153C17.5326 3.50897 17.1087 3.33337 16.6667 3.33337V3.33337ZM15 15H6.66668V6.66671H15V15Z"
+              fill="white"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="bg-gray-cover"></div> -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .jm-template1-gototop {
+        position: fixed;
+        bottom: 150px;
+        right: 10.4%;
+        z-index: 888;
+      }
+      .jm-template1-gototop svg {
+        width: 60px;
+      }
+      .btn-jm-floating-quick-menu-wrap {
+        position: fixed;
+        bottom: 85px;
+        right: 9%;
+        z-index: 15;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      .bg-gray-cover {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        background: rgba(0, 0, 0, 0);
+        z-index: -2;
+        transition: 0.4s;
+        /* display: none !important; */
+      }
+      .bg-gray-cover.on {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 14;
+        transition: 0.4s;
+        /* display: block !important; */
+      }
+      .jm-floating-quick-menu-contents-wrap {
+        opacity: 0;
+        display: none !important;
+      }
+      .jm-floating-quick-menu-contents-wrap.on {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        opacity: 1;
+      }
+      .jm-floating-quick-menu-contents {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        column-gap: 13px;
+        position: relative;
+      }
+      .jm-floating-quick-menu-contents:hover > img {
+        border: 2px solid #fff;
+        border-radius: 999px;
+        transition: 0.2s;
+      }
+
+      .jm-floating-quick-menu-contents:hover > p {
+        color: #fff;
+      }
+
+      .jm-floating-quick-menu-contents p {
+        margin: 0;
+        font-family: "Noto Sans KR";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -0.048em;
+        color: #ffffff;
+        position: absolute;
+        left: -140px;
+        width: 122px;
+        text-align: right;
+        text-shadow: 1px 1px 1px #777;
+      }
+      .jm-floating-quick-menu-contents img {
+        width: 60px;
+        height: 60px;
+      }
+      .btn-jm-floating-quick-menu {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #911789f4;
+        border-radius: 999px;
+        filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.15));
+        border: 2px solid #911789f4;
+        transition: 0.3s;
+      }
+      .btn-jm-floating-quick-menu:hover {
+        border: 2px solid #fff;
+        transition: 0.2s;
+      }
+      .btn-jm-floating-quick-menu.on {
+        border: 2px solid #fff;
+        transition: 0.2s;
+      }
+      .jm-mobile-quick-menu-wrap {
+        display: none;
+      }
+      @media (max-width: 991px) {
+        .btn-jm-floating-quick-menu {
+          width: 60px;
+          height: 60px;
+        }
+        .btn-jm-floating-quick-menu img {
+          width: 30px;
+          height: 30px;
+        }
+        .jm-template1-gototop {
+          position: fixed;
+          bottom: 115px;
+          right: 9.4%;
+          z-index: 777;
+        }
+        .jm-template1-gototop svg {
+          width: 45px;
+        }
+        .btn-jm-floating-quick-menu-wrap {
+          position: fixed;
+          bottom: 50px;
+          right: 7%;
+          z-index: 15;
+          display: flex;
+          flex-direction: column;
+          align-content: center;
+          justify-content: center;
+          gap: 20px;
+        }
+        .jm-mobile-quick-menu-wrap {
+          position: fixed;
+          bottom: 0px;
+          background-color: #fff;
+          box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.2);
+          padding: 15px 8px;
+          width: 100%;
+          height: auto;
+          min-height: 80px;
+          box-sizing: border-box;
+          z-index: 20;
+          display: block;
+        }
+        .jm-mobile-quick-menu {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+        }
+        .jm-mobile-quick-menu-contents {
+          display: flex;
+          flex-direction: column-reverse;
+          row-gap: 7px;
+          align-items: center;
+          justify-content: flex-end;
+          flex: 1;
+        }
+        .jm-mobile-quick-menu-contents img {
+          width: auto;
+          height: 27px;
+        }
+        .jm-mobile-quick-menu-contents p {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 16px;
+          letter-spacing: -0.693333px;
+          color: #868e96;
+        }
+        .jm-mobile-quick-menu-contents.center-symbol-contents {
+          margin-top: -33px;
+          width: 76px;
+          height: 76px;
+          min-width: 76px;
+          min-height: 76px;
+          max-width: 76px;
+          max-height: 76px;
+          box-sizing: border-box;
+          background: #fff;
+          border-radius: 999px;
+          box-shadow: 0px -1px 5px 1px rgba(0, 0, 0, 0.28);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid #fff;
+        }
+        .jm-mobile-quick-menu-contents.center-symbol-contents:hover {
+          border: 2px solid #5387da54;
+        }
+        .jm-mobile-quick-menu-contents.center-symbol-contents:active {
+          border: 2px solid #5387da54;
+        }
+        .jm-mobile-quick-menu-contents.center-symbol-contents span {
+          font-family: "Noto Sans KR";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 17px;
+          text-align: center;
+          letter-spacing: -1px;
+          color: #fff;
+          text-align: center;
+          /* width: 54px; */
+        }
+      }
+    </style>
+    <script>
+      $(".header-sitemap-mobile").on("click", function () {
+        $(".header-sitemap-box.is-mobile").toggleClass("on");
+        $(".header-sitemap-toggle-icon").toggleClass("on");
+      });
+
+      $(".btn-jm-floating-quick-menu").on("click", function () {
+        $(".bg-gray-cover").toggleClass("on");
+        $(".jm-floating-quick-menu-contents-wrap").toggleClass("on");
+        $(".btn-jm-floating-quick-menu").toggleClass("on");
+        $(".btn-jm-floating-quick-menu").toggleClass("jm-animate-pulse");
+      });
+
+      $(".bg-gray-cover").on("click", function () {
+        $(".bg-gray-cover").toggleClass("on");
+        $(".jm-floating-quick-menu-contents-wrap").toggleClass("on");
+        $(".btn-jm-floating-quick-menu").toggleClass("on");
+        $(".btn-jm-floating-quick-menu").toggleClass("jm-animate-pulse");
+      });
+    </script>
+
+    <!-- 퀵메뉴 -->
+
+    <!-- 컨텐츠영역 -->
+    <div data-aos="zoom-out-up" data-aos-easing="ease-in-out-back" data-aos-duration="900" class="jm-min-w-[100vw] jm-min-h-[80vh] jm-bg-[#fff] jm-box-border">
+      <div class="jm-container jm-tracking-[-0.0099em] jm-pt-[85px] lg:jm-pt-[110px] jm-pb-[40px]">
+        <h2 class="jm-font-bold jm-text-[24px] jm-leading-[37px] jm-text-center jm-tracking-[-0.0174em] jm-pb-[20px] lg:jm-text-[35px] lg:jm-leading-[70px] lg:jm-tracking-[-0.02em] lg:jm-pb-[20px]">Contact Us</h2>
+        <iframe class="jm-mb-[30px]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.916008186221!2d126.69223287655143!3d37.72164931521741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c88ccdb0da549%3A0x6f60d6e29695ecb6!2z6rK96riw64-EIO2MjOyjvOyLnCDtmozrj5nquLggNDgw!5e0!3m2!1sko!2skr!4v1712420228849!5m2!1sko!2skr" width="100%" height="550" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="jm-flex jm-flex-col lg:jm-flex-row">
+          <div class="lg:jm-w-[50%]">
+            <h2 class="jm-font-bold jm-text-[#141414] jm-text-[18px] lg:jm-text-[22px] jm-leading-[26.06px] lg:jm-leading-[31.86px] jm-mb-[20px]">주소 및 연락처</h2>
+
+            <div class="jm-mb-[20px] lg:jm-mb-[40px]">
+              <h3 class="jm-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+                  <image
+                    id="Rectangle_74"
+                    data-name="Rectangle 74"
+                    width="20"
+                    height="20"
+                    opacity="0.2"
+                    xlink:href="data:image/png;base64,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"
+                  ></image>
+                </svg>
+                <span class="jm-font-bold jm-text-[#383838] jm-text-[16px] lg:jm-text-[18px] jm-leading-[23.17px] lg:jm-leading-[26.06px] jm-ml-[8px] jm-mb-[6px] lg:jm-mb-[4px]">주소</span>
+              </h3>
+              <p class="jm-break-words jm-font-medium jm-leading-[21.72px] jm-text-[15px] jm-text-[#555]">경기도 파주시 회동길 480, B동 514호</p>
+            </div>
+
+            <div class="jm-mb-[20px] lg:jm-mb-[40px]">
+              <h3 class="jm-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+                  <image
+                    id="Rectangle_73"
+                    data-name="Rectangle 73"
+                    width="20"
+                    height="20"
+                    opacity="0.2"
+                    xlink:href="data:image/png;base64,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"
+                  ></image>
+                </svg>
+                <span class="jm-font-bold jm-text-[#383838] jm-text-[16px] lg:jm-text-[18px] jm-leading-[23.17px] lg:jm-leading-[26.06px] jm-ml-[8px] jm-mb-[6px] lg:jm-mb-[4px]">연락처</span>
+              </h3>
+              <p class="jm-break-words jm-font-medium jm-leading-[21.72px] jm-text-[15px] jm-text-[#555]">
+                - 문의 가능 시간 : 매일 10:00 ~ 19:00 <br />
+                - 문의:<a class="jm-text-[#035C67] hover:jm-text-[#035b6785] active:jm-text-[#035b6785 !jm-inline" href="mailto:handrix3650@naver.com">handrix3650@naver.com</a>
+              </p>
+            </div>
+          </div>
+          <div class="jm-hidden lg:!jm-block jm-w-[1px] jm-bg-[#DFDFDF] jm-mx-[120px]"></div>
+          <hr class="lg:jm-hidden jm-bg-[#DFDFDF] jm-mb-[20px]" />
+          <div class="lg:jm-w-[50%]">
+            <h2 class="jm-font-bold jm-text-[#141414] jm-text-[18px] lg:jm-text-[22px] jm-leading-[26.06px] lg:jm-leading-[31.86px] jm-mb-[20px]">찾아오시는 방법</h2>
+
+            <div class="jm-mb-[20px] lg:jm-mb-[40px]">
+              <h3 class="jm-flex">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <rect opacity="0.2" width="24" height="24" fill="url(#pattern0)"></rect>
+                  <defs>
+                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                      <use xlink:href="#image0_100_3888" transform="scale(0.00195312)"></use>
+                    </pattern>
+                    <image
+                      id="image0_100_3888"
+                      width="512"
+                      height="512"
+                      xlink:href="data:image/png;base64,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"
+                    ></image>
+                  </defs>
+                </svg>
+
+                <span class="jm-font-bold jm-text-[#383838] jm-text-[16px] lg:jm-text-[18px] jm-leading-[23.17px] lg:jm-leading-[26.06px] jm-ml-[8px] jm-mb-[6px] lg:jm-mb-[4px]">주차정보</span>
+              </h3>
+              <p class="jm-break-words jm-font-medium jm-leading-[21.72px] jm-text-[15px] jm-text-[#555]">무료</p>
+            </div>
+
+            <div class="jm-mb-[20px] lg:jm-mb-[40px]">
+              <h3 class="jm-flex">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    opacity="0.2"
+                    d="M12 10.8C11.6817 10.8 11.3765 10.9264 11.1515 11.1515C10.9264 11.3765 10.8 11.6817 10.8 12V16.8C10.8 17.1183 10.9264 17.4235 11.1515 17.6485C11.3765 17.8736 11.6817 18 12 18C12.3183 18 12.6235 17.8736 12.8485 17.6485C13.0736 17.4235 13.2 17.1183 13.2 16.8V12C13.2 11.6817 13.0736 11.3765 12.8485 11.1515C12.6235 10.9264 12.3183 10.8 12 10.8ZM12.456 6.096C12.1638 5.97598 11.8362 5.97598 11.544 6.096C11.3967 6.15311 11.2621 6.23875 11.148 6.348C11.042 6.46464 10.9568 6.59858 10.896 6.744C10.8288 6.88641 10.7959 7.04259 10.8 7.2C10.7991 7.35793 10.8294 7.51448 10.8891 7.66069C10.9488 7.80689 11.0368 7.93987 11.148 8.052C11.2646 8.158 11.3986 8.24323 11.544 8.304C11.7258 8.37869 11.9232 8.40758 12.1187 8.38813C12.3143 8.36869 12.5021 8.3015 12.6657 8.19248C12.8292 8.08346 12.9634 7.93594 13.0566 7.76288C13.1498 7.58983 13.199 7.39654 13.2 7.2C13.1956 6.88228 13.0713 6.57796 12.852 6.348C12.7379 6.23875 12.6033 6.15311 12.456 6.096ZM12 0C9.62663 0 7.30655 0.703788 5.33316 2.02236C3.35977 3.34094 1.8217 5.21508 0.913451 7.4078C0.00519941 9.60051 -0.232441 12.0133 0.230582 14.3411C0.693605 16.6689 1.83649 18.807 3.51472 20.4853C5.19295 22.1635 7.33115 23.3064 9.65892 23.7694C11.9867 24.2324 14.3995 23.9948 16.5922 23.0865C18.7849 22.1783 20.6591 20.6402 21.9776 18.6668C23.2962 16.6934 24 14.3734 24 12C24 10.4241 23.6896 8.8637 23.0866 7.4078C22.4835 5.95189 21.5996 4.62902 20.4853 3.51472C19.371 2.40041 18.0481 1.5165 16.5922 0.913445C15.1363 0.310389 13.5759 0 12 0ZM12 21.6C10.1013 21.6 8.24524 21.037 6.66653 19.9821C5.08782 18.9272 3.85736 17.4279 3.13076 15.6738C2.40416 13.9196 2.21405 11.9893 2.58447 10.1271C2.95488 8.26491 3.86919 6.55436 5.21178 5.21177C6.55436 3.86919 8.26492 2.95488 10.1271 2.58446C11.9894 2.21404 13.9196 2.40415 15.6738 3.13076C17.4279 3.85736 18.9272 5.08781 19.9821 6.66652C21.037 8.24524 21.6 10.1013 21.6 12C21.6 14.5461 20.5886 16.9879 18.7882 18.7882C16.9879 20.5886 14.5461 21.6 12 21.6Z"
+                    fill="black"
+                  ></path>
+                </svg>
+
+                <span class="jm-font-bold jm-text-[#383838] jm-text-[16px] lg:jm-text-[18px] jm-leading-[23.17px] lg:jm-leading-[26.06px] jm-ml-[8px] jm-mb-[6px] lg:jm-mb-[4px]">이용안내</span>
+              </h3>
+              <p class="jm-break-words jm-font-medium jm-leading-[21.72px] jm-text-[15px] jm-text-[#555]">방문 전 사전 연락 부탁드립니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 푸터 -->
+    <div class="jm-bg-[#222] jm-w-full jm-box-border">
+      <div class="jm-container jm-mt-[0px] jm-py-[30px] lg:jm-py-[50px] jm-mx-auto jm-w-full">
+        <div class="jm-relative jm-h-full">
+          <div class="jm-flex jm-flex-col lg:jm-flex-row jm-justify-between jm-items-center jm-gap-y-[15px] jm-mb-[15px] lg:jm-mb-[20px] lg:jm-pt-[9px]">
+            <!-- <div class="jm-flex jm-item-center jm-gap-x-[5px] lg:jm-gap-x-[8px] jm-max-w-[350px]">
+                <a href="https://play.google.com/store/apps/details?id=kr.co.samplix&amp;hl=ko" target=" " class="jm-w-full">
+                  <img class="jm-w-full" src="/plugins/custom_plugin/src/Skins/samplixLandingPageHtmlSkin/assets/img/google-big.png" alt="구글 플레이스토어 다운로드 링크" />
+                </a>
+                <a href="https://apps.apple.com/kr/app/%ED%81%AC%EC%A1%B4-%EC%9E%AC%ED%85%8C%ED%81%AC%EC%9D%98-%EB%AA%A8%EB%93%A0-%EA%B2%83/id1660501630" target=" " class="jm-w-full">
+                  <img class="jm-w-full" src="/plugins/custom_plugin/src/Skins/samplixLandingPageHtmlSkin/assets/img/apple-big.png" alt="애플 앱스토어 다운로드 링크" />
+                </a>
+              </div> -->
+            <button type="button" onclick="location.href='/'" class="jm-flex jm-flex-row jm-items-center jm-justify-center jm-gap-x-[8px] jm-rounded-[100px] jm-bg-[#911789f4] jm-py-[9px] lg:jm-py-[11px] jm-px-[24px] jm-whitespace-nowrap" style="border: 1px solid rgba(255, 255, 255, 0.6)">
+              <span class="jm-whitespace-nowrap jm-text-[#fff] jm-text-[16px] lg:jm-text-[19px] jm-font-[700] jm-tracking-[-0.6px] jm-leading-[150%]">About 샘플릭스</span>
+              <svg class="jm-mt-[2px]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.2605 19L13.053 17.7775L17.7707 12.8877H3V11.1414H17.7707L13.025 6.22245L14.2324 5L21 12.0146L14.2605 19Z" fill="#D59F13"></path>
+              </svg>
+            </button>
+          </div>
+          <div>
+            <div class="jm-w-full">
+              <ul class="jm-flex jm-flex-wrap jm-flex-row jm-gap-x-[10px] jm-mb-0">
+                <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">주식회사 핸드릭스</li>
+                <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">대표이사 : 장백산</li>
+                <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">주소 : 경기도 파주시 회동길 480, B동 514호</li>
+                <li class="jm-hidden lg:!jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">|</li>
+              </ul>
+              <ul class="jm-flex jm-flex-wrap jm-flex-row jm-gap-x-[10px] jm-mb-[4px]">
+                <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">개인정보 관리 책임자 : 김효진</li>
+                <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">문의 : handrix3650@naver.com</li>
+                <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">사업자등록번호 : 424-86-02265</li>
+              </ul>
+              <ul class="jm-flex jm-flex-wrap jm-flex-row jm-gap-x-[10px] jm-mb-[4px]">
+                <li class="jm-flex jm-text-[13px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C] jm-cursor-pointer jm-group"><a class="group-hover:jm-underline" onclick="alert('서비스 오픈 준비 중입니다! 👨‍💻')">이용약관</a></li>
+                <li class="jm-flex jm-text-[13px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C] jm-cursor-pointer jm-group"><a class="group-hover:jm-underline" onclick="alert('서비스 오픈 준비 중입니다! 👨‍💻')">개인정보처리방침</a></li>
+                <li class="jm-flex jm-text-[13px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C] jm-cursor-pointer jm-group"><a class="group-hover:jm-underline" onclick="alert('서비스 오픈 준비 중입니다! 👨‍💻')">이메일무단수집거부</a></li>
+              </ul>
+              <ul class="jm-flex jm-flex-wrap jm-flex-row jm-gap-x-[10px] jm-mb-[4px]">
+                <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">Copyright© SAMPLERIX 2023 All right reserved.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 푸터 -->
+
+    <!-- 컨텐츠 영역  -->
+  </body>
+  <script>
+    AOS.init({
+      once: true, // 한 번만 애니메이션 실행
+    });
+  </script>
+</html>

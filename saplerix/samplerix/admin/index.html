@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ko" style="width: 100%; height: 100%" class="jm-overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>샘플릭스 - Make Your Creative</title>
+    <link rel="stylesheet" href="/assets/css/dist_v240406.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  </head>
+  <body class="" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <!-- JS at body.prepend -->
+
+    <!-- CUSTOM TAGS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;family=Noto+Sans+KR:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet" />
+
+    <link href="/plugins/custom_plugin/src/Components/Themes/CustomTheme/assets/css/aos.css" rel="stylesheet" />
+    <script src="/plugins/custom_plugin/src/Components/Themes/CustomTheme/assets/js/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="/plugins/custom_plugin/src/Components/Themes/CustomTheme/assets/js/swiper9.js"></script>
+
+    <style>
+      * {
+        font-family: "Noto Sans KR", sans-serif !important;
+      }
+      html {
+        background-color: #f0f0f0 !important;
+        height: calc(var(--vh, 1vh) * 100);
+      }
+      body {
+        background-color: #f0f0f0 !important;
+        height: calc(var(--vh, 1vh) * 100);
+      }
+      .xu-button.xu-button--primary {
+        background-color: #302766 !important;
+      }
+      .user a {
+        color: #302766 !important;
+      }
+
+      /* XE 사용자 셋팅페이지 스타일 */
+      .setting-wrap {
+        overflow: auto;
+      }
+      .setting-wrap > .jm-container {
+        padding: 0;
+      }
+      @media screen and (min-width: 768px) {
+        .setting-wrap {
+          padding-top: 50px;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        .setting-wrap {
+          padding-top: 60px;
+        }
+      }
+      .jm-container > .jm-container {
+        padding: 0;
+      }
+      .jm-container {
+        max-width: 1170px;
+      }
+
+      /* 모달 배경 스타일 */
+      .modal-backdrop {
+        background-color: rgba(0, 0, 0, 0.4) !important;
+      }
+
+      /* input type=number 화살표 삭제 */
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox  */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      .jm-a11y {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
+    <div class="jm-w-full jm-h-full jm-flex">
+      <!-- header -->
+      <div class="jm-bis-gnb-animation-header jm-flex jm-justify-between jm-items-center jm-fixed jm-top-[0] jm-left-[0] lg:!jm-left-[260px] jm-w-full lg:jm-w-[calc(100vw-260px)] jm-h-[50px] jm-border-b-[1px] jm-border-[rgba(0,248,250,0.1)] jm-bg-[#1B1443] jm-z-[899]" style="transition: 0.4s">
+        <button class="btn-jm-bis-gnb-open jm-hidden jm-group lg:!jm-flex jm-justify-center jm-items-center jm-w-[50px] jm-h-full jm-bg-[#1B1443] hover:!jm-bg-[#151227]" style="transition: 0.4s">
+          <svg class="btn-jm-bis-gnb-open-svg-svg lg:jm-rotate-180 jm-w-[16px]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: 0.6s">
+            <path class="btn-jm-bis-gnb-open-svg" d="M14 2.74805H2C1.80109 2.74805 1.61032 2.66903 1.46967 2.52838C1.32902 2.38772 1.25 2.19696 1.25 1.99805C1.25 1.79913 1.32902 1.60837 1.46967 1.46772C1.61032 1.32706 1.80109 1.24805 2 1.24805H14C14.1989 1.24805 14.3897 1.32706 14.5303 1.46772C14.671 1.60837 14.75 1.79913 14.75 1.99805C14.75 2.19696 14.671 2.38772 14.5303 2.52838C14.3897 2.66903 14.1989 2.74805 14 2.74805Z" fill="#fff"></path>
+            <path
+              class="btn-jm-bis-gnb-open-svg"
+              d="M14.6482 7.3157L12.8448 5.06145C12.7666 4.96368 12.6674 4.88474 12.5545 4.8305C12.4417 4.77625 12.3181 4.74807 12.1929 4.74805H12.1915C12.0522 4.74798 11.9156 4.78587 11.7962 4.85766C11.6768 4.92944 11.5793 5.0324 11.5141 5.15546C11.4488 5.27852 11.4184 5.41704 11.426 5.55611C11.4336 5.69519 11.4789 5.82957 11.5571 5.9448L12.1434 6.8157H2C1.80109 6.8157 1.61032 6.89471 1.46967 7.03537C1.32902 7.17602 1.25 7.36678 1.25 7.5657C1.25 7.76461 1.32902 7.95537 1.46967 8.09603C1.61032 8.23668 1.80109 8.3157 2 8.3157H12.1432L11.5571 9.18665C11.479 9.30186 11.4337 9.4362 11.4261 9.57523C11.4185 9.71425 11.449 9.85272 11.5142 9.97574C11.5794 10.0988 11.6769 10.2017 11.7962 10.2735C11.9155 10.3453 12.0521 10.3832 12.1913 10.3832H12.1929C12.3181 10.3832 12.4418 10.355 12.5547 10.3008C12.6675 10.2465 12.7668 10.1676 12.845 10.0697L14.6484 7.81545C14.7052 7.7445 14.736 7.65636 14.736 7.56554C14.736 7.47471 14.705 7.3866 14.6482 7.3157Z"
+              fill="#fff"
+            ></path>
+            <path class="btn-jm-bis-gnb-open-svg" d="M13.9526 13.8828H2C1.80109 13.8828 1.61032 13.8038 1.46967 13.6631C1.32902 13.5225 1.25 13.3317 1.25 13.1328C1.25 12.9339 1.32902 12.7431 1.46967 12.6025C1.61032 12.4618 1.80109 12.3828 2 12.3828H13.9526C14.1515 12.3828 14.3423 12.4618 14.4829 12.6025C14.6236 12.7431 14.7026 12.9339 14.7026 13.1328C14.7026 13.3317 14.6236 13.5225 14.4829 13.6631C14.3423 13.8038 14.1515 13.8828 13.9526 13.8828Z" fill="#fff"></path>
+          </svg>
+        </button>
+        <button class="btn-jm-bis-gnb-open-mobile jm-flex lg:!jm-hidden jm-justify-center jm-items-center jm-h-full jm-px-[15px]" style="transition: 0.4s">
+          <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.4284 4.38916H1.57129" stroke="#777777" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+            <path d="M16.5241 11.8574H1.66699" stroke="#777777" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+        <a href="/" class="jm-block lg:!jm-hidden !jm-text-[#555] jm-text-[28px] jm-font-[700]">
+          <img src="/assets/images/main_logo_v2.png" alt="로고" class="jm-w-full jm-max-w-[105px]" />
+        </a>
+        <div class="btn-jm-bis-user-info-layer jm-flex jm-items-center jm-justify-center jm-gap-x-[15px] jm-relative lg:jm-mr-[20px] jm-cursor-pointer jm-whitespace-nowrap jm-min-w-[48px]">
+          <p class="jm-hidden lg:!jm-block jm-text-[#fff] jm-text-[13px] jm-font-[500] jm-tracking-[-0.4px] jm-leading-[26px]">SAMPLERIX 관리자님</p>
+
+          <svg class="jm-w-[20px] lg:!jm-w-[18px]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="jm-bis-user-info-layer-svg" d="M8 8C8.79565 8 9.55871 7.68393 10.1213 7.12132C10.6839 6.55871 11 5.79565 11 5C11 4.20435 10.6839 3.44129 10.1213 2.87868C9.55871 2.31607 8.79565 2 8 2C7.20435 2 6.44129 2.31607 5.87868 2.87868C5.31607 3.44129 5 4.20435 5 5C5 5.79565 5.31607 6.55871 5.87868 7.12132C6.44129 7.68393 7.20435 8 8 8ZM10 5C10 5.53043 9.78929 6.03914 9.41421 6.41421C9.03914 6.78929 8.53043 7 8 7C7.46957 7 6.96086 6.78929 6.58579 6.41421C6.21071 6.03914 6 5.53043 6 5C6 4.46957 6.21071 3.96086 6.58579 3.58579C6.96086 3.21071 7.46957 3 8 3C8.53043 3 9.03914 3.21071 9.41421 3.58579C9.78929 3.96086 10 4.46957 10 5ZM14 13C14 14 13 14 13 14H3C3 14 2 14 2 13C2 12 3 9 8 9C13 9 14 12 14 13ZM13 12.996C12.999 12.75 12.846 12.01 12.168 11.332C11.516 10.68 10.289 10 8 10C5.71 10 4.484 10.68 3.832 11.332C3.154 12.01 3.002 12.75 3 12.996H13Z" fill="#fff"></path>
+          </svg>
+          <div class="jm-bis-user-info-layer jm-hidden jm-absolute jm-top-[25px] jm-right-[0] jm-bg-[#fff] jm-border jm-border-[#302766]">
+            <div class="jm-flex jm-flex-col jm-justify-center jm-items-center jm-gap-y-[10px] jm-py-[20px] jm-px-[25px]">
+              <a class="jm-text-[#383838] jm-text-[400] jm-text-[16px] lg:jm-text-[17px] jm-tracking-[-0.4px] hover:!jm-text-[#302766] hover:jm-underline jm-whitespace-nowrap" href="/mypage">내 정보</a>
+              <a class="jm-text-[#383838] jm-text-[400] jm-text-[16px] lg:jm-text-[17px] jm-tracking-[-0.4px] hover:!jm-text-[#302766] hover:jm-underline jm-whitespace-nowrap" href="/auth/logout">로그아웃</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="jm-bis-lnb-animation-1 jm-fixed jm-top-[0] jm-left-[0] jm-w-[0px] lg:jm-w-[260px] jm-h-[100vh] jm-transition-all jm-duration-300 jm-translate-x-[0%] jm-z-[901]" data-element="gnb-menu--mobile" style="transition: 0.4s">
+        <div class="jm-relative jm-z-[2] jm-flex jm-flex-col jm-w-full jm-min-w-full jm-h-full jm-max-w-[500px] jm-bg-[#1B1443] jm-text-[#fff] jm-overflow-y-auto">
+          <div class="jm-bis-gnb-animation-w-h-46 !jm-flex jm-justify-center jm-items-center jm-w-[0px] lg:jm-w-full jm-bg-[#1B1443] jm-h-[0px] lg:jm-h-[50px] jm-border-b-[1px] jm-border-[rgba(0,248,250,0.1)]" style="transition: 0.1s">
+            <a href="/" class="!jm-text-[#555] jm-text-[28px] jm-font-[700]">
+              <img src="/assets/images/main_logo_v2.png" alt="로고" class="jm-w-full jm-max-w-[150px]" />
+            </a>
+          </div>
+          <div class="jm-flex jm-flex-col jm-bg-[#1B1443] jm-py-[25px] lg:jm-py-[40px] jm-px-[20px] jm-border-box">
+            <a href="  /mypage " class="jm-flex jm-flex-col jm-items-center jm-gap-y-[8px] jm-mb-[20px] lg:jm-mb-[40px]">
+              <p class="jm-flex jm-text-[#fff] !jm-text-[15px] jm-font-[700] jm-tracking-[-0.4px] jm-leading-[22px] jm-line-clamp-1">SAMPLERIX 관리자님</p>
+              <p class="jm-flex jm-text-[#E8E8E8] jm-text-[12px] lg:!jm-text-[13px] jm-font-[500] jm-tracking-[-0.4px] jm-leading-[16px] jm-line-clamp-1">핸드릭스 소속</p>
+            </a>
+
+            <button type="button" onclick="location.href='/samplerix/main'" class="jm-flex jm-items-center jm-justify-center jm-w-full jm-py-[10px] jm-border-[1px] jm-border-[#fff] jm-bg-[#1F1F1F] hover:jm-bg-[#383838]" style="transition: 0.3s" data-modal-id="xe_bis_request_modal">
+              <span class="jm-text-[#fff] jm-font-[500] jm-text-[15px] jm-tracking-[-0.4px] jm-whitespace-nowrap">메인으로 돌아가기</span>
+            </button>
+          </div>
+          <div class="jm-flex jm-flex-col jm-border-box jm-bg-[#1B1443]">
+            <div class="jm-flex jm-flex-col">
+              <ul class="jm-lnb-menu jm-flex jm-flex-col jm-border-t-[1px] jm-border-[rgba(0,248,250,0.1)]">
+                <li class="jm-relative jm-w-full jm-px-[25px] active jm-bg-[rgba(0,248,250,0.1)]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center">
+                    <a href="/samplerix/admin/index.html" class="jm-flex jm-items-center jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#DFDFDF] jm-py-[10px] jm-w-full jm-whitespace-nowrap active !jm-text-[#fff]"> 대시보드 </a>
+                  </div>
+                </li>
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center jm-cursor-pointer">
+                    <a class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#dfdfdf] jm-py-[10px] jm-whitespace-nowrap"> 회원관리 </a>
+                    <div class="jm-absolute jm-right-0 jm-stroke-[#B7B7B7]">
+                      <svg class="jm-plus-icon" width="16" height="16" style="display: block !important" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.2005 6.27015C3.19973 6.13774 3.23842 6.00809 3.31162 5.89774C3.38482 5.7874 3.48922 5.70135 3.61152 5.65057C3.73381 5.59979 3.86846 5.58659 3.99829 5.61263C4.12812 5.63868 4.24726 5.7028 4.3405 5.79682L7.86717 9.33015L11.3938 5.79682C11.5214 5.6876 11.6854 5.63053 11.8532 5.63701C12.021 5.64349 12.1801 5.71305 12.2989 5.83178C12.4176 5.95051 12.4872 6.10967 12.4936 6.27745C12.5001 6.44523 12.4431 6.60929 12.3338 6.73682L8.33384 10.7368C8.20893 10.861 8.03996 10.9307 7.86384 10.9307C7.68771 10.9307 7.51875 10.861 7.39384 10.7368L3.39384 6.73682C3.27067 6.61265 3.20124 6.44505 3.2005 6.27015Z" fill="#949494"></path>
+                      </svg>
+                      <svg class="jm-minus-icon" style="display: none !important" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.7995 9.72985C12.8003 9.86226 12.7616 9.99191 12.6884 10.1023C12.6152 10.2126 12.5108 10.2987 12.3885 10.3494C12.2662 10.4002 12.1315 10.4134 12.0017 10.3874C11.8719 10.3613 11.7527 10.2972 11.6595 10.2032L8.13283 6.66985L4.60616 10.2032C4.47863 10.3124 4.31458 10.3695 4.14679 10.363C3.97901 10.3565 3.81985 10.287 3.70112 10.1682C3.58239 10.0495 3.51284 9.89033 3.50636 9.72255C3.49988 9.55477 3.55695 9.39071 3.66616 9.26318L7.66616 5.26318C7.79107 5.13901 7.96004 5.06932 8.13616 5.06932C8.31229 5.06932 8.48126 5.13901 8.60616 5.26318L12.6062 9.26318C12.7293 9.38735 12.7988 9.55495 12.7995 9.72985Z" fill="white"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <ul class="jm-submenu-mobile jm-flex jm-flex-col jm-mx-[-25px] jm-px-[25px] jm-bg-[rgba(0,248,250,0.05)] jm-py-[15px] jm-border-box" style="display: none !important">
+                    <li class="jm-w-full">
+                      <a href="/samplerix/admin/userList.html" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium gnb__submenu-link" \="">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#B7B7B7] hover:!jm-text-[#fff]">회원 관리 </span>
+                      </a>
+                    </li>
+                    <li class="jm-w-full">
+                      <a onclick="alert('베타서비스 중에는 이용이 어렵습니다.🥺')" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium gnb__submenu-link" \="">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#B7B7B7] hover:!jm-text-[#fff]">판매자등록 요청목록 </span>
+                      </a>
+                    </li>
+                    <li class="jm-w-full">
+                      <a onclick="alert('베타서비스 중에는 이용이 어렵습니다.🥺')" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium gnb__submenu-link" \="">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#B7B7B7] hover:!jm-text-[#fff]">회원 샘플머니 충전내역 </span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center jm-cursor-pointer">
+                    <a class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#dfdfdf] jm-py-[10px] jm-whitespace-nowrap"> 정산관리 </a>
+                    <div class="jm-absolute jm-right-0 jm-stroke-[#B7B7B7]">
+                      <svg class="jm-plus-icon" width="16" height="16" style="display: block !important" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.2005 6.27015C3.19973 6.13774 3.23842 6.00809 3.31162 5.89774C3.38482 5.7874 3.48922 5.70135 3.61152 5.65057C3.73381 5.59979 3.86846 5.58659 3.99829 5.61263C4.12812 5.63868 4.24726 5.7028 4.3405 5.79682L7.86717 9.33015L11.3938 5.79682C11.5214 5.6876 11.6854 5.63053 11.8532 5.63701C12.021 5.64349 12.1801 5.71305 12.2989 5.83178C12.4176 5.95051 12.4872 6.10967 12.4936 6.27745C12.5001 6.44523 12.4431 6.60929 12.3338 6.73682L8.33384 10.7368C8.20893 10.861 8.03996 10.9307 7.86384 10.9307C7.68771 10.9307 7.51875 10.861 7.39384 10.7368L3.39384 6.73682C3.27067 6.61265 3.20124 6.44505 3.2005 6.27015Z" fill="#949494"></path>
+                      </svg>
+                      <svg class="jm-minus-icon" style="display: none !important" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.7995 9.72985C12.8003 9.86226 12.7616 9.99191 12.6884 10.1023C12.6152 10.2126 12.5108 10.2987 12.3885 10.3494C12.2662 10.4002 12.1315 10.4134 12.0017 10.3874C11.8719 10.3613 11.7527 10.2972 11.6595 10.2032L8.13283 6.66985L4.60616 10.2032C4.47863 10.3124 4.31458 10.3695 4.14679 10.363C3.97901 10.3565 3.81985 10.287 3.70112 10.1682C3.58239 10.0495 3.51284 9.89033 3.50636 9.72255C3.49988 9.55477 3.55695 9.39071 3.66616 9.26318L7.66616 5.26318C7.79107 5.13901 7.96004 5.06932 8.13616 5.06932C8.31229 5.06932 8.48126 5.13901 8.60616 5.26318L12.6062 9.26318C12.7293 9.38735 12.7988 9.55495 12.7995 9.72985Z" fill="white"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <ul class="jm-submenu-mobile jm-flex jm-flex-col jm-mx-[-25px] jm-px-[25px] jm-bg-[rgba(0,248,250,0.05)] jm-py-[15px] jm-border-box" style="display: none !important">
+                    <li class="jm-w-full">
+                      <a href="/samplerix/admin/sell_request.html" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium gnb__submenu-link" \="">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#B7B7B7] hover:!jm-text-[#fff]">정산요청 목록 </span>
+                      </a>
+                    </li>
+                    <li class="jm-w-full">
+                      <a onclick="alert('베타서비스 중에는 이용이 어렵습니다.🥺')" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium gnb__submenu-link" \="">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#B7B7B7] hover:!jm-text-[#fff]">정산 내역 </span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center">
+                    <a onclick="alert('베타서비스 중에는 이용이 어렵습니다.🥺')" class="jm-flex jm-items-center jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#DFDFDF] jm-py-[10px] jm-w-full jm-whitespace-nowrap"> SEO 애널리틱스 </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="jm-flex jm-justify-center jm-items-start jm-mx-[23px] jm-mt-[22px] hover:jm-cursor-pointer" data-element="gnb-close--mobile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"><rect width="22" height="2.2" y="15.557" fill="#fff" rx="1.1" transform="rotate(-45 0 15.557)"/><rect width="22" height="2.2" x="1.556" fill="#fff" rx="1.1" transform="rotate(45 1.556 0)"/></svg>
+        </div> -->
+      </div>
+
+      <div class="jm-bis-gnb-dimmed-mobile jm-hidden jm-fixed jm-top-0 jm-left-0 jm-w-full jm-h-full jm-bg-[#000]/50 jm-z-[900]"></div>
+      <div class="jm-bis-gnb-dimmed-mobile jm-hidden jm-fixed jm-top-[18px] jm-right-[18px] jm-w-[24px] jm-h-[24px] jm-z-[901]">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.7584 19.7584L4 4" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+          <path d="M19.7584 4.24162L4 20" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+
+      <div class="jm-hidden jm-pacity-[0] jm-z-[-999] !jm-w-[260px] jm-fill-[#00F8FA]"></div>
+      <div class="jm-hidden jm-opacity-[0] jm-z-[-999] !jm-w-[260px]"></div>
+      <style>
+        .btn-jm-bis-gnb-open:hover .btn-jm-bis-gnb-open-svg {
+          fill: #00f8fa !important;
+        }
+
+        .jm-lnb-menu > li:last-child {
+          margin-bottom: 0;
+        }
+
+        .jm-lnb-menu > li:last-child::after {
+          content: none;
+        }
+      </style>
+      <script>
+        window.addEventListener("DOMContentLoaded", (event) => {
+          // ===== gnb 메뉴 =====
+          $(".btn-jm-bis-gnb-open").click(function (e) {
+            $(".jm-bis-lnb-animation-1").removeClass("!jm-w-[260px]");
+            $(".btn-jm-bis-gnb-open-svg-svg").toggleClass("lg:jm-rotate-180");
+            $(".jm-bis-gnb-animation-header").toggleClass("lg:!jm-left-[260px] lg:jm-w-[calc(100vw-260px)]");
+            $(".jm-bis-gnb-animation-w-h-46").toggleClass("lg:jm-w-full lg:jm-h-[50px]");
+            $(".jm-bis-lnb-animation-1").toggleClass("lg:jm-w-[260px]");
+            $(".jm-bis-lnb-animation-2").toggleClass("lg:jm-pl-[260px]");
+          });
+          // ===== //gnb 메뉴 =====
+          $(".btn-jm-bis-gnb-open-mobile").click(function (e) {
+            $(".jm-bis-lnb-animation-1").toggleClass("!jm-w-[260px]");
+            $(".jm-bis-gnb-dimmed-mobile").toggleClass("jm-hidden");
+          });
+
+          $(".jm-bis-gnb-dimmed-mobile").click(function (e) {
+            $(".jm-bis-lnb-animation-1").toggleClass("!jm-w-[260px]");
+            $(".jm-bis-gnb-dimmed-mobile").toggleClass("jm-hidden");
+          });
+
+          $(".btn-jm-bis-user-info-layer").click(function (e) {
+            $(".jm-bis-user-info-layer").toggleClass("jm-hidden");
+            $(".jm-bis-user-info-layer-svg").toggleClass("jm-fill-[#00F8FA]");
+          });
+
+          $("#__xe_custom_plugin_theme_content").click(function (e) {
+            $(".jm-bis-user-info-layer").addClass("jm-hidden");
+            $(".jm-bis-user-info-layer-svg").removeClass("jm-fill-[#00F8FA]");
+          });
+
+          $(".jm-submenu-btn").click(function (e) {
+            if ($(this).hasClass("active")) {
+              $(this).removeClass("active");
+              $(this).next(".jm-submenu-mobile").stop().slideUp();
+              $(this).find(".jm-plus-icon").css("display", "block");
+              $(this).find(".jm-minus-icon").css("display", "none");
+            } else {
+              $(".jm-submenu-btn").not($(this)).removeClass("active");
+              $(".jm-submenu-btn").not($(this)).next(".jm-submenu-mobile").stop().slideUp();
+              $(".jm-submenu-btn").not($(this)).find(".jm-plus-icon").css("display", "block");
+              $(".jm-submenu-btn").not($(this)).find(".jm-minus-icon").css("display", "none");
+              $(this).addClass("active");
+              $(this).next(".jm-submenu-mobile").stop().slideDown();
+              $(this).find(".jm-plus-icon").css("display", "none");
+              $(this).find(".jm-minus-icon").css("display", "block");
+            }
+          });
+        });
+      </script>
+
+      <script>
+        window.addEventListener("DOMContentLoaded", function () {
+          $(
+            (function () {
+              $('[data-element="gnb--mobile"]').on("click", function () {
+                console.log("click");
+                $('[data-element="gnb-wrapper--mobile"]').show().removeClass("jm-hidden");
+                setTimeout(function () {
+                  $('[data-element="gnb-menu--mobile"]').addClass("!jm-translate-x-[0]");
+                  $('[data-element="gnb-dimd--mobile"]').removeClass("jm-bg-[#000]/[0]").addClass("jm-bg-[#000]/[0.5]");
+                });
+              });
+              $('[data-element="gnb-close--mobile"], [data-element="gnb-dimd--mobile"]').on("click", function () {
+                $('[data-element="gnb-wrapper--mobile"]').fadeOut();
+                $('[data-element="gnb-menu--mobile"]').removeClass("!jm-translate-x-[0]");
+                $('[data-element="gnb-dimd--mobile"]').addClass("jm-bg-[#000]/[0]").removeClass("jm-bg-[#000]/[0.5]");
+              });
+            })()
+          );
+        });
+      </script>
+
+      <!-- content -->
+      <div id="__xe_custom_plugin_theme_content" class="jm-bis-lnb-animation-2 jm-w-full jm-h-[calc(100%-46px)] jm-mt-[46px] lg:jm-pl-[260px] jm-bg-[#f5f5f5]" style="transition: 0.4s">
+        <div class="jm-bg-[#f5f5f5] jm-p-[15px] lg:jm-p-[30px]">
+          <div class="jm-w-full jm-h-auto jm-rounded-[6px]">
+            <div id="widgetbox-widgetpage-0c40f683">
+              <div class="widgetbox-content">
+                <div class="jm-row">
+                  <div class="jm-col-md-12">
+                    <div class="jm-flex jm-flex-col jm-items-center jm-justify-center jm-gap-y-[16px] lg:jm-gap-y-[25px] jm-w-full jm-h-auto" style="transition: 0.4s">
+                      <!-- status -->
+                      <div class="jm-grid jm-grid-cols-2 sm:jm-grid-cols-3 lg:jm-grid-cols-4 jm-gap-x-[15px] lg:jm-gap-x-[12px] jm-gap-y-[10px] jm-w-full" style="transition: 0.4s">
+                        <div class="jm-bis-dash-num jm-flex jm-flex-col jm-items-center jm-justify-center jm-gap-y-[2px] sm:jm-gap-y-[6px] jm-w-full jm-bg-[#302766] jm-py-[10px] sm:jm-py-[15px]" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); border-radius: 4px">
+                          <div class="jm-flex jm-items-center jm-gap-x-[8px]">
+                            <p class="jm-text-[#fff] jm-text-[13px] sm:jm-text-[17px] jm-font-[700] jm-tracking-[-0.4px]">정산요청</p>
+                          </div>
+                          <p class="jm-text-[17px] lg:jm-text-[25px] jm-font-[700] jm-tracking-[-0.4px] jm-nums" style="background-image: linear-gradient(to right, #00f8fa, #14fa00); background-clip: text; -webkit-background-clip: text; color: transparent" data-count="53">99</p>
+                        </div>
+                        <div class="jm-bis-dash-num jm-flex jm-flex-col jm-items-center jm-justify-center jm-gap-y-[2px] sm:jm-gap-y-[6px] jm-w-full jm-bg-[#302766] jm-py-[10px] sm:jm-py-[15px]" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); border-radius: 4px">
+                          <div class="jm-flex jm-items-center jm-gap-x-[8px]">
+                            <p class="jm-text-[#fff] jm-text-[13px] sm:jm-text-[17px] jm-font-[700] jm-tracking-[-0.4px]">월간 등록 음원 수</p>
+                          </div>
+                          <p class="jm-text-[17px] lg:jm-text-[25px] jm-font-[700] jm-tracking-[-0.4px] jm-nums" style="background-image: linear-gradient(to right, #00f8fa, #14fa00); background-clip: text; -webkit-background-clip: text; color: transparent" data-count="12">99</p>
+                        </div>
+                        <div class="jm-bis-dash-num jm-flex jm-flex-col jm-items-center jm-justify-center jm-gap-y-[2px] sm:jm-gap-y-[6px] jm-w-full jm-bg-[#302766] jm-py-[10px] sm:jm-py-[15px]" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); border-radius: 4px">
+                          <div class="jm-flex jm-items-center jm-gap-x-[8px]">
+                            <p class="jm-text-[#fff] jm-text-[13px] sm:jm-text-[17px] jm-font-[700] jm-tracking-[-0.4px]">신규 회원 유입</p>
+                          </div>
+                          <p class="jm-text-[17px] lg:jm-text-[25px] jm-font-[700] jm-tracking-[-0.4px] jm-nums" style="background-image: linear-gradient(to right, #00f8fa, #14fa00); background-clip: text; -webkit-background-clip: text; color: transparent" data-count="32">99</p>
+                        </div>
+                        <div class="jm-bis-dash-num jm-flex jm-flex-col jm-items-center jm-justify-center jm-gap-y-[2px] sm:jm-gap-y-[6px] jm-w-full jm-bg-[#302766] jm-py-[10px] sm:jm-py-[15px]" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); border-radius: 4px">
+                          <div class="jm-flex jm-items-center jm-gap-x-[8px]">
+                            <p class="jm-text-[#fff] jm-text-[13px] sm:jm-text-[17px] jm-font-[700] jm-tracking-[-0.4px]">총 다운로드 횟수</p>
+                          </div>
+                          <p class="jm-text-[17px] lg:jm-text-[25px] jm-font-[700] jm-tracking-[-0.4px] jm-nums" style="background-image: linear-gradient(to right, #00f8fa, #14fa00); background-clip: text; -webkit-background-clip: text; color: transparent" data-count="132">99</p>
+                        </div>
+                      </div>
+                      <!-- status -->
+
+                      <!-- list_wrap -->
+                      <div class="jm-w-full jm-bg-[#fff] jm-p-[20px]" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); border-radius: 4px">
+                        <canvas id="myChart" style="width: 100%; height: 27vh; display: block; box-sizing: border-box" width="1560" height="268"></canvas>
+                      </div>
+
+                      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                      <script>
+                        const labels = ["24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H", "24H"];
+                        const data = {
+                          labels: labels,
+                          datasets: [
+                            {
+                              label: "월간 등록 음원 수",
+                              backgroundColor: "rgba(54, 99, 254, 1)",
+                              borderColor: "rgba(54, 99, 254, 1)",
+                              data: [4, 19, 12, 25, 7, 13, 5, 0, 5, 4, 24, 12, 7, 11, 4, 19, 12, 25, 7, 13, 5, 0, 5, 4],
+                            },
+                            {
+                              label: "총 다운로드 횟수",
+                              backgroundColor: "rgba(49, 194, 36, 1)",
+                              borderColor: "rgba(49, 194, 36, 1)",
+                              data: [30, 10, 5, 2, 21, 28, 7, 8, 21, 5, 2, 28, 22, 19, 30, 10, 5, 2, 21, 28, 7, 8, 21, 5],
+                            },
+                          ],
+                        };
+
+                        const config = {
+                          type: "line",
+                          data,
+                          options: {
+                            responsive: false,
+                            scales: {
+                              yAxes: [
+                                {
+                                  ticks: {
+                                    beginAtZero: true,
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        };
+                      </script>
+
+                      <script>
+                        const myChart = new Chart(document.getElementById("myChart"), config);
+                      </script>
+
+                      <div class="jm-grid jm-grid-cols-1 md:jm-grid-cols-2 jm-gap-x-[20px] jm-gap-y-[15px] sm:jm-gap-y-[20px] jm-w-full" style="transition: 0.4s">
+                        <!-- 미처리 정산 요청-->
+                        <div class="jm-w-full jm-bg-[#fff] jm-p-[20px]" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); border-radius: 4px">
+                          <div class="jm-flex jm-items-center jm-justify-between jm-pb-[20px] jm-border-b-[1px] jm-border-[#dfdfdf] md:!jm-border-[0px]">
+                            <div class="jm-flex jm-items-center jm-gap-x-[8px]">
+                              <p class="jm-text-[#1a1a1a] jm-text-[17px] jm-font-[700] jm-tracking-[-0.4px]">처리 대기 중인 정산요청</p>
+                            </div>
+                            <a href="#" class="jm-flex jm-items-center jm-gap-x-[7px] !jm-text-[#555]">
+                              <span class="jm-text-[#555] jm-text-[13px] jm-font-[400] jm-tracking-[-0.4px]">더보기</span>
+                              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.12706 5.57169L3.73071 0.177143C3.49392 -0.0590475 3.11029 -0.0590475 2.8729 0.177143C2.63612 0.413333 2.63612 0.796967 2.8729 1.03316L7.84122 5.99968L2.8735 10.9662C2.63671 11.2024 2.63671 11.586 2.8735 11.8228C3.11029 12.059 3.49452 12.059 3.73131 11.8228L9.12766 6.42826C9.36086 6.19451 9.36086 5.80484 9.12706 5.57169Z" fill="#949494"></path>
+                              </svg>
+                            </a>
+                          </div>
+                          <div class="jm-hidden md:!jm-flex jm-items-start lg:jm-items-center jm-flex-row lg:!jm-flex-row jm-justify-between jm-gap-x-[10px] jm-gap-y-[4px] jm-w-full jm-bg-[#302766]/5 jm-border-t-[1px] jm-border-[#949494] jm-py-[13px] jm-px-[10px] lg:jm-px-[20px]">
+                            <p class="jm-font-[500] jm-w-full jm-text-[#383838] jm-text-[13px] jm-line-clamp-1 jm-pr-[15px]">이름</p>
+                            <div class="jm-flex jm-flex-row jm-justify-between jm-gap-x-[3px] md:jm-gap-x-[15px] xl:jm-gap-x-[40px] md:jm-min-w-[200px] md:jm-w-[200px]">
+                              <p class="jm-font-[500] jm-w-full jm-text-[#383838] jm-text-[13px] jm-line-clamp-1 jm-pr-[2px] md:jm-pr-[5px] jm-min-w-[68px] md:jm-min-w-[115px] jm-text-left md:jm-text-center">수집일시</p>
+                              <p class="jm-font-[500] jm-w-full jm-text-[#383838] jm-text-[13px] jm-line-clamp-1 jm-pr-[2px] md:jm-pr-[5px] jm-min-w-[50px] jm-text-left md:jm-text-center">상세</p>
+                            </div>
+                          </div>
+                          <div class="jm-w-full jm-text-center jm-py-[30px]">
+                            <p class="jm-text-[#777] jm-text-[15px] jm-font-[500] jm-tracking-[-0.4px] jm-text-center jm-mx-auto">데이터가 존재하지 않습니다.</p>
+                          </div>
+                        </div>
+                        <!-- 고객문의 -->
+                        <div class="jm-w-full jm-bg-[#fff] jm-p-[20px]" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); border-radius: 4px">
+                          <div class="jm-flex jm-items-center jm-justify-between jm-pb-[20px] jm-border-b-[1px] jm-border-[#dfdfdf] md:!jm-border-[0px]">
+                            <p class="jm-text-[#1a1a1a] jm-text-[17px] jm-font-[700] jm-tracking-[-0.4px]">최근 고객문의</p>
+                            <a href="#" class="jm-flex jm-items-center jm-gap-x-[7px] !jm-text-[#555]">
+                              <span class="jm-text-[#555] jm-text-[13px] jm-font-[400] jm-tracking-[-0.4px]">더보기</span>
+                              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.12706 5.57169L3.73071 0.177143C3.49392 -0.0590475 3.11029 -0.0590475 2.8729 0.177143C2.63612 0.413333 2.63612 0.796967 2.8729 1.03316L7.84122 5.99968L2.8735 10.9662C2.63671 11.2024 2.63671 11.586 2.8735 11.8228C3.11029 12.059 3.49452 12.059 3.73131 11.8228L9.12766 6.42826C9.36086 6.19451 9.36086 5.80484 9.12706 5.57169Z" fill="#949494"></path>
+                              </svg>
+                            </a>
+                          </div>
+
+                          <div class="jm-hidden md:!jm-flex jm-items-start md:jm-items-center jm-flex-row lg:!jm-flex-row jm-justify-between jm-gap-x-[10px] jm-gap-y-[4px] jm-w-full jm-bg-[#302766]/5 jm-border-t-[1px] jm-border-[#949494] jm-py-[13px] jm-px-[10px] lg:jm-px-[20px]">
+                            <p class="jm-font-[500] jm-w-full jm-text-[#383838] jm-text-[13px] jm-line-clamp-1 jm-pr-[15px]">아이디 / 회원명</p>
+                            <div class="jm-flex jm-flex-row jm-justify-between jm-gap-x-[3px] md:jm-gap-x-[15px] xl:jm-gap-x-[40px] md:jm-min-w-[200px] md:jm-w-[200px]">
+                              <p class="jm-font-[500] jm-w-full jm-text-[#383838] jm-text-[13px] jm-line-clamp-1 jm-pr-[2px] md:jm-pr-[5px] jm-min-w-[68px] md:jm-min-w-[115px] jm-text-left md:jm-text-center">문의일시</p>
+                              <p class="jm-font-[500] jm-w-full jm-text-[#383838] jm-text-[13px] jm-line-clamp-1 jm-pr-[2px] md:jm-pr-[5px] jm-min-w-[50px] jm-text-left md:jm-text-center">상세</p>
+                            </div>
+                          </div>
+
+                          <button onclick="location.href='#'" class="jm-flex jm-items-start md:jm-items-center jm-flex-col md:!jm-flex-row jm-justify-between jm-gap-x-[10px] jm-gap-y-[4px] jm-w-full jm-bg-[#fff] jm-border-b-[1px] jm-border-[#dfdfdf] jm-py-[7px] jm-px-[10px] lg:jm-px-[20px] hover:jm-bg-[#f7f8f9] jm-z-[8] jm-w-full">
+                            <p class="jm-w-full jm-text-[#383838] jm-text-[13px] jm-line-clamp-1 jm-pr-[15px] jm-text-left">samplerix_admin / 장백산</p>
+                            <div class="jm-flex jm-flex-row jm-justify-between jm-gap-x-[3px] md:jm-gap-x-[15px] xl:jm-gap-x-[40px] md:jm-min-w-[200px] md:jm-w-[200px] jm-w-full">
+                              <p class="jm-w-full jm-text-[#777] jm-text-[13px] jm-leading-[28px] jm-pr-[5px] jm-min-w-[68px] md:jm-min-w-[115px] jm-text-left md:jm-text-center jm-whitespace-nowrap">YYYY-MM-DD</p>
+                              <a href="#" class="btn-manage jm-whitespace-nowrap jm-min-w-[50px] jm-px-[12px] jm-py-[8px] jm-bg-[#302766] hover:jm-bg-[#302766]/90 jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] !jm-text-[#fff] jm-z-[9]"> 상세 </a>
+                            </div>
+                          </button>
+                          <button onclick="location.href='#'" class="jm-flex jm-items-start md:jm-items-center jm-flex-col md:!jm-flex-row jm-justify-between jm-gap-x-[10px] jm-gap-y-[4px] jm-w-full jm-bg-[#fff] jm-border-b-[1px] jm-border-[#dfdfdf] jm-py-[7px] jm-px-[10px] lg:jm-px-[20px] hover:jm-bg-[#f7f8f9] jm-z-[8] jm-w-full">
+                            <p class="jm-w-full jm-text-[#383838] jm-text-[13px] jm-line-clamp-1 jm-pr-[15px] jm-text-left">samplerix_admin / 장백산</p>
+                            <div class="jm-flex jm-flex-row jm-justify-between jm-gap-x-[3px] md:jm-gap-x-[15px] xl:jm-gap-x-[40px] md:jm-min-w-[200px] md:jm-w-[200px] jm-w-full">
+                              <p class="jm-w-full jm-text-[#777] jm-text-[13px] jm-leading-[28px] jm-pr-[5px] jm-min-w-[68px] md:jm-min-w-[115px] jm-text-left md:jm-text-center jm-whitespace-nowrap">YYYY-MM-DD</p>
+                              <a href="#" class="btn-manage jm-whitespace-nowrap jm-min-w-[50px] jm-px-[12px] jm-py-[8px] jm-bg-[#302766] hover:jm-bg-[#302766]/90 jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] !jm-text-[#fff] jm-z-[9]"> 상세 </a>
+                            </div>
+                          </button>
+                          <button onclick="location.href='#'" class="jm-flex jm-items-start md:jm-items-center jm-flex-col md:!jm-flex-row jm-justify-between jm-gap-x-[10px] jm-gap-y-[4px] jm-w-full jm-bg-[#fff] jm-border-b-[1px] jm-border-[#dfdfdf] jm-py-[7px] jm-px-[10px] lg:jm-px-[20px] hover:jm-bg-[#f7f8f9] jm-z-[8] jm-w-full">
+                            <p class="jm-w-full jm-text-[#383838] jm-text-[13px] jm-line-clamp-1 jm-pr-[15px] jm-text-left">samplerix_admin / 장백산</p>
+                            <div class="jm-flex jm-flex-row jm-justify-between jm-gap-x-[3px] md:jm-gap-x-[15px] xl:jm-gap-x-[40px] md:jm-min-w-[200px] md:jm-w-[200px] jm-w-full">
+                              <p class="jm-w-full jm-text-[#777] jm-text-[13px] jm-leading-[28px] jm-pr-[5px] jm-min-w-[68px] md:jm-min-w-[115px] jm-text-left md:jm-text-center jm-whitespace-nowrap">YYYY-MM-DD</p>
+                              <a href="#" class="btn-manage jm-whitespace-nowrap jm-min-w-[50px] jm-px-[12px] jm-py-[8px] jm-bg-[#302766] hover:jm-bg-[#302766]/90 jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] !jm-text-[#fff] jm-z-[9]"> 상세 </a>
+                            </div>
+                          </button>
+                          <button onclick="location.href='#'" class="jm-flex jm-items-start md:jm-items-center jm-flex-col md:!jm-flex-row jm-justify-between jm-gap-x-[10px] jm-gap-y-[4px] jm-w-full jm-bg-[#fff] jm-border-b-[1px] jm-border-[#dfdfdf] jm-py-[7px] jm-px-[10px] lg:jm-px-[20px] hover:jm-bg-[#f7f8f9] jm-z-[8] jm-w-full">
+                            <p class="jm-w-full jm-text-[#383838] jm-text-[13px] jm-line-clamp-1 jm-pr-[15px] jm-text-left">samplerix_admin / 장백산</p>
+                            <div class="jm-flex jm-flex-row jm-justify-between jm-gap-x-[3px] md:jm-gap-x-[15px] xl:jm-gap-x-[40px] md:jm-min-w-[200px] md:jm-w-[200px] jm-w-full">
+                              <p class="jm-w-full jm-text-[#777] jm-text-[13px] jm-leading-[28px] jm-pr-[5px] jm-min-w-[68px] md:jm-min-w-[115px] jm-text-left md:jm-text-center jm-whitespace-nowrap">YYYY-MM-DD</p>
+                              <a href="#" class="btn-manage jm-whitespace-nowrap jm-min-w-[50px] jm-px-[12px] jm-py-[8px] jm-bg-[#302766] hover:jm-bg-[#302766]/90 jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] !jm-text-[#fff] jm-z-[9]"> 상세 </a>
+                            </div>
+                          </button>
+                          <button onclick="location.href='#'" class="jm-flex jm-items-start md:jm-items-center jm-flex-col md:!jm-flex-row jm-justify-between jm-gap-x-[10px] jm-gap-y-[4px] jm-w-full jm-bg-[#fff] jm-border-b-[1px] jm-border-[#dfdfdf] jm-py-[7px] jm-px-[10px] lg:jm-px-[20px] hover:jm-bg-[#f7f8f9] jm-z-[8] jm-w-full">
+                            <p class="jm-w-full jm-text-[#383838] jm-text-[13px] jm-line-clamp-1 jm-pr-[15px] jm-text-left">samplerix_admin / 장백산</p>
+                            <div class="jm-flex jm-flex-row jm-justify-between jm-gap-x-[3px] md:jm-gap-x-[15px] xl:jm-gap-x-[40px] md:jm-min-w-[200px] md:jm-w-[200px] jm-w-full">
+                              <p class="jm-w-full jm-text-[#777] jm-text-[13px] jm-leading-[28px] jm-pr-[5px] jm-min-w-[68px] md:jm-min-w-[115px] jm-text-left md:jm-text-center jm-whitespace-nowrap">YYYY-MM-DD</p>
+                              <a href="#" class="btn-manage jm-whitespace-nowrap jm-min-w-[50px] jm-px-[12px] jm-py-[8px] jm-bg-[#302766] hover:jm-bg-[#302766]/90 jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] !jm-text-[#fff] jm-z-[9]"> 상세 </a>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                      <!-- list_wrap -->
+                    </div>
+
+                    <script>
+                      $(".bis-building-room-search-form").on("submit", function (e) {
+                        var url = $("input[name=dashboard_search_type]:checked").data("url");
+                        $(this).attr("action", url);
+                        $(this).submit();
+                      });
+
+                      window.addEventListener("DOMContentLoaded", (event) => {
+                        $(".jm-nums").each(function () {
+                          const $this = $(this),
+                            countTo = $this.attr("data-count");
+
+                          $({
+                            countNum: $this.text(),
+                          }).animate(
+                            {
+                              countNum: countTo,
+                            },
+                            {
+                              duration: 1000,
+                              easing: "linear",
+                              step: function () {
+                                $this.text(Math.floor(this.countNum));
+                              },
+                              complete: function () {
+                                $this.text(this.countNum);
+                              },
+                            }
+                          );
+                        });
+                      });
+                    </script>
+                    <style>
+                      .jm-dropdown-content.selected {
+                        display: block !important;
+                      }
+
+                      .jm-dropdown-btn.on {
+                        border-color: #383838;
+                      }
+
+                      .jm-dropdown-btn.on p {
+                        color: #383838;
+                      }
+
+                      .custom-toggle-box:checked {
+                        background-color: #5a9fae;
+                      }
+
+                      .custom-toggle-box:checked ~ span:last-child {
+                        --tw-translate-x: -28px; /* translate-x-7 */
+                      }
+                    </style>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="__xe_custom_plugin_popup_content"></div>
+    </div>
+
+    <!-- 요청하기 모달 -->
+    <div id="xe_bis_request_modal" class="jm-custom-modal jm-hidden" data-url="" data-refresh-target-url="">
+      <div class="jm-modal-dimmed jm-h-[100%] jm-max-h-[100vh] jm-w-[100vw] jm-opacity-50 jm-bg-black jm-fixed jm-z-[901] jm-top-[0] jm-left-[0]"></div>
+      <div class="jm-flex jm-flex-row jm-items-center jm-justify-center jm-h-[100%] jm-w-[100vw] jm-fixed jm-top-[0] jm-left-[0] jm-z-[902]">
+        <div class="jm-modal-content jm-relative jm-flex jm-flex-col jm-gap-y-[20px] jm-min-w-[345px] jm-p-[20px] jm-box-border jm-border-[1px] jm-border-[#302766] jm-bg-[#fff] jm-overflow-hidden">
+          <button class="jm-custom-modal-close jm-absolute jm-right-[20px] jm-top-[20px] jm-p-[4px]" data-modal-id="xe_bis_request_modal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#555" stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M13.172 13.172 2.667 2.666M13.172 2.827 2.667 13.333"></path></svg>
+          </button>
+          <h5 class="jm-font-[700] jm-text-[15px] jm-leading-[22px] jm-tracking-[-0.4px] jm-text-[#1A1A1A] jm-text-center">요청하기</h5>
+          <div>
+            <textarea class="bis-user-request-memo jm-w-full jm-bg-[#fff] jm-border-[1px] jm-border-[#DFDFDF] jm-px-[15px] jm-py-[15px] jm-min-h-[318px] jm-resize-none jm-text-[13px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#383838] placeholder:jm-text-[#949494]" name="memo" placeholder="요청 내용을 입력해주세요."></textarea>
+          </div>
+          <div class="jm-flex jm-flex-row jm-justify-center jm-gap-x-[7px]">
+            <button type="button" class="bis-user-request-btn jm-flex jm-justify-center jm-items-center jm-py-[8px] jm-w-full jm-max-w-[115px] jm-bg-[#1F1F1F]">
+              <span class="jm-flex jm-font-[500] jm-text-[13px] jm-leading-[20px] jm-tracking-[-0.4px] jm-text-[#fff]">요청하기</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메모 모달 -->
+    <div id="view_memo_modal_01" class="jm-custom-modal jm-hidden">
+      <div class="jm-modal-dimmed jm-h-[100%] jm-max-h-[100vh] jm-w-[100vw] jm-opacity-50 jm-bg-black jm-fixed jm-z-[1051] jm-top-[0] jm-left-[0]"></div>
+      <div class="jm-flex jm-flex-row jm-items-center jm-justify-center jm-h-[100%] jm-w-[100vw] jm-fixed jm-top-[0] jm-left-[0] jm-z-[1052]">
+        <div class="jm-modal-content jm-flex jm-flex-col jm-gap-y-[20px] jm-w-[calc(100%-20px)] jm-max-w-[345px] jm-h-[407px] jm-p-[20px] jm-box-border jm-border-[1px] jm-border-[#302766] jm-bg-[#fff] jm-overflow-hidden">
+          <button class="jm-custom-modal-close jm-absolute jm-right-[20px] jm-top-[20px] jm-p-[4px]" data-modal-id="view_memo_modal_01">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#555" stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M13.172 13.172 2.667 2.666M13.172 2.827 2.667 13.333"></path></svg>
+          </button>
+          <h5 class="jm-font-[700] jm-text-[15px] jm-leading-[22px] jm-tracking-[-0.4px] jm-text-[#1A1A1A] jm-text-center">메모</h5>
+          <div>
+            <p class="bis-message-content jm-w-full jm-bg-[#fff] jm-border-[1px] jm-border-[#DFDFDF] jm-px-[16px] jm-py-[12px] jm-h-[325px] jm-text-[13px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#383838] jm-overflow-y-auto"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="edit_memo_modal_01" class="jm-custom-modal jm-hidden" data-url="">
+      <div class="jm-modal-dimmed jm-h-[100%] jm-max-h-[100vh] jm-w-[100vw] jm-opacity-50 jm-bg-black jm-fixed jm-z-[1051] jm-top-[0] jm-left-[0]"></div>
+      <div class="jm-flex jm-flex-row jm-items-center jm-justify-center jm-h-[100%] jm-w-[100vw] jm-fixed jm-top-[0] jm-left-[0] jm-z-[1052]">
+        <div class="jm-modal-content jm-flex jm-flex-col jm-gap-y-[20px] jm-w-[calc(100%-20px)] jm-max-w-[345px] jm-min-h-[511px] jm-p-[20px] jm-box-border jm-border-[1px] jm-border-[#302766] jm-bg-[#fff] jm-overflow-hidden">
+          <button class="jm-custom-modal-close jm-absolute jm-right-[20px] jm-top-[20px] jm-p-[4px]" data-modal-id="edit_memo_modal_01">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#555" stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M13.172 13.172 2.667 2.666M13.172 2.827 2.667 13.333"></path></svg>
+          </button>
+          <h5 class="jm-font-[700] jm-text-[15px] jm-leading-[22px] jm-tracking-[-0.4px] jm-text-[#1A1A1A] jm-text-center">메모</h5>
+          <div>
+            <textarea name="message" class="jm-w-full jm-bg-[#fff] jm-border-[1px] jm-border-[#DFDFDF] jm-px-[15px] jm-py-[15px] jm-min-h-[325px] jm-resize-none jm-text-[13px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#383838] placeholder:jm-text-[#949494]" placeholder="메모를 입력해주세요."></textarea>
+          </div>
+          <div class="jm-flex jm-flex-row jm-justify-center jm-gap-x-[7px]">
+            <button class="bis-room-change-trader-message-btn jm-custom-modal-close jm-flex jm-justify-center jm-items-center jm-py-[8px] jm-w-full jm-max-w-[115px] jm-bg-[#1F1F1F] hover:jm-bg-[#1F1F1F]/90" data-modal-id="edit_memo_modal_01">
+              <span class="jm-flex jm-font-[500] jm-text-[13px] jm-leading-[20px] jm-tracking-[-0.4px] jm-text-[#fff]">메모수정</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(".bis-user-request-btn").on("click", function () {
+        var url = $("#xe_bis_request_modal").data("url");
+        var memo = $("#xe_bis_request_modal .bis-user-request-memo").val();
+        XE.post(url, { memo: memo }).then(function (response) {
+          console.log("%o", response);
+          if (response.status === 200) {
+            alert("요청을 등록하였습니다");
+
+            var refreshTargetUrl = $("#xe_bis_request_modal").data("refresh-target-url");
+            if (window.location.pathname == refreshTargetUrl) {
+              window.location.reload();
+            } else {
+              $("#xe_bis_request_modal .bis-user-request-memo").text("");
+              $("#xe_bis_request_modal .jm-custom-modal-close").click();
+            }
+          } else {
+            alert("요청 등록에 실패하였습니다");
+          }
+        });
+      });
+    </script>
+    <!-- 요청하기 모달 -->
+
+    <style>
+      .widgetbox-content .jm-container-fluid .jm-row .jm-col-md-12,
+      .widgetbox-content .jm-container-fluid .jm-row {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .widgetbox-content .jm-container-fluid {
+        padding: 0 !important;
+      }
+
+      .xf-board-show-body .xf-post-article-contents .__xe_contents_compiler {
+        word-break: break-word;
+      }
+
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      .jm-container:after,
+      .jm-container:before {
+        content: none;
+      }
+
+      .jm-dropdown-content.selected {
+        display: block !important;
+      }
+      .jm-dropdown-btn.on {
+        border-color: #383838;
+      }
+
+      .jm-dropdown-btn.on p {
+        color: #383838;
+      }
+
+      .custom-scroll-block {
+        position: relative;
+        overflow: hidden;
+      }
+    </style>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        //모달 오픈 스크립트
+        $("body").on("click", ".jm-custom-modal-open", function () {
+          let open_modal_id = $(this).data("modal-id");
+          $("html").addClass("custom-scroll-block");
+          $("#" + open_modal_id).removeClass("jm-hidden");
+        });
+
+        //모달 닫는 스크립트
+        $(document).on("click", ".jm-custom-modal-close", function () {
+          let close_modal_id = $(this).data("modal-id");
+          $("#" + close_modal_id).addClass("jm-hidden");
+          $("html").removeClass("custom-scroll-block");
+        });
+
+        //모달 이외 클릭시 모달 닫기
+        $(document).mousedown(function (event) {
+          if (!$(event.target).closest(".jm-modal-content, .jm-custom-modal-open, .jm-custom-modal-toggle").length) {
+            $(".jm-custom-modal").addClass("jm-hidden");
+            $("html").removeClass("custom-scroll-block");
+          }
+        });
+
+        //모달 전환
+        $(".jm-custom-modal-toggle").on("click", function () {
+          let open_modal_id = $(this).data("modal-open-id");
+          let close_modal_id = $(this).data("modal-close-id");
+          $("#" + close_modal_id).addClass("jm-hidden");
+          $("#" + open_modal_id).removeClass("jm-hidden");
+        });
+
+        $(".jm-a11y").on("keydown keyup", function () {
+          return false;
+        });
+
+        AOS.init();
+      });
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+      window.addEventListener("resize", () => {
+        console.log("resize");
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      });
+    </script>
+
+    <!-- JS at body.append -->
+
+    <!-- CUSTOM TAGS -->
+    <!-- widgetbox.preview -->
+
+    <script>
+      function previewWidgetBox(id, html) {
+        $("#widgetbox-" + id)
+          .find(".widgetbox-content")
+          .html(html);
+      }
+    </script>
+
+    <div data-flash-app-container="true" id="flash_player_app_root"></div>
+  </body>
+  <script>
+    AOS.init({
+      once: true, // 한 번만 애니메이션 실행
+    });
+  </script>
+</html>

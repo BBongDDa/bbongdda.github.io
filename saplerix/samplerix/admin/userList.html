@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="ko" style="width: 100%; height: 100%" class="jm-overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>샘플릭스 - Make Your Creative</title>
+    <link rel="stylesheet" href="/assets/css/dist_v240406.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  </head>
+  <body class="" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <!-- JS at body.prepend -->
+
+    <!-- CUSTOM TAGS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;family=Noto+Sans+KR:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet" />
+
+    <link href="/plugins/custom_plugin/src/Components/Themes/CustomTheme/assets/css/aos.css" rel="stylesheet" />
+    <script src="/plugins/custom_plugin/src/Components/Themes/CustomTheme/assets/js/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="/plugins/custom_plugin/src/Components/Themes/CustomTheme/assets/js/swiper9.js"></script>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        //�レ옄留�, 肄ㅻ쭏
+        function comma(str) {
+          str = String(str);
+          return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function uncomma(str) {
+          str = String(str);
+          return str.replace(/[^\d]+/g, "");
+        }
+
+        $(document).on("change focusout keyup keydown", ".jm-price-input", function () {
+          this.value = comma(uncomma(this.value));
+        });
+
+        $(document).on("submit", "form.jm-search-form", function (e) {
+          $("form.jm-search-form")
+            .find(".jm-price-input")
+            .each(function () {
+              $(this).val(uncomma($(this).val()));
+            });
+
+          //紐⑸줉 罹먯떆 珥덇린��
+          localStorage.removeItem("user_report_proposal_list_check_id");
+          localStorage.removeItem("my_report_proposal_list_check_id");
+          localStorage.removeItem("user_report_market_price_research_list_check_id");
+          localStorage.removeItem("building_room_history_list_check_id");
+          localStorage.removeItem("building_room_list_check_id");
+          localStorage.removeItem("user_request_list_check_id");
+          localStorage.removeItem("building_room_search_list_check_id");
+          localStorage.removeItem("my_report_market_price_research_list_check_id");
+          localStorage.removeItem("building_room_interest_list_check_id");
+          localStorage.removeItem("staff_list_check_id");
+          localStorage.removeItem("building_list_check_id");
+          return true;
+        });
+
+        $("form.jm-search-form .jm-price-input").each(function () {
+          this.value = comma(uncomma(this.value));
+        });
+
+        $("form.jm-search-form .price-data").each(function () {
+          var data = $(this).text(comma($(this).text()));
+          console.log(data);
+        });
+
+        //+, - 踰꾪듉 湲곕뒫 (comma �꾩슂�� 寃쎌슦)
+        $(document).on("click", ".jm-price-plus", function () {
+          let price = parseInt(uncomma($(this).closest("div").find("input").val()));
+          if (isNaN(price)) {
+            price = 0;
+          }
+          $(this)
+            .closest("div")
+            .find("input")
+            .val(comma(price + 1));
+          $(this).closest("div").find("input").trigger("change");
+        });
+
+        $(document).on("click", ".jm-price-minus", function () {
+          let price = parseInt(uncomma($(this).closest("div").find("input").val()));
+          if (isNaN(price)) {
+            price = 0;
+          }
+          // 理쒖냼 0�쇰줈 �ㅼ젙
+          if (price < 1) {
+            price = 1;
+          }
+          $(this)
+            .closest("div")
+            .find("input")
+            .val(comma(price - 1));
+          $(this).closest("div").find("input").trigger("change");
+        });
+
+        //+, - 踰꾪듉 湲곕뒫 (comma �녿뒗 寃쎌슦)
+        $(document).on("click", ".jm-number-plus", function () {
+          let price = parseFloat($(this).closest("div").find("input").val());
+          if (isNaN(price)) {
+            price = 0;
+          }
+          var result = parseInt(price);
+          //�뚯닔�� �쒗븳
+          $(this)
+            .closest("div")
+            .find("input")
+            .val(result + 1);
+          $(this).closest("div").find("input").trigger("change");
+        });
+
+        $(document).on("click", ".jm-number-minus", function () {
+          let price = parseFloat($(this).closest("div").find("input").val());
+          if (isNaN(price)) {
+            price = 0;
+          }
+          // 理쒖냼 0�쇰줈 �ㅼ젙
+          if (price < 1) {
+            price = 1;
+          }
+          var result = parseInt(price);
+          $(this)
+            .closest("div")
+            .find("input")
+            .val(result - 1);
+          $(this).closest("div").find("input").trigger("change");
+        });
+
+        //寃��� �듭뀡 �ㅼ젙
+        //寃��� �듭뀡 �쒕∼�ㅼ슫 �댁쇅 �대┃�� �대젮�덈뒗 �쒕∼�ㅼ슫 �リ린
+        $(document).click(function (event) {
+          if (!$(event.target).closest(".jm-dropdown-btn, .jm-dropdown-content").length) {
+            $(".jm-dropdown-btn").removeClass("on");
+            $(".jm-dropdown-btn .jm-dropdown-arrow.jm-transition").removeClass("jm-rotate-180");
+            $(".jm-dropdown-btn").next().removeClass("selected");
+          }
+        });
+
+        //寃��� �듭뀡 �쒕∼�ㅼ슫 �닿린/�リ린
+        $(".jm-dropdown-btn").on("click", function () {
+          $(".jm-dropdown-btn").not(this).removeClass("on");
+          $(".jm-dropdown-btn").not(this).next().removeClass("selected");
+          $(".jm-dropdown-btn").not(this).find(".jm-dropdown-arrow.jm-transition").removeClass("jm-rotate-180");
+          $(this).toggleClass("on");
+          $(this).next(".jm-dropdown-content").toggleClass("selected");
+          $(this).find(".jm-dropdown-arrow.jm-transition").toggleClass("jm-rotate-180");
+        });
+
+        //寃��� �듭뀡 �쒕∼�ㅼ슫 �꾩씠�� �대┃�� �リ린
+        $(document).on("click", ".jm-dropdown-item", function () {
+          let select_value = $(this).data("value");
+          let select_name = $(this).text();
+          $(this).closest("ul").prev().val(select_value);
+          $(this).closest(".jm-dropdown-content").prev().find("p").text(select_name);
+          $(this).closest(".jm-dropdown-content").prev().find("p").addClass("!jm-text-[#0B57E3]");
+          $(".jm-dropdown-btn").removeClass("on");
+          $(".jm-dropdown-btn").next(".jm-dropdown-content").removeClass("selected");
+          $(".jm-dropdown-btn .jm-dropdown-arrow.jm-transition").removeClass("jm-rotate-180");
+        });
+
+        //寃��� �듭뀡 �쒕∼�ㅼ슫 �꾩씠�� �대┃�� �リ린
+        $(document).on("keyup", ".jm-dropdown-item", function (e) {
+          if (e.keyCode == 13) {
+            let select_value = $(this).data("value");
+            let select_name = $(this).text();
+            $(this).closest("ul").prev().val(select_value);
+            $(this).closest(".jm-dropdown-content").prev().find("p").text(select_name);
+            $(this).closest(".jm-dropdown-content").prev().find("p").addClass("!jm-text-[#0B57E3]");
+          }
+        });
+
+        // $(document).on('keyup', '.jm-dropdown-btn, .jm-dropdown-content .jm-dropdown-item', function(e) {
+        //     if($(this).hasClass('jm-dropdown-item')) {
+        //         if(e.keyCode == 40){//down
+        //             if($(this).next()) {
+        //                 $(this).next().trigger("focus");
+        //             }
+        //         }
+        //         if(e.keyCode == 38){//up
+        //             if($(this).prev()) {
+        //                 $(this).prev().trigger("focus");
+        //             }
+        //         }
+        //     }
+        //     return false;//cancel scrolling
+        // });
+
+        //寃��� �듭뀡 媛� 蹂�寃�
+        $(document).on("change", ".jm-dropdown-content input", function () {
+          let data_val = $(this).val();
+          let min_data_val = $(this).closest(".jm-dropdown-content").find(".jm-min-price").val();
+          let max_data_val = $(this).closest(".jm-dropdown-content").find(".jm-max-price").val();
+          let print_text = $(this).closest(".jm-dropdown-content").prev().find("p").text();
+
+          if (min_data_val === "" && max_data_val === "") {
+            print_text = $(this).closest(".jm-dropdown-content").find(".jm-data-name").text();
+            $(this).closest(".jm-dropdown-content").prev().find("p").removeClass("!jm-text-[#0B57E3]");
+          } else {
+            print_text = min_data_val + " ~ " + max_data_val;
+            $(this).closest(".jm-dropdown-content").prev().find("p").addClass("!jm-text-[#0B57E3]");
+          }
+
+          $(this).closest(".jm-dropdown-content").prev().find("p").text(print_text);
+        });
+
+        //寃��� �듭뀡 媛� 珥덇린��
+        $(document).on("click", ".jm-price-reset", function () {
+          $(this).closest(".jm-dropdown-content").find("input").val("").trigger("change");
+          $(".jm-dropdown-btn").removeClass("on");
+          $(".jm-dropdown-btn").next().removeClass("selected");
+          $(".jm-dropdown-btn .jm-dropdown-arrow.jm-transition").removeClass("jm-rotate-180");
+        });
+
+        //寃��� �듭뀡 �꾩껜 珥덇린�� 踰꾪듉
+        $(document).on("click", ".jm-search-reset", function () {
+          //紐⑸줉 罹먯떆 珥덇린��
+          localStorage.removeItem("user_report_proposal_list_check_id");
+          localStorage.removeItem("my_report_proposal_list_check_id");
+          localStorage.removeItem("user_report_market_price_research_list_check_id");
+          localStorage.removeItem("building_room_history_list_check_id");
+          localStorage.removeItem("building_room_list_check_id");
+          localStorage.removeItem("user_request_list_check_id");
+          localStorage.removeItem("building_room_search_list_check_id");
+          localStorage.removeItem("my_report_market_price_research_list_check_id");
+          localStorage.removeItem("building_room_interest_list_check_id");
+          localStorage.removeItem("staff_list_check_id");
+          localStorage.removeItem("building_list_check_id");
+
+          history.replaceState({}, null, location.pathname);
+          location.reload();
+        });
+
+        //由ъ뒪�� �뺣젹 諛� 由ъ뒪�� 異쒕젰 媛쒖닔 寃��� form �꾨떖
+        $(".jm-list-order-by").on("change", function () {
+          var searchParams = new URLSearchParams(location.search);
+          var sort_value = $(this).val();
+          var param = "";
+
+          for (var [key, value] of searchParams.entries()) {
+            if (key === "orderby") {
+              value = sort_value;
+            }
+            param += key + "=" + value + "&";
+          }
+
+          if (!searchParams.get("orderby")) {
+            param += "orderby" + "=" + sort_value + "&";
+          }
+          history.replaceState({}, null, location.pathname + "?" + param);
+          location.reload();
+        });
+
+        $(".jm-list-perpage").on("change", function () {
+          var searchParams = new URLSearchParams(location.search);
+          var per_page_value = $(this).val();
+          var param = "";
+          for (var [key, value] of searchParams.entries()) {
+            if (key === "perpage") {
+              value = per_page_value;
+            } else if (key === "page") {
+              value = "";
+            }
+            param += key + "=" + value + "&";
+          }
+
+          if (!searchParams.get("perpage")) {
+            param += "perpage" + "=" + per_page_value + "&";
+          }
+          history.replaceState({}, null, location.pathname + "?" + param);
+          location.reload();
+        });
+
+        //嫄대Ъ �곸꽭�섏씠吏� 紐⑤떖 �닿린
+        $("td.open-building-detail-modal").on("click", function () {
+          var modal_url = $(this).closest("tr").data("modal-url");
+          openBuildingDetailModal(modal_url);
+        });
+
+        $(".search-check-all").on("click", function () {
+          if ($(this).is(":checked")) {
+            $(this)
+              .closest(".jm-search-form")
+              .children(".search-check")
+              .each(function (index) {
+                $(this).prop("checked", false).trigger("change");
+              });
+          }
+        });
+
+        $(".search-check-all").on("change", function () {
+          var checked = $(this).prop("checked");
+          $(".jm-search-form .search-check").each(function (index) {
+            $(this).prop("checked", checked).trigger("change");
+          });
+        });
+
+        function searchCheckAll() {
+          if ($(".jm-search-form .search-check").length === $(".jm-search-form .search-check:checked").length) {
+            $(".search-check-all").prop("checked", true);
+          } else {
+            $(".search-check-all").prop("checked", false);
+          }
+        }
+
+        function searchCheckAllSelected() {
+          var searchParams = new URLSearchParams(location.search);
+          var field_name = $(".jm-search-form .search-check").attr("name");
+
+          if (searchParams.getAll(field_name).length > 0) {
+            $(".search-check-all").prop("checked", false);
+          } else {
+            $(".search-check-all").prop("checked", true).trigger("change");
+          }
+
+          if ($(".jm-search-form .search-check").length === $(".jm-search-form .search-check:checked").length) {
+            $(".search-check-all").prop("checked", true);
+          } else {
+            $(".search-check-all").prop("checked", false);
+          }
+        }
+
+        searchCheckAllSelected();
+
+        $(document).on("change", ".jm-search-form .search-check", function () {
+          searchCheckAll();
+        });
+
+        $(window).keyup(function (e) {
+          var code = e.keyCode ? e.keyCode : e.which;
+          if (code == 9 && $(".jm-dropdown-btn:focus").length) {
+            $(".jm-dropdown-btn:focus").trigger("click");
+          }
+        });
+
+        $(document).on("focusout", ".jm-dropdown-btn, .jm-dropdown-content *", function (e) {
+          if (e.currentTarget.closest(".jm-relative").contains(e.relatedTarget)) {
+            /* Focus will still be within the container */
+          } else {
+            $(".jm-dropdown-btn").removeClass("on");
+            $(".jm-dropdown-btn .jm-dropdown-arrow.jm-transition").removeClass("jm-rotate-180");
+            $(".jm-dropdown-btn").next().removeClass("selected");
+          }
+        });
+      });
+
+      $(function () {
+        $("p[data-selected=true]").trigger("click");
+      });
+    </script>
+    <style>
+      * {
+        font-family: "Noto Sans KR", sans-serif !important;
+      }
+      html {
+        background-color: #f0f0f0 !important;
+        height: calc(var(--vh, 1vh) * 100);
+      }
+      body {
+        background-color: #f0f0f0 !important;
+        height: calc(var(--vh, 1vh) * 100);
+      }
+      .xu-button.xu-button--primary {
+        background-color: #302766 !important;
+      }
+      .user a {
+        color: #302766 !important;
+      }
+
+      /* XE 사용자 셋팅페이지 스타일 */
+      .setting-wrap {
+        overflow: auto;
+      }
+      .setting-wrap > .jm-container {
+        padding: 0;
+      }
+      @media screen and (min-width: 768px) {
+        .setting-wrap {
+          padding-top: 50px;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        .setting-wrap {
+          padding-top: 60px;
+        }
+      }
+      .jm-container > .jm-container {
+        padding: 0;
+      }
+      .jm-container {
+        max-width: 1170px;
+      }
+
+      /* 모달 배경 스타일 */
+      .modal-backdrop {
+        background-color: rgba(0, 0, 0, 0.4) !important;
+      }
+
+      /* input type=number 화살표 삭제 */
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox  */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      .jm-a11y {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
+    <div class="jm-w-full jm-h-full jm-flex">
+      <!-- header -->
+      <div class="jm-bis-gnb-animation-header jm-flex jm-justify-between jm-items-center jm-fixed jm-top-[0] jm-left-[0] lg:!jm-left-[260px] jm-w-full lg:jm-w-[calc(100vw-260px)] jm-h-[50px] jm-border-b-[1px] jm-border-[rgba(0,248,250,0.1)] jm-bg-[#1B1443] jm-z-[899]" style="transition: 0.4s">
+        <button class="btn-jm-bis-gnb-open jm-hidden jm-group lg:!jm-flex jm-justify-center jm-items-center jm-w-[50px] jm-h-full jm-bg-[#1B1443] hover:!jm-bg-[#151227]" style="transition: 0.4s">
+          <svg class="btn-jm-bis-gnb-open-svg-svg lg:jm-rotate-180 jm-w-[16px]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: 0.6s">
+            <path class="btn-jm-bis-gnb-open-svg" d="M14 2.74805H2C1.80109 2.74805 1.61032 2.66903 1.46967 2.52838C1.32902 2.38772 1.25 2.19696 1.25 1.99805C1.25 1.79913 1.32902 1.60837 1.46967 1.46772C1.61032 1.32706 1.80109 1.24805 2 1.24805H14C14.1989 1.24805 14.3897 1.32706 14.5303 1.46772C14.671 1.60837 14.75 1.79913 14.75 1.99805C14.75 2.19696 14.671 2.38772 14.5303 2.52838C14.3897 2.66903 14.1989 2.74805 14 2.74805Z" fill="#fff"></path>
+            <path
+              class="btn-jm-bis-gnb-open-svg"
+              d="M14.6482 7.3157L12.8448 5.06145C12.7666 4.96368 12.6674 4.88474 12.5545 4.8305C12.4417 4.77625 12.3181 4.74807 12.1929 4.74805H12.1915C12.0522 4.74798 11.9156 4.78587 11.7962 4.85766C11.6768 4.92944 11.5793 5.0324 11.5141 5.15546C11.4488 5.27852 11.4184 5.41704 11.426 5.55611C11.4336 5.69519 11.4789 5.82957 11.5571 5.9448L12.1434 6.8157H2C1.80109 6.8157 1.61032 6.89471 1.46967 7.03537C1.32902 7.17602 1.25 7.36678 1.25 7.5657C1.25 7.76461 1.32902 7.95537 1.46967 8.09603C1.61032 8.23668 1.80109 8.3157 2 8.3157H12.1432L11.5571 9.18665C11.479 9.30186 11.4337 9.4362 11.4261 9.57523C11.4185 9.71425 11.449 9.85272 11.5142 9.97574C11.5794 10.0988 11.6769 10.2017 11.7962 10.2735C11.9155 10.3453 12.0521 10.3832 12.1913 10.3832H12.1929C12.3181 10.3832 12.4418 10.355 12.5547 10.3008C12.6675 10.2465 12.7668 10.1676 12.845 10.0697L14.6484 7.81545C14.7052 7.7445 14.736 7.65636 14.736 7.56554C14.736 7.47471 14.705 7.3866 14.6482 7.3157Z"
+              fill="#fff"
+            ></path>
+            <path class="btn-jm-bis-gnb-open-svg" d="M13.9526 13.8828H2C1.80109 13.8828 1.61032 13.8038 1.46967 13.6631C1.32902 13.5225 1.25 13.3317 1.25 13.1328C1.25 12.9339 1.32902 12.7431 1.46967 12.6025C1.61032 12.4618 1.80109 12.3828 2 12.3828H13.9526C14.1515 12.3828 14.3423 12.4618 14.4829 12.6025C14.6236 12.7431 14.7026 12.9339 14.7026 13.1328C14.7026 13.3317 14.6236 13.5225 14.4829 13.6631C14.3423 13.8038 14.1515 13.8828 13.9526 13.8828Z" fill="#fff"></path>
+          </svg>
+        </button>
+        <button class="btn-jm-bis-gnb-open-mobile jm-flex lg:!jm-hidden jm-justify-center jm-items-center jm-h-full jm-px-[15px]" style="transition: 0.4s">
+          <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.4284 4.38916H1.57129" stroke="#777777" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+            <path d="M16.5241 11.8574H1.66699" stroke="#777777" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+        <a href="/" class="jm-block lg:!jm-hidden !jm-text-[#555] jm-text-[28px] jm-font-[700]">
+          <img src="/assets/images/main_logo_v2.png" alt="로고" class="jm-w-full jm-max-w-[105px]" />
+        </a>
+        <div class="btn-jm-bis-user-info-layer jm-flex jm-items-center jm-justify-center jm-gap-x-[15px] jm-relative lg:jm-mr-[20px] jm-cursor-pointer jm-whitespace-nowrap jm-min-w-[48px]">
+          <p class="jm-hidden lg:!jm-block jm-text-[#fff] jm-text-[13px] jm-font-[500] jm-tracking-[-0.4px] jm-leading-[26px]">SAMPLERIX 관리자님</p>
+
+          <svg class="jm-w-[20px] lg:!jm-w-[18px]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="jm-bis-user-info-layer-svg" d="M8 8C8.79565 8 9.55871 7.68393 10.1213 7.12132C10.6839 6.55871 11 5.79565 11 5C11 4.20435 10.6839 3.44129 10.1213 2.87868C9.55871 2.31607 8.79565 2 8 2C7.20435 2 6.44129 2.31607 5.87868 2.87868C5.31607 3.44129 5 4.20435 5 5C5 5.79565 5.31607 6.55871 5.87868 7.12132C6.44129 7.68393 7.20435 8 8 8ZM10 5C10 5.53043 9.78929 6.03914 9.41421 6.41421C9.03914 6.78929 8.53043 7 8 7C7.46957 7 6.96086 6.78929 6.58579 6.41421C6.21071 6.03914 6 5.53043 6 5C6 4.46957 6.21071 3.96086 6.58579 3.58579C6.96086 3.21071 7.46957 3 8 3C8.53043 3 9.03914 3.21071 9.41421 3.58579C9.78929 3.96086 10 4.46957 10 5ZM14 13C14 14 13 14 13 14H3C3 14 2 14 2 13C2 12 3 9 8 9C13 9 14 12 14 13ZM13 12.996C12.999 12.75 12.846 12.01 12.168 11.332C11.516 10.68 10.289 10 8 10C5.71 10 4.484 10.68 3.832 11.332C3.154 12.01 3.002 12.75 3 12.996H13Z" fill="#fff"></path>
+          </svg>
+          <div class="jm-bis-user-info-layer jm-hidden jm-absolute jm-top-[25px] jm-right-[0] jm-bg-[#fff] jm-border jm-border-[#302766]">
+            <div class="jm-flex jm-flex-col jm-justify-center jm-items-center jm-gap-y-[10px] jm-py-[20px] jm-px-[25px]">
+              <a class="jm-text-[#383838] jm-text-[400] jm-text-[16px] lg:jm-text-[17px] jm-tracking-[-0.4px] hover:!jm-text-[#302766] hover:jm-underline jm-whitespace-nowrap" href="/mypage">내 정보</a>
+              <a class="jm-text-[#383838] jm-text-[400] jm-text-[16px] lg:jm-text-[17px] jm-tracking-[-0.4px] hover:!jm-text-[#302766] hover:jm-underline jm-whitespace-nowrap" href="/auth/logout">로그아웃</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="jm-bis-lnb-animation-1 jm-fixed jm-top-[0] jm-left-[0] jm-w-[0px] lg:jm-w-[260px] jm-h-[100vh] jm-transition-all jm-duration-300 jm-translate-x-[0%] jm-z-[901]" data-element="gnb-menu--mobile" style="transition: 0.4s">
+        <div class="jm-relative jm-z-[2] jm-flex jm-flex-col jm-w-full jm-min-w-full jm-h-full jm-max-w-[500px] jm-bg-[#1B1443] jm-text-[#fff] jm-overflow-y-auto">
+          <div class="jm-bis-gnb-animation-w-h-46 !jm-flex jm-justify-center jm-items-center jm-w-[0px] lg:jm-w-full jm-bg-[#1B1443] jm-h-[0px] lg:jm-h-[50px] jm-border-b-[1px] jm-border-[rgba(0,248,250,0.1)]" style="transition: 0.1s">
+            <a href="/" class="!jm-text-[#555] jm-text-[28px] jm-font-[700]">
+              <img src="/assets/images/main_logo_v2.png" alt="로고" class="jm-w-full jm-max-w-[150px]" />
+            </a>
+          </div>
+          <div class="jm-flex jm-flex-col jm-bg-[#1B1443] jm-py-[25px] lg:jm-py-[40px] jm-px-[20px] jm-border-box">
+            <a href="  /mypage " class="jm-flex jm-flex-col jm-items-center jm-gap-y-[8px] jm-mb-[20px] lg:jm-mb-[40px]">
+              <p class="jm-flex jm-text-[#fff] !jm-text-[15px] jm-font-[700] jm-tracking-[-0.4px] jm-leading-[22px] jm-line-clamp-1">SAMPLERIX 관리자님</p>
+              <p class="jm-flex jm-text-[#E8E8E8] jm-text-[12px] lg:!jm-text-[13px] jm-font-[500] jm-tracking-[-0.4px] jm-leading-[16px] jm-line-clamp-1">핸드릭스 소속</p>
+            </a>
+
+            <button type="button" onclick="location.href='/samplerix/main'" class="jm-flex jm-items-center jm-justify-center jm-w-full jm-py-[10px] jm-border-[1px] jm-border-[#fff] jm-bg-[#1F1F1F] hover:jm-bg-[#383838]" style="transition: 0.3s" data-modal-id="xe_bis_request_modal">
+              <span class="jm-text-[#fff] jm-font-[500] jm-text-[15px] jm-tracking-[-0.4px] jm-whitespace-nowrap">메인으로 돌아가기</span>
+            </button>
+          </div>
+          <div class="jm-flex jm-flex-col jm-border-box jm-bg-[#1B1443]">
+            <div class="jm-flex jm-flex-col">
+              <ul class="jm-lnb-menu jm-flex jm-flex-col jm-border-t-[1px] jm-border-[rgba(0,248,250,0.1)]">
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center">
+                    <a href="/samplerix/admin/index.html" class="jm-flex jm-items-center jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#DFDFDF] jm-py-[10px] jm-w-full jm-whitespace-nowrap active !jm-text-[#fff]"> 대시보드 </a>
+                  </div>
+                </li>
+                <li class="jm-relative jm-w-full jm-px-[25px] active jm-bg-[rgba(0,248,250,0.1)]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center jm-cursor-pointer">
+                    <a class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#dfdfdf] jm-py-[10px] jm-whitespace-nowrap"> 회원관리 </a>
+                    <div class="jm-absolute jm-right-0 jm-stroke-[#B7B7B7]">
+                      <svg class="jm-plus-icon" width="16" height="16" style="display: block !important" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.2005 6.27015C3.19973 6.13774 3.23842 6.00809 3.31162 5.89774C3.38482 5.7874 3.48922 5.70135 3.61152 5.65057C3.73381 5.59979 3.86846 5.58659 3.99829 5.61263C4.12812 5.63868 4.24726 5.7028 4.3405 5.79682L7.86717 9.33015L11.3938 5.79682C11.5214 5.6876 11.6854 5.63053 11.8532 5.63701C12.021 5.64349 12.1801 5.71305 12.2989 5.83178C12.4176 5.95051 12.4872 6.10967 12.4936 6.27745C12.5001 6.44523 12.4431 6.60929 12.3338 6.73682L8.33384 10.7368C8.20893 10.861 8.03996 10.9307 7.86384 10.9307C7.68771 10.9307 7.51875 10.861 7.39384 10.7368L3.39384 6.73682C3.27067 6.61265 3.20124 6.44505 3.2005 6.27015Z" fill="#949494"></path>
+                      </svg>
+                      <svg class="jm-minus-icon" style="display: none !important" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.7995 9.72985C12.8003 9.86226 12.7616 9.99191 12.6884 10.1023C12.6152 10.2126 12.5108 10.2987 12.3885 10.3494C12.2662 10.4002 12.1315 10.4134 12.0017 10.3874C11.8719 10.3613 11.7527 10.2972 11.6595 10.2032L8.13283 6.66985L4.60616 10.2032C4.47863 10.3124 4.31458 10.3695 4.14679 10.363C3.97901 10.3565 3.81985 10.287 3.70112 10.1682C3.58239 10.0495 3.51284 9.89033 3.50636 9.72255C3.49988 9.55477 3.55695 9.39071 3.66616 9.26318L7.66616 5.26318C7.79107 5.13901 7.96004 5.06932 8.13616 5.06932C8.31229 5.06932 8.48126 5.13901 8.60616 5.26318L12.6062 9.26318C12.7293 9.38735 12.7988 9.55495 12.7995 9.72985Z" fill="white"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <ul class="jm-submenu-mobile jm-flex jm-flex-col jm-mx-[-25px] jm-px-[25px] jm-bg-[rgba(0,248,250,0.05)] jm-py-[15px] jm-border-box" style="display: flex !important">
+                    <li class="jm-w-full">
+                      <a href="/samplerix/admin/userList.html" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium gnb__submenu-link" \="">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#fff] hover:!jm-text-[#fff]">회원 관리 </span>
+                      </a>
+                    </li>
+                    <li class="jm-w-full">
+                      <a onclick="alert('베타서비스 중에는 이용이 어렵습니다.🥺')" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium gnb__submenu-link" \="">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#B7B7B7] hover:!jm-text-[#fff]">판매자등록 요청목록 </span>
+                      </a>
+                    </li>
+                    <li class="jm-w-full">
+                      <a onclick="alert('베타서비스 중에는 이용이 어렵습니다.🥺')" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium gnb__submenu-link" \="">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#B7B7B7] hover:!jm-text-[#fff]">회원 샘플머니 충전내역 </span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center jm-cursor-pointer">
+                    <a class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#dfdfdf] jm-py-[10px] jm-whitespace-nowrap"> 정산관리 </a>
+                    <div class="jm-absolute jm-right-0 jm-stroke-[#B7B7B7]">
+                      <svg class="jm-plus-icon" width="16" height="16" style="display: block !important" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.2005 6.27015C3.19973 6.13774 3.23842 6.00809 3.31162 5.89774C3.38482 5.7874 3.48922 5.70135 3.61152 5.65057C3.73381 5.59979 3.86846 5.58659 3.99829 5.61263C4.12812 5.63868 4.24726 5.7028 4.3405 5.79682L7.86717 9.33015L11.3938 5.79682C11.5214 5.6876 11.6854 5.63053 11.8532 5.63701C12.021 5.64349 12.1801 5.71305 12.2989 5.83178C12.4176 5.95051 12.4872 6.10967 12.4936 6.27745C12.5001 6.44523 12.4431 6.60929 12.3338 6.73682L8.33384 10.7368C8.20893 10.861 8.03996 10.9307 7.86384 10.9307C7.68771 10.9307 7.51875 10.861 7.39384 10.7368L3.39384 6.73682C3.27067 6.61265 3.20124 6.44505 3.2005 6.27015Z" fill="#949494"></path>
+                      </svg>
+                      <svg class="jm-minus-icon" style="display: none !important" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.7995 9.72985C12.8003 9.86226 12.7616 9.99191 12.6884 10.1023C12.6152 10.2126 12.5108 10.2987 12.3885 10.3494C12.2662 10.4002 12.1315 10.4134 12.0017 10.3874C11.8719 10.3613 11.7527 10.2972 11.6595 10.2032L8.13283 6.66985L4.60616 10.2032C4.47863 10.3124 4.31458 10.3695 4.14679 10.363C3.97901 10.3565 3.81985 10.287 3.70112 10.1682C3.58239 10.0495 3.51284 9.89033 3.50636 9.72255C3.49988 9.55477 3.55695 9.39071 3.66616 9.26318L7.66616 5.26318C7.79107 5.13901 7.96004 5.06932 8.13616 5.06932C8.31229 5.06932 8.48126 5.13901 8.60616 5.26318L12.6062 9.26318C12.7293 9.38735 12.7988 9.55495 12.7995 9.72985Z" fill="white"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <ul class="jm-submenu-mobile jm-flex jm-flex-col jm-mx-[-25px] jm-px-[25px] jm-bg-[rgba(0,248,250,0.05)] jm-py-[15px] jm-border-box" style="display: none !important">
+                    <li class="jm-w-full">
+                      <a href="/samplerix/admin/sell_request.html" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium gnb__submenu-link" \="">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#B7B7B7] hover:!jm-text-[#fff]">정산요청 목록 </span>
+                      </a>
+                    </li>
+                    <li class="jm-w-full">
+                      <a onclick="alert('베타서비스 중에는 이용이 어렵습니다.🥺')" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium gnb__submenu-link" \="">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#B7B7B7] hover:!jm-text-[#fff]">정산 내역 </span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center">
+                    <a onclick="alert('베타서비스 중에는 이용이 어렵습니다.🥺')" class="jm-flex jm-items-center jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#DFDFDF] jm-py-[10px] jm-w-full jm-whitespace-nowrap"> SEO 애널리틱스 </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="jm-flex jm-justify-center jm-items-start jm-mx-[23px] jm-mt-[22px] hover:jm-cursor-pointer" data-element="gnb-close--mobile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"><rect width="22" height="2.2" y="15.557" fill="#fff" rx="1.1" transform="rotate(-45 0 15.557)"/><rect width="22" height="2.2" x="1.556" fill="#fff" rx="1.1" transform="rotate(45 1.556 0)"/></svg>
+        </div> -->
+      </div>
+
+      <div class="jm-bis-gnb-dimmed-mobile jm-hidden jm-fixed jm-top-0 jm-left-0 jm-w-full jm-h-full jm-bg-[#000]/50 jm-z-[900]"></div>
+      <div class="jm-bis-gnb-dimmed-mobile jm-hidden jm-fixed jm-top-[18px] jm-right-[18px] jm-w-[24px] jm-h-[24px] jm-z-[901]">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.7584 19.7584L4 4" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+          <path d="M19.7584 4.24162L4 20" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+
+      <div class="jm-hidden jm-pacity-[0] jm-z-[-999] !jm-w-[260px] jm-fill-[#00F8FA]"></div>
+      <div class="jm-hidden jm-opacity-[0] jm-z-[-999] !jm-w-[260px]"></div>
+      <style>
+        .btn-jm-bis-gnb-open:hover .btn-jm-bis-gnb-open-svg {
+          fill: #00f8fa !important;
+        }
+
+        .jm-lnb-menu > li:last-child {
+          margin-bottom: 0;
+        }
+
+        .jm-lnb-menu > li:last-child::after {
+          content: none;
+        }
+      </style>
+      <script>
+        window.addEventListener("DOMContentLoaded", (event) => {
+          // ===== gnb 메뉴 =====
+          $(".btn-jm-bis-gnb-open").click(function (e) {
+            $(".jm-bis-lnb-animation-1").removeClass("!jm-w-[260px]");
+            $(".btn-jm-bis-gnb-open-svg-svg").toggleClass("lg:jm-rotate-180");
+            $(".jm-bis-gnb-animation-header").toggleClass("lg:!jm-left-[260px] lg:jm-w-[calc(100vw-260px)]");
+            $(".jm-bis-gnb-animation-w-h-46").toggleClass("lg:jm-w-full lg:jm-h-[50px]");
+            $(".jm-bis-lnb-animation-1").toggleClass("lg:jm-w-[260px]");
+            $(".jm-bis-lnb-animation-2").toggleClass("lg:jm-pl-[260px]");
+          });
+          // ===== //gnb 메뉴 =====
+          $(".btn-jm-bis-gnb-open-mobile").click(function (e) {
+            $(".jm-bis-lnb-animation-1").toggleClass("!jm-w-[260px]");
+            $(".jm-bis-gnb-dimmed-mobile").toggleClass("jm-hidden");
+          });
+
+          $(".jm-bis-gnb-dimmed-mobile").click(function (e) {
+            $(".jm-bis-lnb-animation-1").toggleClass("!jm-w-[260px]");
+            $(".jm-bis-gnb-dimmed-mobile").toggleClass("jm-hidden");
+          });
+
+          $(".btn-jm-bis-user-info-layer").click(function (e) {
+            $(".jm-bis-user-info-layer").toggleClass("jm-hidden");
+            $(".jm-bis-user-info-layer-svg").toggleClass("jm-fill-[#00F8FA]");
+          });
+
+          $("#__xe_custom_plugin_theme_content").click(function (e) {
+            $(".jm-bis-user-info-layer").addClass("jm-hidden");
+            $(".jm-bis-user-info-layer-svg").removeClass("jm-fill-[#00F8FA]");
+          });
+
+          $(".jm-submenu-btn").click(function (e) {
+            if ($(this).hasClass("active")) {
+              $(this).removeClass("active");
+              $(this).next(".jm-submenu-mobile").stop().slideUp();
+              $(this).find(".jm-plus-icon").css("display", "block");
+              $(this).find(".jm-minus-icon").css("display", "none");
+            } else {
+              $(".jm-submenu-btn").not($(this)).removeClass("active");
+              $(".jm-submenu-btn").not($(this)).next(".jm-submenu-mobile").stop().slideUp();
+              $(".jm-submenu-btn").not($(this)).find(".jm-plus-icon").css("display", "block");
+              $(".jm-submenu-btn").not($(this)).find(".jm-minus-icon").css("display", "none");
+              $(this).addClass("active");
+              $(this).next(".jm-submenu-mobile").stop().slideDown();
+              $(this).find(".jm-plus-icon").css("display", "none");
+              $(this).find(".jm-minus-icon").css("display", "block");
+            }
+          });
+        });
+      </script>
+
+      <script>
+        window.addEventListener("DOMContentLoaded", function () {
+          $(
+            (function () {
+              $('[data-element="gnb--mobile"]').on("click", function () {
+                console.log("click");
+                $('[data-element="gnb-wrapper--mobile"]').show().removeClass("jm-hidden");
+                setTimeout(function () {
+                  $('[data-element="gnb-menu--mobile"]').addClass("!jm-translate-x-[0]");
+                  $('[data-element="gnb-dimd--mobile"]').removeClass("jm-bg-[#000]/[0]").addClass("jm-bg-[#000]/[0.5]");
+                });
+              });
+              $('[data-element="gnb-close--mobile"], [data-element="gnb-dimd--mobile"]').on("click", function () {
+                $('[data-element="gnb-wrapper--mobile"]').fadeOut();
+                $('[data-element="gnb-menu--mobile"]').removeClass("!jm-translate-x-[0]");
+                $('[data-element="gnb-dimd--mobile"]').addClass("jm-bg-[#000]/[0]").removeClass("jm-bg-[#000]/[0.5]");
+              });
+            })()
+          );
+        });
+      </script>
+
+      <!-- content -->
+      <div id="__xe_custom_plugin_theme_content" class="jm-bis-lnb-animation-2 jm-w-full jm-h-[calc(100%-46px)] jm-mt-[46px] lg:jm-pl-[260px]" style="transition: 0.4s">
+        <!-- 회원관리 (리스트) -->
+        <style>
+          .jm-dropdown-content.selected {
+            display: block !important;
+          }
+
+          .jm-dropdown-btn.on {
+            border-color: #383838;
+          }
+
+          .jm-dropdown-btn.on p {
+            color: #383838;
+          }
+
+          .custom-scroll-block {
+            position: relative;
+            overflow: hidden;
+          }
+        </style>
+
+        <div class="jm-px-[15px] 2xl:jm-px-[20px] jm-py-[15px] 2xl:jm-py-[32px]">
+          <!-- 페이지 타이틀 s -->
+          <h5 class="jm-font-[700] jm-text-[19px] jm-leading-[28px] jm-tracking-[-0.4px] jm-text-[#1A1A1A] jm-mb-[15px]">회원 관리</h5>
+          <!-- 페이지 타이틀 e -->
+          <div class="jm-flex jm-flex-col jm-items-center jm-justify-center jm-gap-y-[20px] jm-w-full">
+            <!-- 검색 s -->
+            <div class="jm-w-full jm-shadow-[0px_0px_10px_rgba(0,0,0,0.2)] jm-bg-[#fff] jm-p-[20px]">
+              <form id="__xe_bis_staff_index_form" action="./userList.html?">
+                <input type="hidden" name="perpage" value="10" />
+                <div class="jm-flex jm-flex-col jm-items-center jm-justify-center jm-gap-y-[20px] jm-w-full search-box jm-search-form">
+                  <!-- 검색 조건 s -->
+                  <div class="jm-grid jm-grid-cols-1 lg:jm-grid-cols-2 2xl:jm-grid-cols-4 jm-flex-col 2xl:jm-flex-row jm-flex-wrap jm-items-center jm-gap-[20px] jm-w-full">
+                    <!-- 검색 조건 select s -->
+                    <div class="jm-relative">
+                      <p class="jm-text-[#383838] jm-text-[13px] jm-font-[500] jm-tracking-[-0.4px] jm-mb-[7px]">소속</p>
+                      <button type="button" class="jm-dropdown-btn jm-flex jm-flex-row jm-justify-between jm-items-center jm-gap-x-[5px] jm-w-full jm-border-[1px] jm-border-[#DFDFDF] jm-py-[8px] jm-px-[15px]">
+                        <p class="jm-text-[13px] jm-leading-[20px] jm-tracking-[-0.4px] jm-text-[#949494] jm-line-clamp-1" data-dropdown-text="전체">전체</p>
+                        <div class="jm-dropdown-arrow jm-transition">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+                            <g clip-path="url(#a)"><path fill="#383838" d="M5.572 9.12a.612.612 0 0 0 .857 0l5.394-5.381a.604.604 0 1 0-.856-.855L6 7.837 1.034 2.883a.604.604 0 1 0-.857.855l5.395 5.381Z"></path></g>
+                            <defs>
+                              <clipPath id="a"><path fill="#fff" d="M12 12H0V0h12z"></path></clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                      </button>
+                      <div class="jm-dropdown-content jm-absolute jm-hidden jm-bottom-[1px] jm-translate-y-[100%] jm-min-w-[calc(100%+40px)] 2xl:jm-min-w-full jm-px-[20px] jm-py-[20px] jm-mx-[-20px] 2xl:jm-mx-0 jm-bg-[#fff] jm-border-[1px] jm-border-[#0B57E3] jm-shadow-[0px_0px_10px_rgba(0,0,0,0.1)] jm-z-[1]">
+                        <input type="hidden" name="staff_group" value="" />
+                        <ul class="jm-flex jm-flex-col jm-gap-y-[10px]">
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="">전체</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="TAG1">핸드릭스</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="TAG2">CS대행업체</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="TAG3">유지보수업체</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="LM">판매등록회원</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="Research">회원</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="other">기타</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- 검색 조건 select e -->
+                    <!-- 검색 조건 dropdown s -->
+                    <div class="jm-relative">
+                      <p class="jm-text-[#383838] jm-text-[13px] jm-font-[500] jm-tracking-[-0.4px] jm-mb-[7px]">권한</p>
+                      <button type="button" class="jm-dropdown-btn jm-flex jm-flex-row jm-justify-between jm-items-center jm-gap-x-[5px] jm-w-full jm-border-[1px] jm-border-[#DFDFDF] jm-py-[8px] jm-px-[15px]">
+                        <p class="jm-text-[13px] jm-leading-[20px] jm-tracking-[-0.4px] jm-text-[#949494] jm-line-clamp-1" data-dropdown-text="전체">전체</p>
+                        <div class="jm-dropdown-arrow jm-transition">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+                            <g clip-path="url(#a)"><path fill="#383838" d="M5.572 9.12a.612.612 0 0 0 .857 0l5.394-5.381a.604.604 0 1 0-.856-.855L6 7.837 1.034 2.883a.604.604 0 1 0-.857.855l5.395 5.381Z"></path></g>
+                            <defs>
+                              <clipPath id="a"><path fill="#fff" d="M12 12H0V0h12z"></path></clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                      </button>
+                      <div class="jm-dropdown-content jm-absolute jm-hidden jm-bottom-[1px] jm-translate-y-[100%] jm-min-w-[calc(100%+40px)] 2xl:jm-min-w-full jm-px-[20px] jm-py-[20px] jm-mx-[-20px] 2xl:jm-mx-0 jm-bg-[#fff] jm-border-[1px] jm-border-[#0B57E3] jm-shadow-[0px_0px_10px_rgba(0,0,0,0.1)] jm-z-[1]">
+                        <input type="hidden" name="group_id" value="" />
+                        <ul class="jm-flex jm-flex-col jm-gap-y-[10px]">
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="">전체</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="2ddc5cbb-b262-4599-a518-bb1e2ced06f3">Samplerix 일반</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="f8363d58-db8e-435b-b223-2996513b9005">Samplerix 판매</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="5a054786-4452-443a-83ea-2f3ee16532de">Samplerix 관리자</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="5a054786-4452-443a-83ea-2f3ee16532de">Samplerix 최고관리자</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- 검색 조건 dropdown e -->
+                    <!-- 검색 조건 dropdown s -->
+                    <div class="jm-relative">
+                      <p class="jm-text-[#383838] jm-text-[13px] jm-font-[500] jm-tracking-[-0.4px] jm-mb-[7px]">계정상태</p>
+                      <button type="button" class="jm-dropdown-btn jm-flex jm-flex-row jm-justify-between jm-items-center jm-gap-x-[5px] jm-w-full jm-border-[1px] jm-border-[#DFDFDF] jm-py-[8px] jm-px-[15px]">
+                        <p class="jm-text-[13px] jm-leading-[20px] jm-tracking-[-0.4px] jm-text-[#949494] jm-line-clamp-1" data-dropdown-text="전체">전체</p>
+                        <div class="jm-dropdown-arrow jm-transition">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+                            <g clip-path="url(#a)"><path fill="#383838" d="M5.572 9.12a.612.612 0 0 0 .857 0l5.394-5.381a.604.604 0 1 0-.856-.855L6 7.837 1.034 2.883a.604.604 0 1 0-.857.855l5.395 5.381Z"></path></g>
+                            <defs>
+                              <clipPath id="a"><path fill="#fff" d="M12 12H0V0h12z"></path></clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                      </button>
+                      <div class="jm-dropdown-content jm-absolute jm-hidden jm-bottom-[1px] jm-translate-y-[100%] jm-min-w-[calc(100%+40px)] 2xl:jm-min-w-full jm-px-[20px] jm-py-[20px] jm-mx-[-20px] 2xl:jm-mx-0 jm-bg-[#fff] jm-border-[1px] jm-border-[#0B57E3] jm-shadow-[0px_0px_10px_rgba(0,0,0,0.1)] jm-z-[1]">
+                        <input type="hidden" name="status" value="" />
+                        <ul class="jm-flex jm-flex-col jm-gap-y-[10px]">
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="">전체</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="activated">탈퇴</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="pending_admin">활동중</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="denied">정지</li>
+                          <li class="jm-dropdown-item jm-cursor-pointer jm-pb-[10px] jm-border-b-[1px] jm-border-b-[#DFDFDF] last:jm-border-b-0" data-value="denied">기타</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- 검색 조건 dropdown e -->
+                    <!-- 검색어 s -->
+                    <div class="jm-flex jm-flex-col jm-w-full">
+                      <p class="jm-text-[#383838] jm-text-[13px] jm-font-[500] jm-tracking-[-0.4px] jm-mb-[7px]">검색어</p>
+                      <div class="jm-relative jm-w-full 2xl:jm-max-w-[781px]">
+                        <input type="text" name="keyword" value="" maxlength="100" class="form-control jm-outline-none jm-border-[1px] jm-border-[#DFDFDF] jm-pl-[38px] jm-pr-[15px] jm-py-[8px] jm-w-full jm-font-[400] jm-text-[13px] jm-leading-[20px] jm-text-[#383838] placeholder:!jm-text-[#949494] focus:jm-border-[#1D1503]" placeholder="ID, 이름을 입력하세요." />
+                        <div class="jm-absolute jm-flex jm-left-[11px] !jm-top-[50%] !jm-translate-y-[-50%]">
+                          <button class="jm-p-[4px]" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path fill="#0B57E3" d="M13.267 13.984 8.883 9.6a3.673 3.673 0 0 1-1.166.675 4.125 4.125 0 0 1-1.417.242c-1.2 0-2.217-.417-3.05-1.25C2.417 8.434 2 7.428 2 6.25s.417-2.183 1.25-3.016c.833-.834 1.844-1.25 3.033-1.25 1.178 0 2.18.416 3.009 1.25.827.833 1.241 1.838 1.241 3.016A4.156 4.156 0 0 1 9.6 8.884L14 13.25l-.733.734ZM6.283 9.517c.9 0 1.667-.32 2.3-.958a3.16 3.16 0 0 0 .95-2.309c0-.9-.316-1.67-.95-2.308a3.119 3.119 0 0 0-2.3-.958c-.91 0-1.686.319-2.325.958A3.146 3.146 0 0 0 3 6.25c0 .9.32 1.67.958 2.309a3.166 3.166 0 0 0 2.325.958Z"></path></svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 검색어 e -->
+                  </div>
+                  <!-- 검색 조건 e -->
+                  <!-- 검색 버튼 s -->
+                  <div class="jm-flex jm-flex-row jm-items-center jm-justify-center jm-gap-x-[12px]">
+                    <button type="button" class="jm-search-reset jm-flex jm-justify-center jm-bg-[#777777] hover:jm-bg-[#777777]/90 jm-min-w-[115px] jm-py-[8px] jm-px-[12px]">
+                      <span class="jm-font-[500] jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#fff]">초기화</span>
+                    </button>
+                    <button type="submit" onclick="$('#__xe_bis_staff_index_form').submit()" class="jm-flex jm-justify-center jm-bg-[#0B57E3] hover:jm-bg-[#0B57E3]/90 jm-min-w-[115px] jm-py-[8px] jm-px-[12px]">
+                      <span class="jm-font-[500] jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#fff]">검색하기</span>
+                    </button>
+                  </div>
+                  <!-- 검색 버튼 e -->
+                </div>
+              </form>
+            </div>
+            <style>
+              .jm-dropdown-content.selected {
+                display: block !important;
+              }
+
+              .jm-dropdown-btn.on {
+                border-color: #383838;
+              }
+
+              .jm-dropdown-btn.on p {
+                color: #383838;
+              }
+            </style>
+            <!-- 검색 e -->
+            <div class="jm-w-full jm-shadow-[0px_0px_10px_rgba(0,0,0,0.2)] jm-bg-[#fff] jm-p-[20px]">
+              <div class="jm-flex jm-flex-col jm-items-center jm-gap-y-[20px]">
+                <!-- 테이블 상단 기능 s -->
+                <div class="jm-flex jm-flex-col 2xl:jm-flex-row jm-justify-between jm-items-end jm-gap-y-[10px] jm-w-full">
+                  <div class="jm-flex jm-flex-row jm-gap-x-[8px] jm-w-full 2xl:jm-w-auto">
+                    <!-- select box s -->
+                    <div class="jm-relative jm-flex jm-w-full jm-justify-between jm-items-center jm-overflow-hidden 2xl:jm-min-w-[252px]">
+                      <select name="perpage" class="jm-list-perpage jm-appearance-none jm-bg-transparent jm-w-full jm-h-full jm-outline-none jm-border-[1px] jm-border-[#DFDFDF] focus:jm-border-[#383838] jm-pl-[15px] jm-pr-[35px] jm-py-[8px] jm-text-[13px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#383838]">
+                        <option value="10">10개씩 보기</option>
+                        <option value="25">25개씩 보기</option>
+                        <option value="50">50개씩 보기</option>
+                        <option value="100">100개씩 보기</option>
+                      </select>
+                      <div class="jm-absolute jm-right-[15px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+                          <g clip-path="url(#a)"><path fill="#383838" d="M5.572 9.12a.612.612 0 0 0 .857 0l5.394-5.381a.604.604 0 1 0-.856-.855L6 7.837 1.034 2.883a.604.604 0 1 0-.857.855l5.395 5.381Z"></path></g>
+                          <defs>
+                            <clipPath id="a"><path fill="#fff" d="M12 12H0V0h12z"></path></clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                    </div>
+                    <!-- select box e -->
+                  </div>
+                  <div class="jm-flex jm-flex-row jm-gap-x-[8px]">
+                    <button onclick="location.href='#/system/staff/create'" type="button" class="jm-bg-[#0B57E3] hover:jm-bg-[#0B57E3]/90 jm-px-[12px] jm-py-[8px]">
+                      <span class="jm-flex jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#fff]">회원추가</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- 테이블 상단 기능 e -->
+
+                <!-- 스크롤 테이블 s -->
+                <div class="jm-w-full">
+                  <div class="jm-overflow-x-auto">
+                    <table class="jm-w-full jm-min-w-[1250px] jm-break-all jm-whitespace-nowrap">
+                      <thead class="jm-bg-[#F6F8FC] jm-border-t-[1px] jm-border-t-[#949494] jm-h-[49px]">
+                        <tr>
+                          <th class="jm-px-[20px] first:jm-pl-[30px]">
+                            <!-- checkbox s -->
+                            <label class="jm-relative jm-block jm-min-w-[16px] jm-min-h-[16px] jm-cursor-pointer !jm-mb-0" tabindex="0">
+                              <input type="checkbox" class="check checkAll jm-peer jm-a11y" id="checkAll" tabindex="-1" />
+                              <span class="jm-absolute jm-top-[50%] jm-translate-y-[-50%] jm-left-0 jm-bg-[#fff] peer-checked:jm-bg-[#2155A0] jm-border-[1px] jm-border-[#949494] peer-checked:jm-border-[#2155A0] jm-w-[16px] jm-h-[16px] peer-checked:after:jm-content-[''] peer-checked:after:jm-absolute peer-checked:after:jm-left-[50%] peer-checked:after:jm-top-[50%] peer-checked:after:jm-w-[6px] peer-checked:after:jm-h-[9px] peer-checked:after:jm-mt-[-6px] peer-checked:after:jm-ml-[-3px] peer-checked:after:jm-border-r-[2px] peer-checked:after:jm-border-r-[#fff] peer-checked:after:jm-border-b-[2px] peer-checked:after:jm-border-b-[#fff] peer-checked:after:jm-rotate-[40deg]"></span>
+                            </label>
+                            <!-- checkbox e -->
+                          </th>
+                          <th class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-font-[500] jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838] jm-text-center">ID</p>
+                          </th>
+                          <th class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-font-[500] jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838] jm-text-center">이름</p>
+                          </th>
+                          <th class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-font-[500] jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838] jm-text-center">이메일</p>
+                          </th>
+                          <th class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-font-[500] jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838] jm-text-center">연락처</p>
+                          </th>
+                          <th class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-font-[500] jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838] jm-text-center">소속</p>
+                          </th>
+                          <th class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-font-[500] jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838] jm-text-center">권한</p>
+                          </th>
+                          <th class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-font-[500] jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838] jm-text-center">계정상태</p>
+                          </th>
+                          <th class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-font-[500] jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838] jm-text-center">최종로그인</p>
+                          </th>
+                          <th class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-font-[500] jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838] jm-text-center">관리</p>
+                          </th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr class="jm-bg-[#fff] hover:jm-bg-[rgba(156,156,156,0.08)] jm-text-center jm-border-b-[1px] jm-border-b-[#DFDFDF] jm-h-[49px]">
+                          <td class="jm-px-[20px] first:jm-pl-[30px]">
+                            <label class="jm-relative jm-block jm-min-w-[16px] jm-min-h-[16px] jm-cursor-pointer !jm-mb-0" tabindex="0">
+                              <input type="checkbox" class="check jm-peer jm-a11y" data-user-id="6f51cb32-52a4-4387-b3e0-6b9281cfa5f6" tabindex="-1" />
+                              <span class="jm-absolute jm-top-[50%] jm-translate-y-[-50%] jm-left-0 jm-bg-[#fff] peer-checked:jm-bg-[#2155A0] jm-border-[1px] jm-border-[#949494] peer-checked:jm-border-[#2155A0] jm-w-[16px] jm-h-[16px] peer-checked:after:jm-content-[''] peer-checked:after:jm-absolute peer-checked:after:jm-left-[50%] peer-checked:after:jm-top-[50%] peer-checked:after:jm-w-[6px] peer-checked:after:jm-h-[9px] peer-checked:after:jm-mt-[-6px] peer-checked:after:jm-ml-[-3px] peer-checked:after:jm-border-r-[2px] peer-checked:after:jm-border-r-[#fff] peer-checked:after:jm-border-b-[2px] peer-checked:after:jm-border-b-[#fff] peer-checked:after:jm-rotate-[40deg]"></span>
+                            </label>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">frank0229</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">이정민</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">dlwjdals0229@naver.com</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">010-8724-2156</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">회원</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">SAMPLERIX 일반</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">활동중</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">2024-04-02 23:09:48</p>
+                          </td>
+                          <td>
+                            <button onclick="location.href='#/system/staff/6f51cb32-52a4-4387-b3e0-6b9281cfa5f6/edit'" type="button" class="jm-px-[12px] jm-py-[8px] jm-bg-[#AEA181] hover:jm-bg-[#AEA181]/90 jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#fff] jm-mr-[16px]">수정</button>
+                            <button type="button" data-user-id="6f51cb32-52a4-4387-b3e0-6b9281cfa5f6" class="bis-table-content-delete-btn jm-px-[12px] jm-py-[8px] jm-bg-[#949494] hover:jm-bg-[#949494]/90 jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#fff]">삭제</button>
+                          </td>
+                        </tr>
+                        <tr class="jm-bg-[#fff] hover:jm-bg-[rgba(156,156,156,0.08)] jm-text-center jm-border-b-[1px] jm-border-b-[#DFDFDF] jm-h-[49px]">
+                          <td class="jm-px-[20px] first:jm-pl-[30px]">
+                            <label class="jm-relative jm-block jm-min-w-[16px] jm-min-h-[16px] jm-cursor-pointer !jm-mb-0" tabindex="0">
+                              <input type="checkbox" class="check jm-peer jm-a11y" data-user-id="6f51cb32-52a4-4387-b3e0-6b9281cfa5f6" tabindex="-1" />
+                              <span class="jm-absolute jm-top-[50%] jm-translate-y-[-50%] jm-left-0 jm-bg-[#fff] peer-checked:jm-bg-[#2155A0] jm-border-[1px] jm-border-[#949494] peer-checked:jm-border-[#2155A0] jm-w-[16px] jm-h-[16px] peer-checked:after:jm-content-[''] peer-checked:after:jm-absolute peer-checked:after:jm-left-[50%] peer-checked:after:jm-top-[50%] peer-checked:after:jm-w-[6px] peer-checked:after:jm-h-[9px] peer-checked:after:jm-mt-[-6px] peer-checked:after:jm-ml-[-3px] peer-checked:after:jm-border-r-[2px] peer-checked:after:jm-border-r-[#fff] peer-checked:after:jm-border-b-[2px] peer-checked:after:jm-border-b-[#fff] peer-checked:after:jm-rotate-[40deg]"></span>
+                            </label>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">sydneychun123</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">전혜경</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">sydneychun123@naver.com</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">010-3564-1353</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">판매등록회원</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">SAMPLERIX 판매</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">활동중</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">2024-03-28 17:47:52</p>
+                          </td>
+                          <td>
+                            <button onclick="location.href='#/system/staff/6f51cb32-52a4-4387-b3e0-6b9281cfa5f6/edit'" type="button" class="jm-px-[12px] jm-py-[8px] jm-bg-[#AEA181] hover:jm-bg-[#AEA181]/90 jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#fff] jm-mr-[16px]">수정</button>
+                            <button type="button" data-user-id="6f51cb32-52a4-4387-b3e0-6b9281cfa5f6" class="bis-table-content-delete-btn jm-px-[12px] jm-py-[8px] jm-bg-[#949494] hover:jm-bg-[#949494]/90 jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#fff]">삭제</button>
+                          </td>
+                        </tr>
+
+                        <tr class="jm-bg-[#fff] hover:jm-bg-[rgba(156,156,156,0.08)] jm-text-center jm-border-b-[1px] jm-border-b-[#DFDFDF] jm-h-[49px]">
+                          <td class="jm-px-[20px] first:jm-pl-[30px]">
+                            <label class="jm-relative jm-block jm-min-w-[16px] jm-min-h-[16px] jm-cursor-pointer !jm-mb-0" tabindex="0">
+                              <input type="checkbox" class="check jm-peer jm-a11y" data-user-id="6f51cb32-52a4-4387-b3e0-6b9281cfa5f6" tabindex="-1" />
+                              <span class="jm-absolute jm-top-[50%] jm-translate-y-[-50%] jm-left-0 jm-bg-[#fff] peer-checked:jm-bg-[#2155A0] jm-border-[1px] jm-border-[#949494] peer-checked:jm-border-[#2155A0] jm-w-[16px] jm-h-[16px] peer-checked:after:jm-content-[''] peer-checked:after:jm-absolute peer-checked:after:jm-left-[50%] peer-checked:after:jm-top-[50%] peer-checked:after:jm-w-[6px] peer-checked:after:jm-h-[9px] peer-checked:after:jm-mt-[-6px] peer-checked:after:jm-ml-[-3px] peer-checked:after:jm-border-r-[2px] peer-checked:after:jm-border-r-[#fff] peer-checked:after:jm-border-b-[2px] peer-checked:after:jm-border-b-[#fff] peer-checked:after:jm-rotate-[40deg]"></span>
+                            </label>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">handrix_admin</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">관리자</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">handrix_admin@naver.com</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">010-3325-7033</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">핸드릭스</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">SAMPLERIX 최고관리자</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">활동중</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">2024-03-02 15:12:38</p>
+                          </td>
+                          <td>
+                            <button onclick="location.href='#/system/staff/6f51cb32-52a4-4387-b3e0-6b9281cfa5f6/edit'" type="button" class="jm-px-[12px] jm-py-[8px] jm-bg-[#AEA181] hover:jm-bg-[#AEA181]/90 jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#fff] jm-mr-[16px]">수정</button>
+                            <button type="button" data-user-id="6f51cb32-52a4-4387-b3e0-6b9281cfa5f6" class="bis-table-content-delete-btn jm-px-[12px] jm-py-[8px] jm-bg-[#949494] hover:jm-bg-[#949494]/90 jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#fff]">삭제</button>
+                          </td>
+                        </tr>
+
+                        <tr class="jm-bg-[#fff] hover:jm-bg-[rgba(156,156,156,0.08)] jm-text-center jm-border-b-[1px] jm-border-b-[#DFDFDF] jm-h-[49px]">
+                          <td class="jm-px-[20px] first:jm-pl-[30px]">
+                            <label class="jm-relative jm-block jm-min-w-[16px] jm-min-h-[16px] jm-cursor-pointer !jm-mb-0" tabindex="0">
+                              <input type="checkbox" class="check jm-peer jm-a11y" data-user-id="6f51cb32-52a4-4387-b3e0-6b9281cfa5f6" tabindex="-1" />
+                              <span class="jm-absolute jm-top-[50%] jm-translate-y-[-50%] jm-left-0 jm-bg-[#fff] peer-checked:jm-bg-[#2155A0] jm-border-[1px] jm-border-[#949494] peer-checked:jm-border-[#2155A0] jm-w-[16px] jm-h-[16px] peer-checked:after:jm-content-[''] peer-checked:after:jm-absolute peer-checked:after:jm-left-[50%] peer-checked:after:jm-top-[50%] peer-checked:after:jm-w-[6px] peer-checked:after:jm-h-[9px] peer-checked:after:jm-mt-[-6px] peer-checked:after:jm-ml-[-3px] peer-checked:after:jm-border-r-[2px] peer-checked:after:jm-border-r-[#fff] peer-checked:after:jm-border-b-[2px] peer-checked:after:jm-border-b-[#fff] peer-checked:after:jm-rotate-[40deg]"></span>
+                            </label>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">th3_dev</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">땡큐쏘마치</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">th3@naver.com</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">010-9732-6183</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">유지보수업체</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">SAMPLERIX 관리자</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">활동중</p>
+                          </td>
+                          <td onclick="location.href='#'" class="jm-px-[20px] first:jm-pl-[30px]">
+                            <p class="jm-text-[13px] jm-leading-[19px] jm-tracking-[-0.4px] jm-text-[#383838]">2024-03-01 08:13:22</p>
+                          </td>
+                          <td>
+                            <button onclick="location.href='#/system/staff/6f51cb32-52a4-4387-b3e0-6b9281cfa5f6/edit'" type="button" class="jm-px-[12px] jm-py-[8px] jm-bg-[#AEA181] hover:jm-bg-[#AEA181]/90 jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#fff] jm-mr-[16px]">수정</button>
+                            <button type="button" data-user-id="6f51cb32-52a4-4387-b3e0-6b9281cfa5f6" class="bis-table-content-delete-btn jm-px-[12px] jm-py-[8px] jm-bg-[#949494] hover:jm-bg-[#949494]/90 jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#fff]">삭제</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="jm-text-[12px] jm-leading-[16px] jm-tracking-[-0.4px] jm-pt-[12px] jm-text-[#de3618]">* 항목이 많으면 좌우 스크롤이 가능합니다.</p>
+                </div>
+                <!-- 스크롤 테이블 e -->
+
+                <!-- 테이블 하단 기능 s -->
+                <div class="jm-flex jm-flex-row jm-flex-wrap jm-justify-start jm-items-center jm-w-full jm-gap-x-[8px] jm-gap-y-[10px]">
+                  <button type="button" class="btn-jm-check-all jm-flex jm-justify-center jm-bg-[#fff] hover:jm-bg-[rgba(156,156,156,0.08)] jm-border-[1px] jm-border-[#DFDFDF] jm-py-[8px] jm-px-[12px]">
+                    <span class="jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#383838]">전체선택</span>
+                  </button>
+                  <button type="button" class="jm-flex jm-justify-center jm-bg-[#fff] hover:jm-bg-[rgba(156,156,156,0.08)] jm-border-[1px] jm-border-[#DFDFDF] jm-py-[8px] jm-px-[12px]">
+                    <span class="jm-font-[500] jm-text-[12px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#383838]">선택삭제</span>
+                  </button>
+                </div>
+                <!-- 테이블 하단 기능 e -->
+
+                <!-- 페이지네이션 s -->
+                <!-- 
+
+<div class="jm-flex jm-flex-row jm-justify-center jm-items-center jm-gap-x-[20px] jm-w-full">
+    <div>
+                    <a class="jm-flex jm-justify-center jm-items-center jm-w-[32px] jm-h-[32px] jm-border-[1px] jm-border-[#DFDFDF]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" fill="none"><path fill="#DFDFDF" d="M7.68 13.664.664 6.992l7-6.656.984.953-5.984 5.703 6 5.703-.984.97Z"/></svg>
+            </a>
+            </div>
+
+    <div class="jm-flex jm-flex-row jm-justif-center jm-items-center jm-gap-x-[4px]">
+        
+                    
+            
+            
+                                                                        <div>
+                            <a class="jm-flex jm-justify-center jm-items-center jm-w-[32px] jm-h-[32px] jm-bg-[#0B57E3] jm-border-[1px] jm-border-[#0B57E3]">
+                                <p class="jm-text-[14px] jm-leading-[17px] jm-tracking-[-1.12424px] jm-text-[#fff]">1</p>
+                            </a>
+                        </div>
+                                                                                <div>
+                            <a href="#/system/staff/list?page=2" class="jm-flex jm-justify-center jm-items-center jm-w-[32px] jm-h-[32px] jm-border-[1px] jm-border-[#DFDFDF]">
+                                <p class="jm-text-[14px] jm-leading-[17px] jm-tracking-[-1.12424px] jm-text-[#949494]">2</p>
+                            </a>
+                        </div>
+                                                                                <div>
+                            <a href="#/system/staff/list?page=3" class="jm-flex jm-justify-center jm-items-center jm-w-[32px] jm-h-[32px] jm-border-[1px] jm-border-[#DFDFDF]">
+                                <p class="jm-text-[14px] jm-leading-[17px] jm-tracking-[-1.12424px] jm-text-[#949494]">3</p>
+                            </a>
+                        </div>
+                                                                                <div>
+                            <a href="#/system/staff/list?page=4" class="jm-flex jm-justify-center jm-items-center jm-w-[32px] jm-h-[32px] jm-border-[1px] jm-border-[#DFDFDF]">
+                                <p class="jm-text-[14px] jm-leading-[17px] jm-tracking-[-1.12424px] jm-text-[#949494]">4</p>
+                            </a>
+                        </div>
+                                                            </div>
+
+    <div>
+                    <a href="#/system/staff/list?page=2" class="jm-flex jm-justify-center jm-items-center jm-w-[32px] jm-h-[32px] jm-border-[1px] jm-border-[#DFDFDF] jm-rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" fill="none"><path fill="#949494" d="M7.68 13.664.664 6.992l7-6.656.984.953-5.984 5.703 6 5.703-.984.97Z"/></svg>
+            </a>
+        
+    </div>
+</div>
+ -->
+
+                <style>
+                  .jm-list-board--pagination.jm-list-board--pagination-pc .jm-list-board--pagination-list .jm-list-board__pagination-number.jm-list-board__pagination-number--active {
+                    border: none !important;
+                    background: #0b57e3 !important;
+                  }
+                  .jm-list-board--pagination.jm-list-board--pagination-pc .jm-list-board--pagination-list .jm-list-board__pagination-number.jm-list-board__pagination-number--active a {
+                    color: #fff !important;
+                  }
+                </style>
+                <!-- 페이지네이션 e -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form id="__xe_bis_staff_delete_form" method="POST" action="#/system/staff/delete">
+          <input type="hidden" name="_token" value="fBIlkOus0J3Ixt8Vl0DdyaKcGDCoeI3uK9L6nY9M" />
+          <input type="hidden" name="_method" value="DELETE" />
+        </form>
+
+        <script>
+          //이전 페이지 검사를 위한 cache 키 값 저장
+          localStorage.setItem("before_page_list_cache", "staff_list_check_id");
+
+          //게시글 목록 다른 페이지로 이동하면 선택 id cache 지우기
+          //이전 페이지 cache 키 값 저장
+          var before_page_cache = localStorage.getItem("before_page_list_cache");
+          var before_path = new URL(document.referrer).pathname;
+          var now_path = location.pathname;
+
+          //이전 페이지와 현재 페이지 경로가 다르면 키 값 cache 삭제
+          if (before_path !== now_path) {
+            localStorage.removeItem(before_page_cache);
+          }
+
+          // 선택한 공실 ID 배열을 반환
+          // <!-- TODO 이전 페이지에서 선택했던 공실들도 포함하여야 함 -->
+          function getSelectedUserIdArr() {
+            var targetId = localStorage.getItem("staff_list_check_id");
+
+            if (!targetId) {
+              targetId = [];
+            } else {
+              targetId = JSON.parse(targetId);
+            }
+
+            return targetId;
+          }
+
+          var targetId = getSelectedUserIdArr();
+
+          //체크된 데이터 체크하기
+          $.each(targetId, function (index, item) {
+            $('.bis-room-table-item .check[data-user-id="' + item + '"]').prop("checked", true);
+            if ($(".bis-room-table-item .check").length === $(".bis-room-table-item .check:checked").length) {
+              $("#checkAll").prop("checked", true);
+              return true;
+            } else {
+              $("#checkAll").prop("checked", false);
+            }
+          });
+
+          // 전체선택
+          function checkAll(checked = true) {
+            $(".bis-room-table-item .check").each(function (index) {
+              $(this).prop("checked", checked).trigger("change");
+            });
+          }
+
+          $("#checkAll").on("click", function () {
+            checkAll($(this).prop("checked"));
+          });
+
+          $(".btn-jm-check-all").on("click", function () {
+            checkAll($(this).prop("checked"));
+          });
+
+          //캐시에 체크된 데이터 추가
+          $(document).on("change", ".bis-room-table-item .check", function () {
+            var target_arr = getSelectedUserIdArr();
+            var check_no = $(this).data("user-id");
+
+            if ($(".bis-room-table-item .check").length === $(".bis-room-table-item .check:checked").length) {
+              $("#checkAll").prop("checked", true);
+            } else {
+              $("#checkAll").prop("checked", false);
+            }
+
+            if ($(this).is(":checked")) {
+              //체크 데이터 추가
+              target_arr.push(check_no);
+              //중복 제거
+              var set = new Set(target_arr);
+              //객체를 배열로 변환
+              target_arr = Array.from(set);
+            } else {
+              //체크 해제 데이터 삭제
+              var target_arr = target_arr.filter((element) => element !== check_no);
+            }
+
+            localStorage.setItem("staff_list_check_id", JSON.stringify(target_arr));
+          });
+
+          $(".bis-table-content-delete-btn").on("click", function () {
+            if (!confirm("정말로 해당 사원을 삭제하시겠습니까?\n이 작업은 되돌릴 수 없습니다")) {
+              return false;
+            }
+
+            var targetStaffUserId = $(this).data("user-id");
+            var deleteForm = $("#__xe_bis_staff_delete_form");
+            deleteForm.append('<input type="hidden" name="user_id" value="' + targetStaffUserId + '" />');
+            deleteForm.submit();
+          });
+        </script>
+      </div>
+
+      <div id="__xe_custom_plugin_popup_content"></div>
+    </div>
+
+    <!-- 요청하기 모달 -->
+    <div id="xe_bis_request_modal" class="jm-custom-modal jm-hidden" data-url="" data-refresh-target-url="">
+      <div class="jm-modal-dimmed jm-h-[100%] jm-max-h-[100vh] jm-w-[100vw] jm-opacity-50 jm-bg-black jm-fixed jm-z-[901] jm-top-[0] jm-left-[0]"></div>
+      <div class="jm-flex jm-flex-row jm-items-center jm-justify-center jm-h-[100%] jm-w-[100vw] jm-fixed jm-top-[0] jm-left-[0] jm-z-[902]">
+        <div class="jm-modal-content jm-relative jm-flex jm-flex-col jm-gap-y-[20px] jm-min-w-[345px] jm-p-[20px] jm-box-border jm-border-[1px] jm-border-[#302766] jm-bg-[#fff] jm-overflow-hidden">
+          <button class="jm-custom-modal-close jm-absolute jm-right-[20px] jm-top-[20px] jm-p-[4px]" data-modal-id="xe_bis_request_modal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#555" stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M13.172 13.172 2.667 2.666M13.172 2.827 2.667 13.333"></path></svg>
+          </button>
+          <h5 class="jm-font-[700] jm-text-[15px] jm-leading-[22px] jm-tracking-[-0.4px] jm-text-[#1A1A1A] jm-text-center">요청하기</h5>
+          <div>
+            <textarea class="bis-user-request-memo jm-w-full jm-bg-[#fff] jm-border-[1px] jm-border-[#DFDFDF] jm-px-[15px] jm-py-[15px] jm-min-h-[318px] jm-resize-none jm-text-[13px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#383838] placeholder:jm-text-[#949494]" name="memo" placeholder="요청 내용을 입력해주세요."></textarea>
+          </div>
+          <div class="jm-flex jm-flex-row jm-justify-center jm-gap-x-[7px]">
+            <button type="button" class="bis-user-request-btn jm-flex jm-justify-center jm-items-center jm-py-[8px] jm-w-full jm-max-w-[115px] jm-bg-[#1F1F1F]">
+              <span class="jm-flex jm-font-[500] jm-text-[13px] jm-leading-[20px] jm-tracking-[-0.4px] jm-text-[#fff]">요청하기</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메모 모달 -->
+    <div id="view_memo_modal_01" class="jm-custom-modal jm-hidden">
+      <div class="jm-modal-dimmed jm-h-[100%] jm-max-h-[100vh] jm-w-[100vw] jm-opacity-50 jm-bg-black jm-fixed jm-z-[1051] jm-top-[0] jm-left-[0]"></div>
+      <div class="jm-flex jm-flex-row jm-items-center jm-justify-center jm-h-[100%] jm-w-[100vw] jm-fixed jm-top-[0] jm-left-[0] jm-z-[1052]">
+        <div class="jm-modal-content jm-flex jm-flex-col jm-gap-y-[20px] jm-w-[calc(100%-20px)] jm-max-w-[345px] jm-h-[407px] jm-p-[20px] jm-box-border jm-border-[1px] jm-border-[#302766] jm-bg-[#fff] jm-overflow-hidden">
+          <button class="jm-custom-modal-close jm-absolute jm-right-[20px] jm-top-[20px] jm-p-[4px]" data-modal-id="view_memo_modal_01">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#555" stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M13.172 13.172 2.667 2.666M13.172 2.827 2.667 13.333"></path></svg>
+          </button>
+          <h5 class="jm-font-[700] jm-text-[15px] jm-leading-[22px] jm-tracking-[-0.4px] jm-text-[#1A1A1A] jm-text-center">메모</h5>
+          <div>
+            <p class="bis-message-content jm-w-full jm-bg-[#fff] jm-border-[1px] jm-border-[#DFDFDF] jm-px-[16px] jm-py-[12px] jm-h-[325px] jm-text-[13px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#383838] jm-overflow-y-auto"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="edit_memo_modal_01" class="jm-custom-modal jm-hidden" data-url="">
+      <div class="jm-modal-dimmed jm-h-[100%] jm-max-h-[100vh] jm-w-[100vw] jm-opacity-50 jm-bg-black jm-fixed jm-z-[1051] jm-top-[0] jm-left-[0]"></div>
+      <div class="jm-flex jm-flex-row jm-items-center jm-justify-center jm-h-[100%] jm-w-[100vw] jm-fixed jm-top-[0] jm-left-[0] jm-z-[1052]">
+        <div class="jm-modal-content jm-flex jm-flex-col jm-gap-y-[20px] jm-w-[calc(100%-20px)] jm-max-w-[345px] jm-min-h-[511px] jm-p-[20px] jm-box-border jm-border-[1px] jm-border-[#302766] jm-bg-[#fff] jm-overflow-hidden">
+          <button class="jm-custom-modal-close jm-absolute jm-right-[20px] jm-top-[20px] jm-p-[4px]" data-modal-id="edit_memo_modal_01">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#555" stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M13.172 13.172 2.667 2.666M13.172 2.827 2.667 13.333"></path></svg>
+          </button>
+          <h5 class="jm-font-[700] jm-text-[15px] jm-leading-[22px] jm-tracking-[-0.4px] jm-text-[#1A1A1A] jm-text-center">메모</h5>
+          <div>
+            <textarea name="message" class="jm-w-full jm-bg-[#fff] jm-border-[1px] jm-border-[#DFDFDF] jm-px-[15px] jm-py-[15px] jm-min-h-[325px] jm-resize-none jm-text-[13px] jm-leading-[18px] jm-tracking-[-0.4px] jm-text-[#383838] placeholder:jm-text-[#949494]" placeholder="메모를 입력해주세요."></textarea>
+          </div>
+          <div class="jm-flex jm-flex-row jm-justify-center jm-gap-x-[7px]">
+            <button class="bis-room-change-trader-message-btn jm-custom-modal-close jm-flex jm-justify-center jm-items-center jm-py-[8px] jm-w-full jm-max-w-[115px] jm-bg-[#1F1F1F] hover:jm-bg-[#1F1F1F]/90" data-modal-id="edit_memo_modal_01">
+              <span class="jm-flex jm-font-[500] jm-text-[13px] jm-leading-[20px] jm-tracking-[-0.4px] jm-text-[#fff]">메모수정</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(".bis-user-request-btn").on("click", function () {
+        var url = $("#xe_bis_request_modal").data("url");
+        var memo = $("#xe_bis_request_modal .bis-user-request-memo").val();
+        XE.post(url, { memo: memo }).then(function (response) {
+          console.log("%o", response);
+          if (response.status === 200) {
+            alert("요청을 등록하였습니다");
+
+            var refreshTargetUrl = $("#xe_bis_request_modal").data("refresh-target-url");
+            if (window.location.pathname == refreshTargetUrl) {
+              window.location.reload();
+            } else {
+              $("#xe_bis_request_modal .bis-user-request-memo").text("");
+              $("#xe_bis_request_modal .jm-custom-modal-close").click();
+            }
+          } else {
+            alert("요청 등록에 실패하였습니다");
+          }
+        });
+      });
+    </script>
+    <!-- 요청하기 모달 -->
+
+    <style>
+      .widgetbox-content .jm-container-fluid .jm-row .jm-col-md-12,
+      .widgetbox-content .jm-container-fluid .jm-row {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .widgetbox-content .jm-container-fluid {
+        padding: 0 !important;
+      }
+
+      .xf-board-show-body .xf-post-article-contents .__xe_contents_compiler {
+        word-break: break-word;
+      }
+
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      .jm-container:after,
+      .jm-container:before {
+        content: none;
+      }
+
+      .jm-dropdown-content.selected {
+        display: block !important;
+      }
+      .jm-dropdown-btn.on {
+        border-color: #383838;
+      }
+
+      .jm-dropdown-btn.on p {
+        color: #383838;
+      }
+
+      .custom-scroll-block {
+        position: relative;
+        overflow: hidden;
+      }
+    </style>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        //모달 오픈 스크립트
+        $("body").on("click", ".jm-custom-modal-open", function () {
+          let open_modal_id = $(this).data("modal-id");
+          $("html").addClass("custom-scroll-block");
+          $("#" + open_modal_id).removeClass("jm-hidden");
+        });
+
+        //모달 닫는 스크립트
+        $(document).on("click", ".jm-custom-modal-close", function () {
+          let close_modal_id = $(this).data("modal-id");
+          $("#" + close_modal_id).addClass("jm-hidden");
+          $("html").removeClass("custom-scroll-block");
+        });
+
+        //모달 이외 클릭시 모달 닫기
+        $(document).mousedown(function (event) {
+          if (!$(event.target).closest(".jm-modal-content, .jm-custom-modal-open, .jm-custom-modal-toggle").length) {
+            $(".jm-custom-modal").addClass("jm-hidden");
+            $("html").removeClass("custom-scroll-block");
+          }
+        });
+
+        //모달 전환
+        $(".jm-custom-modal-toggle").on("click", function () {
+          let open_modal_id = $(this).data("modal-open-id");
+          let close_modal_id = $(this).data("modal-close-id");
+          $("#" + close_modal_id).addClass("jm-hidden");
+          $("#" + open_modal_id).removeClass("jm-hidden");
+        });
+
+        $(".jm-a11y").on("keydown keyup", function () {
+          return false;
+        });
+
+        AOS.init();
+      });
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+      window.addEventListener("resize", () => {
+        console.log("resize");
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      });
+    </script>
+
+    <!-- JS at body.append -->
+
+    <!-- CUSTOM TAGS -->
+    <!-- widgetbox.preview -->
+
+    <script>
+      function previewWidgetBox(id, html) {
+        $("#widgetbox-" + id)
+          .find(".widgetbox-content")
+          .html(html);
+      }
+    </script>
+
+    <div data-flash-app-container="true" id="flash_player_app_root"></div>
+  </body>
+  <script>
+    AOS.init({
+      once: true, // 한 번만 애니메이션 실행
+    });
+  </script>
+</html>
+ㅁ

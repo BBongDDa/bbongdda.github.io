@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="width: 100%; height: 100%; margin: 0 !important; padding: 0 !important">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0; url=https://ki-do.netlify.app/"></meta>
-    <title>Document</title>
+    <link rel="shortcut icon" href="https://ki-do.kr/imgs/logo.svg" />
+    <title>키도 랜딩페이지</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body></body>
+  <body style="width: 100%; height: 100%; display: flex; flex-direction: column; gap: 25px; align-items: center; justify-content: center; padding: 15px">
+    <img src="https://ki-do.kr/imgs/logo.svg" alt="qr code" style="width: 80%; max-width: 700px; margin: 0 auto 30px auto" />
+    <a href="./KiDO_v2_apk.zip" target="_blank" download="" class="bg-[#333] flex items-center justify-center py-[9px] px-[25px] rounded-[48px] text-[#fff] text-[16px] font-[700] tracking-[-0.6px]">안드로이드 어플 설치하기 (APK)</a>
+    <a href="https://ki-do.kr/" target="_blank" class="bg-[#ff2f01] flex items-center justify-center py-[9px] px-[25px] rounded-[48px] text-[#fff] text-[16px] font-[700] tracking-[-0.6px]">웹 환경에서 바로 시작하기</a>
+  </body>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: "#da373d",
+          },
+        },
+      },
+    };
+  </script>
 </html>

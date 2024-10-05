@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홀수/짝수 색깔 출력</title>
+    <style>
+        .contents-wrapper{
+            width: 90%;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h2{
+            color: blue;
+            margin: 0 0 2px 0 !important;
+            font-weight: 500;
+        }
+        .odd {
+            background-color: green;
+            color: white;
+            padding: 6px;
+            aspect-ratio: 1/1;
+            font-size: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #dfdfdf;
+            display: inline-block;
+            text-align: center;
+            width: 30px;
+        }
+
+        .even {
+            background-color: red;
+            color: white;
+            padding: 6px;
+            aspect-ratio: 1/1;
+            font-size: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #dfdfdf;
+            display: inline-block;
+            text-align: center;
+            width: 30px;
+        }
+        #output{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: autos;
+            gap: 0px;
+            white-space: nowrap;
+            margin: 0 auto;
+            border: 1px solid #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contents-wrapper">
+    <h2>1-10 홀수/짝수 색깔 출력</h2>
+
+<div id="output"></div>
+</div>
+
+<script>
+    const output = document.getElementById("output");
+
+    for (let i = 1; i <= 10; i++) {
+        let div = document.createElement("div");
+        div.textContent = i;
+
+        if (i % 2 === 0) {
+            div.className = "even";  // 짝수는 빨간색
+        } else {
+            div.className = "odd";   // 홀수는 초록색
+        }
+
+        output.appendChild(div);
+    }
+</script>
+
+</body>
+</html>

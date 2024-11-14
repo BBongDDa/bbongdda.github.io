@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" style="width: 100%; height: 100%; margin: 0 !important; padding: 0 !important">
+<html
+  lang="en"
+  style="width: 100%; height: 100%; margin: 0 !important; padding: 0 !important"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,11 +10,58 @@
     <title>키도 랜딩페이지</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body style="width: 100%; height: 100%; display: flex; flex-direction: column; gap: 25px; align-items: center; justify-content: center; padding: 15px">
-    <img src="https://ki-do.kr/imgs/logo.svg" alt="qr code" style="width: 80%; max-width: 700px; margin: 0 auto 30px auto" />
-    <a href="./KiDO_v2_apk.zip" target="_blank" download="" class="bg-[#333] flex items-center justify-center py-[9px] px-[25px] rounded-[48px] text-[#fff] text-[16px] font-[700] tracking-[-0.6px]">안드로이드 어플 설치하기 (APK)</a>
-    <a href="https://ki-do.kr/" target="_blank" class="bg-[#ff2f01] flex items-center justify-center py-[9px] px-[25px] rounded-[48px] text-[#fff] text-[16px] font-[700] tracking-[-0.6px]">웹 환경에서 바로 시작하기</a>
+  <body
+    style="
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+    "
+  >
+    <img
+      src="https://ki-do.kr/imgs/logo.svg"
+      alt="qr code"
+      style="width: 80%; max-width: 700px; margin: 0 auto 30px auto"
+    />
+    <a
+      href="./KiDO_v2_apk.zip"
+      target="_blank"
+      download=""
+      class="bg-[#333] flex items-center justify-center py-[9px] px-[25px] rounded-[48px] text-[#fff] text-[16px] font-[700] tracking-[-0.6px]"
+      >안드로이드 어플 설치하기 (APK)</a
+    >
+    <a
+      href="https://ki-do.kr/"
+      target="_blank"
+      class="bg-[#ff2f01] flex items-center justify-center py-[9px] px-[25px] rounded-[48px] text-[#fff] text-[16px] font-[700] tracking-[-0.6px]"
+      >웹 환경에서 바로 시작하기</a
+    >
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 25px;
+      "
+    >
+      <div style="width: 80% !important; margin: 0 auto">
+        <p>소개영상</p>
+        <video style="width: 100%" controls>
+          <source src="./assets/pt.mp4" />
+        </video>
+      </div>
+      <div style="width: 80% !important; margin: 0 auto">
+        <p>시연영상</p>
+        <video style="width: 100%" controls>
+          <source src="./assets/mvp.mp4" />
+        </video>
+      </div>
+    </div>
   </body>
+
   <script>
     tailwind.config = {
       theme: {

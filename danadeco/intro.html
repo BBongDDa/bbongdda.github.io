@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./animate.css">
+    <script src="./wow.min.js"></script>  
+   <script>
+     new WOW().init();
+   </script>
+   <title>(주)단아데코_DANADECO</title>
+    <style>
+        #mainNav{
+            background-color: whitesmoke;
+            padding: 0.8%;
+        }
+        body{
+            padding-top: 1rem;
+        }
+        #whitebox{
+            background-color: white;
+            text-align: center;
+            padding: 2%;
+            padding-left: 5rem;
+            padding-right: 5rem;
+            height: auto;
+        }
+        #cont{
+          display: flex;
+            margin-top: auto;
+            background-color: white;
+            text-align: center;
+            align-items: center;
+        }
+        .logomain{
+                width: 7rem; height:auto;
+            }
+            .name2{
+      font-size: small; position: relative; top: 0.2rem; color: #0B3861;
+    }
+        #cont2{
+            margin-top: auto;
+            background-color: white;
+            text-align: center;
+            align-items: center;
+        }
+        
+        #whitebox2{
+            height: auto;
+            background-color: white;
+            text-align: center;
+            padding-top: 1rem;
+        }
+        #whitebox3{
+            height: auto;
+            background-color: white;
+            text-align: center;
+            padding-top: 1rem;
+        }
+        #CEOPIC{
+          border-radius: 1%;
+          height: 420px;
+          position: relative;
+          top: 17px;
+           width: auto; 
+           margin-top: 1rem; 
+           margin: 0 auto;
+           box-shadow: 0px 0px 10px;
+           
+        }
+        
+        #designlogo{
+              height: 150px;
+              padding: 2%;
+            }
+        #leftbox{
+                height: auto;
+                text-align: center;
+                width: 45%;
+                float: left;
+                flex: 1;
+            margin-top: 20px;
+            padding: 3%;
+            margin: 1%;
+            margin-bottom: 1.7rem;
+            }
+            #rightbox{
+                height: auto;
+                width: 45%;
+                padding-left: 4rem;
+                padding-right: 4rem;
+                padding-top: 1rem;
+                text-align: left;
+            }
+            .bilogo{
+              width: 40%;
+            }
+            .bilogo2{
+              width: 50%;
+            }
+            .msgicon{
+              width: 4.5rem;
+            }
+        
+
+    @media ( max-width: 1070px ) {
+            #mainbg{
+                background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url('./mainbg.jpg') center center / cover no-repeat;
+            }
+            #mainslo{
+                font-size: 25px;
+            }
+            #cont{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            margin: 0 auto;
+            }
+            #CEOPIC{
+                height: auto;
+                width: 80%;
+                align-items: center;
+            }
+            .logomain{
+                width: 7rem;height:auto;
+                padding: 1%;
+            }
+            .name2{
+               font-size: xx-small; position: relative; top: 0.2rem; color: #0B3861;
+            }
+            #leftbox{
+                height: auto;
+                width: 50%;
+                flex: 1;
+            }
+            #designlogo{
+              height: 90px;
+              padding: 2%;
+            }
+            #rightbox{
+                height: auto;
+                width: 90%;
+                padding: 7%;
+                text-align: center;
+            }
+            #map_dana{
+             width: 90%;
+            }
+            #whitebox{
+            background-color: white;
+            text-align: center;
+            padding: 1%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            height: auto;
+        }
+            #box{
+                align-items: center;
+                width: 90%;
+                min-width: 310px;
+                padding: 0.5%;
+                margin: 0.5%;
+                margin-bottom: 1.7rem;
+            }
+            .bilogo{
+              width: 70%;
+            }
+            .bilogo2{
+              width: 85%;
+            }
+            .msgicon{
+              width: 3.2rem;
+            }
+     }
+
+    </style>
+
+</head>
+<body style="padding-top: 4rem;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-blue fixed-top" id="mainNav" > 
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="./index.html" style=" font-family: 함초롱바탕;"> <img src='./img/logo.png' class="logomain"><b class="name1">&nbsp; </b><b class="name2"> PREMIUM HOME INTERIOR</b></a> 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> 
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto" style="color: #335771;">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="./index.html">&nbsp; Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger"  style="color: #00000090; font-weight: 600;" href="./intro.html">&nbsp; Company</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="./exam.html">&nbsp; Portfolios </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="./contact.html">&nbsp; 견적문의 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="./hire.html">&nbsp; 인재채용 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="http://danadeco.shop">&nbsp; SHOP </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <br>
+    <section id="whitebox">
+      <br>
+      <br>
+    <div id="cont">
+
+        <img style="margin-top: 1rem;" src="./img/ceo.jpg" alt="CEO" id="CEOPIC">
+        <br>
+    <section id="rightbox">
+        <span style="font-size: 1.rem; font-weight: bold;">CEO&nbsp;</span><span><img style="width: 5rem;" src="./img/ceo_sign.png" alt="서명"></span>
+        <br>
+        <br>
+        <p>&nbsp;내집 꾸미기, 셀프 인테리어 열풍을 보면서 알 수 있듯 소비자들의 인테리어에 대한 관심이 증가하고 있습니다. 소비자들의 눈높이와 수준도 높아져 유명 펜션들의 인테리어 주기는 3년이 채 되지 않습니다. 관광, 숙박업의 성공요인은 인테리어가 자부한다 해도 과언이 아닙니다.</p>
+        <br>
+        <P>&nbsp;커튼, 침구는 공간의 인테리어와 분위기를  담당합니다.  하지만 그 종류만해도 수천가지가 넘어 일반 고객님들이 조합하기에 어려움이 많습니다. 인테리어에도 유행이 있고 트렌드가 있습니다. 단아데코는 고객님들에게 최고의 공간을 선사하기 위해 지속적으로 연구하고 있습니다.</P>
+        <br>
+        <span> 최고의 전문가들에게 밑고 맡겨 주십시오.</span>
+        <p> 고객만족으로 보답하겠습니다.</p>
+    </section>
+    </section>
+    <section id="whitebox2">
+      <br>
+      <br>
+    <h2 style="text-align: center;">TEAM</h2>
+    <div class="col-lg-11" style="padding-top: 3%; margin: 0 auto;">
+  
+      <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <img class="d-block img-fluid" src="./img/intro1.PNG" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block img-fluid" src="./img/intro3.PNG" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block img-fluid" src="./img/intro2.PNG" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block img-fluid" src="./img/intro4.PNG" alt="Fourth slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+</section>
+    <br>
+    <br>
+    <hr style="border: solid 1px rgba(165, 200, 222, 1); width: 80%;">
+    <br>
+
+    <section id="whitebox2" style="padding: 2%;">
+      <br>
+      <br>
+      <h2 style="text-align: center; color: #2D557D;">BI 소개</h2>
+      <br>
+      <span>'단아데코'는 단아하게 꾸민다는 기업이념을 나타내며 블루톤은 ECO의 친환경 침대를</span>
+      <br>
+      <span>앞에서 본 형상의 디자인 요소와 편안한 안락한 분위기를 표현하였습니다.  </span>
+      <br>
+      <br>
+      <div style="text-align: center;">
+      <img src="./img/logo.png" alt="logo" class="bilogo">
+    </div>
+    <br>
+    <div>
+      <img src="./img/biintro.PNG" alt="bi" class="bilogo2">
+    </div>
+    </section>
+<br>
+<br>
+<br>
+<hr style="border: solid 1px rgba(165, 200, 222, 1); width: 80%;">
+<br>
+<section class="content-section" style="margin: 0 auto;">
+  <br>
+  <br>
+<h2 style="text-align: center; color: #2D557D;">협력업체</h2>
+<br>
+<br>
+<div id="cont2">
+<img src="./img/clogo1.png" style="height: 152px; padding: 1%; border-radius: 60%;">
+<img src="./img/clogo2.png" style="height: 152px; padding: 1%;">
+<img src="./img/clogo3.png" style="height: 170px; padding: 2%;">
+</div>
+<div id="cont2">
+<img src="./img/clogo4.jpg"style="height: 170px; padding: 2%;">
+<img src="./img/clogo5.png" style="height: 170px; padding: 2%;">
+<img src="./img/clogo7.png" style="height: 170px; padding: 2%;">
+</div>
+<div id="cont2">
+<img src="./img/clogo6.png" id="designlogo">
+</div>
+</section>
+<br>
+<a style="display:scroll; position:fixed; bottom:30px; right:30px; color:  #F7E600;" href="https://open.kakao.com/o/sV8YmEyc" target="  " title="채팅채널"><img src="./img/msgicon.png" class="msgicon"></i></a>
+<footer class="footer text-center">
+  <div class="container">
+
+
+    <P style="text-align: center;"> [MAP_단아데코]</P>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3157.306682050242!2d127.20654101538379!3d37.688996024862895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cc986d6f79bcd%3A0x62191b5febcf910f!2zKOyjvCnri6jslYTrjbDsvZQ!5e0!3m2!1sko!2skr!4v1597857805586!5m2!1sko!2skr" id="map_dana" width="900" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <div style="background-color: #335771; width: 100%; height: auto;"> 
+    <section style="padding-top: 3rem; padding-left: 15%; padding-right: 15%; text-align: left; font-size: small; color: white;">
+      <img src="./img/logowhite.png" alt="logo" style="width: 7rem; height:auto;">
+      <br>
+      <br>
+      <P><span style="font-weight: 600;">회사명</span> (주) 단아데코&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: 600;">대표</span> 전영걸</P>
+      <P><span style="font-weight: 600;">대표전화</span> 1661-8058</P>
+      <P><span style="font-weight: 600;">사업자등록번호</span> 453-81-00372</P>
+      <p><span style="font-weight: 600;">주소</span> 경기도 남양주시 오남읍 양지로 46번길 74</p>
+      <br>
+      <hr style="border: solid 1px white;">
+      <br>
+      <p>happy8482@naver.com</p>
+      <p>031-624-5382</p>
+    </section>
+<br>
+<br>
+    <p class="text small mb-1" style="color: white;">Copyright &copy; DANADECO 2020</p>
+    <h1 class="text small mb-1" style="color: white;">(주) 단아데코</h1>
+  <br>
+  </div>
+
+</footer>
+</div>
+      <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.min.js"></script>
+</body>
+</html>

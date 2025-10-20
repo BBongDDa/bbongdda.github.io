@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link rel="stylesheet" href="./animate.css">
+     <script src="./wow.min.js"></script>  
+     <meta name="google-site-verification" content="5mTpIpIOKPpTq0NKMFK7mwTVFU8usbK5ZYUdazL8HjM" />
+     <meta name="naver-site-verification" content="08beb613d26bd80b4daefb6a54481ad163b53f30" />
+    <script>
+    	new WOW().init();
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwlNqAEil52XRPHmSVb4Luk18qQG9GqcM&sensor=false&language=ko"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <title>단아데코_DANADECO</title>
+    <style>
+        #mainNav{
+            background-color: whitesmoke;
+            padding: 0.8%;
+        }
+        #mainbg{
+            height: 700px;
+            background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('./img/mainbg.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 2%;
+            padding-top: 1.7rem;
+            text-align: center;
+        }
+        #firbox{
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 4%;
+            height: auto;
+        }
+        #whitebox{
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 4%;
+            height: auto;
+        }
+        #whitebox444{
+            background-color: #f8f9fa;
+            text-align: center;
+            padding-top: 5rem; padding-left: 7rem; padding-right: 7rem; height: 95%;
+            height: auto;
+        }
+        .logomain{
+                width: 7rem; height:auto;
+            }
+        #whitebox2{
+            text-align: center;
+            padding-top: 1rem;
+        }
+        #firstitem{
+          width: 100%; flex: 1;
+        }
+        .imgitem{
+          width: 32%;
+        }
+        
+        p.typing-txt{display: none;}
+    #box{
+    width: 33%;
+     height: 25%;
+    }
+    #history{
+      text-align: center;
+    }
+    #historyimg{
+      width: 50%; padding: 2%; position: relative; top: -6rem;
+    }
+    .name2{
+      font-size: small; position: relative; top: 0.2rem; color: #0B3861;
+    }
+    .msgicon{
+              width: 4.5rem;
+            }
+  
+
+    .typing {  
+/*       position: absolute;*/ 
+     display: inline-block; 
+     font-size: 25px;
+     color: white;
+      animation-duration: 0.3s; 
+      animation-iteration-count: infinite; 
+    } 
+    @keyframes cursor{ 
+      0%{border-right: 0.5px solid #fff} 
+      50%{border-right: 0.5px solid #000} 
+      100%{border-right: 0.5px solid #fff} 
+    }
+
+    @media ( max-width: 1070px ) {
+            #mainbg{
+                background: url('./img/mainbg.jpg') center center / cover no-repeat;
+                height: 450px;
+
+
+            }
+            #mainslo{
+                font-size: 25px;
+            }
+            #cont{
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: center;
+            text-align: center;
+            margin: 0 auto;
+            }
+            .logomain{
+                width: 7rem;height:auto;
+                padding: 1%;
+            }
+            #whitebox{
+                padding: 10%;
+                height: auto;
+            }
+            #whitebox444{
+            background-color: #f8f9fa;
+            text-align: center;
+            padding-top: 3rem; padding-left: 1rem; padding-right: 1rem; height: 95%;
+            height: auto;
+        }
+            #box{
+                align-items: center;
+                width: 100%;
+                min-width: 310px;
+                padding: 0.2%;
+                margin: 0.5%;
+                margin-bottom: 1.3rem;
+            }
+            #leftbox{
+                height: 510px;
+                width: 45%;
+                padding: 1%;
+                float: left;
+            }
+            #mainitem{
+              text-align: center;
+              align-content: center;
+              align-items: center;
+            }
+            #firstitem{
+            width: 100%;
+            }
+            #historyimg{
+              padding: 1%;
+              width: 80%;
+            }
+            .imgitem{
+              width: 100%;
+            }
+            .msgicon{
+              width: 3.2rem;
+            }
+            .name2{
+      font-size: xx-small; position: relative; top: 0.2rem; color: #0B3861;
+    }
+            #map_dana{
+             width: 90%;
+            }
+            #rightbox{
+                height: 510px;
+                width: 45%;
+                padding-left: 4rem;
+                padding-right: 4rem;
+                padding-top: 4rem;
+                float: right;
+            }
+     }
+
+    </style>
+
+</head>
+<body style="padding-top: 4rem;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-blue fixed-top" id="mainNav" > 
+        <div class="container">
+          <a class="navbar-brand js-scroll-trigger" href="./index.html" style=" font-family: 함초롱바탕;"> <img src='./img/logo.png' class="logomain"><b class="name1">&nbsp; </b><b class="name2"> PREMIUM HOME INTERIOR</b></a> 
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> 
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto" style="color: #335771;">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" style="color: #00000090; font-weight: 600;" href="./index.html">&nbsp; Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="./intro.html">&nbsp; Company </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="./exam.html">&nbsp; Portfolio </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="./contact.html">&nbsp; 견적문의 </a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="./hire.html">&nbsp; 인재채용 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="http://danadeco.shop">&nbsp; SHOP </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <section class="content-section" id="mainbg">
+        <header class="masthead d-flex">
+            <div class="container text-center my-auto" style="padding-top: 2rem;">
+                <br>
+                <br>
+          </div>
+    </section>
+    <section class="content-section bg-white" id="firbox" >
+        <p class="wow fadeInDown" style="font-size: 1.4rem; font-weight: 600; padding-top: 1rem;">단아데코는 쿠션 하나, 베갯잇 하나도 소홀히 제작하지 않습니다.</p>
+        <br>
+        <div class="wow fadeInDown" >
+        <p>자체 생산을 하고 있어 원하는 사이즈와 디자인으로 맞춤 제작이 가능합니다.</p>
+        <p>원단의 종류는 무수히 많습니다. 사진으로는 색상과 질감이 정확하게 표현되지 않습니다.</p>
+        <p>무료 방문상담 후 맞춤 제작, 시공까지 10 여년간 4천개 거래업체(호텔,펜션, 리조트)에서</p>
+        <p>증명받은 신뢰할 수 있는 품질과 무상 AS (6개월) 서비스로 고객만족에 최선을 다하겠습니다.</p>
+      </div>
+    </section>
+    <div id="mainitem">
+    <section  class="content-section" id="whitebox2">
+      <br>
+    <h2 style="text-align: center;" >PRODUCT</h2>
+    <br>
+    <br>
+    <div id="cont" style="display: flex;">
+        <section id="box" class="wow fadeInLeft">
+            <img src="./img/ct1.PNG" class="imgitem"id="firstitem" alt="이미지">
+        </section>
+        <section id="box" class="wow fadeInDown" style="width: 33%; height: 25%; padding: 3.5%; padding-top: 3rem; padding-left: 3rem; text-align: left;">
+          <div style="font-size: 0.95rem;">
+            <dl>
+              <dt style="font-size: 1.7rem;">커튼</dt>
+              <br>
+              <br>
+              <dd>암막 커튼(밝은 계열, 어두운 계열)</dd>
+          <dd>일반 커튼</dd>
+          <dd>방수 커튼</dd>
+          <dd>속지</dd>
+          <dd>여름 커튼(린넨, 쉬폰, 레이스)</dd>
+          <dd>이중 커튼</dd>
+        </div>
+        </section>
+        <section id="box" class="wow fadeInRight">
+            <img src="./img/b1.PNG"class="imgitem" style="width: 100%; " alt="이미지">
+        </section>
+    </div> 
+    <div id="cont" style="display: flex;">
+        <section id="box" class="wow fadeInLeft" style="width: 33%; height: 25%; padding: 3.5%; padding-top: 3rem; padding-left: 3rem; text-align: left;">
+          <div style="font-size: 0.95rem;">
+            <dl>
+              <dt style="font-size: 1.7rem;">블라인드</dt>
+              <br>
+              <br>
+              <dd>스마트커튼</dd>
+          <dd>롤스크린</dd>
+          <dd>알루미늄</dd>
+          <dd>허니콤</dd>
+          <dd>우드</dd>
+          <dd>실사</dd>
+          <dd>버티컬</dd> 
+        </section>
+        <section id="box" class="wow fadeInDown" >
+            <img src="./img/e1.PNG" class="imgitem" style="width: 100%; " alt="이미지">
+        </section>
+        <section id="box" class="wow fadeInRight" style="width: 33%; height: 25%; padding: 3.5%; padding-top: 3rem; padding-left: 3em; text-align: left;">
+          <div style="font-size: 0.95rem;">
+            <dt style="font-size: 1.7rem;">침구</dt>
+            <br>
+            <br>
+            <dd>이불</dd>
+        <dd>커버(사계절, 여름)</dd>
+        <dd>매트리스 커버</dd>
+        <dd>요</dd>
+        <dd>이불 솜(솜, 거위)</dd>
+        <dd>차렵이불</dd>
+        <dd>베개(커버, 솜)</dd> 
+        <dd>쿠션,방석</dd>
+        <br>
+        </div>
+        </section>
+      </div>
+    </div>       
+    </section>
+    <br>
+    <section  class="content-section bg-white" id="whitebox444">
+      <div class="row">
+
+        <div class="col-lg-5" style="text-align: left;">
+          <br>
+          <br>
+          <h3 class="wow flipInX">HANDMADE 맞춤제작</h3>
+          <h3 class="wow flipInX" >자체생산 노하우</h3>
+
+          <br>
+          <div class="list-group">
+            <pre style="font-family: 함초롱바탕; font-size: 1rem;">
+커튼은 전문가와 상담후 맞춤 제작이 정답입니다.
+
+커튼과 블라인드는 공간의 분위기를 담당합니다. 
+인테리어 소품 중 가장 오래 사용하는 제품입니다. 
+
+커튼은 걸어서 사용하는 제품이므로 수축률을
+고려해야 합니다. 
+그 밖에도 전문가가 확인하고 상담해 드릴부분이 많습니다.
+
+인터넷 저가형 커튼은 원단의 질이 좋지 않고
+사이즈가 정해져있습니다. 
+
+기장이 짧아도, 길어도 우스꽝스러운게 커튼입니다.
+싸다고 구매했다가 낭패본 경험 다들 있으실거라고 생각합니다. 
+
+눈으로 보고 만저보고 전문가와 함께 무료상담해보세요.
+전국의 4천개 업체들은 모두 단골손님입니다. 
+고객이 만족할때까지 단아데코는 만족하지 않습니다. 
+최선을 다해 제작 시공하겠습니다.
+            </pre>
+          </div>
+  
+        </div>
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-7" >
+  
+          <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+            <br>
+            <br>
+            <br>
+            <br>
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <img class="d-block img-fluid" src="./img/sl0.jpg" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid" src="./img/sl1.jpg" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid" src="./img/sl2.jpg" alt="Third slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <div>
+    <section class="content-section bg-white" id="history">
+      <br>
+      <br>
+      <br>
+      <div>
+      <img class="col-lg-7" src="./img/history.png" id="historyimg" alt="history">
+    </div>
+    </section>
+       <a style="display:scroll; position:fixed; bottom:30px; right:30px; color:  #F7E600;" href="https://open.kakao.com/o/sV8YmEyc" target="  " title="채팅채널"><img src="./img/msgicon.png" class="msgicon"></i></a>
+    <br>
+    <footer class="footer text-center">
+      <div class="container">
+  
+  
+        <P style="text-align: center;"> [MAP_단아데코]</P>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3157.306682050242!2d127.20654101538379!3d37.688996024862895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cc986d6f79bcd%3A0x62191b5febcf910f!2zKOyjvCnri6jslYTrjbDsvZQ!5e0!3m2!1sko!2skr!4v1597857805586!5m2!1sko!2skr" id="map_dana" width="900" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  
+      </div>
+      <br>
+      <br>
+      <br>
+      <div style="background-color: #335771; width: 100%; height: auto;"> 
+        <section style="padding-top: 3rem; padding-left: 15%; padding-right: 15%; text-align: left; font-size: small; color: white;">
+          <img src="./img/logowhite.png" alt="logo" style="width: 7rem; height:auto;">
+          <br>
+          <br>
+          <P><span style="font-weight: 600;">회사명</span> (주) 단아데코&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: 600;">대표</span> 전영걸</P>
+          <P><span style="font-weight: 600;">대표전화</span> 1661-8058</P>
+          <P><span style="font-weight: 600;">사업자등록번호</span> 453-81-00372</P>
+          <p><span style="font-weight: 600;">주소</span> 경기도 남양주시 오남읍 양지로 46번길 74</p>
+          <br>
+          <hr style="border: solid 1px white;">
+          <br>
+          <p>happy8482@naver.com</p>
+          <p>031-624-5382</p>
+        </section>
+  <br>
+  <br>
+        <p class="text small mb-1" style="color: white;">Copyright &copy; DANADECO 2020</p>
+        <h1 class="text small mb-1" style="color: white;">(주) 단아데코</h1>
+      <br>
+      </div>
+
+    </footer>
+  </div>
+      <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.min.js"></script>
+</body>
+</html>

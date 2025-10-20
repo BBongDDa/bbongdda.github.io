@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./animate.css">
+     <script src="./wow.min.js"></script>  
+    <script>
+    	new WOW().init();
+    </script>
+    <title>(주)단아데코_DANADECO</title>
+    <style>
+        #mainNav{
+            background-color: whitesmoke;
+            padding: 0.8%;
+        }
+        body{
+            padding-top: 1rem;
+        }
+        #whitebox{
+            background-color: white;
+            text-align: center;
+            padding: 2%;
+            padding-bottom: 0%;
+            height: auto;
+        }
+        #cont{
+          display: flex;
+            margin-top: auto;
+            background-color: white;
+            text-align: center;
+            align-items: center;
+        }
+        #cont2{
+            margin-top: auto;
+            background-color: white;
+            text-align: center;
+            align-items: center;
+        }
+        
+        #whitebox2{
+            height: auto;
+            background-color: white;
+            text-align: center;
+            padding-top: 1rem;
+        }
+        #whitebox3{
+            height: auto;
+            background-color: white;
+            text-align: center;
+            padding-top: 1rem;
+        }
+        #CEOPIC{
+          border-radius: 5%;
+          height: 510px;
+           width: auto; 
+           padding-top: 1rem; 
+           margin: 0 auto;
+        }
+        .eximg{
+            width: 49%;
+            padding: 5%;
+        }
+        #designlogo{
+              height: 150px;
+              padding: 2%;
+            }
+        #leftbox{
+                height: auto;
+                text-align: center;
+                width: 45%;
+                float: left;
+                flex: 1;
+            margin-top: 20px;
+            padding: 3%;
+            margin: 1%;
+            margin-bottom: 1.7rem;
+            }
+            #rightbox{
+                height: auto;
+                width: 45%;
+                padding-left: 4rem;
+                padding-right: 4rem;
+                padding-top: 4rem;
+                text-align: left;
+            }
+            .logomain{
+                width: 7rem; height:auto;
+            }
+            .name2{
+      font-size: small; position: relative; top: 0.2rem; color: #0B3861;
+    }
+    .msgicon{
+              width: 4.5rem;
+            }
+
+            * {
+  box-sizing: border-box;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 6px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+    @media ( max-width: 1070px ) {
+            #mainbg{
+                background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url('./mainbg.jpg') center center / cover no-repeat;
+            }
+            #mainslo{
+                font-size: 25px;
+            }
+            #cont{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            margin: 0 auto;
+            }
+            #CEOPIC{
+                height: auto;
+                width: 80%;
+                align-items: center;
+            }
+            .logomain{
+                width: 7rem;height:auto;
+                padding: 1%;
+            }
+            .name2{
+               font-size: xx-small; position: relative; top: 0.2rem; color: #0B3861;
+            }
+            #leftbox{
+                height: auto;
+                width: 50%;
+                flex: 1;
+            }
+            .eximg{
+                width: 90%;
+                padding: 2%;
+            }
+            #designlogo{
+              height: 90px;
+              padding: 2%;
+            }
+            #rightbox{
+                height: auto;
+                width: 90%;
+                padding: 7%;
+                text-align: center;
+            }
+            #map_dana{
+             width: 90%;
+            }
+
+            #box{
+                align-items: center;
+                width: 90%;
+                min-width: 310px;
+                padding: 0.5%;
+                margin: 0.5%;
+                margin-bottom: 1.7rem;
+            }
+     
+     .msgicon{
+              width: 3.2rem;
+            }
+    }
+    </style>
+
+</head>
+<body style="padding-top: 4rem;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-blue fixed-top" id="mainNav" > 
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="./index.html" style=" font-family: 함초롱바탕;"> <img src='./img/logo.png' class="logomain"><b class="name1">&nbsp; </b><b class="name2"> PREMIUM HOME INTERIOR</b></a> 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> 
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto" style="color: #335771;">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="./index.html">&nbsp; Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger"  href="./intro.html">&nbsp; Company</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" style="color: #00000090; font-weight: 600;" href="./exam.html">&nbsp; Portfolio </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="./contact.html">&nbsp; 견적문의 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="./hire.html">&nbsp; 인재채용 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="http://danadeco.shop">&nbsp; SHOP </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <section id="whitebox">
+        <br>
+    <h3 style=" font-size: 1.5rem; margin-top: 2rem; text-align: center; color: #335771;">​전국 4천여개 업체 시공, 검증된 실력으로 실측부터 제작 시공까지</h3>
+<br>    
+</section>
+<section class="content-section" style="margin: 0 auto; text-align: center;">
+<div id="cont2">
+<img \ src="./img/ex1.PNG" class="eximg"><img src="./img/ex2.PNG" class="eximg" >
+</div>
+<div id="cont2">
+<img src="./img/ex3.PNG" class="eximg" >
+<img src="./img/ex4.PNG" class="eximg" >
+</div>
+</section>
+<br>
+<br>
+<br>
+    <div class="container">
+
+      <!-- Full-width images with number text -->
+      <div class="mySlides">
+        <div class="numbertext">1 / 6</div>
+          <img src="./img/mainbg.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">2 / 6</div>
+          <img src="./img/mainbg.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">3 / 6</div>
+          <img src="./img/mainbg.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">4 / 6</div>
+          <img src="./img/mainbg.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">5 / 6</div>
+          <img src="./img/mainbg.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">6 / 6</div>
+          <img src="./img/mainbg.jpg" style="width:100%">
+      </div>
+    
+      <!-- Next and previous buttons -->
+      <a class="prev" style="color: white;" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" style="color: white;" onclick="plusSlides(1)">&#10095; &nbsp;</a>
+    
+      <!-- Image text -->
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+    
+      <!-- Thumbnail images -->
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="./img/mainbg.jpg" style="width:100%" onclick="currentSlide(1)" alt="거래처 이름1">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./img/mainbg.jpg" style="width:100%" onclick="currentSlide(2)" alt="거래처 이름2">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./img/mainbg.jpg" style="width:100%" onclick="currentSlide(3)" alt="거래처 이름3">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./img/mainbg.jpg" style="width:100%" onclick="currentSlide(4)" alt="거래처 이름4">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./img/mainbg.jpg" style="width:100%" onclick="currentSlide(5)" alt="거래처 이름5">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./img/mainbg.jpg" style="width:100%" onclick="currentSlide(6)" alt="거래처 이름6">
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+<script>
+  var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<br>
+<a style="display:scroll; position:fixed; bottom:30px; right:30px; color:  #F7E600;" href="https://open.kakao.com/o/sV8YmEyc" target="  " title="채팅채널"><img src="./img/msgicon.png" class="msgicon"></i></a>
+<footer class="footer text-center">
+  <br>
+  <br>
+  <br>
+  <div style="background-color: #335771; width: 100%; height: auto;"> 
+    <section style="padding-top: 3rem; padding-left: 15%; padding-right: 15%; text-align: left; font-size: small; color: white;">
+      <img src="./img/logowhite.png" alt="logo" style="width: 7rem; height:auto;">
+      <br>
+      <br>
+      <P><span style="font-weight: 600;">회사명</span> (주) 단아데코&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: 600;">대표</span> 전영걸</P>
+      <P><span style="font-weight: 600;">대표전화</span> 1661-8058</P>
+      <P><span style="font-weight: 600;">사업자등록번호</span> 453-81-00372</P>
+      <p><span style="font-weight: 600;">주소</span> 경기도 남양주시 오남읍 양지로 46번길 74</p>
+      <br>
+      <hr style="border: solid 1px white;">
+      <br>
+      <p>happy8482@naver.com</p>
+      <p>031-624-5382</p>
+    </section>
+<br>
+<br>
+    <p class="text small mb-1" style="color: white;">Copyright &copy; DANADECO 2020</p>
+    <h1 class="text small mb-1" style="color: white;">(주) 단아데코</h1>
+  <br>
+  </div>
+
+</footer>
+</div>
+      <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.min.js"></script>
+</body>
+</html>

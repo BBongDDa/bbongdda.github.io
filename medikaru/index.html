@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ko" style="width: 100%; height: 100%" class="jm-overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메디카루 - 신경쓰기 힘든 외국인 환자 유치 메디카루가 돕습니다.</title>
+    <link rel="stylesheet" href="./assets/css/dist_v240406.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <!-- 컨텐츠 영역  -->
+    <style>
+      * {
+        font-family: "Spoqa Han Sans Neo", "sans-serif";
+      }
+      body::after {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: -3;
+
+        /* load images */
+        content: url("/assets/video/main-bg.mp4") url("/assets/images/about.jpg") url("/assets/images/buyer.jpg") url("/assets/images/biz.jpg") url(/assets/video/main-bg.mp4) url(/assets/images/about.jpg) url(/assets/images/buyer.jpg) url(/assets/images/biz.jpg);
+      }
+      .gnb__menu:hover .gnb__submenu {
+        display: block !important;
+      }
+      .gnb__menu:hover > a > span {
+        color: #44d08e;
+      }
+      html,
+      body {
+        scroll-behavior: smooth;
+        width: 100% !important;
+        background-color: #fff;
+        font-family: "Spoqa Han Sans Neo", sans-serif;
+        overflow-x: hidden;
+      }
+      .gnb-active {
+        color: #44d08e;
+      }
+      .change-icon-color {
+        fill: #777;
+      }
+      .gnb__menu-wrap-3depth {
+        position: absolute;
+        display: none;
+        left: 100%;
+        top: -10px;
+        background: #f7f7f7;
+        padding: 10px 30px;
+      }
+      .gnb__submenu > li:hover > .gnb__menu-wrap-3depth {
+        display: block;
+      }
+
+      .gnb__menu-3depth {
+        padding: 5px 0;
+      }
+
+      .gnb__menu-3depth > a > span {
+        white-space: nowrap;
+      }
+
+      .gnb__submenu .gnb__menu-link-arrow {
+        stroke: #383838;
+      }
+
+      .gnb__submenu > li:hover .gnb__menu-link-arrow {
+        stroke: #44d08e;
+      }
+    </style>
+
+    <!-- header -->
+    <header data-aos="zoom-out-up" data-aos-easing="ease-in-out-back" data-aos-duration="1800" class="xf-scroll-change__bg jm-fixed jm-top-0 jm-left-0 jm-right-0 jm-z-[100] jm-h-[70px] xl:jm-h-[90px] jm-transition-all jm-duration-500 jm-w-[100vw] jm-border-b-[1px] jm-border-[#999] jm-shadow-xl" style="transition: 0.4s">
+      <div class="jm-container jm-mx-auto jm-h-full jm-w-full jm-max-w-[1140px] jm-flex jm-items-center jm-justify-between !jm-border-b-[0px]">
+        <!-- brand -->
+        <div class="jm-relative jm-flex jm-items-center jm-h-[100%]">
+          <a href="/" class="xf-scroll-change__logo-text jm-text-[#44D08E] hover:jm-text-[#44D08E] active:jm-text-[#44D08E] @endif jm-font-bold jm-text-[24px] xl:jm-text-[32px] jm-leaidng-[38.73px] jm-tracking-[-0.0474em]">
+            <img class="jm-white-logo jm-w-[140px] hover:jm-opacity-70 lg:jm-w-[185px]" style="transition: 0.3s" src="./assets/images/logo-white.svg" alt="메디카루 로고" />
+            <img class="jm-color-logo jm-w-[140px] hover:jm-opacity-70 lg:jm-w-[185px] !jm-hidden" style="transition: 0.3s" src="./assets/images/logo.svg" alt="메디카루 로고" />
+          </a>
+        </div>
+        <!-- mobile gnb toggle -->
+        <div class="jm-flex xl:jm-hidden">
+          <button data-element="gnb--mobile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path class="xf-scroll-change__path jm-btn-scnu-search-svg" fill="" d="M3.5 9.333h21A1.167 1.167 0 0 0 24.5 7h-21a1.167 1.167 0 0 0 0 2.333Zm21 9.334h-21A1.167 1.167 0 1 0 3.5 21h21a1.167 1.167 0 1 0 0-2.333Zm0-5.834h-21a1.167 1.167 0 1 0 0 2.334h21a1.167 1.167 0 0 0 0-2.334Z" /></svg>
+          </button>
+        </div>
+
+        <!-- menu -->
+        <ul class="xf-scroll-change__text jm-hidden xl:!jm-flex jm-h-full jm-items-center xl:jm-gap-x-[55px] jm-gap-x-[25px] jm-text-[#FFF] jm-text-[18px] jm-font-bold jm-tracking-[-0.0174em] jm-leading-[26.06px]">
+          <!-- <li class="gnb__menu jm-relative jm-flex jm-py-[20px]">
+            <a href="#" class="jm-relative jm-flex jm-justify-center jm-items-center">
+              <span class="jm-text-[18px] jm-font-[700] jm-tracking-[-0.313px] jm-leading-[150%] jm-text-[#fff] hover:!jm-text-[#44D08E] hover:jm-underline hover:jm-underline-offset-2">1뎁스</span>
+            </a>
+
+            <ul class="gnb__submenu jm-absolute jm-left-[50%] jm-translate-x-[-50%] jm-hidden jm-top-[100%] jm-py-[10px] jm-bg-[#FFF]" style="box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15)">
+              <li class="jm-relative jm-w-full"> 
+                <a href="#" class="jm-inline-flex jm-items-center jm-py-[5px] jm-px-[30px] jm-w-full hover:jm-text-[#44D08E] hover:jm-underline hover:jm-underline-offset-2 jm-text-[#383838] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-font-medium jm-whitespace-nowrap gnb__submenu-link">
+                  <span class="gnb__menu-link-text">dd</span>
+                </a>
+              </li>
+            </ul>
+          </li> -->
+          <li class="gnb__menu jm-relative jm-flex jm-py-[20px]">
+            <a href="#main" class="jm-relative jm-flex jm-justify-center jm-items-center">
+              <span class="jm-text-[18px] jm-font-[700] jm-tracking-[-0.313px] jm-leading-[150%] jm-text-[#fff] hover:!jm-text-[#44D08E]" style="transition: 0.3s">홈</span>
+            </a>
+          </li>
+
+          <li class="gnb__menu jm-relative jm-flex jm-py-[20px]">
+            <a href="#about" class="jm-relative jm-flex jm-justify-center jm-items-center">
+              <span class="jm-text-[18px] jm-font-[700] jm-tracking-[-0.313px] jm-leading-[150%] jm-text-[#fff] hover:!jm-text-[#44D08E]" style="transition: 0.3s">회사소개</span>
+            </a>
+          </li>
+
+          <li class="gnb__menu jm-relative jm-flex jm-py-[20px]">
+            <a href="#biz" class="jm-relative jm-flex jm-justify-center jm-items-center">
+              <span class="jm-text-[18px] jm-font-[700] jm-tracking-[-0.313px] jm-leading-[150%] jm-text-[#fff] hover:!jm-text-[#44D08E]" style="transition: 0.3s">사업영역</span>
+            </a>
+          </li>
+
+          <li class="gnb__menu jm-relative jm-flex jm-py-[20px]">
+            <a href="#contact" class="jm-relative jm-flex jm-justify-center jm-items-center">
+              <span class="jm-text-[18px] jm-font-[700] jm-tracking-[-0.313px] jm-leading-[150%] jm-text-[#fff] hover:!jm-text-[#44D08E]" style="transition: 0.3s">문의하기</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <script>
+      if (window.scrollY === 0) {
+        $(".jm-white-logo").removeClass("!jm-hidden");
+        $(".jm-color-logo").addClass("!jm-hidden");
+        $(".xf-scroll-change__logo-text").addClass("!jm-text-[#fff]");
+        $(".xf-scroll-change__bg").addClass("transparent-bg");
+        $(".xf-scroll-change__bg").removeClass("jm-shadow-xl");
+        $(".xf-scroll-change__bg > .jm-container").addClass("!jm-border-b-0");
+        $(".jm-btn-scnu-search-wrap").css("background", "transparent");
+        $(".jm-btn-scnu-search-svg").css("fill", "#fff");
+        $(".change-icon-color").css("fill", "#fff");
+        $(".xf-scroll-change__logo").addClass("jm-hidden");
+        $(".xf-scroll-change__logo-white").removeClass("jm-hidden");
+        $(".jm-btn-sign").addClass("!jm-border-[#fff] jm-text-center jm-bg-[#fff]/30 jm-border-none hover:jm-bg-[#fff]/60");
+        $(".jm-btn-sign > span").addClass("!jm-text-[#fff]/60");
+        $(".jm-btn-sign > span").removeClass("jm-text-[#44D08E]");
+      } else {
+        $(".jm-white-logo").addClass("!jm-hidden");
+        $(".jm-color-logo").removeClass("!jm-hidden");
+        $(".xf-scroll-change__logo-text").removeClass("!jm-text-[#fff]");
+        $(".xf-scroll-change__bg").removeClass("transparent-bg");
+        $(".xf-scroll-change__bg").addClass("jm-shadow-xl");
+        $(".xf-scroll-change__bg > .jm-container").removeClass("!jm-border-b-0");
+        $(".jm-btn-scnu-search-wrap").css("background", "#fff");
+        $(".jm-btn-scnu-search-svg").css("fill", "#777");
+        $(".change-icon-color").css("fill", "#777");
+        $(".xf-scroll-change__logo").removeClass("jm-hidden");
+        $(".xf-scroll-change__logo-white").addClass("jm-hidden");
+        $(".jm-btn-sign").removeClass("!jm-border-[#fff] jm-text-center jm-bg-[#fff]/30 jm-border-none hover:jm-bg-[#fff]/60");
+        $(".jm-btn-sign").addClass("!jm-border-[2px] !jm-border-[#D59F13] !jm-bg-[#fff]");
+        $(".jm-btn-sign > span").removeClass("!jm-text-[#fff]/60");
+        $(".jm-btn-sign > span").addClass("jm-text-[#44D08E]");
+      }
+      window.addEventListener("scroll", function (e) {
+        if (window.scrollY === 0) {
+          $(".jm-white-logo").removeClass("!jm-hidden");
+          $(".jm-color-logo").addClass("!jm-hidden");
+          $(".xf-scroll-change__bg").removeClass("jm-shadow-xl");
+          $(".xf-scroll-change__logo-text").addClass("!jm-text-[#fff]");
+          $(".xf-scroll-change__bg").addClass("transparent-bg");
+          $(".xf-scroll-change__bg > .jm-container").addClass("!jm-border-b-0");
+          $(".jm-btn-scnu-search-wrap").css("background", "transparent");
+          $(".jm-btn-scnu-search-svg").css("fill", "#fff");
+          $(".change-icon-color").css("fill", "#fff");
+          $(".xf-scroll-change__logo").addClass("jm-hidden");
+          $(".xf-scroll-change__logo-white").removeClass("jm-hidden");
+          $(".jm-btn-sign").addClass("!jm-border-[#fff] jm-text-center jm-bg-[#fff]/30 jm-border-none hover:jm-bg-[#fff]/60");
+          $(".jm-btn-sign").removeClass("!jm-border-[2px] !jm-border-[#D59F13] !jm-bg-[#fff]");
+          $(".jm-btn-sign > span").removeClass("!jm-text-[#44D08E]");
+          $(".jm-btn-sign > span").addClass("!jm-text-[#fff]/60");
+        } else {
+          $(".jm-white-logo").addClass("!jm-hidden");
+          $(".jm-color-logo").removeClass("!jm-hidden");
+          $(".xf-scroll-change__bg").addClass("jm-shadow-xl");
+          $(".xf-scroll-change__logo-text").removeClass("!jm-text-[#fff]");
+          $(".xf-scroll-change__bg").removeClass("transparent-bg");
+          $(".xf-scroll-change__bg > .jm-container").removeClass("!jm-border-b-0");
+          $(".jm-btn-scnu-search-svg").css("fill", "#777");
+          $(".change-icon-color").css("fill", "#777");
+          $(".xf-scroll-change__logo").removeClass("jm-hidden");
+          $(".xf-scroll-change__logo-white").addClass("jm-hidden");
+          $(".jm-btn-sign").removeClass("!jm-border-[#fff] jm-text-center jm-bg-[#fff]/30 jm-border-none hover:jm-bg-[#fff]/60");
+          $(".jm-btn-sign").addClass("!jm-border-[2px] !jm-border-[#D59F13]");
+          $(".jm-btn-sign").addClass("!jm-border-[2px] !jm-border-[#D59F13] !jm-bg-[#fff]");
+          $(".jm-btn-sign > span").removeClass("!jm-text-[#fff]/60");
+          $(".jm-btn-sign > span").addClass("!jm-text-[#44D08E]");
+        }
+      });
+    </script>
+
+    <style>
+      .xf-scroll-change__bg {
+        background: #fffffff1;
+        transition: 0.4s;
+      }
+      .xf-scroll-change__bg .gnb__menu > a > span {
+        color: #3f3f3f;
+      }
+      .xf-scroll-change__bg .gnb__menu:hover > a > span,
+      .xf-scroll-change__bg .gnb__menu > a > span.gnb-active {
+        color: #44d08e;
+      }
+
+      .xf-scroll-change__bg.transparent-bg {
+        background: transparent !important;
+        transition: 0.4s;
+      }
+      .xf-scroll-change__bg.transparent-bg .gnb__menu > a > span {
+        color: #ffffffeb;
+      }
+      .xf-scroll-change__bg.transparent-bg .gnb__menu:hover > a > span,
+      .xf-scroll-change__bg.transparent-bg .gnb__menu > a > span.gnb-active {
+        color: #fff;
+      }
+    </style>
+
+    <style>
+      /* gnb 1depth 마지막 색깔 변경 */
+      li:last-child > .jm-submenu-mobile {
+        margin-bottom: 0;
+      }
+    </style>
+
+    <!-- 모바일 gnb  -->
+    <div class="jm-fixed jm-top-0 jm-flex jm-flex-row jm-w-full jm-h-[100vh] jm-overflow-hidden jm-hidden jm-z-[999]" data-element="gnb-wrapper--mobile">
+      <div class="jm-absolute jm-left-0 jm-z-[999] jm-flex jm-flex-row jm-h-[100vh] jm-w-[calc(100%-64px)] jm-max-w-[310px] md:jm-max-w-[500px] jm-transition-all jm-duration-300 jm-translate-x-[-100%]" data-element="gnb-menu--mobile">
+        <div class="jm-relative jm-z-[20] jm-flex jm-flex-col jm-w-full jm-min-w-full jm-h-full jm-max-w-[500px] jm-bg-[#FFF] jm-overflow-y-auto">
+          <div class="jm-flex jm-flex-col jm-bg-[#EFEFEF] jm-py-[20px] jm-px-[24px] jm-pb-[30px] jm-border-box">
+            <div class="jm-flex jm-flex-row jm-justify-end jm-py-[12px]">
+              <span class="jm-flex jm-w-[32px] jm-h-[32px] jm-justify-center jm-items-center jm-ml-[10px] hover:jm-cursor-pointer" data-element="gnb-close--mobile">
+                <svg class="jm-flex" width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M.2968 13.5815a.5.5 0 1 0 .707.7071l6.2889-6.2888 6.2888 6.2888a.5.5 0 1 0 .7071-.7071L7.9998 7.2927 14.4389.8536a.5.5 0 1 0-.7071-.7072L7.2927 6.5856.8536.1465a.5.5 0 1 0-.7072.7071l6.4391 6.439-6.2887 6.2889Z" fill="#000" /></svg>
+              </span>
+            </div>
+            <div class="jm-flex jm-mt-[30px] jm-mb-[24px] jm-flex-row jm-justify-between">
+              <div class="jm-flex jm-flex-row">
+                <div class="jm-flex jm-justify-center jm-ite한ms-center">
+                  <div class="jm-flex jm-mr-[12px] jm-w-[48px] jm-h-[48px] jm-rounded-full jm-bg-no-repeat jm-bg-cover jm-overflow-hidden md:jm-mr-[16px] jm-bg-[#fff]"></div>
+                </div>
+                <div class="jm-flex jm-flex-col">
+                  <!-- @if(auth()->check())
+                              <div class="jm-flex jm-flex-row">
+                                      <span class="jm-flex jm-text-[#383838]  jm-text[17px] jm-leading-[25px] jm-whitespasce-nowrap">{{ Auth::user()->getDisplayName() }}</span>
+                                      <span class="jm-flex jm-text-[#383838] jm-text[17px] jm-leading-[25px]">님</span>
+                              </div>
+                              <a href="/auth/logout" class="jm-flex jm-flex-row">
+                                  <span class="jm-flex jm-text-[#383838] jm-text[17px] jm-leading-[25px] jm-whitespasce-nowrap">로그아웃</span>
+                              </a>
+                              @else -->
+                  <div class="jm-flex jm-flex-row">
+                    <span class="jm-flex jm-text-[#44D08E] jm-text[17px] jm-leading-[25px] jm-whitespasce-nowrap jm-font-[600]">안녕하세요!</span>
+                  </div>
+                  <div class="jm-flex jm-items-center">
+                    <span class="jm-flex jm-text-[13px] jm-text-[#383838]">메디카루 방문을 환영합니다!</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="jm-flex jm-flex-col jm-pt-[30px] jm-border-box jm-bg-[#fff]">
+            <div class="jm-flex jm-flex-col">
+              <ul class="jm-flex jm-flex-col">
+                <!-- <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-group jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center jm-cursor-pointer">
+                    <a href="#" class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#383838] jm-py-[10px] jm-whitespace-nowra group-hover:!jm-text-[#44D08E]"> 메뉴 2뎁스 </a>
+                    <div class="jm-absolute jm-right-0 jm-stroke-[#B7B7B7] group-hover:!jm-stroke-[#44D08E]">
+                      <svg class="jm-plus-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path stroke-linecap="square" stroke-linejoin="round" stroke-width="1.4" d="M10 4.166v11.667M4.167 10h11.666" /></svg>
+                      <svg class="jm-minus-icon" style="display: none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path stroke-linecap="square" stroke-linejoin="round" stroke-width="1.4" d="M4.167 10h11.666" /></svg>
+                    </div>
+                  </div>
+                  <ul class="jm-submenu-mobile jm-flex jm-flex-col jm-mx-[-25px] jm-mb-[10px] jm-px-[25px] jm-bg-[#F8F8F8] jm-py-[15px] jm-border-box" style="display: none">
+                    <li class="jm-w-full">
+                      <a href="#" class="jm-inline-block jm-py-[5px] jm-w-full jm-font-[500] jm-text-[#787878] hover:jm-text-[#555555] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] gnb__submenu-link">
+                        <span class="jm-font-[500] jm-text-[16px] jm-leading-[23px] jm-tracking-[-0.02em] jm-text-[#555]">2뎁스</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li> -->
+
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center">
+                    <a href="#main" class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#383838] jm-py-[10px] jm-w-full jm-whitespace-nowra hover:!jm-text-[#91178968]"> 홈 </a>
+                  </div>
+                </li>
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center">
+                    <a href="#about" class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#383838] jm-py-[10px] jm-w-full jm-whitespace-nowra hover:!jm-text-[#91178968]"> 회사소개 </a>
+                  </div>
+                </li>
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center">
+                    <a href="#biz" class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#383838] jm-py-[10px] jm-w-full jm-whitespace-nowra hover:!jm-text-[#91178968]"> 사업영역 </a>
+                  </div>
+                </li>
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center">
+                    <a href="#contact" class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#383838] jm-py-[10px] jm-w-full jm-whitespace-nowra hover:!jm-text-[#91178968]"> 문의하기 </a>
+                  </div>
+                </li>
+                <li class="jm-relative jm-w-full jm-px-[25px]">
+                  <div class="jm-submenu-btn jm-relative jm-w-full jm-flex jm-justify-between jm-items-center">
+                    <a href="/samplerix/main/" class="jm-font-[500] jm-text-[18px] jm-leading-[26px] jm-tracking-[-0.02em] jm-text-[#383838] jm-py-[10px] jm-w-full jm-whitespace-nowra hover:!jm-text-[#91178968]"> 시작하기 </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="jm-absolute jm-z-[1] jm-w-full jm-h-full jm-bg-[#000]/[0]" data-element="gnb-dimd--mobile"></div>
+    </div>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        $(
+          (function () {
+            $('[data-element="gnb--mobile"]').on("click", function () {
+              console.log("click");
+              $("html").css("overflow", "hidden");
+              $('[data-element="gnb-wrapper--mobile"]').show().removeClass("jm-hidden");
+              setTimeout(function () {
+                $('[data-element="gnb-menu--mobile"]').addClass("!jm-translate-x-[0]");
+                $('[data-element="gnb-dimd--mobile"]').removeClass("jm-bg-[#000]/[0]").addClass("jm-bg-[rgba(0,0,0,0.6)]");
+              });
+            });
+            $('[data-element="gnb-close--mobile"], [data-element="gnb-dimd--mobile"]').on("click", function () {
+              $('[data-element="gnb-wrapper--mobile"]').fadeOut();
+              $("html").css("overflow", "");
+              $('[data-element="gnb-menu--mobile"]').removeClass("!jm-translate-x-[0]");
+              $('[data-element="gnb-dimd--mobile"]').addClass("jm-bg-[#000]/[0]").removeClass("jm-bg-[rgba(0,0,0,0.6)]");
+            });
+          })()
+        );
+      });
+    </script>
+
+    <script>
+      $(function () {
+        // ===== 모바일 햄버거 메뉴 =====
+        $(".jm-submenu-btn").click(function (e) {
+          if ($(this).hasClass("active")) {
+            $(this).removeClass("active");
+            $(this).next(".jm-submenu-mobile").stop().slideUp();
+            $(this).find(".jm-plus-icon").css("display", "block");
+            $(this).find(".jm-minus-icon").css("display", "none");
+          } else {
+            $(this).addClass("active");
+            $(this).next(".jm-submenu-mobile").stop().slideDown();
+            $(this).find(".jm-plus-icon").css("display", "none");
+            $(this).find(".jm-minus-icon").css("display", "block");
+          }
+        });
+        // ===== //모바일 햄버거 메뉴 =====
+      });
+    </script>
+
+    <!-- 모바일 gnb -->
+
+    <div class="jm-w-full jm-bg-transparent">
+      <div id="main" class="jm-w-full jm-h-[80vh] jm-relative jm-bg-cover jm-bg-center" style="scroll-behavior: smooth; background-image: url('./assets/images/main-bg.svg')">
+        <div class="jm-w-full jm-h-full jm-absolute jm-top-0 jm-left-0 jm-bg-[#000]/50 jm-z-[1]"></div>
+        <div class="jm-container jm-absolute jm-z-[2] jm-left-[50%] jm-translate-x-[-50%] w-full h-full jm-flex jm-flex-col jm-justify-center jm-items-center lg:jm-items-start jm-w-full jm-h-full jm-py-[60px] lg:jm-py-[80px]">
+          <h1 class="jm-typing jm-text-[#fff] jm-font-[700] jm-tracking-[-2px] jm-leading-[150%] jm-text-[38px] lg:jm-text-[56px] jm-text-center lg:jm-text-left jm-max-w-[855px]" data-aos="zoom-out-up" data-aos-easing="ease-in-out-back" data-aos-duration="2000" style="word-break: keep-all"></h1>
+          <div data-aos="zoom-out-up" data-aos-easing="ease-in-out-back" data-aos-duration="2000" class="jm-w-[93px] jm-h-[2px] jm-bg-[#fff] jm-my-[20px] lg:jm-my-[30px]"></div>
+          <p class="jm-text-[#fff] jm-font-[400] jm-tracking-[-0.8px] jm-leading-[160%] jm-text-[18px] lg:jm-text-[20px] jm-mb-[20px] lg:jm-mb-[30px] jm-text-center lg:jm-text-left" data-aos="zoom-out-up" data-aos-easing="ease-in-out-back" data-aos-duration="2000" style="word-break: keep-all">
+            신경쓰기 힘든 외국인 환자 유치,<br class="jm-block lg:!jm-hidden" />
+            메디카루는 프레임을 부숩니다.<br />
+            병원장님께서는 치료에만 전념할 수 있도록<br class="jm-block lg:!jm-hidden" />
+            메디카루가 최선을 다 하겠습니다.
+          </p>
+          <a href="#about" class="jm-group jm-absolute jm-bottom-[90px] jm-left-[42.7%] lg:jm-left-[48%] jm-animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" class="jm-w-[60px] lg:jm-w-[77px]" viewBox="0 0 77 53" fill="none">
+              <g opacity="0.8">
+                <path
+                  opacity="0.8"
+                  d="M7.01754 41.9636C6.95789 41.4598 6.71593 41.0687 6.29169 40.7903C5.86745 40.5119 5.34709 40.3727 4.73061 40.3727C4.27985 40.3727 3.88544 40.4456 3.54737 40.5915C3.21262 40.7373 2.95078 40.9378 2.76186 41.193C2.57626 41.4482 2.48345 41.7382 2.48345 42.063C2.48345 42.3348 2.54808 42.5685 2.67735 42.764C2.80992 42.9563 2.97896 43.117 3.18445 43.2463C3.38994 43.3722 3.60538 43.4766 3.83075 43.5595C4.05613 43.639 4.26328 43.7037 4.4522 43.7534L5.48629 44.0318C5.75145 44.1014 6.04643 44.1975 6.37124 44.3201C6.69936 44.4428 7.01257 44.6102 7.31087 44.8223C7.61248 45.0311 7.86106 45.2995 8.05661 45.6277C8.25216 45.9558 8.34993 46.3585 8.34993 46.8358C8.34993 47.386 8.20575 47.8831 7.9174 48.3272C7.63236 48.7714 7.21475 49.1244 6.66456 49.3862C6.11769 49.648 5.45315 49.779 4.67095 49.779C3.94179 49.779 3.31039 49.6613 2.77678 49.426C2.24647 49.1906 1.82886 48.8625 1.52394 48.4416C1.22233 48.0207 1.05164 47.5318 1.01186 46.975H2.28459C2.31773 47.3594 2.44699 47.6776 2.67237 47.9295C2.90107 48.1781 3.18942 48.3637 3.53743 48.4863C3.88876 48.6057 4.2666 48.6653 4.67095 48.6653C5.1416 48.6653 5.56418 48.5891 5.93871 48.4366C6.31324 48.2808 6.60987 48.0654 6.82862 47.7903C7.04737 47.5119 7.15675 47.1871 7.15675 46.8159C7.15675 46.4778 7.06229 46.2027 6.87337 45.9906C6.68445 45.7785 6.43587 45.6061 6.12763 45.4736C5.81939 45.341 5.48629 45.225 5.12834 45.1255L3.8755 44.7676C3.08004 44.5389 2.45031 44.2124 1.98629 43.7882C1.52228 43.3639 1.29027 42.8088 1.29027 42.1227C1.29027 41.5526 1.44439 41.0555 1.75263 40.6312C2.06418 40.2037 2.4818 39.8722 3.00547 39.6369C3.53246 39.3983 4.12076 39.279 4.77039 39.279C5.42664 39.279 6.00997 39.3966 6.52039 39.6319C7.0308 39.8639 7.43516 40.1821 7.73345 40.5865C8.03506 40.9908 8.19415 41.4499 8.21073 41.9636H7.01754ZM12.5203 49.7591C11.8044 49.7591 11.1879 49.59 10.6708 49.252C10.1538 48.9139 9.75607 48.4482 9.47766 47.8549C9.19926 47.2617 9.06005 46.5839 9.06005 45.8216C9.06005 45.046 9.20257 44.3616 9.48761 43.7683C9.77596 43.1717 10.177 42.706 10.6907 42.3713C11.2078 42.0332 11.811 41.8642 12.5004 41.8642C13.0373 41.8642 13.5212 41.9636 13.9521 42.1625C14.383 42.3613 14.736 42.6397 15.011 42.9977C15.2861 43.3557 15.4568 43.7733 15.5231 44.2505H14.3498C14.2603 43.9025 14.0615 43.5943 13.7532 43.3258C13.4483 43.054 13.0373 42.9182 12.5203 42.9182C12.0629 42.9182 11.6619 43.0375 11.3172 43.2761C10.9758 43.5114 10.709 43.8445 10.5167 44.2754C10.3278 44.703 10.2333 45.2051 10.2333 45.7818C10.2333 46.3718 10.3261 46.8855 10.5118 47.323C10.7007 47.7605 10.9658 48.1002 11.3072 48.3422C11.6519 48.5841 12.0563 48.7051 12.5203 48.7051C12.8252 48.7051 13.102 48.6521 13.3505 48.546C13.5991 48.4399 13.8096 48.2875 13.9819 48.0886C14.1543 47.8897 14.2769 47.6511 14.3498 47.3727H15.5231C15.4568 47.8235 15.2928 48.2295 15.0309 48.5907C14.7724 48.9487 14.4294 49.2337 14.0018 49.4459C13.5776 49.6547 13.0837 49.7591 12.5203 49.7591ZM19.5406 49.7591C18.8512 49.7591 18.2463 49.595 17.726 49.2669C17.2089 48.9388 16.8046 48.4797 16.5129 47.8897C16.2245 47.2998 16.0804 46.6104 16.0804 45.8216C16.0804 45.0261 16.2245 44.3317 16.5129 43.7385C16.8046 43.1452 17.2089 42.6845 17.726 42.3564C18.2463 42.0282 18.8512 41.8642 19.5406 41.8642C20.23 41.8642 20.8332 42.0282 21.3503 42.3564C21.8706 42.6845 22.275 43.1452 22.5633 43.7385C22.855 44.3317 23.0008 45.0261 23.0008 45.8216C23.0008 46.6104 22.855 47.2998 22.5633 47.8897C22.275 48.4797 21.8706 48.9388 21.3503 49.2669C20.8332 49.595 20.23 49.7591 19.5406 49.7591ZM19.5406 48.7051C20.0643 48.7051 20.4951 48.5709 20.8332 48.3024C21.1713 48.0339 21.4215 47.6809 21.5839 47.2434C21.7463 46.8059 21.8275 46.332 21.8275 45.8216C21.8275 45.3111 21.7463 44.8355 21.5839 44.3947C21.4215 43.9539 21.1713 43.5976 20.8332 43.3258C20.4951 43.054 20.0643 42.9182 19.5406 42.9182C19.0169 42.9182 18.586 43.054 18.248 43.3258C17.9099 43.5976 17.6597 43.9539 17.4973 44.3947C17.3349 44.8355 17.2537 45.3111 17.2537 45.8216C17.2537 46.332 17.3349 46.8059 17.4973 47.2434C17.6597 47.6809 17.9099 48.0339 18.248 48.3024C18.586 48.5709 19.0169 48.7051 19.5406 48.7051ZM23.9918 49.6V41.9636H25.1254V43.117H25.2049C25.3441 42.7392 25.596 42.4326 25.9606 42.1973C26.3252 41.962 26.7362 41.8443 27.1935 41.8443C27.2797 41.8443 27.3874 41.846 27.5167 41.8493C27.646 41.8526 27.7437 41.8576 27.81 41.8642V43.0574C27.7702 43.0474 27.6791 43.0325 27.5366 43.0126C27.3974 42.9894 27.2499 42.9778 27.0941 42.9778C26.7229 42.9778 26.3915 43.0557 26.0998 43.2115C25.8114 43.3639 25.5827 43.5761 25.4137 43.8478C25.248 44.1163 25.1651 44.4229 25.1651 44.7676V49.6H23.9918ZM31.2707 49.7591C30.5813 49.7591 29.9764 49.595 29.456 49.2669C28.939 48.9388 28.5346 48.4797 28.243 47.8897C27.9546 47.2998 27.8104 46.6104 27.8104 45.8216C27.8104 45.0261 27.9546 44.3317 28.243 43.7385C28.5346 43.1452 28.939 42.6845 29.456 42.3564C29.9764 42.0282 30.5813 41.8642 31.2707 41.8642C31.9601 41.8642 32.5633 42.0282 33.0803 42.3564C33.6007 42.6845 34.005 43.1452 34.2934 43.7385C34.5851 44.3317 34.7309 45.0261 34.7309 45.8216C34.7309 46.6104 34.5851 47.2998 34.2934 47.8897C34.005 48.4797 33.6007 48.9388 33.0803 49.2669C32.5633 49.595 31.9601 49.7591 31.2707 49.7591ZM31.2707 48.7051C31.7943 48.7051 32.2252 48.5709 32.5633 48.3024C32.9014 48.0339 33.1516 47.6809 33.314 47.2434C33.4764 46.8059 33.5576 46.332 33.5576 45.8216C33.5576 45.3111 33.4764 44.8355 33.314 44.3947C33.1516 43.9539 32.9014 43.5976 32.5633 43.3258C32.2252 43.054 31.7943 42.9182 31.2707 42.9182C30.747 42.9182 30.3161 43.054 29.9781 43.3258C29.64 43.5976 29.3897 43.9539 29.2273 44.3947C29.0649 44.8355 28.9837 45.3111 28.9837 45.8216C28.9837 46.332 29.0649 46.8059 29.2273 47.2434C29.3897 47.6809 29.64 48.0339 29.9781 48.3024C30.3161 48.5709 30.747 48.7051 31.2707 48.7051ZM36.8952 39.4182V49.6H35.7219V39.4182H36.8952ZM39.4175 39.4182V49.6H38.2442V39.4182H39.4175ZM46.7875 49.7591C46.1511 49.7591 45.5893 49.5983 45.1021 49.2768C44.6149 48.952 44.2337 48.4946 43.9586 47.9047C43.6835 47.3114 43.546 46.6104 43.546 45.8017C43.546 44.9996 43.6835 44.3036 43.9586 43.7136C44.2337 43.1236 44.6165 42.6679 45.1071 42.3464C45.5976 42.0249 46.1644 41.8642 46.8074 41.8642C47.3045 41.8642 47.6973 41.947 47.9856 42.1128C48.2773 42.2752 48.4993 42.4608 48.6518 42.6696C48.8076 42.8751 48.9286 43.0441 49.0147 43.1767H49.1142V39.4182H50.2875V49.6H49.1539V48.4267H49.0147C48.9286 48.5659 48.8059 48.7415 48.6468 48.9537C48.4877 49.1625 48.2607 49.3497 47.9657 49.5155C47.6708 49.6779 47.278 49.7591 46.7875 49.7591ZM46.9466 48.7051C47.4172 48.7051 47.8149 48.5825 48.1397 48.3372C48.4645 48.0886 48.7115 47.7456 48.8805 47.3081C49.0495 46.8673 49.1341 46.3585 49.1341 45.7818C49.1341 45.2117 49.0512 44.7129 48.8855 44.2853C48.7198 43.8545 48.4745 43.5197 48.1497 43.2811C47.8249 43.0391 47.4238 42.9182 46.9466 42.9182C46.4494 42.9182 46.0351 43.0458 45.7037 43.301C45.3755 43.5529 45.1286 43.8959 44.9629 44.3301C44.8005 44.761 44.7193 45.2449 44.7193 45.7818C44.7193 46.3254 44.8021 46.8192 44.9679 47.2633C45.1369 47.7041 45.3855 48.0555 45.7136 48.3173C46.045 48.5758 46.456 48.7051 46.9466 48.7051ZM54.9015 49.7591C54.2121 49.7591 53.6073 49.595 53.0869 49.2669C52.5699 48.9388 52.1655 48.4797 51.8738 47.8897C51.5855 47.2998 51.4413 46.6104 51.4413 45.8216C51.4413 45.0261 51.5855 44.3317 51.8738 43.7385C52.1655 43.1452 52.5699 42.6845 53.0869 42.3564C53.6073 42.0282 54.2121 41.8642 54.9015 41.8642C55.5909 41.8642 56.1941 42.0282 56.7112 42.3564C57.2315 42.6845 57.6359 43.1452 57.9243 43.7385C58.2159 44.3317 58.3618 45.0261 58.3618 45.8216C58.3618 46.6104 58.2159 47.2998 57.9243 47.8897C57.6359 48.4797 57.2315 48.9388 56.7112 49.2669C56.1941 49.595 55.5909 49.7591 54.9015 49.7591ZM54.9015 48.7051C55.4252 48.7051 55.8561 48.5709 56.1941 48.3024C56.5322 48.0339 56.7824 47.6809 56.9449 47.2434C57.1073 46.8059 57.1885 46.332 57.1885 45.8216C57.1885 45.3111 57.1073 44.8355 56.9449 44.3947C56.7824 43.9539 56.5322 43.5976 56.1941 43.3258C55.8561 43.054 55.4252 42.9182 54.9015 42.9182C54.3779 42.9182 53.947 43.054 53.6089 43.3258C53.2708 43.5976 53.0206 43.9539 52.8582 44.3947C52.6958 44.8355 52.6146 45.3111 52.6146 45.8216C52.6146 46.332 52.6958 46.8059 52.8582 47.2434C53.0206 47.6809 53.2708 48.0339 53.6089 48.3024C53.947 48.5709 54.3779 48.7051 54.9015 48.7051ZM60.8231 49.6L58.4964 41.9636H59.7294L61.3799 47.8102H61.4595L63.0902 41.9636H64.343L65.9538 47.7903H66.0333L67.6839 41.9636H68.9169L66.5902 49.6H65.4368L63.7663 43.7335H63.647L61.9765 49.6H60.8231ZM70.8413 45.0062V49.6H69.668V41.9636H70.8015V43.1568H70.901C71.0799 42.769 71.3517 42.4575 71.7163 42.2221C72.0809 41.9835 72.5515 41.8642 73.1282 41.8642C73.6453 41.8642 74.0977 41.9702 74.4855 42.1824C74.8733 42.3912 75.1749 42.7094 75.3903 43.1369C75.6057 43.5611 75.7135 44.0981 75.7135 44.7477V49.6H74.5402V44.8272C74.5402 44.2273 74.3844 43.76 74.0728 43.4253C73.7613 43.0872 73.3337 42.9182 72.7902 42.9182C72.4156 42.9182 72.0809 42.9994 71.7859 43.1618C71.4942 43.3242 71.2639 43.5611 71.0948 43.8727C70.9258 44.1843 70.8413 44.5621 70.8413 45.0062Z"
+                  fill="white"
+                  class="group-hover:!jm-fill-[#44D08E]"
+                ></path>
+                <path d="M38.25 5.84998V11.7" stroke="white" stroke-width="1.5" stroke-linecap="round" class="group-hover:!jm-stroke-[#44D08E]"></path>
+                <rect x="29.25" y="0.75" width="18" height="29.7" rx="9" stroke="white" stroke-width="1.5" class="group-hover:!jm-stroke-[#44D08E]"></rect>
+              </g>
+            </svg>
+          </a>
+          <div class="jm-typing-txt">
+            <ul>
+              <li>외국인 환자 유치, 메디카루와 함께라면 아직 늦지 않았습니다.</li>
+            </ul>
+            <style>
+              .jm-typing-txt {
+                display: none;
+              }
+              .jm-typeing-txt ul {
+                list-style: none;
+              }
+              .jm-typing {
+                display: inline-block;
+                animation-duration: 0.3s;
+                animation-iteration-count: infinite;
+              }
+            </style>
+          </div>
+        </div>
+        <script>
+          var typingBool = false;
+          var typingIdx = 0;
+          var liIndex = 0;
+          var liLength = $(".jm-typing-txt>ul>li").length;
+
+          var typingTxt = $(".jm-typing-txt>ul>li").eq(liIndex).text();
+          typingTxt = typingTxt.split("");
+          if (typingBool == false) {
+            typingBool = true;
+            var tyInt = setInterval(typing, 80);
+          }
+
+          function typing() {
+            if (typingIdx < typingTxt.length) {
+              $(".jm-typing").append(typingTxt[typingIdx]);
+              typingIdx++;
+            } else {
+              if (liIndex >= liLength - 1) {
+                liIndex = 0;
+              } else {
+                liIndex++;
+              }
+
+              typingIdx = 0;
+              typingBool = false;
+              typingTxt = $(".jm-typing-txt>ul>li").eq(liIndex).text();
+
+              clearInterval(tyInt);
+              setTimeout(function () {
+                $(".jm-typing").html("");
+                tyInt = setInterval(typing, 90);
+              }, 3000);
+            }
+          }
+        </script>
+      </div>
+      <div id="about" class="jm-w-full jm-h-auto jm-flex jm-flex-col jm-items-center jm-justify-center">
+        <div class="jm-container jm-flex jm-flex-col jm-items-center jm-justify-center jm-w-full jm-py-[60px] lg:jm-py-[100px]">
+          <p class="jm-text-[#aaa] jm-text-[18px] lg:jm-text-[24px] jm-font-[500] jm-leading-[130%] jm-tracking-[-0.4px] jm-mb-[8px] lg:jm-mb-[12px]">회사소개</p>
+          <p data-aos="fade-up" data-aos-easing="ease-in-out-back" data-aos-duration="900" class="jm-text-[28px] lg:jm-text-[48px] jm-text-[#000] jm-font-[300] jm-mb-[60px] lg:jm-mb-[80px]"><span class="jm-font-[700]">메디카루</span>는 무엇이 다를까요?</p>
+          <div class="jm-grid jm-grid-cols-1 lg:jm-grid-cols-3 jm-w-full jm-gap-[60px] lg:jm-gap-[36px]">
+            <div data-aos="flip-down" data-aos-easing="ease-in-out-back" data-aos-duration="900" class="jm-relative jm-bg-[#f4f5fa] jm-flex jm-flex-col jm-gap-y-[12px] jm-items-center jm-justify-center jm-px-[12px] lg:jm-px-[20px] jm-pt-[42px] lg:jm-pt-[60px] jm-pb-[30px] lg:jm-pb-[40px] jm-shadow-md jm-w-full" style="border-radius: 0px 20px">
+              <div class="jm-absolute jm-top-[-40px] jm-left-[50%] jm-translate-x-[-50%] jm-flex jm-items-center jm-justify-center jm-bg-[#fff] jm-p-[11px] lg:jm-p-[15px] jm-text-[#44D08E] jm-text-[32px] lg:jm-text-[42px] jm-tracking-[-0.45px] jm-font-[700] jm-leading-[110%] jm-aspect-square" style="border-radius: 0px 20px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15)">01</div>
+              <p class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-text-center jm-tracking-[-0.5px]">일본 현지에서 활동</p>
+              <p class="jm-text-[#777] jm-text-[15px] lg:jm-text-[16px] jm-font-[400] jm-leading-[160%] jm-text-center jm-tracking-[-1px] lg:jm-tracking-[-0.45px] jm-w-full">
+                메디카루는 일본 내에 법인을<br class="jm-hidden lg:!jm-block" />
+                보유하고 있으며,<br class="jm-block lg:!jm-hidden" />
+                한국에서 대응하기<br class="jm-hidden lg:!jm-block" />
+                어려운 부분을 지원하고 있습니다.
+              </p>
+            </div>
+            <div data-aos="flip-down" data-aos-easing="ease-in-out-back" data-aos-duration="1400" class="jm-relative jm-bg-[#f4f5fa] jm-flex jm-flex-col jm-gap-y-[12px] jm-items-center jm-justify-center jm-px-[12px] lg:jm-px-[20px] jm-pt-[42px] lg:jm-pt-[60px] jm-pb-[30px] lg:jm-pb-[40px] jm-shadow-md jm-w-full" style="border-radius: 0px 20px">
+              <div class="jm-absolute jm-top-[-40px] jm-left-[50%] jm-translate-x-[-50%] jm-flex jm-items-center jm-justify-center jm-bg-[#fff] jm-p-[11px] lg:jm-p-[15px] jm-text-[#44D08E] jm-text-[32px] lg:jm-text-[42px] jm-tracking-[-0.45px] jm-font-[700] jm-leading-[110%] jm-aspect-square" style="border-radius: 0px 20px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15)">02</div>
+              <p class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-text-center jm-tracking-[-0.5px]">일본의 모든 광고 매체 활용 가능</p>
+              <p class="jm-text-[#777] jm-text-[15px] lg:jm-text-[16px] jm-font-[400] jm-leading-[160%] jm-text-center jm-tracking-[-1.2px] lg:jm-tracking-[-0.45px] jm-w-full">
+                원장님께서 원하시는 매체를 사용하여 <br class="jm-hidden lg:!jm-block" />
+                오프라인 광고부터<br class="jm-block lg:!jm-hidden" />
+                온라인 광고까지<br class="jm-hidden lg:!jm-block" />
+                다양한 매체를 활용할 수 있습니다.<br class="jm-hidden lg:!jm-block" />
+              </p>
+            </div>
+            <div data-aos="flip-down" data-aos-easing="ease-in-out-back" data-aos-duration="1800" class="jm-relative jm-bg-[#f4f5fa] jm-flex jm-flex-col jm-gap-y-[12px] jm-items-center jm-justify-center jm-px-[12px] lg:jm-px-[20px] jm-pt-[42px] lg:jm-pt-[60px] jm-pb-[30px] lg:jm-pb-[40px] jm-shadow-md jm-w-full" style="border-radius: 0px 20px">
+              <div class="jm-absolute jm-top-[-40px] jm-left-[50%] jm-translate-x-[-50%] jm-flex jm-items-center jm-justify-center jm-bg-[#fff] jm-p-[11px] lg:jm-p-[15px] jm-text-[#44D08E] jm-text-[32px] lg:jm-text-[42px] jm-tracking-[-0.45px] jm-font-[700] jm-leading-[110%] jm-aspect-square" style="border-radius: 0px 20px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15)">03</div>
+              <p class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-text-center jm-tracking-[-0.5px]">일본 전문화 팀의 1:1 마크</p>
+              <p class="jm-text-[#777] jm-text-[15px] lg:jm-text-[16px] jm-font-[400] jm-leading-[160%] jm-text-center jm-tracking-[-1px] lg:jm-tracking-[-0.45px] jm-w-full">
+                디자이너, 고객 서비스 (통역), 그리고 <br class="jm-hidden lg:!jm-block" />
+                마케팅 분야에서<br class="jm-block lg:!jm-hidden" />
+                전문화된 일본 팀이 <br class="jm-hidden lg:!jm-block" />
+                병원을 1:1 마크하고 있습니다. <br class="jm-hidden lg:!jm-block" />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="jm-w-full jm-bg-[#F4F5FA]">
+          <div class="jm-container jm-flex jm-flex-col jm-items-center jm-justify-center jm-w-full jm-py-[60px] lg:jm-py-[100px]">
+            <p class="jm-text-[#aaa] jm-text-[18px] lg:jm-text-[24px] jm-font-[500] jm-leading-[130%] jm-tracking-[-0.4px] jm-mb-[8px] lg:jm-mb-[12px]">회사소개</p>
+            <p data-aos="fade-up" data-aos-easing="ease-in-out-back" data-aos-duration="900" class="jm-text-[28px] lg:jm-text-[48px] jm-text-[#000] jm-font-[300] jm-text-center">
+              <span class="jm-font-[700]">메디카루</span>와 함께라면,<br class="jm-block lg:!jm-hidden" />
+              <span class="jm-font-[700]">일본 전담 인하우스</span>를<br />
+              갖는 것과 같습니다.
+            </p>
+            <div class="jm-w-full jm-h-[1px] jm-bg-[#aaa] jm-my-[30px] lg:jm-my-[40px]"></div>
+            <div class="jm-flex jm-flex-col items-center jm-w-full jm-gap-y-[30px] lg:jm-gap-0">
+              <div class="jm-flex jm-flex-col-reverse lg:jm-flex-row jm-items-center jm-w-full jm-gap-[20px] lg:jm-gap-[5px]">
+                <div data-aos="fade-right" data-aos-duration="1000" class="jm-flex jm-flex-col jm-gap-y-[12px] jm-items-center jm-justify-center jm-w-full">
+                  <p class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-text-center jm-tracking-[-0.3px]">병원 영업일 = 메디카루 영업일</p>
+                  <p class="jm-text-[#777] jm-text-[15px] lg:jm-text-[16px] jm-font-[400] jm-leading-[160%] jm-text-center jm-tracking-[-0.25px]">
+                    병원의 영업일은 메디카루의 영업일과 일치합니다.<br />
+                    라인상담부터 원내통역까지 서비스가 제공됩니다.
+                  </p>
+                </div>
+                <div data-aos="fade-left" data-aos-duration="1000" class="jm-w-full jm-aspect-[57/32] jm-bg-cover jm-bg-center" style="background-image: url('./assets/images/content-1.png')"></div>
+              </div>
+              <div class="jm-flex jm-flex-col lg:jm-flex-row jm-items-center jm-w-full jm-gap-[20px] lg:jm-gap-[5px]">
+                <div data-aos="fade-right" data-aos-duration="1000" class="jm-w-full jm-aspect-[57/32] jm-bg-cover jm-bg-center" style="background-image: url('./assets/images/content-2.png')"></div>
+                <div data-aos="fade-left" data-aos-duration="1000" class="jm-flex jm-flex-col jm-gap-y-[12px] jm-items-center jm-justify-center jm-w-full">
+                  <p class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-text-center jm-tracking-[-0.3px]">원내 프로세스 현지 최적화</p>
+                  <p class="jm-text-[#777] jm-text-[15px] lg:jm-text-[16px] jm-font-[400] jm-leading-[160%] jm-text-center jm-tracking-[-0.25px]">일본인 환자를 위한 프로세스를 제공해드리겠습니다.</p>
+                </div>
+              </div>
+              <div class="jm-flex jm-flex-col-reverse lg:jm-flex-row jm-items-center jm-w-full jm-gap-[20px] lg:jm-gap-[5px]">
+                <div data-aos="fade-right" data-aos-duration="1100" class="jm-flex jm-flex-col jm-gap-y-[12px] jm-items-center jm-justify-center jm-w-full">
+                  <p class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-text-center jm-tracking-[-0.3px]">코디네이터 + 마케터 업무의 융합화</p>
+                  <p class="jm-text-[#777] jm-text-[15px] lg:jm-text-[16px] jm-font-[400] jm-leading-[160%] jm-text-center jm-tracking-[-0.25px]">
+                    메디카루에서는 일본인 코디네이터가 수행하지<br class="jm-block lg:!jm-hidden" />
+                    못하는 업무와<br class="jm-hidden lg:!jm-block" />
+                    한국인 마케터가 수행하지 못하는 업무를<br class="jm-block lg:!jm-hidden" />
+                    전담하겠습니다.
+                  </p>
+                </div>
+                <div data-aos="fade-left" data-aos-duration="1100" class="jm-w-full jm-aspect-[57/32] jm-bg-cover jm-bg-center" style="background-image: url('./assets/images/content-3.png')"></div>
+              </div>
+              <div class="jm-flex jm-flex-col lg:jm-flex-row jm-items-center jm-w-full jm-gap-[20px] lg:jm-gap-[5px]">
+                <div data-aos="fade-right" data-aos-duration="1100" class="jm-w-full jm-aspect-[57/32] jm-bg-cover jm-bg-center" style="background-image: url('./assets/images/content-verify.png')"></div>
+                <div data-aos="fade-left" data-aos-duration="1100" class="jm-flex jm-flex-col jm-gap-y-[12px] jm-items-center jm-justify-center jm-w-full">
+                  <p class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-text-center jm-tracking-[-0.3px]">외국인 환자 유치업자 등록증 보유</p>
+                  <p class="jm-text-[#777] jm-text-[15px] lg:jm-text-[16px] jm-font-[400] jm-leading-[160%] jm-text-center jm-tracking-[-0.25px]">
+                    원장님은 치료에만 집중하실 수 있도록 메디카루가<br class="jm-block lg:!jm-hidden" />
+                    일본인<br class="jm-hidden lg:!jm-block" />
+                    환자 유치에 집중하겠습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="jm-w-full jm-h-[1px] jm-bg-[#aaa] jm-mt-[30px] lg:jm-mt-[40px]"></div>
+          </div>
+        </div>
+      </div>
+      <div id="biz" class="jm-w-full jm-h-auto jm-flex jm-flex-col jm-items-center jm-justify-center">
+        <div class="jm-container jm-flex jm-flex-col jm-items-center jm-justify-center jm-w-full jm-py-[60px] lg:jm-py-[100px]">
+          <div class="jm-grid jm-grid-cols-1 lg:jm-grid-cols-2 jm-w-full jm-gap-[60px] lg:jm-gap-[36px]">
+            <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="900" class="jm-flex jm-flex-col jm-items-start jm-justify-between jm-gap-y-[30px]">
+              <div class="jm-w-full jm-text-center lg:jm-text-left">
+                <p class="jm-text-[#aaa] jm-text-[18px] lg:jm-text-[24px] jm-font-[500] jm-leading-[130%] jm-tracking-[-0.4px] jm-mb-[8px] lg:jm-mb-[12px]">사업영역</p>
+                <p data-aos="fade-up" data-aos-easing="ease-in-out-back" data-aos-duration="900" class="jm-text-[28px] lg:jm-text-[48px] jm-text-[#000] jm-font-[300] jm-leading-[130%] jm-tracking-[-2px]">
+                  <span class="jm-font-[700]">메디카루</span>의 <span class="jm-font-[700]">상품</span>을<br class="jm-hidden lg:!jm-block" />
+                  소개합니다.
+                </p>
+              </div>
+              <div class="jm-w-full lg:jm-w-[80%] jm-grid jm-grid-cols-5 jm-gap-[10px]">
+                <a href="#" class="jm-w-full jm-aspect-square jm-bg-center jm-bg-cover hover:jm-opacity-70" style="background-image: url('./assets/images/icon-1.png')"> </a>
+                <a href="#" class="jm-w-full jm-aspect-square jm-bg-center jm-bg-cover hover:jm-opacity-70" style="background-image: url('./assets/images/icon-2.png')"> </a>
+                <a href="#" class="jm-w-full jm-aspect-square jm-bg-center jm-bg-cover hover:jm-opacity-70" style="background-image: url('./assets/images/icon-3.png')"> </a>
+                <a href="#" class="jm-w-full jm-aspect-square jm-bg-center jm-bg-cover hover:jm-opacity-70" style="background-image: url('./assets/images/icon-4.png')"> </a>
+                <a href="#" class="jm-w-full jm-aspect-square jm-bg-center jm-bg-cover hover:jm-opacity-70" style="background-image: url('./assets/images/icon-5.png')"> </a>
+              </div>
+            </div>
+            <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="900" class="jm-w-full jm-flex jm-flex-col-reverse lg:jm-flex-row">
+              <div class="jm-flex jm-flex-col jm-gap-y-[12px] jm-justify-center jm-w-full jm-bg-[#F4F5FA] jm-px-[15px] lg:jm-px-[20px] jm-py-[20px] lg:jm-py-[10px]">
+                <p class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[140%] jm-text-left jm-tracking-[-0.3px]">
+                  리얼모델<br class="jm-hidden lg:!jm-block" />
+                  인플루언서 시딩
+                </p>
+                <p class="jm-text-[#777] jm-text-[15px] lg:jm-text-[16px] jm-font-[400] jm-leading-[160%] jm-text-left jm-tracking-[-1px]" style="word-break: keep-all">소셜 미디어 플랫폼인 트위터부터 유튜브까지 다양한 채널을 통해 인플루언서들과의 연결을 증진하고자 합니다. 리얼모델과 인플루언서 협찬을 합친 상품으로 병원이 2차 활용할 수 있는 자료와 인플루언서 자체의 영향력을 가져갈 수 있습니다.</p>
+              </div>
+              <div class="jm-w-full jm-bg-cover jm-bg-center jm-hidden lg:!jm-block jm-aspect-[245/350]" style="background-image: url('./assets/images/content-4.png')"></div>
+              <div class="jm-w-full jm-bg-cover jm-bg-center jm-block lg:!jm-hidden jm-aspect-[345/250]" style="background-image: url('./assets/images/content-4-m.png')"></div>
+            </div>
+            <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="1100" class="jm-w-full jm-flex jm-flex-col-reverse lg:jm-flex-row">
+              <div class="jm-flex jm-flex-col jm-gap-y-[12px] jm-justify-center jm-w-full jm-bg-[#F4F5FA] jm-px-[15px] lg:jm-px-[20px] jm-py-[20px] lg:jm-py-[10px]">
+                <p class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[140%] jm-text-left jm-tracking-[-0.3px]">
+                  메디카루 <br class="jm-hidden lg:!jm-block" />
+                  자체 보유채널
+                </p>
+                <p class="jm-text-[#777] jm-text-[15px] lg:jm-text-[16px] jm-font-[400] jm-leading-[160%] jm-text-left jm-tracking-[-1px]" style="word-break: keep-all">메디카루는 일본계 뷰티 미디어를 운영하고 있습니다. 미디어를 통해 병원을 위한 맞춤형 브랜디드 콘텐츠를 제작하고 있으며 틱톡, 트위터, 유튜브, 인스타 그램을 통해 주요 타겟인 20대 ~ 40대 일본인 여성들에게 많은 노출이 되고 있습니다.</p>
+              </div>
+              <div class="jm-w-full jm-bg-cover jm-bg-center jm-hidden lg:!jm-block jm-aspect-[245/350]" style="border-radius: 0 40px 0 0; background-image: url('./assets/images/content-5.png')"></div>
+              <div class="jm-w-full jm-bg-cover jm-bg-center jm-block lg:!jm-hidden jm-aspect-[345/250]" style="background-image: url('./assets/images/content-5-m.png')"></div>
+            </div>
+            <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="1100" class="jm-w-full jm-flex jm-flex-col-reverse lg:jm-flex-row">
+              <div class="jm-flex jm-flex-col jm-gap-y-[12px] jm-justify-center jm-w-full jm-bg-[#F4F5FA] jm-px-[15px] lg:jm-px-[20px] jm-py-[20px] lg:jm-py-[10px]">
+                <p class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[140%] jm-text-left jm-tracking-[-0.3px]">채널 운영 대행</p>
+                <p class="jm-text-[#777] jm-text-[15px] lg:jm-text-[16px] jm-font-[400] jm-leading-[160%] jm-text-left jm-tracking-[-1px]" style="word-break: keep-all">트위터, 인스타그램, 아메바 등의 소셜 미디어 플랫폼은 병원에서 신경써야 할 대상이며, 환자 유치에 있어서 중요한 역할을 합니다. 환자유치에 있어서 필수적인 병의원 채널을 메디카루가 운영대행하며 컨텐츠 현지화를 도와드립니다.</p>
+              </div>
+              <div class="jm-w-full jm-bg-cover jm-bg-center jm-hidden lg:!jm-block jm-aspect-[245/350]" style="border-radius: 0 40px 0 0; background-image: url('./assets/images/content-6.png')"></div>
+              <div class="jm-w-full jm-bg-cover jm-bg-center jm-block lg:!jm-hidden jm-aspect-[345/250]" style="background-image: url('./assets/images/content-6-m.png')"></div>
+            </div>
+          </div>
+        </div>
+        <div class="jm-w-full jm-bg-cover jm-bg-center jm-h-auto jm-py-[40px] lg:jm-py-[80px]" style="background-image: url('./assets/images/bg-graph.png')">
+          <div class="jm-w-full jm-container jm-flex jm-flex-col jm-items-center jm-justify-center !jm-px-[0px]">
+            <div class="jm-w-full">
+              <p class="jm-text-[#aaa] jm-text-[18px] lg:jm-text-[24px] jm-font-[500] jm-leading-[130%] jm-tracking-[-0.4px] jm-mb-[8px] lg:jm-mb-[12px] jm-text-center">사업영역</p>
+              <p data-aos="fade-up" data-aos-easing="ease-in-out-back" data-aos-duration="900" class="jm-text-[28px] lg:jm-text-[48px] jm-text-[#fff] jm-font-[700] jm-leading-[130%] jm-tracking-[-1.68px] jm-text-center jm-mb-[30px] lg:jm-mb-[50px]">
+                메디카루 ALL IN ONE<br />
+                현지 최적화 프로세스
+              </p>
+              <img data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="900" src="./assets/images/pc-graph.png" alt="pc-graph" class="jm-hidden lg:!jm-block w-full jm-animate-pulse" />
+              <img data-aos="zoom-out" data-aos-duration="800" src="./assets/images/m-graph.png" alt="m-graph" class="jm-block lg:!jm-hidden jm-w-full jm-animate-pulse" />
+              <p data-aos="fade" data-aos-easing="ease-in-out-back" data-aos-duration="900" class="jm-text-[28px] lg:jm-text-[48px] jm-text-[#fff] jm-font-[300] jm-leading-[130%] jm-tracking-[-1.68px] jm-text-center jm-mb-[30px] lg:jm-mb-[50px]">
+                <span class="jm-font-[700]">원내 통역 대행</span>과 <span class="jm-font-[700]">VIP컨시어지</span><br class="jm-block lg:!jm-hidden" />
+                서비스 까지<br class="jm-hidden lg:!jm-block" />
+                책임지겠습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="contact" class="jm-w-full jm-h-auto jm-flex jm-flex-col jm-items-center jm-justify-center jm-bg-[#F4F5FA]">
+        <div class="jm-container jm-flex jm-flex-col jm-items-center jm-justify-center jm-w-full jm-py-[60px] lg:jm-py-[100px]">
+          <p class="jm-text-[#aaa] jm-text-[18px] lg:jm-text-[24px] jm-font-[500] jm-leading-[130%] jm-tracking-[-0.4px] jm-mb-[8px] lg:jm-mb-[12px]">문의하기</p>
+          <p data-aos="fade-up" data-aos-easing="ease-in-out-back" data-aos-duration="800" class="jm-text-[28px] lg:jm-text-[48px] jm-text-[#000] jm-font-[300] jm-text-center aos-init aos-animate">
+            <span class="jm-font-[700]">메디카루</span>
+            에게 물어보세요.
+          </p>
+          <div class="jm-w-full jm-h-[1px] jm-bg-[#aaa] jm-my-[30px] lg:jm-my-[40px]"></div>
+          <form class="gform jm-w-full" method="POST" id="gform" data-email="aaaa4082@naver.com" action="https://script.google.com/macros/s/AKfycbykf7aiH2jtyEatsJZoBHAoOS_k9xLsHP_4qmlzVRLVn6hcTqWtHzx3DrpCF2yd4AN4/exec">
+            <!-- change the form action to your script url -->
+            <div class="form-elements jm-w-full jm-grid jm-grid-cols-1 lg:jm-grid-cols-2 jm-gap-[40px]">
+              <fieldset class="pure-group jm-w-full jm-flex jm-flex-col jm-gap-y-[12px]">
+                <label class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-tracking-[-0.3px]" for="h-name">병원명 </label>
+                <input id="h-name" name="병원명 :" required="" type="text" placeholder="병원명을 입력해주세요." class="jm-py-[16px] jm-px-[12px] jm-bg-[#fff] jm-text-[18px] jm-text-[#000] jm-border jm-border-[#ccc] jm-rounded-[8px] focus:!jm-border-[#44D08E] hover:!jm-border-[#44D08E]" />
+              </fieldset>
+
+              <fieldset class="pure-group jm-w-full jm-flex jm-flex-col jm-gap-y-[12px]">
+                <label class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-tracking-[-0.3px]" for="name">담당자 성함 </label>
+                <input id="name" name="담당자 성함 :" required="" type="text" placeholder="담당자 성함을 입력해주세요." class="jm-py-[16px] jm-px-[12px] jm-bg-[#fff] jm-text-[18px] jm-text-[#000] jm-border jm-border-[#ccc] jm-rounded-[8px] focus:!jm-border-[#44D08E] hover:!jm-border-[#44D08E]" />
+              </fieldset>
+
+              <fieldset class="pure-group jm-w-full jm-flex jm-flex-col jm-gap-y-[12px]">
+                <label class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-tracking-[-0.3px]" for="role">직책 </label>
+                <input id="role" name="직책 :" required="" type="text" placeholder="직책을 입력해주세요." class="jm-py-[16px] jm-px-[12px] jm-bg-[#fff] jm-text-[18px] jm-text-[#000] jm-border jm-border-[#ccc] jm-rounded-[8px] focus:!jm-border-[#44D08E] hover:!jm-border-[#44D08E]" />
+              </fieldset>
+
+              <fieldset class="pure-group jm-w-full jm-flex jm-flex-col jm-gap-y-[12px]">
+                <label class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-tracking-[-0.3px]" for="tel">연락처 </label>
+                <input id="tel" name="연락처 :" required="" type="text" placeholder="연락처를 입력해주세요." class="jm-py-[16px] jm-px-[12px] jm-bg-[#fff] jm-text-[18px] jm-text-[#000] jm-border jm-border-[#ccc] jm-rounded-[8px] focus:!jm-border-[#44D08E] hover:!jm-border-[#44D08E]" />
+              </fieldset>
+              <fieldset class="pure-group jm-w-full jm-flex jm-flex-col jm-gap-y-[12px]">
+                <label class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-tracking-[-0.3px]" for="email">이메일 </label>
+                <input id="email" name="이메일 :" required="" type="email" placeholder="이메일 주소를 입력해주세요." class="jm-py-[16px] jm-px-[12px] jm-bg-[#fff] jm-text-[18px] jm-text-[#000] jm-border jm-border-[#ccc] jm-rounded-[8px] focus:!jm-border-[#44D08E] hover:!jm-border-[#44D08E]" />
+              </fieldset>
+              <!-- 
+              <fieldset class="pure-group jm-w-full jm-flex jm-flex-col jm-gap-y-[12px]">
+                <label class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-tracking-[-0.3px]" for="platform">입점되어 있는 플랫폼 </label>
+                <select name="임점 플랫폼 :" id="platform" class="jm-py-[16px] jm-px-[12px] jm-bg-[#fff] jm-text-[18px] jm-text-[#000] jm-border jm-border-[#ccc] jm-rounded-[8px] focus:!jm-border-[#44D08E] hover:!jm-border-[#44D08E]">
+                  <option disabled>입점 플랫폼 선택</option>
+                  <option>입점 플랫폼 없음</option>
+                  <option>강남언니</option>
+                  <option>아메바</option>
+                  <option>트위터</option>
+                  <option>라인</option>
+                </select>
+              </fieldset> -->
+
+              <div class="jm-w-full jm-flex jm-flex-col jm-gap-y-[20px]">
+                <label class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-tracking-[-0.3px]" for="platform">입점되어 있는 플랫폼 </label>
+                <div class="jm-grid jm-grid-cols-1 lg:jm-grid-cols-2 jm-gap-[18px] jm-w-full">
+                  <fieldset class="pure-group jm-w-full jm-flex jm-items-center">
+                    <input id="check_id_1" name="강남언니 입점 :" type="checkbox" value=" " class="jm-peer jm-w-0 jm-h-0 jm-opacity-0" />
+                    <label for="check_id_1" class="jm-flex jm-items-center jm-justify-center jm-border-[1px] jm-border-[#C5CBD1] jm-!w-[22px] jm-!h-[22px] jm-aspect-square jm-rounded-[4px] peer-checked:!jm-bg-[#44D08E] jm-peer-checked:!border-[#fff]">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2559 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.93043 13.3986L3.92543 9.39406C3.60043 9.06865 3.07252 9.06865 2.7471 9.39406L2.74418 9.39698C2.41877 9.7224 2.41877 10.2503 2.74418 10.5757L7.33877 15.1699L7.34127 15.1728C7.66668 15.4986 8.1946 15.4986 8.52002 15.1728L8.52293 15.1699L17.2559 6.42531C17.5813 6.0999 17.5813 5.5724 17.2559 5.24698Z" fill="#fff"></path>
+                      </svg>
+                    </label>
+                    <label for="check_id_1" class="jm-pl-[8px] jm-text-[#000] peer-checked:!text-[#888]">
+                      <span class="jm-text-[18px] jm-leading-[130%] jm-tracking-[-0.4px] jm-font-[400]">강남언니</span>
+                    </label>
+                  </fieldset>
+                  <fieldset class="pure-group jm-w-full jm-flex jm-items-center">
+                    <input id="check_id_2" name="아메바 입점 :" type="checkbox" value=" " class="jm-peer jm-w-0 jm-h-0 jm-opacity-0" />
+                    <label for="check_id_2" class="jm-flex jm-items-center jm-justify-center jm-border-[1px] jm-border-[#C5CBD1] jm-!w-[22px] jm-!h-[22px] jm-aspect-square jm-rounded-[4px] peer-checked:!jm-bg-[#44D08E] jm-peer-checked:!border-[#fff]">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2559 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.93043 13.3986L3.92543 9.39406C3.60043 9.06865 3.07252 9.06865 2.7471 9.39406L2.74418 9.39698C2.41877 9.7224 2.41877 10.2503 2.74418 10.5757L7.33877 15.1699L7.34127 15.1728C7.66668 15.4986 8.1946 15.4986 8.52002 15.1728L8.52293 15.1699L17.2559 6.42531C17.5813 6.0999 17.5813 5.5724 17.2559 5.24698Z" fill="#fff"></path>
+                      </svg>
+                    </label>
+                    <label for="check_id_2" class="jm-pl-[8px] jm-text-[#000] peer-checked:!text-[#888]">
+                      <span class="jm-text-[18px] jm-leading-[130%] jm-tracking-[-0.4px] jm-font-[400]">아메바</span>
+                    </label>
+                  </fieldset>
+                  <fieldset class="pure-group jm-w-full jm-flex jm-items-center">
+                    <input id="check_id_3" name="트위터 입점 :" type="checkbox" value=" " class="jm-peer jm-w-0 jm-h-0 jm-opacity-0" />
+                    <label for="check_id_3" class="jm-flex jm-items-center jm-justify-center jm-border-[1px] jm-border-[#C5CBD1] jm-!w-[22px] jm-!h-[22px] jm-aspect-square jm-rounded-[4px] peer-checked:!jm-bg-[#44D08E] jm-peer-checked:!border-[#fff]">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2559 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.93043 13.3986L3.92543 9.39406C3.60043 9.06865 3.07252 9.06865 2.7471 9.39406L2.74418 9.39698C2.41877 9.7224 2.41877 10.2503 2.74418 10.5757L7.33877 15.1699L7.34127 15.1728C7.66668 15.4986 8.1946 15.4986 8.52002 15.1728L8.52293 15.1699L17.2559 6.42531C17.5813 6.0999 17.5813 5.5724 17.2559 5.24698Z" fill="#fff"></path>
+                      </svg>
+                    </label>
+                    <label for="check_id_3" class="jm-pl-[8px] jm-text-[#000] peer-checked:!text-[#888]">
+                      <span class="jm-text-[18px] jm-leading-[130%] jm-tracking-[-0.4px] jm-font-[400]">트위터</span>
+                    </label>
+                  </fieldset>
+                  <fieldset class="pure-group jm-w-full jm-flex jm-items-center">
+                    <input id="check_id_4" name="라인 입점 :" type="checkbox" value=" " class="jm-peer jm-w-0 jm-h-0 jm-opacity-0" />
+                    <label for="check_id_4" class="jm-flex jm-items-center jm-justify-center jm-border-[1px] jm-border-[#C5CBD1] jm-!w-[22px] jm-!h-[22px] jm-aspect-square jm-rounded-[4px] peer-checked:!jm-bg-[#44D08E] jm-peer-checked:!border-[#fff]">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2559 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.93043 13.3986L3.92543 9.39406C3.60043 9.06865 3.07252 9.06865 2.7471 9.39406L2.74418 9.39698C2.41877 9.7224 2.41877 10.2503 2.74418 10.5757L7.33877 15.1699L7.34127 15.1728C7.66668 15.4986 8.1946 15.4986 8.52002 15.1728L8.52293 15.1699L17.2559 6.42531C17.5813 6.0999 17.5813 5.5724 17.2559 5.24698Z" fill="#fff"></path>
+                      </svg>
+                    </label>
+                    <label for="check_id_4" class="jm-pl-[8px] jm-text-[#000] peer-checked:!text-[#888]">
+                      <span class="jm-text-[18px] jm-leading-[130%] jm-tracking-[-0.4px] jm-font-[400]">라인</span>
+                    </label>
+                  </fieldset>
+                </div>
+              </div>
+
+              <fieldset class="pure-group jm-w-full jm-flex jm-flex-col jm-gap-y-[12px] lg:jm-col-span-2">
+                <label class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-tracking-[-0.3px]" for="message">문의사항 </label>
+                <textarea id="message" name="문의사항 :" rows="5" placeholder="문의사항을 입력해주세요." class="jm-py-[16px] jm-px-[12px] jm-bg-[#fff] jm-text-[18px] jm-text-[#000] jm-border jm-border-[#ccc] jm-rounded-[8px] focus:!jm-border-[#44D08E] hover:!jm-border-[#44D08E]"></textarea>
+              </fieldset>
+
+              <fieldset class="pure-group jm-w-full jm-flex jm-flex-col jm-gap-y-[12px] lg:jm-col-span-2">
+                <label class="jm-text-[#000] jm-text-[20px] lg:jm-text-[22px] jm-font-[700] jm-leading-[130%] jm-tracking-[-0.3px]" for="agreement">이용동의 </label>
+                <textarea
+                  id="agreement"
+                  class="jm-p-[15px]"
+                  rows="8"
+                  readonly=""
+                  style="line-height: 140%"
+                  placeholder="	당사는 「개인정보보호법」에 의거하여, 아래와 같은 내용으로 개인정보를
+수집하고 있습니다.
+귀하께서는 아래 내용을 자세히 읽어 보시고, 모든 내용을 이해하신 후에 동의 여부를 결정해 주시기 바랍니다.
+- 이용자가 제공한 모든 정보는 다음의 목적을 위해 활용하며, 하기 목적 이외의 용도로는 사용되지 않습니다.
+① 개인정보 수집 항목 및 수집·이용 목적
+가) 수집 항목 (필수항목)
+- 성명(국문), 전화번호, 이메일, 문의사항 등 문의 신청서에 기재된 정보
+또는 신청자가 제공한 정보
+나) 수집 및 이용 목적
+- 고객 문의에 대한 원활한 상담 진행
+② 개인정보 보유 및 이용기간
+- 수집·이용 동의일로부터 개인정보의 수집·이용목적을 달성할 때까지
+③ 동의거부관리
+- 귀하께서는 본 안내에 따른 개인정보 수집, 이용에 대하여 동의를 거부하실 권리가 있습니다. 다만,
+귀하가 개인정보의 수집/이용에 동의를 거부하시는 경우에 원활한 상담 진행에 어려움이 발생할 수 있음을 알려드립니다."
+                ></textarea>
+              </fieldset>
+              <fieldset class="pure-group jm-w-full jm-flex jm-items-center">
+                <input id="check_id_agree" name="agreement / 동의 :" type="checkbox" class="jm-peer jm-w-0 jm-h-0 jm-opacity-0" />
+                <label for="check_id_agree" class="jm-flex jm-items-center jm-justify-center jm-border-[1px] jm-border-[#C5CBD1] jm-!w-[22px] jm-!h-[22px] jm-aspect-square jm-rounded-[4px] peer-checked:!jm-bg-[#44D08E] jm-peer-checked:!border-[#fff]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2559 5.24698L17.2529 5.24406C16.9275 4.91865 16.3996 4.91865 16.0746 5.24406L7.93043 13.3986L3.92543 9.39406C3.60043 9.06865 3.07252 9.06865 2.7471 9.39406L2.74418 9.39698C2.41877 9.7224 2.41877 10.2503 2.74418 10.5757L7.33877 15.1699L7.34127 15.1728C7.66668 15.4986 8.1946 15.4986 8.52002 15.1728L8.52293 15.1699L17.2559 6.42531C17.5813 6.0999 17.5813 5.5724 17.2559 5.24698Z" fill="#fff"></path>
+                  </svg>
+                </label>
+                <label for="check_id_agree" class="jm-pl-[8px] jm-text-[#000] peer-checked:!text-[#888]">
+                  <span class="jm-text-[18px] jm-leading-[130%] jm-tracking-[-0.4px] jm-font-[400]">개인정보 수집 및 이용에 동의</span>
+                </label>
+              </fieldset>
+              <div class="jm-w-full jm-h-[1px] jm-bg-[#aaa] jm-my-[30px] lg:jm-my-[40px] lg:jm-col-span-2"></div>
+
+              <div class="jm-flex jm-items-center jm-gap-[10px] jm-w-full jm-h-auto jm-text-center jm-mx-auto lg:jm-col-span-2">
+                <button type="submit" class="button-success pure-button button-xlarge jm-w-auto jm-py-[13px] jm-px-[50px] jm-bg-[#44D08E] jm-rounded-[8px] jm-mx-auto">
+                  <span class="jm-text-[#fff] jm-text-[16px] jm-font-[700] jm-leading-[110%]">문의하기</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Customise the Thankyou Message People See when they submit the form: -->
+            <div class="thankyou_message" style="display: none">
+              <h2 style="text-align: center" class="text-[#000] text-[20px] my-[35px]">성공적으로 제출되었습니다. 담당자 확인 후 빠르게 연락드리겠습니다.</h2>
+              <div class="cardgotohome">
+                <a href="https://kellyfnc.com/" target="_parent">
+                  <img class="cardgotohome" src="./card-1.png" alt="" />
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- 푸터 -->
+      <div class="jm-bg-[#222]">
+        <div class="jm-container jm-mt-[0px] jm-py-[30px] lg:jm-py-[50px] jm-mx-auto jm-w-full">
+          <div class="jm-relative jm-h-full">
+            <a href="/" class="jm-text-[#44D08E] hover:jm-text-[#44D08E] active:jm-text-[#44D08E] jm-font-bold jm-text-[24px] xl:jm-text-[32px] jm-leaidng-[38.73px] jm-tracking-[-0.0474em]">
+              <img class="jm-w-[140px] hover:jm-opacity-70 lg:jm-w-[185px]" style="transition: 0.3s" src="./assets/images/logo-white.svg" alt="메디카루 로고" />
+            </a>
+            <div class="jm-mt-[24px]">
+              <div class="jm-w-full">
+                <ul class="jm-flex jm-flex-wrap jm-flex-row jm-gap-x-[10px] jm-mb-0">
+                  <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">메디카루</li>
+                  <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">대표이사 : 장하리</li>
+                  <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">주소 : 경기도 의정부시 오목로 205번길 55(민락동,메가타워) 4층</li>
+                  <li class="jm-hidden lg:!jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">|</li>
+                </ul>
+                <ul class="jm-flex jm-flex-wrap jm-flex-row jm-gap-x-[10px] jm-mb-[4px]">
+                  <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">개인정보 관리 책임자 : 장하리</li>
+                  <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">문의 : wyjcom1@naver.com</li>
+                  <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">사업자등록번호 : 205-87 -01134</li>
+                </ul>
+                <ul class="jm-flex jm-flex-wrap jm-flex-row jm-gap-x-[10px] jm-mb-[4px]">
+                  <li class="jm-flex jm-text-[13px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C] jm-cursor-pointer jm-group"><a class="group-hover:jm-underline" onclick="alert('점검 중입니다.')">이용약관</a></li>
+                  <li class="jm-flex jm-text-[13px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C] jm-cursor-pointer jm-group"><a class="group-hover:jm-underline" onclick="alert('점검 중입니다.')">개인정보처리방침</a></li>
+                  <li class="jm-flex jm-text-[13px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C] jm-cursor-pointer jm-group"><a class="group-hover:jm-underline" onclick="alert('점검 중입니다.')">이메일무단수집거부</a></li>
+                </ul>
+                <ul class="jm-flex jm-flex-wrap jm-flex-row jm-gap-x-[10px] jm-mb-[4px]">
+                  <li class="jm-flex jm-text-[15px] jm-leading-[25px] jm-tracking-[-0.5px] jm-text-[#6C6C6C]">Copyright© 메디카루 2024 All right reserved.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 푸터 -->
+
+    <!-- 컨텐츠 영역  -->
+  </body>
+  <script>
+    AOS.init();
+  </script>
+  <script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#check_id_1").change(function () {
+        if ($("#check_id_1").is(":checked")) {
+          $("#check_id_1").val("입점 O");
+        } else {
+          $("#check_id_1").val(" ");
+        }
+      });
+      $("#check_id_2").change(function () {
+        if ($("#check_id_2").is(":checked")) {
+          $("#check_id_2").val("입점 O");
+        } else {
+          $("#check_id_2").val(" ");
+        }
+      });
+      $("#check_id_3").change(function () {
+        if ($("#check_id_3").is(":checked")) {
+          $("#check_id_3").val("입점 O");
+        } else {
+          $("#check_id_3").val(" ");
+        }
+      });
+      $("#check_id_4").change(function () {
+        if ($("#check_id_4").is(":checked")) {
+          $("#check_id_4").val("입점 O");
+        } else {
+          $("#check_id_4").val(" ");
+        }
+      });
+    });
+  </script>
+</html>
